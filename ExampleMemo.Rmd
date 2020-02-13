@@ -1,0 +1,25 @@
+---
+author:
+- Scott Large, PhD
+- Chief
+- Ecosystem Dynamics and Assessment Branch
+- Northeast Fisheries Science Center
+opening: To whom it may concern,
+closing: Sincerely,
+address:
+- Fishery Management Council
+- 1234 Roady McRoad
+- City, State, 00000
+
+letterhead: letterhead/NEFSCletterhead.pdf
+
+output: linl::linl
+---
+
+This is the text of the memo!
+
+```{r, echo=FALSE}
+#remotes::install_github("gadenbuie/lorem")
+```
+
+`r lorem::ipsum(paragraphs = 2)`
