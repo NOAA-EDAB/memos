@@ -1,0 +1,242 @@
+\documentclass[10pt,]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[left=2cm, right=2cm, top=2cm, bottom=3cm, footskip = .5cm]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\providecommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{}
+    \pretitle{\vspace{\droptitle}}
+  \posttitle{}
+    \author{}
+    \preauthor{}\postauthor{}
+    \date{}
+    \predate{}\postdate{}
+  
+% Set up the fonts
+\usepackage[urw-palatino]{mathdesign}
+\usepackage[T1]{fontenc}
+
+
+% Set the language for 508
+\hypersetup{
+  pdftitle = {title},
+  pdflang = en-US}
+
+% Add accessibility support from http://www.richschwinn.com/accessibility
+\RequirePackage{accsupp}
+\RequirePackage{pdfcomment}
+\newcommand{\AccTool}[2]{\BeginAccSupp{method=pdfstringdef,unicode,Alt={{#1}}}\pdftooltip{{#2}}{{#1}}\EndAccSupp{}}
+
+
+% Set up the headers and footers
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{ifthen}
+\usepackage{everypage}
+\usepackage{float}
+\usepackage{subfig}
+
+% Avoid struggling over figure and table float in Rmarkdown
+\let\origfigure\figure
+\let\endorigfigure\endfigure
+\renewenvironment{figure}[1][2] {
+    \expandafter\origfigure\expandafter[H]
+} {
+    \endorigfigure
+}
+
+\let\origtable\table
+\let\endorigtable\endtable
+\renewenvironment{table}[1][2] {
+    \expandafter\origtable\expandafter[H]
+} {
+    \endorigtable
+}
+
+% First page has the large title and NOAA logo
+\pagestyle{fancy}
+\fancyhf{}
+\setlength\headheight{40pt}
+\cfoot{\thepage}
+
+\AddEverypageHook{%
+   \ifthenelse{\value{page}=1}%
+     {\rhead{\includegraphics[width=40pt]{images/NOAA_logo.png} \\ \textsf{\emph{DRAFT}}}
+      \lhead{\textsf{\LARGE State of the Ecosystem 2020: Response Memo}}
+      }%
+     {\rhead{}
+      \lhead{\textsf{\emph{State of the Ecosystem 2020: Response Memo}}}
+     }
+}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Make caption fonts a bit smaller
+\usepackage[font={small}]{caption}
+
+
+% Change section labels to san serif
+\usepackage{sectsty}
+\allsectionsfont{\normalfont\sffamily\bfseries}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+
+\begin{document}
+
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+In the table below we summarize all comments and requests with sources.
+The Progress column briefly summarizes how we responded, with a more
+detailed response in the numbered Memo Section. In the Progress column,
+``SOE'' indicates a change included in the report(s).
+
+\begin{table}[!h]
+\centering
+\resizebox{\linewidth}{!}{
+\begin{tabular}{l|l|l|l}
+\hline
+Request & Source & Progress & Memo Section\\
+\hline
+Formal response to requests & Both Councils & this response memo & Introduction\\
+\hline
+Consider report card like Alaska's & Both Councils & SOE summary bullets (page 1) & 1.0\\
+\hline
+include summary visualization & Both Councils & SOE infographics (page 2) & 2.0\\
+\hline
+Include uncertainty estimates for all indicators & Both Councils & SOE survey biomass uncertainty included; feedback requested for other indicators & 3.0\\
+\hline
+Include Downeast ME (Scotian Shelf EPU) & NEFMC & SOE survey biomass now includes most; included in other indicators & 4.0\\
+\hline
+Link zooplankton abundance and or community composition to fish condition & NEFMC & SOE page 2 research spotlight & 5.0\\
+\hline
+Ocean acidification information & Both Councils & inadequate information for indicator; existing info summarized here & 6.0\\
+\hline
+Gulf Stream Index/Labrador current interaction & Both Councils & SOE Labrador current and Gulf Stream indices now included in both reports & 7.0\\
+\hline
+Include source for PP estimates (satellite vs in situ) & NEFMC & SOE clarified that all PP estiamtes are from satellite & 8.0\\
+\hline
+Shellfish growth/distribution linked to climate (system productivity) & MAFMC & project with R. Mann student to start late 2020 & 9.0\\
+\hline
+Esturine condition relative to power plants and temp & MAFMC & inadequate resourses to address this year & 10.0\\
+\hline
+Frequency and occurance of warm rings & MAFMC & SOE added indicator & 11.0\\
+\hline
+Cold pool index & MAFMC & SOE added indicator & 12.0\\
+\hline
+Nutrient inputs and water quality near shore & MAFMC & summary of data from National Estuarine Research Reserve network started, example info included here & 13.0\\
+\hline
+Link environmental and social, economic indicators & NEFMC & SOE habitat wind overlap, page 2 conceptual model & 14.0\\
+\hline
+Quantitative overlap of wind area and habitat and fishing areas & MAFMC & SOE habitat wind overlap, wind overlap with fisheries for next round & 15.0\\
+\hline
+Include links to Social Science websites & NEFMC & SOE link included in both reports & 16.0\\
+\hline
+Management complexity & MAFMC & project started by summer student in 2018, needs further analysis & 17.0\\
+\hline
+South atlantic managed species represented in recreational indices - break out species managed by MA, SA and AS. & MAFMC & SOE revised indicator and noted change in report & 18.0\\
+\hline
+Add social elements from overview conceptual model to NE conceptual model & NEFMC & older general conceptual model replaced by specific links between indicators in report & 19.0\\
+\hline
+Avg weight of diet components by feeding group & Both Councils & stomach fullness analysis started--species level; feedback requested & 20.0\\
+\hline
+North Atlantic Right Whale calf production indicator & NEFMC & SOE added indicator & 21.0\\
+\hline
+Distinguish managed species in report & NEFMC & SOE Council managed species separated in landings figures & 22.0\\
+\hline
+Marine Mammal consumption & MAFMC & SOE added discussion of seal diets & 23.0\\
+\hline
+Small pelagic abundance & MAFMC & SOE have survey planktivore time series but would like to improve; see also SOE forage energy density & 24.0\\
+\hline
+Young of Year index from multiple surveys & MAFMC & SOE fish production from NEFSC trawl; feedback reqested on how to expand & 25.0\\
+\hline
+Biomass of sharks & MAFMC & HMS provided landings for 3 years and working on full time series, still looking for source of biomass data & 26.0\\
+\hline
+Diversity metric for NEFSC trawl survey & NEFMC & need to reconcile different survey vessel catchabilites or split by vessel & 27.0\\
+\hline
+Mean stomach weight across feeding guilds & MAFMC & stomach fullness analysis started--species level; feedback requested & 28.0\\
+\hline
+Ecosystem risk score & MAFMC & SOE PP required a step towards this; feedback requested for other desired analyses & 29.0\\
+\hline
+Inflection points for indicators & Both Councils & inadequate resources to do inflection point and threshold analysis this year & 30.0\\
+\hline
+\end{tabular}}
+\end{table}
+
+\hypertarget{responses-to-comments}{%
+\section{Responses to comments}\label{responses-to-comments}}
+
+
+\end{document}
