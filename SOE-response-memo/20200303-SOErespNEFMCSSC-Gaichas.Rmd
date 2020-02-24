@@ -6,10 +6,10 @@ author:
 - Northeast Fisheries Science Center
 opening: To whom it may concern,
 closing: Sincerely,
+date: "`r format(Sys.time(), '%d %B, %Y')`"
 address:
-- Fishery Management Council
-- 1234 Roady McRoad
-- City, State, 00000
+- New England Fishery Management Council
+- Scientific and Statistical Committee
 
 letterhead: letterhead/NEFSCletterhead.pdf
 
