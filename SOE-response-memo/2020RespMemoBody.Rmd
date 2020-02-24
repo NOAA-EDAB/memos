@@ -34,9 +34,51 @@ In the table below we summarize all comments and requests with sources. The Prog
 # take from google drive to automatically update any changes
 #googledrive::drive_download("Northeast IEA/State of the Ecosystem Reports/SOE 2020/Workshop & Meeting Notes/Request checklist", path="2019requests.xlsx", overwrite = TRUE)
 
-knitr::kable(read_excel("2019requests.xlsx", sheet="MemoTable", range = 'A1:D32')) %>%
-  kable_styling(latex_options = c("hold_position", "scale_down"))
+requests <- read_excel("2019requests.xlsx", sheet="MemoTable", range = 'A1:D32')
+
+#requests$`Memo Section` <- paste0("[", requests$`Memo Section`, "](#",requests$`Memo Section`,")") #trying to make clickable links in the table to sections, not working
+#adding format = "markdown" to kable statement made them links but they still didnt jump to report sections and messed up other formatting
+
+knitr::kable(requests, longtable = T, booktabs = TRUE, linesep = "") %>%
+  kable_styling(font_size=9, latex_options = c("hold_position", "striped", "repeat_header")) %>%
+  row_spec(0,bold=TRUE) %>%
+  column_spec(1, width="5cm") %>%
+  column_spec(2, width="2cm") %>%
+  column_spec(3, width="5cm") %>%
+  column_spec(4, width="2cm")
 ```
 
 
 # Responses to comments
+
+## 1 
+
+Both Councils asked for a summary "report card" similar to that used in Alaska [@zador_ecosystem_2016]. The first page of this year's SOE reports summarizes the key messages with icons showing the message theme (e.g., commercial fisheries, fishing communities, forage species, system productivity, etc). At present, we synthesized key findings on both existing and new indicators. We welcome suggestions for indicators that should always be tracked in this section, and for further refinements to make this summary more useful.
+
+## 2 
+
+Both Councils asked for a summary visualization. The first page of the report uses icons developed to help visualize different report components. The second page of this year's SOE report has both a map visualizing the key oceanographic features mentioned in the report along with fishing communities, and a conceptual model visualizing potential linkages between report indicators. The conceptual model is discussed further under point [5](#5) below.
+
+## 3
+
+Both Councils asked for uncertainty estimates to be included with indicators. As a first step, we included survey design-based uncertainty estimates for all surveys where we had haul specific information (all but the inshore ME-NH survey). Including this uncertainty led to a different approach to the data, looking for true departures from expected stable dynamics at the functional group level, and provided insight into which trends were potentially noteworthy. Survey biomass uncertainty is included in figure 
+
+We experimented with a model-based estimate of uncertainty for survey biomass which accounts for both spatial and temporal sources (VAST). The results are promising (Fig. \ref{fig:VASTtest}). This method can also potentailly combine the inshore and offshore surveys into a single analysis. If the SSCs and Councils consider this approach promising, we will persue it further for next year. 
+
+```{r VASTtest}
+
+
+```
+
+Some indicators (e.g. total landings) may have uncertainty which is difficult to calculate (e.g. based on unknown reporting errors). Many other current indicators do not have straightforward uncertainty calculaltions (e.g. diversity indices, anomalies) so we welcome suggestions from the SSC and Council to guide estimation for future reports.
+
+## 4
+
+The NE SSC asked to include Downeast ME in future reports (as the Scotian Shelf EPU which includes it has not been included in previous reports). 
+
+## 5
+
+
+
+# References
+
