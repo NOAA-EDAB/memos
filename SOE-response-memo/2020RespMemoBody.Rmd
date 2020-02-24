@@ -63,10 +63,12 @@ Both Councils asked for a summary visualization. The first page of the report us
 
 Both Councils asked for uncertainty estimates to be included with indicators. As a first step, we included survey design-based uncertainty estimates for all surveys where we had haul specific information (all but the inshore ME-NH survey). Including this uncertainty led to a different approach to the data, looking for true departures from expected stable dynamics at the functional group level, and provided insight into which trends were potentially noteworthy. Survey biomass uncertainty is included in figure 
 
-We experimented with a model-based estimate of uncertainty for survey biomass which accounts for both spatial and temporal sources (VAST). The results are promising (Fig. \ref{fig:VASTtest}). This method can also potentailly combine the inshore and offshore surveys into a single analysis. If the SSCs and Councils consider this approach promising, we will persue it further for next year. 
+We experimented with a model-based estimate of uncertainty for survey biomass which accounts for both spatial and temporal sources (VAST; @thorson_guidance_2019). The results are promising (Fig. \ref{fig:VASTtest}). This method can also potentailly combine the inshore and offshore surveys into a single analysis. If the SSCs and Councils consider this approach promising, we will persue it further for next year. 
 
-```{r VASTtest}
+```{r VASTtest, fig.cap="Georges Bank piscivoves biomass and uncertainty as estimated by the VAST model.", fig.show='hold', out.width='49%'}
 
+knitr::include_graphics("images/ln_density.png")
+knitr::include_graphics("images/biomass_plot.pdf")
 
 ```
 
@@ -74,7 +76,7 @@ Some indicators (e.g. total landings) may have uncertainty which is difficult to
 
 ## 4
 
-The NE SSC asked to include Downeast ME in future reports (as the Scotian Shelf EPU which includes it has not been included in previous reports). 
+The NE SSC asked to include downeast ME in future reports, because the Scotian Shelf EPU which includes downeast ME has not been included in previous reports. We felt it was inappropriate to report on the Scotian Shelf EPU, which includes Canadian waters and is an incomplete portion of the full Soctian Shelf. However, this year we recalculated survey biomass using an updated strata set that includes much of downeast ME. Further, fishery catch and revenue data, fishing community data, and recreational indicators have always included downeast ME. Oceanographic indicators
 
 ## 5
 
