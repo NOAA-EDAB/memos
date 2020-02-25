@@ -18,13 +18,40 @@ subparagraph: yes
 knitr::opts_chunk$set(echo = FALSE,
                       message = FALSE,
                       warning = FALSE,
+                      dev = "cairo_pdf",
                       fig.align = 'center') #allows for inserting R code into captions
 
 library(tidyverse)
 library(readxl)
 library(kableExtra)
+library(ecodata)
 
 ```
+
+```{r setupfigs, include=FALSE}
+#Time series constants
+shade.alpha <- 0.3
+shade.fill <- "lightgrey"
+lwd <- 1
+pcex <- 2
+trend.alpha <- 0.5
+trend.size <- 2
+hline.size <- 1
+hline.alpha <- 0.35
+hline.lty <- "dashed"
+label.size <- 5
+hjust.label <- 1.5
+letter_size <- 4
+feeding.guilds1<- c("Piscivore","Planktivore","Benthivore","Benthos")
+feeding.guilds <- c("Apex Predator","Piscivore","Planktivore","Benthivore","Benthos")
+x.shade.min <- 2009
+x.shade.max <- 2019
+#Function for custom ggplot facet labels
+label <- function(variable,value){
+  return(facet_names[value])
+}
+```
+
 
 ```{r, include = F}
 #this is to wrap text around figures if we want
@@ -246,11 +273,88 @@ In addition, NEFSC survey data was analyzed to determine if South-Atlantic manag
 
 ## 19
 
-The NEFMC requested that social elements from the overview conceptual model shown in presentations be added to the New England conceptual model included in the printed SOE report. While this would be a useful update; all of the previous conceptual models have been replaced by different summary visualizations requested by the Councils (see points 1 and 2). Therefore, this change to the original conceptual model has not yet been made.
+The NEFMC requested that social elements from the overview conceptual model shown in presentations be added to the New England conceptual model included in the printed SOE report. While this would be a useful update, all of the previous conceptual models have been replaced by different summary visualizations requested by the Councils (see points 1 and 2). 
 
 ## 20
 
-Avg weight of diet components by feeding group, Mean stomach weight across feeding guilds
+Both Councils were interested in indicators related to fish diet data. For example, average weight of diet components by feeding group, and mean stomach weight across feeding guilds were mentioned. We initiated exploratory analysis of diet information this year, and present examples of the types of information available to seek feedback on how the Counicls would like indicators developed further. Here, stomach fullness was expressed as an anomaly for each species in each region with sufficient data to evaluate whether common anomalies were present.
+
+```{r ma-stomachs, fig.cap= "Stomach fullness anomaly in the Mid-Atlantic Bight.", fig.height=9 }
+fullness <- ecodata::stom_fullness %>%
+  group_by(Var, EPU) %>% ## Remove values with missing data
+  filter(n()> 10) %>% ## at least ten years of data
+  ungroup() %>% 
+  filter(EPU == "MAB") %>%
+  ggplot(aes(x = Time, y = Value)) +
+  geom_line() +
+  #geom_point() +
+  annotate("rect", fill = shade.fill, alpha = shade.alpha,
+      xmin = x.shade.min , xmax = x.shade.max,
+      ymin = -Inf, ymax = Inf) +
+  geom_hline(aes(yintercept = 0),
+           size = hline.size,
+           alpha = hline.alpha,
+           linetype = hline.lty) +
+  ggtitle("MAB Stomach fullness") +
+  ylab("Stomach fullness anomaly") +
+  facet_wrap(~Var)+
+  theme(strip.text=element_text(hjust=0))+
+  theme_ts()
+
+fullness
+
+```
+
+```{r ne-stomachs, fig.cap=" Stomach Fullness Anomaly in New England.", fig.height=9  }
+gb_fullness <- ecodata::stom_fullness %>%
+  group_by(Var, EPU) %>% ## Remove values with missing data
+  filter(n()> 10) %>% ## at least tens years
+  ungroup() %>% 
+  filter(EPU == "GB") %>%
+  ggplot(aes(x = Time, y = Value)) +
+  geom_line() +
+  #geom_point() +
+  annotate("rect", fill = shade.fill, alpha = shade.alpha,
+      xmin = x.shade.min , xmax = x.shade.max,
+      ymin = -Inf, ymax = Inf) +
+  geom_hline(aes(yintercept = 0),
+           size = hline.size,
+           alpha = hline.alpha,
+           linetype = hline.lty) +
+  ggtitle("GB Stomach fullness") +
+  ylab("Stomach fullness anomaly") +
+  facet_wrap(~Var)+
+  theme(strip.text=element_text(hjust=0), 
+        legend.position = "none", 
+        axis.text.x = element_text(angle = 45))+
+  theme_ts()
+
+gom_fullness <- ecodata::stom_fullness %>%
+  group_by(Var, EPU) %>% ## Remove values with missing data
+  filter(n()> 10) %>% ## at least tens years
+  ungroup() %>% 
+  filter(EPU == "GOM") %>%
+  ggplot(aes(x = Time, y = Value)) +
+  geom_line() +
+  #geom_point() +
+  annotate("rect", fill = shade.fill, alpha = shade.alpha,
+      xmin = x.shade.min , xmax = x.shade.max,
+      ymin = -Inf, ymax = Inf) +
+  geom_hline(aes(yintercept = 0),
+           size = hline.size,
+           alpha = hline.alpha,
+           linetype = hline.lty) +
+  ggtitle("GOM Stomach fullness") +
+  ylab("Stomach fullness anomaly") +
+  facet_wrap(~Var)+
+  theme(strip.text=element_text(hjust=0), 
+        legend.position = "none", 
+        axis.text.x = element_text(angle = 45))+
+  theme_ts()
+
+gb_fullness
+gom_fullness
+```
 
 ## 21
 
