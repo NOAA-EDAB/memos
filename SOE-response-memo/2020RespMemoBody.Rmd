@@ -57,11 +57,11 @@ Both Councils asked for a summary "report card" similar to that used in Alaska [
 
 ## 2 
 
-Both Councils asked for a summary visualization. The first page of the report uses icons developed to help visualize different report components. The second page of this year's SOE report has both a map visualizing the key oceanographic features mentioned in the report along with fishing communities, and a conceptual model visualizing potential linkages between report indicators. The conceptual model is discussed further under point [5](#5) below.
+Both Councils asked for a summary visualization. The first page of the SOE report uses icons developed to help visualize different report components. The second page of this year's SOE report has both a map visualizing the key oceanographic features mentioned in the report along with fishing communities, and a conceptual model visualizing potential linkages between report indicators. The conceptual model is discussed further under point [5](#5) below.
 
 ## 3
 
-Both Councils asked for uncertainty estimates to be included with indicators. As a first step, we included survey design-based uncertainty estimates for all surveys where we had haul specific information (all but the inshore ME-NH survey). Including this uncertainty led to a different approach to the data, looking for true departures from expected stable dynamics at the functional group level, and provided insight into which trends were potentially noteworthy. Survey biomass uncertainty is included in figure 
+Both Councils asked for uncertainty estimates to be included with indicators. As a first step, we included survey design-based uncertainty estimates for all surveys where we had haul specific information (all but the inshore ME-NH survey). Including this uncertainty led to a different approach to the data, looking for true departures from expected stable dynamics at the functional group level, and provided insight into which trends were potentially noteworthy. Survey biomass uncertainty is included in each SOE (p. MAFMC and p. NEFMC).
 
 We experimented with a model-based estimate of uncertainty for survey biomass which accounts for both spatial and temporal sources (VAST; @thorson_guidance_2019). The results are promising (Fig. \ref{fig:VASTtest}). This method can also potentailly combine the inshore and offshore surveys into a single analysis. If the SSCs and Councils consider this approach promising, we will persue it further for next year. 
 
@@ -76,9 +76,68 @@ Some indicators (e.g. total landings) may have uncertainty which is difficult to
 
 ## 4
 
-The NE SSC asked to include downeast ME in future reports, because the Scotian Shelf EPU which includes downeast ME has not been included in previous reports. We felt it was inappropriate to report on the Scotian Shelf EPU, which includes Canadian waters and is an incomplete portion of the full Soctian Shelf. However, this year we recalculated survey biomass using an updated strata set that includes much of downeast ME. Further, fishery catch and revenue data, fishing community data, and recreational indicators have always included downeast ME. Oceanographic indicators
+The NE SSC asked to include downeast ME in future reports, because the Scotian Shelf EPU which includes downeast ME has not been included in previous reports. We felt it was inappropriate to report on the Scotian Shelf EPU, which includes Canadian waters and is an incomplete portion of the full Soctian Shelf. However, this year we recalculated survey biomass using an updated strata set that includes much of downeast ME (p. MAFMC and p. NEFMC and see updated methods^[https://noaa-edab.github.io/tech-doc/survdat.html]). Further, fishery catch and revenue data, fishing community data, and recreational indicators have always included downeast ME because both fishing statistical areas and human community data include all of ME. Therefore, fishery and fish biomass information reflects much of the area. 
+
+Oceanographic indicators (surface and bottom temperature, phytoplankton, zooplankton) remain at the EPU level. The EPUs were defined based on these characteristics^[https://noaa-edab.github.io/tech-doc/epu.html] so we are hesitant to alter them for these indicators without a more thorough examination of the EPU definitions in general. 
 
 ## 5
+
+Both Councils have been interested in ecosystem energy flow and how changes in ecosystem productivty link to fishery production. In particular, the NE SSC asked about further links between zooplankton abundance and or community composition to fish condition. Research was initiated during 2019 evaluating statistical relationships between environmental indicators including temperature, depth, and zooplankton community composition and fish condition. Initial results are noted in each SOE (p. MAFMC and p. NEFMC). Further work is ongoing to link more of the indicators in the report using both statistical analysis and potentially structural equation modeling as noted on p. 2 of each SOE under "Research Spotlight."
+
+
+
+## 6
+
+
+## 7
+
+
+## 8
+
+
+## 9
+
+## 10
+
+## 11
+
+## 12
+
+## 13
+
+## 14
+
+## 15
+
+## 16
+
+## 17
+
+## 18
+
+## 19
+
+## 20
+
+## 21
+
+## 22
+
+## 23
+
+## 24
+
+## 25
+
+## 26
+
+## 27
+
+## 28
+
+## 29
+
+## 30
 
 
 
