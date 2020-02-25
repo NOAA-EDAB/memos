@@ -173,7 +173,7 @@ The MAFMC requested that we investigate estuarine condition relative to power pl
 
 ## 11
 
-The MA SSC requested information on the frequency and occurrence of Gulf Stream warm core rings. We have added an indicator based on @andres_recent_2016 and @gawarkiewicz_changing_2018 to both SOE reports (p. MAFMC and p. NEFMC). We welcome further comments on the utility of this new indicator.
+The MA SSC requested information on the frequency and occurrence of Gulf Stream warm core rings. We have added an indicator based on @andres_recent_2016, @gawarkiewicz_changing_2018,and @gangopadhyay_observed_2019 to both SOE reports (p. MAFMC and p. NEFMC). We welcome further comments on the utility of this new indicator.
 
 ## 12
 
@@ -358,19 +358,21 @@ gom_fullness
 
 ## 21
 
-North Atlantic Right Whale calf production indicator
+THe NEFMC requested a North Atlantic Right Whale calf production indicator. This indicator has been added to both SOE reports (p. MAFMC and p. NEFMC).
 
 ## 22
 
-Distinguish managed species in report
+THe NEFMC requested that managed species be distinguished in the report. Both SOE reports summarize landings as a whole and by Council-managed species in aggregate (p. MAFMC and p. NEFMC). A table listing which species are managed by which entity is included in each SOE report (Table 4 in both reports). Status of Council-managed species is reported in each SOE (p. MAFMC and p. NEFMC) with jointly managed species indicated. 
 
 ## 23
 
-Marine Mammal consumption
+The MAFMC was interested in estiamtes of marine mammal consumption. While there have been no updated reports of total marine mammal consumption for the US Northeast Shelf ecosystem since @smith_consumption_2015, new diet studies are in progress. We included updated information on seal diets in both SOE reports (p. MAFMC and p. NEFMC). Once completed, these diet studies combined with mammal population estimates could be used to update marine mammal consumption estimates.
 
 ## 24
 
-Small pelagic abundance
+The MAFMC requested indices of small pelagic abundance. While the SOE includes survey biomass estimates of planktivores (p. MAFMC and p. NEFMC), we would like to improve on these indices. Combining survey information using VAST models as described under point 3 may improve indices for small pelagics, but species not sampled by bottom trawl surveys remain problematic. We welcome feedback on other sources of information to address small pelagic abundance.
+
+Forage energy content is another important consideration which may affect predators as much as fluctuations in abundance. This year we have included initial information on forage energy content in the SOE reports (p. MAFMC and p. NEFMC) which highlights the potential for seasonal and interannual variability in energy content. We plan to develop forage energy content indicators as this time series develops, and welcome feedback on how best to do so.
 
 ## 25
 
