@@ -156,11 +156,35 @@ The MA SSC requested a cold pool index. We have added an indicator of cold pool 
 
 The MAFMC requested information on nutrient inputs and water quality near shore and in estuaries. This year we started a collaboration with the National Esturarine Research Reserve (NERR) network to assemble information. Here we provide examples of the types of information available and ask for feedback on what type of information would be most useful. 
 
+There are NERRs all around the US (Fig. \ref{fig:nerrUS}), so the first decision is which ones to include. A reasonable starting point might be all of the NERRs from ME to NC, but other locations may be of interest. Then, status for a certain indicator could be mapped across all of the selected NERRs as in Fig. \ref{fig:nerrUS}. 
 
+```{r nerrUS, fig.cap="National Estuarine Research Reserve locations in the US."}
+knitr::include_graphics("images/nerrs_map.png")
+```
+
+Within a particular NERR there may be several sampling locations (Fig. \ref{fig:waquoit}), so the next decision would be whether to include many stations or a subset of stations representing certain conditions (or having the longest time series).
+
+```{r waquoit, fig.cap="Waquit Bay National Estuarine Research Reserve map with sampling locations."}
+knitr::include_graphics("images/Waquoit_Map.jpg")
+```
+
+At each station several types of data are collected, so the next decision is which type of information is most useful for the Councils? For example, multiple indicators could contribute to water quality overall in an area, and could be annual or seasonal (Fig. \ref{fig:nerr-mult}), or a single indicator of nutrient input could be of interest across multiple areas (Fig. \ref{fig:nerr-DIN}).
+
+```{r nerr-mult, fig.cap="Multiple water quality attributes.", fig.show='hold', out.width='49%'}
+knitr::include_graphics("images/NERRs_Chla.png")
+knitr::include_graphics("images/NERRs_DO.png")
+```
+
+```{r nerr-DIN, fig.cap="Dissolved Inorganic Nitrogen (DIN) in two locations.", fig.show='hold', out.width='49%'}
+knitr::include_graphics("images/NERRs_MH_DIN.png")
+knitr::include_graphics("images/NERRs_MP_DIN.png")
+```
+
+Finally, thresholds for water quality would need to be evaluated (Fig. \ref{fig:nerr-DIN}). Several exist and could be used by the Council depending on the ultimate goal for having the indicator.
 
 ## 14
 
-Link environmental and social, economic indicators
+Link environmental and social, economic indicators 
 
 ## 15
 
@@ -168,7 +192,7 @@ Quantitative overlap of wind area and habitat and fishing areas
 
 ## 16
 
-Include links to Social Science websites
+The NE SSC asked that weiInclude links to Social Science indicator websites. These links have been included in both reports (p. MAFMC and p. NEFMC).
 
 ## 17
 
