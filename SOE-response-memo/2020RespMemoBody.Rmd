@@ -84,62 +84,105 @@ Oceanographic indicators (surface and bottom temperature, phytoplankton, zooplan
 
 Both Councils have been interested in ecosystem energy flow and how changes in ecosystem productivty link to fishery production. In particular, the NE SSC asked about further links between zooplankton abundance and or community composition to fish condition. Research was initiated during 2019 evaluating statistical relationships between environmental indicators including temperature, depth, and zooplankton community composition and fish condition. Initial results are noted in each SOE (p. MAFMC and p. NEFMC). Further work is ongoing to link more of the indicators in the report using both statistical analysis and potentially structural equation modeling as noted on p. 2 of each SOE under "Research Spotlight."
 
-
-
 ## 6
 
+Both Councils asked for information on ocean acidification (OA). 
 
 ## 7
 
+Gulf Stream Index/Labrador current interaction
 
 ## 8
 
+Include source for PP estimates (satellite vs in situ)
 
 ## 9
 
+Shellfish growth/distribution linked to climate (system productivity)
+
 ## 10
+
+Esturine condition relative to power plants and temp
 
 ## 11
 
+Frequency and occurance of warm rings
+
 ## 12
+
+Cold pool index
 
 ## 13
 
+Nutrient inputs and water quality near shore
+
 ## 14
+
+Link environmental and social, economic indicators
 
 ## 15
 
+Quantitative overlap of wind area and habitat and fishing areas
+
 ## 16
+
+Include links to Social Science websites
 
 ## 17
 
+Management complexity
+
 ## 18
+
+South atlantic managed species represented in recreational indices - break out species managed by MA, SA and AS.
 
 ## 19
 
+Add social elements from overview conceptual model to NE conceptual model
+
 ## 20
+
+Avg weight of diet components by feeding group
 
 ## 21
 
+North Atlantic Right Whale calf production indicator
+
 ## 22
+
+Distinguish managed species in report
 
 ## 23
 
+Marine Mammal consumption
+
 ## 24
+
+Small pelagic abundance
 
 ## 25
 
+Young of Year index from multiple surveys
+
 ## 26
+
+Biomass of sharks
 
 ## 27
 
+Diversity metric for NEFSC trawl survey
+
 ## 28
+
+Mean stomach weight across feeding guilds
 
 ## 29
 
+Ecosystem risk score
+
 ## 30
 
-
+Inflection points for indicators
 
 # References
 
