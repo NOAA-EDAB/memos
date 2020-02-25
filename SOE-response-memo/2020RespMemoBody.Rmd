@@ -26,6 +26,21 @@ library(kableExtra)
 
 ```
 
+```{r, include = F}
+#this is to wrap text around figures if we want
+defOut <- knitr::knit_hooks$get("plot")  # save the default plot hook 
+knitr::knit_hooks$set(plot = function(x, options) {  # set new plot hook ...
+  x <- defOut(x, options)  # first apply the default hook
+  if(!is.null(options$wrapfigure)) {  # then, if option wrapfigure is given ...
+    # create the new opening string for the wrapfigure environment ...
+    wf <- sprintf("\\begin{wrapfigure}{%s}{%g\\textwidth}", options$wrapfigure[[1]], options$wrapfigure[[2]])
+    x  <- gsub("\\begin{figure}", wf, x, fixed = T)  # and replace the default one with it.
+    x  <- gsub("{figure}", "{wrapfigure}", x, fixed = T)  # also replace the environment ending
+  }
+  return(x)
+})
+```
+
 # Introduction
 
 In the table below we summarize all comments and requests with sources. The Progress column briefly summarizes how we responded, with a more detailed response in the numbered Memo Section. In the Progress column, "SOE" indicates a change included in the report(s).
@@ -61,7 +76,7 @@ Both Councils asked for a summary visualization. The first page of the SOE repor
 
 ## 3
 
-Both Councils asked for uncertainty estimates to be included with indicators. As a first step, we included survey design-based uncertainty estimates for all surveys where we had haul specific information (all but the inshore ME-NH survey). Including this uncertainty led to a different approach to the data, looking for true departures from expected stable dynamics at the functional group level, and provided insight into which trends were potentially noteworthy. Survey biomass uncertainty is included in each SOE (p. MAFMC and p. NEFMC).
+Both Councils asked for uncertainty estimates to be included with indicators. As a first step, we included survey design-based uncertainty estimates^[https://noaa-edab.github.io/tech-doc/survdat.html] for all surveys where we had haul specific information (all but the inshore ME-NH survey). Including this uncertainty led to a different approach to the data, looking for true departures from expected stable dynamics at the functional group level, and provided insight into which trends were potentially noteworthy. Survey biomass uncertainty is included in each SOE (p. MAFMC and p. NEFMC).
 
 We experimented with a model-based estimate of uncertainty for survey biomass which accounts for both spatial and temporal sources (VAST; @thorson_guidance_2019). The results are promising (Fig. \ref{fig:VASTtest}). This method can also potentailly combine the inshore and offshore surveys into a single analysis. If the SSCs and Councils consider this approach promising, we will persue it further for next year. 
 
@@ -76,17 +91,42 @@ Some indicators (e.g. total landings) may have uncertainty which is difficult to
 
 ## 4
 
-The NE SSC asked to include downeast ME in future reports, because the Scotian Shelf EPU which includes downeast ME has not been included in previous reports. We felt it was inappropriate to report on the Scotian Shelf EPU, which includes Canadian waters and is an incomplete portion of the full Soctian Shelf. However, this year we recalculated survey biomass using an updated strata set that includes much of downeast ME (p. MAFMC and p. NEFMC and see updated methods^[https://noaa-edab.github.io/tech-doc/survdat.html]). Further, fishery catch and revenue data, fishing community data, and recreational indicators have always included downeast ME because both fishing statistical areas and human community data include all of ME. Therefore, fishery and fish biomass information reflects much of the area. 
+The NE SSC asked to include downeast ME in future reports, because the Scotian Shelf EPU which includes downeast ME has not been included in previous reports. We felt it was inappropriate to report on the Scotian Shelf EPU, which includes Canadian waters and is an incomplete portion of the full Soctian Shelf. However, this year we recalculated survey biomass using an updated strata set that includes much of downeast ME for the NEFSC (Fig. \ref{fig:survbio-strata}; p. NEFMC SOE). The inshore strata not included in the NEFSC trawl survey biomass are represented in the ME-NH survey (p. NEFMC SOE) Further, fishery catch and revenue data, fishing community data, and recreational indicators have always included downeast ME because both fishing statistical areas and human community data include all of ME. Therefore, fishery and fish biomass information reflects much of the area. 
+
+```{r survbio-strata, fig.cap="Survey strata mapping to EPUs for biomass estimates", out.width='80%'} 
+#,  fig.align="right", wrapfigure = list("R", .5)
+knitr::include_graphics("images/EPU_Designations_Map.jpg")
+```
 
 Oceanographic indicators (surface and bottom temperature, phytoplankton, zooplankton) remain at the EPU level. The EPUs were defined based on these characteristics^[https://noaa-edab.github.io/tech-doc/epu.html] so we are hesitant to alter them for these indicators without a more thorough examination of the EPU definitions in general. 
 
 ## 5
 
-Both Councils have been interested in ecosystem energy flow and how changes in ecosystem productivty link to fishery production. In particular, the NE SSC asked about further links between zooplankton abundance and or community composition to fish condition. Research was initiated during 2019 evaluating statistical relationships between environmental indicators including temperature, depth, and zooplankton community composition and fish condition. Initial results are noted in each SOE (p. MAFMC and p. NEFMC). Further work is ongoing to link more of the indicators in the report using both statistical analysis and potentially structural equation modeling as noted on p. 2 of each SOE under "Research Spotlight."
+Both Councils have been interested in ecosystem energy flow and how changes in ecosystem productivty link to fishery production. In particular, the NE SSC asked about further links between zooplankton abundance and or community composition to fish condition. Research was initiated during 2019 evaluating statistical relationships between environmental indicators including temperature, depth, and zooplankton community composition and fish condition. Initial results are noted in each SOE (p. MAFMC and p. NEFMC). Further work is ongoing to link more of the indicators in the report using both statistical analysis and potentially structural equation modeling as noted on p. 2 of each SOE under "Research Spotlight." This conceptual model shows the full range of potential linkages, but we plan to start with a subset of linkages (Fig. \ref{fig:researchlinks}). In particular, potential linkages between zooplankton and forage fish energy content (p. MAFMC and p. NEFMC) may also be explored in the upcoming years.
+
+```{r researchlinks, fig.cap="Full set of hypothesized relationships between SOE indicators related to fish condition (left) and subset to be investigated first (right)." , fig.show='hold', out.width='49%'}
+
+knitr::include_graphics("images/SOEconditionfactorlinks_color.png")
+knitr::include_graphics("images/SOEconditionfactorlinks_keycolor.png")
+
+```
 
 ## 6
 
-Both Councils asked for information on ocean acidification (OA). 
+Both Councils asked for information on ocean acidification (OA). In late 2019, NOAA reviewed available OA information and is now finalizing a research plan^[https://sab.noaa.gov/sites/SAB/Meetings/2019_Documents/Dec_Meeting/2020%20OA%20Research%20Plan%20DRAFT%20External%20Review.pdf] to address OA comprehensively. Unfortunately, this synthesis was not available in time to include in the 2020 SOE. 
+
+The main message of this forthcoming report is that we don't have much of a time series of OA monitoring data for our region yet, but we have been (and will continue) collecting data in the Northeast and that NOAA sees OA monitoring as a priority.  There are three main research objectives for 2020-2029 outlined in the report:
+
+  1. Document and predict change via monitoring, analysis, and modeling.  
+  1. Characterize and predict biological sensitivity of species and ecosystems.   
+  1. Understand human dimensions and socioeconomic impacts of OA.  
+
+Specific work is in progress now and should be available for future SOE reports, including:
+
+  * Aleck Wang (WHOI) and Chris Melrose (NEFSC) are working on climatology of spatial and seasonal patterns of carbonate chemistry parameters on the Northeast U.S. Continental Shelf, which will form a critical baseline for future OA indicators.
+  * Grace Saba is the lead PI on a new project which is using gliders to characterize OA conditions and to validate/improve OA models for the region.
+
+Until a climatology and time series of OA measurements is available for comparison, we can include other information on OA in the SOE as it becomes available. We welcome feedback and suggestions from the SSC and Council on what information would be most useful.
 
 ## 7
 
