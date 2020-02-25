@@ -72,13 +72,13 @@ Both Councils asked for a summary "report card" similar to that used in Alaska [
 
 ## 2 
 
-Both Councils asked for a summary visualization. The first page of the SOE report uses icons developed to help visualize different report components. The second page of this year's SOE report has both a map visualizing the key oceanographic features mentioned in the report along with fishing communities, and a conceptual model visualizing potential linkages between report indicators. The conceptual model is discussed further under point [5](#5) below.
+Both Councils asked for a summary visualization. The first page of the SOE report uses icons developed to help visualize different report components. The second page of this year's SOE report has both a map visualizing the key oceanographic features mentioned in the report along with fishing communities, and a conceptual model visualizing potential linkages between report indicators. The conceptual model is discussed further under point 5 below.
 
 ## 3
 
 Both Councils asked for uncertainty estimates to be included with indicators. As a first step, we included survey design-based uncertainty estimates^[https://noaa-edab.github.io/tech-doc/survdat.html] for all surveys where we had haul specific information (all but the inshore ME-NH survey). Including this uncertainty led to a different approach to the data, looking for true departures from expected stable dynamics at the functional group level, and provided insight into which trends were potentially noteworthy. Survey biomass uncertainty is included in each SOE (p. MAFMC and p. NEFMC).
 
-We experimented with a model-based estimate of uncertainty for survey biomass which accounts for both spatial and temporal sources (VAST; @thorson_guidance_2019). The results are promising (Fig. \ref{fig:VASTtest}). This method can also potentailly combine the inshore and offshore surveys into a single analysis. If the SSCs and Councils consider this approach promising, we will persue it further for next year. 
+We experimented with a model-based estimate of uncertainty for survey biomass which accounts for both spatial and temporal sources (VAST; @thorson_guidance_2019). The results are promising (Fig. \ref{fig:VASTtest}), and may serve not just as a biomass indicator but also an indicator of distribution shifts for species and functional groups. This method can also potentailly combine the inshore and offshore surveys into a single analysis. If the SSCs and Councils consider this approach promising, we will persue it further for next year. 
 
 ```{r VASTtest, fig.cap="Georges Bank piscivoves biomass and uncertainty as estimated by the VAST model.", fig.show='hold', out.width='49%'}
 
@@ -124,37 +124,39 @@ The main message of this forthcoming report is that we don't have much of a time
 Specific work is in progress now and should be available for future SOE reports, including:
 
   * Aleck Wang (WHOI) and Chris Melrose (NEFSC) are working on climatology of spatial and seasonal patterns of carbonate chemistry parameters on the Northeast U.S. Continental Shelf, which will form a critical baseline for future OA indicators.
-  * Grace Saba is the lead PI on a new project which is using gliders to characterize OA conditions and to validate/improve OA models for the region.
+  * Grace Saba (Rutgers) is the lead PI on a new project which is using gliders to characterize OA conditions and to validate/improve OA models for the region.
 
 Until a climatology and time series of OA measurements is available for comparison, we can include other information on OA in the SOE as it becomes available. We welcome feedback and suggestions from the SSC and Council on what information would be most useful.
 
 ## 7
 
-Gulf Stream Index/Labrador current interaction
+Both Councils were interested in large scale ocean current interactions and requested additional information on the Gulf Stream Index and Labrador current. We have expanded this section and included information on both Gulf Stream warm core rings (see point 11) and on the decreasing proportion of Labrador Current water entering the Gulf of Maine in both SOE reports this year (p. MAFMC and p. NEFMC). 
 
 ## 8
 
-Include source for PP estimates (satellite vs in situ)
+The NE SSC asked that we include sources for primary production estimates (satellite vs in situ). We have noted in the SOE that primary production and chlorophyll estimates are satellite-derived (p. MAFMC and p. NEFMC), and continue to include full methods in our technical documentation^[https://noaa-edab.github.io/tech-doc/chl-pp.html].
 
 ## 9
 
-Shellfish growth/distribution linked to climate (system productivity)
+The MAFMC requested that we investigate how shellfish growth and distribution information could be linked to climate indicators and possibly ecosystem productivity. While this request was beyond our capacity to address this year, we are working with Dr. Roger Mann to host his student working on shellfish growth at NEFSC and to facilitate integration of SOE climate indicators with this work later this year or early next. 
 
 ## 10
 
-Esturine condition relative to power plants and temp
+The MAFMC requested that we investigate estuarine condition relative to power plants and plant-driven changes in water temperature. This request was beyond our capacity to address this year. However, we have initiated work on estuarine water quality in general (see point 13).
 
 ## 11
 
-Frequency and occurance of warm rings
+The MA SSC requested information on the frequency and occurrence of Gulf Stream warm core rings. We have added an indicator based on @andres_recent_2016 and @gawarkiewicz_changing_2018 to both SOE reports (p. MAFMC and p. NEFMC). We welcome further comments on the utility of this new indicator.
 
 ## 12
 
-Cold pool index
+The MA SSC requested a cold pool index. We have added an indicator of cold pool temperature to the MAFMC SOE report, because the cold pool was considered most relevant to the MAB EPU (p. MAFMC). However, if the NEFMC is interested in this index (because some managed species such as winter flounder occupy this habitat) we can include it in future NEFMC SOE reports. We welcome further comments on the utility of this new indicator.
 
 ## 13
 
-Nutrient inputs and water quality near shore
+The MAFMC requested information on nutrient inputs and water quality near shore and in estuaries. This year we started a collaboration with the National Esturarine Research Reserve (NERR) network to assemble information. Here we provide examples of the types of information available and ask for feedback on what type of information would be most useful. 
+
+
 
 ## 14
 
