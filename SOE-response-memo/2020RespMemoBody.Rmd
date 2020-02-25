@@ -181,7 +181,9 @@ The MA SSC requested a cold pool index. We have added an indicator of cold pool 
 
 ## 13
 
-The MAFMC requested information on nutrient inputs and water quality near shore and in estuaries. This year we started a collaboration with the National Esturarine Research Reserve (NERR) network to assemble information. Here we provide examples of the types of information available and ask for feedback on what type of information would be most useful. 
+The MAFMC requested information on nutrient inputs and water quality near shore and in estuaries. While the Chesapeake water quality index from the 2019 report was not yet updated by the contributor, we included information on the Chesapeake Bay low salinity event in 2018-2019 with notes on how it affected Chesapeake Bay living resources in the SOE (p. MAFMC).
+
+This year we started a collaboration with the National Esturarine Research Reserve (NERR) network to assemble information. Here we provide examples of the types of information available and ask for feedback on what type of information would be most useful. 
 
 There are NERRs all around the US (Fig. \ref{fig:nerrUS}), so the first decision is which ones to include. A reasonable starting point might be all of the NERRs from ME to NC, but other locations may be of interest. Then, status for a certain indicator could be mapped across all of the selected NERRs as in Fig. \ref{fig:nerrUS}. 
 
@@ -211,7 +213,7 @@ Finally, thresholds for water quality would need to be reviewed (Fig. \ref{fig:n
 
 ## 14
 
-The NEFMC asked for more linkages between environmental and social and economic indicators in the SOE. Two new indicators and the research spotlight highlighted under point 5 address this request. The first new indicator places commercial fishery landings in the context of ecosystem produtivity by calculating the primary production required to support landings; it is described in detail below. The second new indicator calculates the probability of occupancy of wind lease areas based on habitat modeling; tt is described in detail in point 15.
+The NEFMC asked for more linkages between environmental and social and economic indicators in the SOE. Two new indicators and the research spotlight linking environmental indicators, fish condition, and fishery economic indicators highlighted under point 5 address this request. The first new indicator places commercial fishery landings in the context of ecosystem produtivity by calculating the primary production required to support landings; it is described in detail below. The second new indicator calculates the probability of occupancy of wind lease areas based on habitat modeling; it is described in detail in point 15.
 
 ### Primary production required (PPR) 
 This indicator is included in both SOEs (p. MAFMC and p. NEFMC). It is defined as
@@ -277,7 +279,7 @@ The NEFMC requested that social elements from the overview conceptual model show
 
 ## 20
 
-Both Councils were interested in indicators related to fish diet data. For example, average weight of diet components by feeding group, and mean stomach weight across feeding guilds were mentioned. We initiated exploratory analysis of diet information this year, and present examples of the types of information available to seek feedback on how the Counicls would like indicators developed further. Here, stomach fullness was expressed as an anomaly for each species in each region with sufficient data to evaluate whether common anomalies were present.
+Both Councils were interested in indicators related to fish diet data. For example, average weight of diet components by feeding group, and mean stomach weight across feeding guilds were mentioned. We initiated exploratory analysis of diet information this year, and present examples of the types of information available to seek feedback on how the Counicls would like indicators developed further. Here, stomach fullness was expressed as an anomaly for each species in each region. This shows which species have adequate data for inclusion in a time series, and suggests there are not obvious common stomach fullness anomalies across species. We welcome suggestions to clarify methods and objectives for fish stomach data indicators.
 
 ```{r ma-stomachs, fig.cap= "Stomach fullness anomaly in the Mid-Atlantic Bight.", fig.height=9 }
 fullness <- ecodata::stom_fullness %>%
@@ -366,7 +368,7 @@ THe NEFMC requested that managed species be distinguished in the report. Both SO
 
 ## 23
 
-The MAFMC was interested in estiamtes of marine mammal consumption. While there have been no updated reports of total marine mammal consumption for the US Northeast Shelf ecosystem since @smith_consumption_2015, new diet studies are in progress. We included updated information on seal diets in both SOE reports (p. MAFMC and p. NEFMC). Once completed, these diet studies combined with mammal population estimates could be used to update marine mammal consumption estimates.
+The MAFMC was interested in estimates of marine mammal consumption. While there have been no updated reports of total marine mammal consumption for the US Northeast Shelf ecosystem since @smith_consumption_2015, new diet studies are in progress. We included updated information on seal diets in both SOE reports (p. MAFMC and p. NEFMC). Once completed, these diet studies combined with mammal population estimates could be used to update marine mammal consumption estimates.
 
 ## 24
 
@@ -376,7 +378,7 @@ Forage energy content is another important consideration which may affect predat
 
 ## 25
 
-Young of Year index from multiple surveys
+The MA SSC was interested in a young of year index from multiple surveys. 
 
 ## 26
 
@@ -384,7 +386,9 @@ Biomass of sharks
 
 ## 27
 
-Diversity metric for NEFSC trawl survey
+The NE SSC requested a species diversity metric based on NEFSC trawl survey data. We have included such a metric in past reports (2017), but were concerned that apparent differences in diversity prior to and after 2008 may be driven by differences in survey vessels. While species-specific cpue and sizes have calibration coefficents between survey vessels, the number of species captured by the vessels has no known calibration coefficient. 
+
+We could calculate diversity indices for Albatross and Bigelow years separately to avoid this issue, and will do so if the Councils would find these separate indices useful.
 
 ## 28
 
