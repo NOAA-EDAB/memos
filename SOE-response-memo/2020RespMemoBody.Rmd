@@ -279,7 +279,9 @@ The NEFMC requested that social elements from the overview conceptual model show
 
 ## 20
 
-Both Councils were interested in indicators related to fish diet data. For example, average weight of diet components by feeding group, and mean stomach weight across feeding guilds were mentioned. We initiated exploratory analysis of diet information this year, and present examples of the types of information available to seek feedback on how the Counicls would like indicators developed further. Here, stomach fullness was expressed as an anomaly for each species in each region. This shows which species have adequate data for inclusion in a time series, and suggests there are not obvious common stomach fullness anomalies across species. We welcome suggestions to clarify methods and objectives for fish stomach data indicators.
+Both Councils were interested in indicators related to fish diet data. For example, average weight of diet components by feeding group, and mean stomach weight across feeding guilds were mentioned. We initiated exploratory analysis of diet information this year, and present examples of the types of information available to seek feedback on how the Counicls would like indicators developed further. 
+
+On NEFSC surveys, most stomach estimates are taken as a volume measure, but there is a standard conversion included in the diet database that gives an approximate stomach weight. This estimated stomach weight was used to calculate stomach fullness (a proportion from empty = 0 to full = 1). Stomach fullness may be a better measure than absolute stomach weight if combining across species into a feeding guild, otherwise big animals with heavier stomachs will dominate the index. Here, stomach fullness was expressed as an annual anomaly for each species in each region. This shows which species have adequate data for inclusion in a time series, and suggests there are not obvious common stomach fullness anomalies across species. We welcome suggestions to clarify methods and objectives for fish stomach data indicators.
 
 ```{r ma-stomachs, fig.cap= "Stomach fullness anomaly in the Mid-Atlantic Bight.", fig.height=9 }
 fullness <- ecodata::stom_fullness %>%
@@ -378,11 +380,11 @@ Forage energy content is another important consideration which may affect predat
 
 ## 25
 
-The MA SSC was interested in a young of year index from multiple surveys. 
+The MA SSC was interested in a young of year index from multiple surveys. We have included the fish productivity index in both SOE reports (p. MAFMC and p. NEFMC), which calculates the number of small fish per biomass of large fish of the same species from NEFSC surveys. This index has been reported previously to MAFMC, and intermittently to NEFMC. We recognize that this is not strictly a young of year index, and it is from a single survey. We seek guidance from the SSC on how to refine this index; would a similar index of small fish numbers to large fish biomass from the NEAMAP survey data be useful? Or would an index of young of year without biomass of larger fish be more useful? If so, how would we best combine species or select species for the index? And should we try to combine surveys or report them separately?
 
 ## 26
 
-Biomass of sharks
+The MAFMC requested information on biomass of sharks, as fishermen had reported encountering more blacktip, spinner, and sandbar sharks each summer. We were able to obtain catch data from the Highly Migratory Species group at NMFS Headquarters for the past 3 years, and the group is working on assembling a longer time series for future reports. We did not print the 3 year time series in the SOE reports, but visualizations are available along with other commercial landings^[https://noaa-edab.github.io/ecodata/human_dimensions]. To date, we have been unable to get biomass information on sharks at the coastwide level. We welcome suggestions for sources of this information.
 
 ## 27
 
@@ -392,11 +394,13 @@ We could calculate diversity indices for Albatross and Bigelow years separately 
 
 ## 28
 
-Ecosystem risk score
+The MAFMC requested work towards an ecosystem-level risk score. This system level score could augment information on individual risk elements already included in the MAFMC EAFM risk assessment, which is updated annually. Multiple indicators could be combined to form an integrated risk score (as discussed by the MAFMC Ecosystem and Ocean Planning Committee when evaluting this EAFM risk assessment), and many integrated scores have been suggested in the scientific literature. We seek further guidance on how best to develop an integrated ecosystem risk score for the MAFMC and NEFMC. 
+
+In the meantime, the primary production required to support landings introduced in this year's SOEs (p. MAFMC and p. NEFMC) may contribute to an overall ecosystem risk score. While there is no established threshold for primary production required, fisheries would likely pose higher ecosystem risk if they require very high proportions of primary production. We welcome comments and suggestions from the Councils to continue this work.
 
 ## 29
 
-Inflection points for indicators
+Both Councils have been interested in ecosystem-level thresholds and determining where indicators reach inflection points, suggesting changes in trends of concern. The SOEs include statistical analysis to determine where indicators have significant increasing or decreasing trends. However, based on a recent simulation analysis, we are confident in trend assessment only for time series of 30 years or more [@hardison_simulation_2019]. Work is ongoing to determine where shifts or changepoints across multiple indicators have ocurred, but was not ready for inclusion in this year's reports. We welcome comments and guidance from the Councils on the types of analysis that would be most useful.
 
 # References
 
