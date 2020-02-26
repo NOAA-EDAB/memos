@@ -16,8 +16,8 @@ letterhead: letterhead/NEFSCletterhead.pdf
 output: linl::linl
 ---
 
-In this memo we list the comments and requests received on the 2019 State of the Ecosystem (SOE) reports, and how we responded to those requests. We include comments from both Councils because adjustments to the report were made in response to both. We welcome comments on whether this memo is useful and how to imporve it for future SOE reporting.
+In this memo we list the comments and requests received on the 2019 State of the Ecosystem (SOE) reports, and how we responded to those requests. We include comments from both Councils because adjustments to the report were made in response to both. We welcome comments on whether this memo is useful and how to improve it for future SOE reporting.
 
 In the attached document, include a table where we summarize all comments and requests with sources. The Progress column briefly summarizes how we responded, with a more detailed response in the numbered Memo Section. In the Progress column, "SOE" indicates a change included in the report(s). In each detailed response, we refer to SOE pages where changes are found or include information that was not sufficiently developed to include in the SOE to solicit feedback on how best to develop indicators for future reports.
 
-We look forward to feedback from the SSC.
+We welcome comments on the entire SOE report as well as information included in this memo, and look forward to feedback from the SSC and Council.
