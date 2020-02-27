@@ -140,7 +140,7 @@ knitr::include_graphics("images/SOEconditionfactorlinks_keycolor.png")
 
 ## 6
 
-Both Councils asked for information on ocean acidification (OA). In late 2019, NOAA reviewed available OA information and is now finalizing a research plan^[https://sab.noaa.gov/sites/SAB/Meetings/2019_Documents/Dec_Meeting/2020%20OA%20Research%20Plan%20DRAFT%20External%20Review.pdf] to address OA comprehensively. Unfortunately, this synthesis was not available in time to include in the 2020 SOE. 
+Both Councils asked for information on ocean acidification (OA). In 2019, NOAA reviewed available OA information and is now finalizing a research plan^[https://sab.noaa.gov/sites/SAB/Meetings/2019_Documents/Dec_Meeting/2020%20OA%20Research%20Plan%20DRAFT%20External%20Review.pdf] to address OA comprehensively. Unfortunately, this synthesis was not available in time to include in the 2020 SOE. 
 
 The main message of this forthcoming report is that we don't have much of a time series of OA monitoring data for our region yet, but we have been (and will continue) collecting data in the Northeast and that NOAA sees OA monitoring as a priority.  There are three main research objectives for 2020-2029 outlined in the report:
 
@@ -152,6 +152,7 @@ Specific work is in progress now and should be available for future SOE reports,
 
   * Aleck Wang (WHOI) and Chris Melrose (NEFSC) are working on climatology of spatial and seasonal patterns of carbonate chemistry parameters on the Northeast U.S. Continental Shelf, which will form a critical baseline for future OA indicators.
   * Grace Saba (Rutgers) is the lead PI on a new project which is using gliders to characterize OA conditions and to validate/improve OA models for the region.
+  * There is ongoing experimental work being conducted at the NEFSC Milford lab that we could include if the information is relevant
 
 Until a climatology and time series of OA measurements is available for comparison, we can include other information on OA in the SOE as it becomes available. We welcome feedback and suggestions from the SSC and Council on what information would be most useful.
 
@@ -193,7 +194,7 @@ knitr::include_graphics("images/nerrs_map.png")
 
 Within a particular NERR there may be several sampling locations (Fig. \ref{fig:waquoit}), so the next decision would be whether to include many stations or a subset of stations representing certain conditions (or having the longest time series).
 
-```{r waquoit, fig.cap="Waquit Bay National Estuarine Research Reserve map with sampling locations.", out.width='75%'}
+```{r waquoit, fig.cap="Waquit Bay National Estuarine Research Reserve map with sampling locations.", out.width='95%'}
 knitr::include_graphics("images/Waquoit_Map.jpg")
 ```
 
@@ -238,13 +239,13 @@ We have explored the index in the following ways. Using:
 
 * *Combined vertebrates and invertebrates.*
 
-    The landings in some of the EPUs are dominated by invertibrates (Lobster, Clams) which may play a significant part in driving this index. Creating two additional indices, one for vertebrates and one for invertebrates may be an interesting avenue. This will of course imply the inclusion of many other lesser caught species into the index. It will also involve partioning the landings into vertibrates and invertibrates.
+    The landings in some of the EPUs are dominated by invertebrates (Lobster, Clams) which may play a significant part in driving this index. Creating two additional indices, one for vertebrates and one for invertebrates may be an interesting avenue. This will of course imply the inclusion of many other lesser caught species into the index. It will also involve partitioning the landings into vertebrates and invertebrates.
 
 *Other comments*
 
-* Some classifications in the commercial fisheries database are not at the species level. Some are Genus, Family or even higher orders, some are just general unclassified. eg. (DOGFISH, UNC, FLATFISH, Argentinidae). Most of these cases are associated with lower landings. However if we increase the threshold and/or split landings into vertibrates and invertibrates we will encounter more of these classifications. They will need to be assigned a trophic level which may cause complications and/ or subjective decision making.
+* Some classifications in the commercial fisheries database are not at the species level. Some are Genus, Family or even higher orders, some are just general unclassified. eg. (DOGFISH, UNC, FLATFISH, Argentinidae). Most of these cases are associated with lower landings. However if we increase the threshold and/or split landings into vertebrates and invertebrates we will encounter more of these classifications. They will need to be assigned a trophic level which may cause complications and/ or subjective decision making.
 
-* It is possible for species to drop out of the top x% of the landings and be replaced by other species with similar trophic level and the index will somewhat insensitve to this (Fig. \ref{fig:ppr-species}). The mean trophic level would also be insensitive to such changes. This may or may not be of concern but it my be worth looking into how often this happens. 
+* It is possible for species to drop out of the top x% of the landings and be replaced by other species with a similar trophic level and the index will be somewhat insensitive to this (Fig. \ref{fig:ppr-species}). The mean trophic level would also be insensitive to such changes. This may or may not be of concern, but it may be worth looking into how often this occurs. 
 
 ```{r ppr-species, fig.cap="Species included in 80\\% of landings for each year in the Mid-Atlantic Bight (left), Georges Bank (center), and Gulf of Maine (right).", fig.show='hold', out.width='32%'}
 
@@ -269,9 +270,9 @@ The MAFMC asked for indicators of management complexity for use in the EAFM risk
 
 ## 18
 
-The MAFMC asked that South Atlantic-managed species be represented in recreational catch diversity indices. This has been done and the updated indicator is included in both SOE reports (p. MAFMC and p. NEFMC). 
+The MAFMC asked that South Atlantic Council-managed species be represented in recreational catch diversity indices. This has been done and the updated indicator is included in both SOE reports (p. MAFMC and p. NEFMC). 
 
-In addition, NEFSC survey data was analyzed to determine if South-Atlantic managed species have become more common in the survey over time. This indicator has also been included in both SOE reports (p. MAFMC and p. NEFMC).
+In addition, NEFSC survey data was analyzed to determine if South Atlantic Council managed species have become more common in the survey over time. This indicator has also been included in both SOE reports (p. MAFMC and p. NEFMC).
 
 ## 19
 
@@ -370,7 +371,7 @@ The NEFMC requested that managed species be distinguished in the report. Both SO
 
 ## 23
 
-The MAFMC was interested in estimates of marine mammal consumption. While there have been no updated reports of total marine mammal consumption for the US Northeast Shelf ecosystem since @smith_consumption_2015, new diet studies are in progress. We included updated information on seal diets in both SOE reports (p. MAFMC and p. NEFMC). Once completed, these diet studies combined with mammal population estimates could be used to update marine mammal consumption estimates.
+The MAFMC was interested in estimates of marine mammal consumption. While there have been no updated reports of total marine mammal consumption for the US Northeast Shelf ecosystem since 2015 @smith_consumption_2015, new diet studies are in progress. We included updated information on seal diets in both SOE reports (p. MAFMC and p. NEFMC). Once completed, these diet studies combined with mammal population estimates could be used to update marine mammal consumption estimates.
 
 ## 24
 
@@ -398,9 +399,13 @@ The MAFMC requested work towards an ecosystem-level risk score. This system leve
 
 In the meantime, the primary production required to support landings introduced in this year's SOEs (p. MAFMC and p. NEFMC) may contribute to an overall ecosystem risk score. While there is no established threshold for primary production required, fisheries would likely pose higher ecosystem risk if they require very high proportions of primary production. We welcome comments and suggestions from the Councils to continue this work.
 
+Similarly, the new SOE marine heat wave indicator (p. MAFMC and p. NEFMC) may contribute to an overall ecosystem risk score from a climate/environmental perspective, as it measures the frequency of extreme temperature conditions in each EPU which pose risks to ecolgical and fishing communities. This could be integrated with existing climate vulnerability information and/or other report indicators to assess risk. Ultimately, the Council's objectives for this risk score will determine the components used. 
+
 ## 29
 
-Both Councils have been interested in ecosystem-level thresholds and determining where indicators reach inflection points, suggesting changes in trends of concern. The SOEs include statistical analysis to determine where indicators have significant increasing or decreasing trends. However, based on a recent simulation analysis, we are confident in trend assessment only for time series of 30 years or more [@hardison_simulation_2019]. Work is ongoing to determine where shifts or changepoints across multiple indicators have ocurred, but was not ready for inclusion in this year's reports. We welcome comments and guidance from the Councils on the types of analysis that would be most useful.
+Both Councils have been interested in ecosystem-level thresholds and determining where indicators reach inflection points, suggesting changes in trends of concern. The SOEs include statistical analysis to determine where indicators have significant increasing or decreasing trends. However, based on a recent simulation analysis, we are confident in trend assessment only for time series of 30 years or more [@hardison_simulation_2019]. 
+
+Some SOE indicators, such as the new marine heat wave cumulative intensity indicator in the Gulf of Maine (p. NEFMC) have both significant trends and visually obvious shifts that could reflect a change in state for that indicator, which could be confirmed with further statistical analysis.  Work is ongoing to determine statistically where shifts or changepoints across multiple indicators have ocurred, but was not ready for inclusion in this year's reports. We welcome comments and guidance from the Councils on the types of analysis that would be most useful: changepoints for individual indicators, or across many indicators, or both?
 
 # References
 
