@@ -227,7 +227,7 @@ We have explored the index in the following ways. Using:
 
 * *A global transfer efficiency of 15% for all species.*
     
-    This gives comparable estamates to methods used in Figure 7.3 of the 2009 Ecosystem Status Report^[https://www.nefsc.noaa.gov/publications/crd/crd0911/crd0911.pdf] that applied a combination of transfer efficiencies calculated from EMAX food web models^[https://www.nefsc.noaa.gov/publications/crd/crd0615/crd0615.pdf]. While many studies use a 10% rule of thumb, that is an approximation as well. One adaptation would be to use a different transfer efficienct for the first level. eg. $\left( \frac{1}{TE_1}\right)  \left(\frac{1}{TE_2}\right)^{TL_i-2}$. Whatever choices are made, the sensitivity of the index to such changes should be examined.
+    This gives comparable estimates to methods used in Figure 7.3 of the 2009 Ecosystem Status Report^[https://www.nefsc.noaa.gov/publications/crd/crd0911/crd0911.pdf] that applied a combination of transfer efficiencies calculated from EMAX food web models^[https://www.nefsc.noaa.gov/publications/crd/crd0615/crd0615.pdf]. While many studies use a 10% rule of thumb, that is an approximation as well. One adaptation would be to use a different transfer efficienct for the first level. eg. $\left( \frac{1}{TE_1}\right)  \left(\frac{1}{TE_2}\right)^{TL_i-2}$. Whatever choices are made, the sensitivity of the index to such changes should be examined.
 
 * *Primary production not lagged with landings.*
 
