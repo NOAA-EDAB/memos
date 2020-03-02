@@ -93,15 +93,15 @@ knitr::kable(requests, longtable = T, booktabs = TRUE, linesep = "") %>%
 
 # Responses to comments
 
-## 1 
+## 1 Report Card
 
 Both Councils asked for a summary "report card" similar to that used in Alaska [@zador_ecosystem_2016]. The first page of this year's SOE reports summarizes the key messages with icons showing the message theme (e.g., commercial fisheries, fishing communities, forage species, system productivity, etc). At present, we synthesized key findings on both existing and new indicators. We welcome suggestions for indicators that should always be tracked in this section, and for further refinements to make this summary more useful.
 
-## 2 
+## 2 Summary Visualization
 
 Both Councils asked for a summary visualization. The first page of the SOE report uses icons developed to help visualize different report components. The second page of this year's SOE report has both a map visualizing the key oceanographic features mentioned in the report along with fishing communities, and a conceptual model visualizing potential linkages between report indicators. The conceptual model is discussed further under point 5 below.
 
-## 3
+## 3 Uncertainty Estimates
 
 Both Councils asked for uncertainty estimates to be included with indicators. As a first step, we included survey design-based uncertainty estimates^[https://noaa-edab.github.io/tech-doc/survdat.html] for all surveys where we had haul specific information (all but the inshore ME-NH survey). Including this uncertainty led to a different approach to the data, looking for true departures from expected stable dynamics at the functional group level, and provided insight into which trends were potentially noteworthy. Survey biomass uncertainty is included in each SOE (p. MAFMC and p. NEFMC).
 
@@ -116,7 +116,7 @@ knitr::include_graphics("images/biomass_plot.pdf")
 
 Some indicators (e.g. total landings) may have uncertainty which is difficult to calculate (e.g. based on unknown reporting errors). Many other current indicators do not have straightforward uncertainty calculaltions (e.g. diversity indices, anomalies) so we welcome suggestions from the SSC and Council to guide estimation for future reports.
 
-## 4
+## 4 Downeast Maine
 
 The NE SSC asked to include downeast ME in future reports, because the Scotian Shelf EPU which includes downeast ME has not been included in previous reports. We felt it was inappropriate to report on the Scotian Shelf EPU, which includes Canadian waters and is an incomplete portion of the full Soctian Shelf. However, this year we recalculated survey biomass using an updated strata set that includes much of downeast ME for the NEFSC (Fig. \ref{fig:survbio-strata}; p. NEFMC SOE). The inshore strata not included in the NEFSC trawl survey biomass are represented in the ME-NH survey (p. NEFMC SOE) Further, fishery catch and revenue data, fishing community data, and recreational indicators have always included downeast ME because both fishing statistical areas and human community data include all of ME. Therefore, fishery and fish biomass information reflects much of the area. 
 
@@ -127,7 +127,7 @@ knitr::include_graphics("images/EPU_Designations_Map.jpg")
 
 Oceanographic indicators (surface and bottom temperature, phytoplankton, zooplankton) remain at the EPU level. The EPUs were defined based on these characteristics^[https://noaa-edab.github.io/tech-doc/epu.html] so we are hesitant to alter them for these indicators without a more thorough examination of the EPU definitions in general. 
 
-## 5
+## 5 Link Zooplankton, Fish Condition
 
 Both Councils have been interested in ecosystem energy flow and how changes in ecosystem productivty link to fishery production. In particular, the NE SSC asked about further links between zooplankton abundance and or community composition to fish condition. Research was initiated during 2019 evaluating statistical relationships between environmental indicators including temperature, depth, and zooplankton community composition and fish condition. Initial results are noted in each SOE (p. MAFMC and p. NEFMC). Further work is ongoing to link more of the indicators in the report using both statistical analysis and potentially structural equation modeling as noted on p. 2 of each SOE under "Research Spotlight." This conceptual model shows the full range of potential linkages, but we plan to start with a subset of linkages (Fig. \ref{fig:researchlinks}). In particular, potential linkages between zooplankton and forage fish energy content (p. MAFMC and p. NEFMC) may also be explored in the upcoming years.
 
@@ -138,7 +138,7 @@ knitr::include_graphics("images/SOEconditionfactorlinks_keycolor.png")
 
 ```
 
-## 6
+## 6 Ocean Acidification
 
 Both Councils asked for information on ocean acidification (OA). In 2019, NOAA reviewed available OA information and is now finalizing a research plan^[https://sab.noaa.gov/sites/SAB/Meetings/2019_Documents/Dec_Meeting/2020%20OA%20Research%20Plan%20DRAFT%20External%20Review.pdf] to address OA comprehensively. Unfortunately, this synthesis was not available in time to include in the 2020 SOE. 
 
@@ -156,31 +156,31 @@ Specific work is in progress now and should be available for future SOE reports,
 
 Until a climatology and time series of OA measurements is available for comparison, we can include other information on OA in the SOE as it becomes available. We welcome feedback and suggestions from the SSC and Council on what information would be most useful.
 
-## 7
+## 7 Gulf Stream and Labrador Current
 
 Both Councils were interested in large scale ocean current interactions and requested additional information on the Gulf Stream Index and Labrador current. We have expanded this section and included information on both Gulf Stream warm core rings (see point 11) and on the decreasing proportion of Labrador Current water entering the Gulf of Maine in both SOE reports this year (p. MAFMC and p. NEFMC). 
 
-## 8
+## 8 Primary Production Source
 
 The NE SSC asked that we include sources for primary production estimates (satellite vs in situ). We have noted in the SOE that primary production and chlorophyll estimates are satellite-derived (p. MAFMC and p. NEFMC), and continue to include full methods in our technical documentation^[https://noaa-edab.github.io/tech-doc/chl-pp.html].
 
-## 9
+## 9 Shellfish Growth
 
 The MAFMC requested that we investigate how shellfish growth and distribution information could be linked to climate indicators and possibly ecosystem productivity. While this request was beyond our capacity to address this year, we are working with Dr. Roger Mann to host his student working on shellfish growth at NEFSC and to facilitate integration of SOE climate indicators with this work later this year or early next. 
 
-## 10
+## 10 Power Plants
 
 The MAFMC requested that we investigate estuarine condition relative to power plants and plant-driven changes in water temperature. This request was beyond our capacity to address this year. However, we have initiated work on estuarine water quality in general (see point 13).
 
-## 11
+## 11 Warm Core Rings
 
 The MA SSC requested information on the frequency and occurrence of Gulf Stream warm core rings. We have added an indicator based on @andres_recent_2016, @gawarkiewicz_changing_2018,and @gangopadhyay_observed_2019 to both SOE reports (p. MAFMC and p. NEFMC). We welcome further comments on the utility of this new indicator.
 
-## 12
+## 12 Cold Pool Index
 
 The MA SSC requested a cold pool index. We have added an indicator of cold pool temperature to the MAFMC SOE report, because the cold pool was considered most relevant to the MAB EPU (p. MAFMC). However, if the NEFMC is interested in this index (because some managed species such as winter flounder occupy this habitat) we can include it in future NEFMC SOE reports. We welcome further comments on the utility of this new indicator.
 
-## 13
+## 13 Estuarine Water Quality
 
 The MAFMC requested information on nutrient inputs and water quality near shore and in estuaries. While the Chesapeake water quality index from the 2019 report was not yet updated by the contributor, we included information on the Chesapeake Bay low salinity event in 2018-2019 with notes on how it affected Chesapeake Bay living resources in the SOE (p. MAFMC).
 
@@ -188,7 +188,7 @@ This year we started a collaboration with the National Esturarine Research Reser
 
 There are NERRs all around the US (Fig. \ref{fig:nerrUS}), so the first decision is which ones to include. A reasonable starting point might be all of the NERRs from ME to NC, but other locations may be of interest. Then, status for a certain indicator could be mapped across all of the selected NERRs as in Fig. \ref{fig:nerrUS}. 
 
-```{r nerrUS, fig.cap="National Estuarine Research Reserve locations in the US."}
+```{r nerrUS, fig.cap="National Estuarine Research Reserve locations in the US, with trend indicators for an example metric: Triangle pointing up = increasing trend; Triangle pointing down = decreasing trend, Flat line = no trend."}
 knitr::include_graphics("images/nerrs_map.png")
 ```
 
@@ -212,7 +212,7 @@ knitr::include_graphics("images/NERRs_MP_DIN.png")
 
 Finally, thresholds for water quality would need to be reviewed (Fig. \ref{fig:nerr-DIN}). Several exist and could be used by the Council depending on the ultimate goal for having the indicator.
 
-## 14
+## 14 Link Environment and Society
 
 The NEFMC asked for more linkages between environmental and social and economic indicators in the SOE. Two new indicators and the research spotlight linking environmental indicators, fish condition, and fishery economic indicators highlighted under point 5 address this request. The first new indicator places commercial fishery landings in the context of ecosystem produtivity by calculating the primary production required to support landings; it is described in detail below. The second new indicator calculates the probability of occupancy of wind lease areas based on habitat modeling; it is described in detail in point 15.
 
@@ -227,7 +227,7 @@ We have explored the index in the following ways. Using:
 
 * *A global transfer efficiency of 15% for all species.*
     
-    This probably needs some refinement and can/should be adapted based on previous studies. One adaptation would be to use a different transfer efficienct for the first level. eg. $\left( \frac{1}{TE_1}\right)  \left(\frac{1}{TE_2}\right)^{TL_i-2}$. Whatever choices are made, the sensitivity of the index to such changes should be examined.
+    This gives comparable estamates to methods used in Figure 7.3 of the 2009 Ecosystem Status Report^[https://www.nefsc.noaa.gov/publications/crd/crd0911/crd0911.pdf] that applied a combination of transfer efficiencies calculated from EMAX food web models^[https://www.nefsc.noaa.gov/publications/crd/crd0615/crd0615.pdf]. While many studies use a 10% rule of thumb, that is an approximation as well. One adaptation would be to use a different transfer efficienct for the first level. eg. $\left( \frac{1}{TE_1}\right)  \left(\frac{1}{TE_2}\right)^{TL_i-2}$. Whatever choices are made, the sensitivity of the index to such changes should be examined.
 
 * *Primary production not lagged with landings.*
 
@@ -254,35 +254,35 @@ knitr::include_graphics("images/composition-GB-0_80.png")
 knitr::include_graphics("images/composition-GOM-0_80.png")
 ```
 
-We welome feedback for approaches to refine this indicator.
+We welcome feedback for approaches to refine this indicator.
 
-## 15
+## 15 Wind Energy Habitat Overlap
 
 The MAFMC requested an index of quantitative overlap of wind energy lease areas and fisheries, in particular to update the EAFM risk assessment (Other ocean uses risk element). A list of species with the highest probability of occupancy in the current and proposed wind lease areas based on habitat modeling is included in both SOEs (p. MAFMC and p. NEFMC). This indicator can be refined to meet the needs of both Councils. In future reports we plan to include the overlap of current fisheries with wind lease areas as well.
 
-## 16
+## 16 Other Social Science Indicators
 
 The NE SSC asked that we include links to NMFS Social Science indicator websites. These links have been included in both reports (p. MAFMC and p. NEFMC).
 
-## 17
+## 17 Management Complexity
 
 The MAFMC asked for indicators of management complexity for use in the EAFM risk assessment. An NEFSC summer student started work on this in 2018, but we have lacked capacity to finish the project since then. If resources allow we will continue the project, and guidance for further indicator developmet is welcome.
 
-## 18
+## 18 SAFMC and ASMFC Species
 
-The MAFMC asked that South Atlantic Council-managed species be represented in recreational catch diversity indices. This has been done and the updated indicator is included in both SOE reports (p. MAFMC and p. NEFMC). 
+The MAFMC asked that South Atlantic Council and Atlantic States Marine Fisheries Commission-managed species be represented in recreational catch diversity indices. This has been done and the updated indicator is included in both SOE reports (p. MAFMC and p. NEFMC). 
 
-In addition, NEFSC survey data was analyzed to determine if South Atlantic Council managed species have become more common in the survey over time. This indicator has also been included in both SOE reports (p. MAFMC and p. NEFMC).
+In addition, NEFSC survey data was analyzed to determine if South Atlantic Council-managed species have become more common in the survey over time. This indicator has also been included in both SOE reports (p. MAFMC and p. NEFMC).
 
-## 19
+## 19 Conceptual Model Social Elements
 
 The NEFMC requested that social elements from the overview conceptual model shown in presentations be added to the New England conceptual model included in the printed SOE report. While this would be a useful update, all of the previous conceptual models have been replaced by different summary visualizations requested by the Councils (see points 1 and 2). 
 
-## 20
+## 20 Fish Diet Indicators
 
 Both Councils were interested in indicators related to fish diet data. For example, average weight of diet components by feeding group, and mean stomach weight across feeding guilds were mentioned. We initiated exploratory analysis of diet information this year, and present examples of the types of information available to seek feedback on how the Counicls would like indicators developed further. 
 
-On NEFSC surveys, most stomach estimates are taken as a volume measure, but there is a standard conversion included in the diet database that gives an approximate stomach weight. This estimated stomach weight was used to calculate stomach fullness (a proportion from empty = 0 to full = 1). Stomach fullness may be a better measure than absolute stomach weight if combining across species into a feeding guild, otherwise big animals with heavier stomachs will dominate the index. Here, stomach fullness was expressed as an annual anomaly for each species in each region. This shows which species have adequate data for inclusion in a time series, and suggests there are not obvious common stomach fullness anomalies across species. We welcome suggestions to clarify methods and objectives for fish stomach data indicators.
+On NEFSC surveys, most stomach estimates are taken as a volume measure, but there is a standard conversion included in the diet database that gives an approximate stomach weight. This estimated stomach weight was used to calculate stomach fullness (a ratio of stomach weight to fish weight for non-empty stomach samples). Stomach fullness may be a better measure than absolute stomach weight if combining across species into a feeding guild, otherwise big animals with heavier stomachs will dominate the index. Here, stomach fullness was expressed as an annual anomaly for each species in each region. This shows which species have adequate data for inclusion in a time series, and suggests there are not obvious common stomach fullness anomalies across species. We welcome suggestions to clarify methods and objectives for fish stomach data indicators.
 
 ```{r ma-stomachs, fig.cap= "Stomach fullness anomaly in the Mid-Atlantic Bight.", fig.height=9 }
 fullness <- ecodata::stom_fullness %>%
@@ -361,39 +361,39 @@ gb_fullness
 gom_fullness
 ```
 
-## 21
+## 21 Right Whale Calves
 
 The NEFMC requested a North Atlantic Right Whale calf production indicator. This indicator has been added to both SOE reports (p. MAFMC and p. NEFMC).
 
-## 22
+## 22 Distinguish Managed Species
 
 The NEFMC requested that managed species be distinguished in the report. Both SOE reports summarize landings as a whole and by Council-managed species in aggregate (p. MAFMC and p. NEFMC). A table listing which species are managed by which entity is included in each SOE report (Table 4 in both reports). Status of Council-managed species is reported in each SOE (p. MAFMC and p. NEFMC) with jointly managed species indicated. 
 
-## 23
+## 23 Marine Mammal Consumption
 
 The MAFMC was interested in estimates of marine mammal consumption. While there have been no updated reports of total marine mammal consumption for the US Northeast Shelf ecosystem since 2015 @smith_consumption_2015, new diet studies are in progress. We included updated information on seal diets in both SOE reports (p. MAFMC and p. NEFMC). Once completed, these diet studies combined with mammal population estimates could be used to update marine mammal consumption estimates.
 
-## 24
+## 24 Small Pelagic Abundance
 
 The MAFMC requested indices of small pelagic abundance. While the SOE includes survey biomass estimates of planktivores (p. MAFMC and p. NEFMC), we would like to improve on these indices. Combining survey information using VAST models as described under point 3 may improve indices for small pelagics, but species not sampled by bottom trawl surveys remain problematic. We welcome feedback on other sources of information to address small pelagic abundance.
 
 Forage energy content is another important consideration which may affect predators as much as fluctuations in abundance. This year we have included initial information on forage energy content in the SOE reports (p. MAFMC and p. NEFMC) which highlights the potential for seasonal and interannual variability in energy content. We plan to develop forage energy content indicators as this time series develops, and welcome feedback on how best to do so.
 
-## 25
+## 25 Young of Year Index
 
 The MA SSC was interested in a young of year index from multiple surveys. We have included the fish productivity index in both SOE reports (p. MAFMC and p. NEFMC), which calculates the number of small fish per biomass of large fish of the same species from NEFSC surveys. This index has been reported previously to MAFMC, and intermittently to NEFMC. We recognize that this is not strictly a young of year index, and it is from a single survey. We seek guidance from the SSC on how to refine this index; would a similar index of small fish numbers to large fish biomass from the NEAMAP survey data be useful? Or would an index of young of year without biomass of larger fish be more useful? If so, how would we best combine species or select species for the index? And should we try to combine surveys or report them separately?
 
-## 26
+## 26 Shark Biomass
 
 The MAFMC requested information on biomass of sharks, as fishermen had reported encountering more blacktip, spinner, and sandbar sharks each summer. We were able to obtain catch data from the Highly Migratory Species group at NMFS Headquarters for the past 3 years, and the group is working on assembling a longer time series for future reports. We did not print the 3 year time series in the SOE reports, but visualizations are available along with other commercial landings^[https://noaa-edab.github.io/ecodata/human_dimensions]. To date, we have been unable to get biomass information on sharks at the coastwide level. We welcome suggestions for sources of this information.
 
-## 27
+## 27 Trawl Survey Species Diversity
 
 The NE SSC requested a species diversity metric based on NEFSC trawl survey data. We have included such a metric in past reports (2017), but were concerned that apparent differences in diversity prior to and after 2008 may be driven by differences in survey vessels. While species-specific cpue and sizes have calibration coefficents between survey vessels, the number of species captured by the vessels has no known calibration coefficient. 
 
 We could calculate diversity indices for Albatross and Bigelow years separately to avoid this issue, and will do so if the Councils would find these separate indices useful.
 
-## 28
+## 28 Ecosystem Risk Score
 
 The MAFMC requested work towards an ecosystem-level risk score. This system level score could augment information on individual risk elements already included in the MAFMC EAFM risk assessment, which is updated annually. Multiple indicators could be combined to form an integrated risk score (as discussed by the MAFMC Ecosystem and Ocean Planning Committee when evaluting this EAFM risk assessment), and many integrated scores have been suggested in the scientific literature. We seek further guidance on how best to develop an integrated ecosystem risk score for the MAFMC and NEFMC. 
 
@@ -401,9 +401,11 @@ In the meantime, the primary production required to support landings introduced 
 
 Similarly, the new SOE marine heat wave indicator (p. MAFMC and p. NEFMC) may contribute to an overall ecosystem risk score from a climate/environmental perspective, as it measures the frequency of extreme temperature conditions in each EPU which pose risks to ecolgical and fishing communities. This could be integrated with existing climate vulnerability information and/or other report indicators to assess risk. Ultimately, the Council's objectives for this risk score will determine the components used. 
 
-## 29
+## 29 Thresholds and Inflection Points
 
 Both Councils have been interested in ecosystem-level thresholds and determining where indicators reach inflection points, suggesting changes in trends of concern. The SOEs include statistical analysis to determine where indicators have significant increasing or decreasing trends. However, based on a recent simulation analysis, we are confident in trend assessment only for time series of 30 years or more [@hardison_simulation_2019]. 
+
+The new Gulf Stream warm core ring indicator (see point 11 above) shows a state change in warm core ring production based on a recent publication [@gangopadhyay_observed_2019]. 
 
 Some SOE indicators, such as the new marine heat wave cumulative intensity indicator in the Gulf of Maine (p. NEFMC) have both significant trends and visually obvious shifts that could reflect a change in state for that indicator, which could be confirmed with further statistical analysis.  Work is ongoing to determine statistically where shifts or changepoints across multiple indicators have ocurred, but was not ready for inclusion in this year's reports. We welcome comments and guidance from the Councils on the types of analysis that would be most useful: changepoints for individual indicators, or across many indicators, or both?
 
