@@ -14,6 +14,8 @@ address:
 - Scientific and Statistical Committee
 encl:
  - "State of the Ecosystem 2020: Response Memo"
+cc:
+- Jon Hare
 letterhead: letterhead/NEFSCletterhead.pdf
 signature: signature/gaichas.pdf
 signature-before: -8ex
