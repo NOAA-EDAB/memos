@@ -12,8 +12,11 @@ address:
 - 50 Water Street, Mill 2
 - Newburyport, MA 01950
 - Scientific and Statistical Committee
-
+encl:
+ - "State of the Ecosystem 2020: Response Memo"
 letterhead: letterhead/NEFSCletterhead.pdf
+signature: signature/gaichas.pdf
+signature-before: -8ex
 
 output: linl::linl
 ---
