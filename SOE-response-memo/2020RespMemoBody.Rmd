@@ -399,7 +399,7 @@ The MAFMC requested work towards an ecosystem-level risk score. This system leve
 
 In the meantime, the primary production required to support landings introduced in this year's SOEs (p. 3-4 MAFMC and NEFMC, and see point 14 above) may contribute to an overall ecosystem risk score. While there is no established threshold for primary production required, fisheries would likely pose higher ecosystem risk if they require very high proportions of primary production. We welcome comments and suggestions from the Councils to continue this work.
 
-Similarly, the new SOE marine heat wave indicator (p. 23-25 MAFMC and p. 28-31 NEFMC) may contribute to an overall ecosystem risk score from a climate/environmental perspective, as it measures the frequency of extreme temperature conditions in each EPU which pose risks to ecolgical and fishing communities. This could be integrated with existing climate vulnerability information and/or other report indicators to assess risk. Ultimately, the Council's objectives for this risk score will determine the components used. 
+Similarly, the new SOE marine heat wave indicator (p. 23-25 MAFMC and p. 28-31 NEFMC) may contribute to an overall ecosystem risk score from a climate/environmental perspective, as it measures the frequency of extreme temperature conditions in each EPU which pose risks to ecological and fishing communities. This could be integrated with existing climate vulnerability information and/or other report indicators to assess risk. Ultimately, the Council's objectives for this risk score will determine the components used. 
 
 ## 29 Thresholds and Inflection Points
 
