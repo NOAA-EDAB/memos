@@ -1,24 +1,21 @@
 ---
 author:
-- Sarah Gaichas, PhD
-- Research Fishery Biologist
-- Ecosystem Dynamics and Assessment Branch
+- Jon Hare, PhD
+- Science and Research Director
 - Northeast Fisheries Science Center
-opening: To the SSC,
+opening: Dear Mr. Nies,
 closing: Sincerely,
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 address:
+- Mr. Tom Nies
+- Executive Director
 - New England Fishery Management Council
 - 50 Water Street, Mill 2
 - Newburyport, MA 01950
-- Scientific and Statistical Committee
 encl:
  - "State of the Ecosystem 2020: Response Memo"
-cc:
-- Jon Hare
+
 letterhead: letterhead/NEFSCletterhead.pdf
-signature: signature/gaichas.pdf
-signature-before: -8ex
 
 output: linl::linl
 ---
