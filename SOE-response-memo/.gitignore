@@ -3,3 +3,7 @@
 *.upa
 *.upb
 .DS_Store
+
+*.pdf
+*.tex
+

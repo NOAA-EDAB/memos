@@ -40,3 +40,7 @@ vignettes/*.pdf
 
 # Mac stuff
 .DS_Store
+
+*.pdf
+*.tex
+
