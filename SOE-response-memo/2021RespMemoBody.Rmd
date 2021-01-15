@@ -1,0 +1,100 @@
+---
+title:
+geometry: left=2cm, right=2cm, top=2cm, bottom=3cm, footskip = .5cm
+output: 
+  pdf_document:
+    includes:
+      in_header: latex/header2021.tex
+    keep_tex: yes
+bibliography: SOE2020.bib
+csl: plos.csl
+link-citations: yes
+fontsize: 10pt
+subparagraph: yes
+---
+
+```{r setup, include=FALSE}
+#Default Rmd options
+knitr::opts_chunk$set(echo = FALSE,
+                      message = FALSE,
+                      warning = FALSE,
+                      dev = "cairo_pdf",
+                      fig.align = 'center') #allows for inserting R code into captions
+
+library(tidyverse)
+library(readxl)
+library(kableExtra)
+library(ecodata)
+library(googledrive)
+library(pacman)
+p_load(repmis, RCurl, DT, magrittr, gsubfn, stringr, tidyverse)
+
+
+```
+
+```{r, include = F}
+#this is to wrap text around figures if we want
+defOut <- knitr::knit_hooks$get("plot")  # save the default plot hook 
+knitr::knit_hooks$set(plot = function(x, options) {  # set new plot hook ...
+  x <- defOut(x, options)  # first apply the default hook
+  if(!is.null(options$wrapfigure)) {  # then, if option wrapfigure is given ...
+    # create the new opening string for the wrapfigure environment ...
+    wf <- sprintf("\\begin{wrapfigure}{%s}{%g\\textwidth}", options$wrapfigure[[1]], options$wrapfigure[[2]])
+    x  <- gsub("\\begin{figure}", wf, x, fixed = T)  # and replace the default one with it.
+    x  <- gsub("{figure}", "{wrapfigure}", x, fixed = T)  # also replace the environment ending
+  }
+  return(x)
+})
+```
+
+NOTES to be REMOVED
+
+Read in the google sheet with the list of requests
+
+```{r, message=FALSE}
+#results link https://docs.google.com/spreadsheets/d/1BSsibzyrj-ge3n55BunQBgNPbcL_gy3BzwGmosnV2vY/edit#gid=0
+
+resultfile <- drive_find(pattern = "SOE_Request_Checklist", type = "spreadsheet")
+
+requests <- drive_download(resultfile, type = "csv", overwrite = TRUE) %>%
+  {read.csv(.$local_path)} 
+
+```
+
+
+Use the code=readLines with the setup chunks from ecodata: need to do before each set of figs from a region/subgroup
+
+# Introduction
+
+In the table below we summarize all comments and requests with sources. The Progress column briefly summarizes how we responded, with a more detailed response in the numbered Memo Section. In the Progress column, "SOE" indicates a change included in the report(s).
+
+```{r summtable}
+# take from google drive to automatically update any changes
+#googledrive::drive_download("Northeast IEA/State of the Ecosystem Reports/SOE 2020/Workshop & Meeting Notes/Request checklist", path="2019requests.xlsx", overwrite = TRUE)
+
+#requests <- read_excel("2019requests.xlsx", sheet="MemoTable", range = 'A1:D31')
+
+#requests$`Memo Section` <- paste0("[", requests$`Memo Section`, "](#",requests$`Memo Section`,")") #trying to make clickable links in the table to sections, not working
+#adding format = "markdown" to kable statement made them links but they still didnt jump to report sections and messed up other formatting
+
+requeststab <- requests %>%
+  select(Request, Year, Source, Progress) %>%
+  mutate("Memo Section" = rownames(.))
+
+knitr::kable(requeststab, longtable = T, booktabs = TRUE, linesep = "") %>%
+  kable_styling(font_size=9, latex_options = c("hold_position", "striped", "repeat_header")) %>%
+  row_spec(0,bold=TRUE) %>%
+  column_spec(1, width="5cm") %>%
+  column_spec(2, width="1cm") %>%
+  column_spec(3, width="2cm") %>%
+  column_spec(4, width="5cm") %>%
+  column_spec(5, width="2cm")
+```
+
+
+# Responses to comments
+
+
+
+# References
+
