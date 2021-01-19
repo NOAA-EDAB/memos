@@ -47,11 +47,13 @@ knitr::knit_hooks$set(plot = function(x, options) {  # set new plot hook ...
 })
 ```
 
-NOTES to be REMOVED
+<!--
+NOTES
 
-Read in the google sheet with the list of requests
+Use the code=readLines with the setup chunks from ecodata: need to do before each set of figs from a region/subgroup
+-->
 
-```{r, message=FALSE}
+```{r, message=FALSE, results='hide'}
 #results link https://docs.google.com/spreadsheets/d/1BSsibzyrj-ge3n55BunQBgNPbcL_gy3BzwGmosnV2vY/edit#gid=0
 
 resultfile <- drive_find(pattern = "SOE_Request_Checklist", type = "spreadsheet")
@@ -60,9 +62,6 @@ requests <- drive_download(resultfile, type = "csv", overwrite = TRUE) %>%
   {read.csv(.$local_path)} 
 
 ```
-
-
-Use the code=readLines with the setup chunks from ecodata: need to do before each set of figs from a region/subgroup
 
 # Introduction
 
@@ -94,7 +93,12 @@ knitr::kable(requeststab, longtable = T, booktabs = TRUE, linesep = "") %>%
 
 # Responses to comments
 
-
+```{r, results='asis'}
+for(i in 1:nrow(requeststab)) {
+  cat("##", requeststab$'Memo Section'[i], as.character(requeststab$Request[i]), "\n")
+  cat("\n")
+}
+```
 
 # References
 
