@@ -6,7 +6,7 @@ output:
     includes:
       in_header: latex/header2021.tex
     keep_tex: yes
-bibliography: SOE2020.bib
+bibliography: SOE2021.bib
 csl: plos.csl
 link-citations: yes
 fontsize: 10pt
@@ -51,6 +51,7 @@ knitr::knit_hooks$set(plot = function(x, options) {  # set new plot hook ...
 NOTES
 
 Use the code=readLines with the setup chunks from ecodata: need to do before each set of figs from a region/subgroup
+
 -->
 
 ```{r, message=FALSE, results='hide'}
@@ -90,15 +91,120 @@ knitr::kable(requeststab, longtable = T, booktabs = TRUE, linesep = "") %>%
   column_spec(5, width="2cm")
 ```
 
-
 # Responses to comments
 
+<!-- compiled this to md then copied back in, filled in text between
 ```{r, results='asis'}
 for(i in 1:nrow(requeststab)) {
   cat("##", requeststab$'Memo Section'[i], as.character(requeststab$Request[i]), "\n")
   cat("\n")
 }
 ```
+-->
 
+1 Report card and summary visualizations
+----------------------------------------
+
+Both Councils requested a "report card" style summary section with visualizations in 2019. We introduced a 2 page summary format in 2020 with a bulleted list of results on the first page and visualizations on the second. This year, the report was reorganized to more clearly link indicators with fishery management objectives and to better synthesize results across indicators, so the summary section was restructured accordingly. The 2021 summary pages include: 
+
+1. a report card style table summarizing status and trends of indicators linked to management objectives, combined with brief descriptions of implications for management synthesizing across multiple indicators in the report;  
+2. a bulleted list highlighting risks to meeting fishery management objectives, including those from climate change and those from wind energy development; and  
+3. visualizations of ecosystem synthesis themes integrated in the report, including multiple drivers of change, regime shifts, and ecosystem reorganization.  
+
+
+2 Ecosystem Overfishing indicators (Link and Watson, 2019)
+----------------------------------------------------------
+
+Both Councils have requested more information on ecosystem thresholds and inflection points. This year we have included proposed ecosystem overfishing indicators and thresholds [@link_global_2019]. 
+
+3 Primary production required, interpretation of decline?
+---------------------------------------------------------
+
+4 Climate Change context
+------------------------
+
+5 Clarify language (e.g., primary production required)
+------------------------------------------------------
+
+6 Copy Editing
+--------------
+
+7 Ocean Acidification
+---------------------
+
+8 Include examples of High/Low engaged ports
+--------------------------------------------
+
+9 Expand wind lease area and habitat overlap
+--------------------------------------------
+
+10 Expand cold pool index
+-------------------------
+
+11 Seperate Bigelow/Albatross catch diversity metric
+----------------------------------------------------
+
+12 Shark diversity indicator
+----------------------------
+
+13 Uncertainty estimates
+------------------------
+
+14 Bycatch index
+----------------
+
+15 Marine Mammal consumption
+----------------------------
+
+16 Estuarine Water Quality
+--------------------------
+
+17 Linking Condition
+--------------------
+
+18 Avg weight of diet components by feeding group
+-------------------------------------------------
+
+19 Mean stomach weight across feeding guilds
+--------------------------------------------
+
+20 Shellfish growth/distribution linked to climate (system productivity)
+------------------------------------------------------------------------
+
+21 Cumulative weather index
+---------------------------
+
+22 Management complexity
+------------------------
+
+23 VAST and uncertainty
+-----------------------
+
+24 Seal index
+-------------
+
+25 Incorporate social sciences survey from council
+--------------------------------------------------
+
+26 Young of Year index from multiple surveys
+--------------------------------------------
+
+27 Biomass of spp not included in BTS
+-------------------------------------
+
+28 Estuarine condition relative to power plants and temp
+--------------------------------------------------------
+
+29 Inflection points for indicators
+-----------------------------------
+
+30 Reduce indicator dimensionality with multivariate statistics
+---------------------------------------------------------------
+
+31 Breakpoints
+--------------
+
+32 Re-evaluate EPUs
+-------------------
 # References
 
