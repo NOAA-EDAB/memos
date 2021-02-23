@@ -1,4 +1,8 @@
 # memos
+
+
+![gitleaks](https://github.com/NOAA-EDAB/memos/workflows/gitleaks/badge.svg)
+
 Use this repository to write memos developed in R or other plain text languages. 
 
 **Note**: The following guidelines are based on a memo built using the package `linl`.
