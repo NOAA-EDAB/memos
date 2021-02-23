@@ -111,17 +111,24 @@ Both Councils requested a "report card" style summary section with visualization
 2. a bulleted list highlighting risks to meeting fishery management objectives, including those from climate change and those from wind energy development; and  
 3. visualizations of ecosystem synthesis themes integrated in the report, including multiple drivers of change, regime shifts, and ecosystem reorganization.  
 
+We welcome feedback on these revisions and suggestions for further refinements to make this summary more useful.
 
 2 Ecosystem Overfishing indicators (Link and Watson, 2019)
 ----------------------------------------------------------
 
-Both Councils have requested more information on ecosystem thresholds and inflection points. This year we have included proposed ecosystem overfishing indicators and thresholds [@link_global_2019]. 
+Both Councils have requested more information on ecosystem thresholds and inflection points. This year we have calculated two ecosystem overfishing indicators with proposed thresholds [@link_global_2019] for each ecological production unit (EPU) on the northeast US shelf. 
 
 3 Primary production required, interpretation of decline?
 ---------------------------------------------------------
 
+
+
 4 Climate Change context
 ------------------------
+
+The NE SSC was interested in more explicitly addressing climate change in the reports. As described above, we have now reorganized the report into two major sections. The second section outlines risk to meeting fishery management objectives, with climate change representing the first major risk category (the other is offshore wind energy development). Climate risks to meeting fishery management objectives are also explicitly indicated in the first section on performance against management objectives. We welcome feedback on this structural revision.
+
+Cimate forecasts at scales relevant to fishery management (months to years) are in progress, with at least one paper in review at present. We plan to include more of this information in future reports. 
 
 5 Clarify language (e.g., primary production required)
 ------------------------------------------------------
@@ -144,8 +151,14 @@ Both Councils have requested more information on ecosystem thresholds and inflec
 11 Seperate Bigelow/Albatross catch diversity metric
 ----------------------------------------------------
 
-12 Shark diversity indicator
-----------------------------
+The NE SSC requested a species diversity metric based on NEFSC trawl survey data. We had included such a metric in past reports (2017), but were concerned that apparent differences in diversity prior to and after 2008 may be driven by differences in survey vessels. While species-specific cpue and sizes have calibration coefficents between survey vessels, the number of species captured by the vessels has no known calibration coefficient.
+
+After discussion with both SSCs in 2020, we calculated NEFSC trawl survey diversity metrics separately for the Albatross and Bigelow survey vessel time series. In each 2021 SOE we report the expected number of species per 1000 individuals sampled for each EPU in the fall, with uncertainty  (p.  MAFMC and p.  NEFMC). Distinguising potential vessel effects from trends in diversity should be facilitated by this presentation. Plots for spring, as well as comparisons with Shannon diversity metrics combining both vessel time series as originally calculated, are available online (https://noaa-edab.github.io/ecodata/macrofauna_NE#Survey_Shannon_Diversity, https://noaa-edab.github.io/ecodata/macrofauna_MAB#Survey_Shannon_Diversity). We welcome further discussion to refine this and other diversity indices.
+
+12 Shark abundance and catch indicators
+---------------------------------------
+
+The MAFMC requested information on biomass of sharks, as fishermen had reported encountering more blacktip, spinner, and sandbar sharks each summer. We were able to obtain catch data from the Highly Migratory Species group at NMFS Headquarters as well as bycatch information from the NEFSC Observer Program. 
 
 13 Uncertainty estimates
 ------------------------
@@ -177,6 +190,8 @@ Both Councils have requested more information on ecosystem thresholds and inflec
 22 Management complexity
 ------------------------
 
+The MAFMC asked for indicators of management complexity for use in the EAFM risk assessment. An NEFSC summer student started work on this in 2018, but we have lacked capacity to finish the project since then. If resources allow we will continue the project, and guidance for further indicator developmet is welcome.
+
 23 VAST and uncertainty
 -----------------------
 
@@ -186,25 +201,44 @@ Both Councils have requested more information on ecosystem thresholds and inflec
 25 Incorporate social sciences survey from council
 --------------------------------------------------
 
+The NE SSC was interested in reviewing information on the perception and use of social science information from an NEFMC survey. We had insufficient resources to address this in 2020.  We welcome input from the New England Council and staff on how best to incorporate this information in future reports.
+
 26 Young of Year index from multiple surveys
 --------------------------------------------
+
+The MA SSC was interested in a young of year index from multiple surveys. In past reports we have included the fish productivity index, which calculates the number of small fish per biomass of large fish of the same species from NEFSC surveys. This index is based only on the NEFSC bottom trawl survey, which was cancelled in 2020, so the index was not updated. We recognize that this is not strictly a young of year index, and it is from a single survey. 
+
+We had insufficient resources to address this in 2020.  
 
 27 Biomass of spp not included in BTS
 -------------------------------------
 
+We included information on sharks this year, and data streams for many other species not captured by bottom trawl surveys (BTS) are under investigation. However, we had insufficient resources to address this fully in 2020.  
+
 28 Estuarine condition relative to power plants and temp
 --------------------------------------------------------
+
+We had insufficient resources to address this in 2020.  
 
 29 Inflection points for indicators
 -----------------------------------
 
+While this could not be addressed for individual indicators in 2020, we did include new Ecosystem Overfishing indicators with proposed thresholds (see Section 2, [Ecosystem Overfishing indicators](#ecosystem-overfishing-indicators-link-and-watson-2019)). We welcome suggestions for which additional indicators or groups of indicators should be prioritized for inflection point/threshold analysis in upcoming years.  
+
 30 Reduce indicator dimensionality with multivariate statistics
 ---------------------------------------------------------------
+
+We had insufficient resources to address this in 2020.  
 
 31 Breakpoints
 --------------
 
+While this could not be addressed for individual indicators in 2020, our newly introduced regime shifts synthesis theme will be explored further in upcoming years. We welcome suggestions for which individual indicators or groups of indicators should be prioritized for regime shift analysis in upcoming years.  
+
 32 Re-evaluate EPUs
 -------------------
+
+Initial planning for re-evaluating Northeast US Shelf ecological production units has started, but we had insufficient resources to begin the project in 2020.  
+
 # References
 
