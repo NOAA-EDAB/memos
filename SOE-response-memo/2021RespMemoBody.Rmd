@@ -18,6 +18,8 @@ subparagraph: yes
 knitr::opts_chunk$set(echo = FALSE,
                       message = FALSE,
                       warning = FALSE,
+                      fig.width = 4,
+                      fig.asp = 0.45,
                       dev = "cairo_pdf",
                       fig.align = 'center') #allows for inserting R code into captions
 
@@ -127,7 +129,17 @@ We welcome suggestions for further analysis that would be most useful for the Co
 3 Primary production required, interpretation of decline?
 ---------------------------------------------------------
 
-Both Councils were interested in further interpretation of the decline in the fraction of primary production required to support commercial landings presented in the 2020 reports. For 2021, this indicator was extended back in time by reconstructing total primary production prior to the satellite era. It is also interpreted in the context of the ecosystem overfishing indicators introduced this year, which suggest when ecosystem overfishing may have ocurred over the past 50 years. 
+Both Councils were interested in further interpretation of the decline in the fraction of primary production required to support commercial landings presented in the 2020 reports. For 2021, this indicator was extended back in time by reconstructing total primary production prior to the satellite era using the mean of 1998-2010 as values for pre 1998 (Fig. \ref{fig:pp-recon}). This gives a fuller context of the demand that much higher historical landings placed on ecosystem productivity relative to current landings.
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-setup.R")}
+```
+
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-GIS-setup.R")}
+```
+
+```{r pp-recon, fig.cap="Primary production reconstructed (dashed line) using the mean of satellite-derived values from 1998-2010 (points).", code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-pp-reconstructed.R")}
+```
+
+It is also interpreted in the context of the ecosystem overfishing indicators introduced this year, which suggest when ecosystem overfishing may have ocurred over the past 50 years. 
 
 4 Climate Change context
 ------------------------
@@ -164,7 +176,7 @@ The NE SSC pointed out copy editing errors in the document. The NEFSC RCB copy e
 10 Expand cold pool index
 -------------------------
 
-
+The MA SSC was interested in an expanded cold pool index. This year we introduced an index based on 
 
 11 Seperate Bigelow/Albatross catch diversity metric
 ----------------------------------------------------
