@@ -133,20 +133,32 @@ Cimate forecasts at scales relevant to fishery management (months to years) are 
 5 Clarify language (e.g., primary production required)
 ------------------------------------------------------
 
+Both Councils asked for clarification of several new terms, including "primary production required," and the NE SSC suggested adding a glossary to improve clarity. We have added an online glossary (https://noaa-edab.github.io/tech-doc/glossary.html) which is linked from the report to explain many terms. The Northeast Fisheries Science Center Research Communications Branch (NEFSC RCB) also reviewed the draft document to streamline language.
+
 6 Copy Editing
 --------------
+
+
 
 7 Ocean Acidification
 ---------------------
 
+
+
 8 Include examples of High/Low engaged ports
 --------------------------------------------
+
+
 
 9 Expand wind lease area and habitat overlap
 --------------------------------------------
 
+
+
 10 Expand cold pool index
 -------------------------
+
+
 
 11 Seperate Bigelow/Albatross catch diversity metric
 ----------------------------------------------------
@@ -158,7 +170,7 @@ After discussion with both SSCs in 2020, we calculated NEFSC trawl survey divers
 12 Shark abundance and catch indicators
 ---------------------------------------
 
-The MAFMC requested information on biomass of sharks, as fishermen had reported encountering more blacktip, spinner, and sandbar sharks each summer. We were able to obtain catch data from the Highly Migratory Species group at NMFS Headquarters as well as bycatch information from the NEFSC Observer Program. 
+The MAFMC requested information on biomass of sharks, as fishermen had reported encountering more blacktip, spinner, and sandbar sharks each summer. We were able to obtain catch and CPUE data from the Highly Migratory Species group at NMFS Headquarters as well as bycatch information from the NEFSC Observer Program. 
 
 13 Uncertainty estimates
 ------------------------
