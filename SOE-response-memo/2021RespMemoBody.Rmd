@@ -11,6 +11,7 @@ csl: plos.csl
 link-citations: yes
 fontsize: 10pt
 subparagraph: yes
+urlcolor: blue
 ---
 
 ```{r setup, include=FALSE}
@@ -124,7 +125,7 @@ Both Councils have requested more information on ecosystem thresholds and inflec
 
 2. The proposed ecosystem overfishing thresholds are based on a global analysis. The indices define ecosystem productivity in different ways. The Ryther Index is effectively based on fishery removals relative to global primary productivity per unit area, while the Fogarty Index is based on fishery removals relative to regional primary productivity [@link_global_2019]. The study authors "recommend that the indices proposed here be used cognizant of other potential sources of productivity and that are relevant to the scale at which fisheries management mostly occurs."
 
-We welcome suggestions for further analysis that would be most useful for the Councils to evaluate and potentially use these ecosystem overfishing indices. 
+Our implementation of these indicators is fully documented in an R package [`eofindices`](https://noaa-edab.github.io/eofindices/index.html), where a disucssion of technical details including the [2021 calculations](https://noaa-edab.github.io/eofindices/articles/workedExample2021.html) and potential [future work](https://noaa-edab.github.io/eofindices/articles/futureWork.html) are also provided. We welcome suggestions for further analysis that would be most useful for the Councils to evaluate and potentially use these ecosystem overfishing indices. 
 
 3 Primary production required, interpretation of decline?
 ---------------------------------------------------------
@@ -136,17 +137,17 @@ Both Councils were interested in further interpretation of the decline in the fr
 ```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-GIS-setup.R")}
 ```
 
-```{r pp-recon, fig.cap="Primary production reconstructed (dashed line) using the mean of satellite-derived values from 1998-2010 (points).", code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-pp-reconstructed.R")}
+```{r pp-recon, fig.cap="Primary production reconstructed (dashed line) using the mean of satellite-derived values from 1998-2010 (points); example for the Mid-Atlantic Bight.", code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-pp-reconstructed.R")}
 ```
 
-It is also interpreted in the context of the ecosystem overfishing indicators introduced this year, which suggest when ecosystem overfishing may have ocurred over the past 50 years. 
+It is also interpreted in the context of the ecosystem overfishing indicators introduced this year, which suggest when ecosystem overfishing may have ocurred over the past 50 years. In the SOE, we note that fisheries catches are sustained by a lower proportion of the ecosystem's primary production now than in the past, particularly when compared with the 1970s when the Fogarty and Ryther indices suggest that ecosystem overfishing may have occurred in the MAB and on GB. We also note that landings are generally declining while primary production remains steady or increasing across the EPUs. A full set of plots to help interpret the primary production required and ecosystem overfishing indices (including mean trophic level, which species are included in the landings, and the primary production time series) are available [online](https://noaa-edab.github.io/eofindices/articles/currentIndices.html). We welcome suggestions to include additional plots or conduct analyses to improve interpretation of these indices for the Councils. 
 
 4 Climate Change context
 ------------------------
 
-The NE SSC was interested in more explicitly addressing climate change in the reports. As described above, we have now reorganized the report into two major sections. The second section outlines risk to meeting fishery management objectives, with climate change representing the first major risk category (the other is offshore wind energy development). Climate risks to meeting fishery management objectives are also explicitly indicated in the first section on performance against management objectives. We welcome feedback on this structural revision.
+The NE SSC was interested in more explicitly addressing climate change in the reports. As described above, we have now reorganized the report into two major sections. The second section outlines risk to meeting fishery management objectives, with climate change representing the first major risk category (the other is offshore wind energy development). Climate risks to meeting fishery management objectives are also explicitly indicated and cross-referenced in the first section on performance against management objectives. We welcome feedback on this structural revision.
 
-Cimate forecasts at scales relevant to fishery management (months to years) are in progress, with at least one paper in review at present. We plan to include more of this information in future reports. 
+Climate forecasts at scales relevant to fishery management (months to years) are in progress, with at least one paper on statistical bottom temperature forecasts in review at present. We plan to include more of this information in future reports as the science becomes available, and welcome guidance on which forecast variables might be most useful to the Councils.
 
 5 Clarify language (e.g., primary production required)
 ------------------------------------------------------
@@ -161,22 +162,59 @@ The NE SSC pointed out copy editing errors in the document. The NEFSC RCB copy e
 7 Ocean Acidification
 ---------------------
 
+Last year we reported on work in progress related to Ocean Acidification (OA), including:
 
+  * Aleck Wang (WHOI) and Chris Melrose (NEFSC) are working on climatology of spatial and seasonal patterns of carbonate chemistry parameters on the Northeast U.S. Continental Shelf, which will form a critical baseline for future OA indicators.
+  * Grace Saba (Rutgers) is the lead PI on a new project which is using gliders to characterize OA conditions and to validate/improve OA models for the region.
+  * There is ongoing experimental work being conducted at the NEFSC Milford lab that we could include if the information is relevant
+
+Both Councils, and in particular the NE SSC, were interested in including this work as it becomes available. This year we included the data from gliders characterizing seasonal OA conditions on the Mid-Atlantic shelf (p. MAFMC and Fig. \ref{fig:glidertracks}), and compared the observed OA conditions with preliminary lab results on pH thresholds where surfclam growth may be impacted (p. MAFMC).
+
+```{r glidertracks, fig.cap=""}
+knitr::include_graphics("images/pH glider transect map - Grace Saba.jpg")
+```
+
+
+We will continue to update OA information as it becomes available. 
 
 8 Include examples of High/Low engaged ports
 --------------------------------------------
 
+Both Councils were interested in more information on fishery engagement trends, including clearer definitions of engagement and reliance, and the NE SSC requested examples of engagement scores at the fishing community level. Fishery engagement, reliance, and social vulnerability are briefly defined in the SOE text and glossary, with a link to the NMFS webpage defining all of these indicators and a maps with information for all communities. 
 
+A new presentation of individual community status with respect to engagement, reliance, and social vulnerability for both commercial and recreational fisheries was included as a baseline (p. MAFMC and p. NEFMC), to be updated in future years so that Councils may keep track of changes in community status.
 
 9 Expand wind lease area and habitat overlap
 --------------------------------------------
 
+The Mid-Atlantic Council and SSC remain interested in the potential effects of offshore wind development on ecosystems and fishery management, and asked to see expanded consideration of information beyond the NEFSC bottom trawl survey. This year offshore wind development indicators are highlighted in the new SOE section on risks to meeting fishery management objectives. The MA SSC expressed interest in an indicator of fishery revenue within wind lease areas, which has been provided this year with a focus on Council-managed species in each SOE report (p. MAFMC and p. NEFMC). Information on overlap of scientific surveys for ocean physics, low trophic levels, shellfish, fish, and protected species with wind lease areas is also provided in each report (p. MAFMC and p. NEFMC). Detailed maps highlighting the timing and type of potentail development are also included. The wind energy area and habitat overlap information presented in 2020 could not be updated as there were no new NEFSC bottom trawl surveys, but the table is retained online as supplementary informtion. 
 
+During the production process, new information summarizing seabird, cetatean, and turtle "hotspots" with respect to wind lease areas was submitted by Timothy White (BOEM). We present that information here for feedback to determine if this should be refined and included in future SOE reports. Hotspot richness was defined as the sum of the number of persistent hotspots across taxa. Tim calculated individual persistent hotspots for about 60 different species (whales, seabirds, and sea turtles), then summed the individual hotspots across each grid cell to calculate hotspot richness, as shown on the map. A cell with a hotspot richness value of 8 represents 8 species-specific hotspots. All the wind energy areas intersect hotspots, and all values greater than 1 represent multi-species persistent hotspots (Fig. \ref{fig:hotspots}). Visualizations of hotspots for cetaceans, seabirds, and turtles separately are available [online]().
+
+```{r hotspots, fig.cap="Overlap of whale, seabird, and turtle hotspots with wind lease areas."}
+knitr::include_graphics("images/cetaceans_seabirds_turtles_hotspot_richness_v2-1.pdf")
+```
+
+We welcome further discussion on the expanded offshore wind development section, and suggestions for further indicator development that is most beneficial to the Councils.
 
 10 Expand cold pool index
 -------------------------
 
-The MA SSC was interested in an expanded cold pool index. This year we introduced an index based on 
+The MA SSC was interested in an expanded cold pool index, in particular with respect to timing of stratification and its breakdown in the fall. This year we introduced new cold pool metrics based on the [GLORYS12V1 dataset](https://resources.marine.copernicus.eu/?option=com_csw&task=results?option=com_csw&view=details&product_id=GLOBAL_REANALYSIS_PHY_001_030), which is an global ocean reanalysis model for the ocean physics with 8 km resolution and 50 depth layers. In prior years, bottom temperature observations from the surveys were used to define the cold pool index. The advantage of the modeled product is the improved spatial and temporal resolution compared to the survey data.  The vertical layers of the model will also allow us to examine stratification and mixing indices in future reports.  One limitation, however, is the time series is shorter and there is a lag in the availability of the more recent data; current availaility is January 1993-June 2019. 
+
+In the SOE we visualize changes in cold pool area using this dataset to allow the Council to see how this dynamic habitat varies annually and in response to the temperature indicators we report. While we considered this to be an intuitive initial presentation, there are many other possible cold pool metrics that could be reported from this dataset. For example, time series of four additional metrics are available in the SOE dataset, [`ecodata`](https://github.com/NOAA-EDAB/ecodata) (Fig. \ref{fig:coldpool}): 
+
+1. Name: T_peak; Definition: spatial cold pool temperature distribution at the peak day 140; Units: degrees C.  
+2. Name: T_mean; Definition: yearly-mean cold pool temperature distribution; Units: degrees C.  
+3. Name: T_min; Definition: yearly-min cold pool temperature distribution; Units: degrees C.  
+4. Name: V_max; Definition: yearly-max cold pool vertical distribution relative to depth; Units: meter/meter.  
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-setup.R")}
+```
+
+```{r coldpool, fig.cap="Mid-Atlantic cold pool metrics from the GLORYS reanalysis dataset, as defined in text above.", fig.width=7, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-cold_pool.R")}
+```
+
+We welcome feedback on whether using this reanalysis dataset is preferable to the prior observation-based cold pool index. If this dataset seems promising, we seek suggestions on metrics the SSC would like to see from this dataset and how to present this information so that it is most useful to the Council.
 
 11 Seperate Bigelow/Albatross catch diversity metric
 ----------------------------------------------------
@@ -188,24 +226,46 @@ After discussion with both SSCs in 2020, we calculated NEFSC trawl survey divers
 12 Shark abundance and catch indicators
 ---------------------------------------
 
-The MAFMC requested information on biomass of sharks, as fishermen had reported encountering more blacktip, spinner, and sandbar sharks each summer. We were able to obtain catch and CPUE data from the Highly Migratory Species group at NMFS Headquarters as well as bycatch information from the NEFSC Observer Program. 
+The MAFMC requested information on biomass of sharks, as fishermen had reported encountering more blacktip, spinner, and sandbar sharks each summer. Both Councils have been interested in expanding data sources beyond the NEFSC bottom trawl survey for improved understanding of ecosystem dynammics. We were able to obtain commercial landings (Fig. \ref{fig:hmsland}), recreational landings (SOE p. MAFMC and p. NEFMC), and CPUE data (SOE p. MAFMC and p. NEFMC) from the Highly Migratory Species (HMS) group at NMFS Headquarters as well as bycatch information from the NEFSC Observer Program (SOE p. MAFMC and p. NEFMC). 
+```{r hmsland, fig.cap="Highly Migratory Species (HMS) landings; groups include “Bluefin Tuna”, “BAYS”, “Swordfish”, “Large Coastal Sharks”, “Small Coastal Sharks”, “Pelagic Sharks”, “Smoothhound Sharks”. “BAYS” includes bigeye, albacore, yellowfin and skipjack tunas. “Large Coastal Sharks” includes blacktip, bull, great hammerhead, scalloped hammerhead, smooth hammerhead, lemon, nurse, sandbar, silky, spinner, and tiger sharks. “Small Coastal Sharks” includes Atlantic sharpnose, blacknose, bonnethead, finetooth sharks. “Pelagic Sharks” includes blue, porbeagle, shortfin mako, and thresher sharks. “Smoothhound Sharks” includes smooth dogfish shark.", code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-hms-landings-comdat-commercial_landings.R")}
+
+```
+
+```{r hmsrev, fig.cap="HMS revenue, groups are the same as previous figure.", code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-hms-comm-revenue.R")}
+
+```
+
+In addition, commercial revenue from HMS (Fig. \ref{fig:hmsrev}) and information on CPUE (bycatch) of many other species (Fig. \ref{fig:hmsbycatch}) is available. 
+```{r hmsbycatch, fig.cap="Example species CPUE available from HMS fishery observations."}
+knitr::include_graphics("images/hms-too-big.png")
+```
+
+With these new contributions, we can potentially include more information on performance relative to management objectives for HMS, such as a Kobe plot similar to the one presented for Council-managed species. We welcome feedback on what additional information on HMS would be most useful to the Councils in future SOE reports.
 
 13 Uncertainty estimates
 ------------------------
 
+
+
 14 Bycatch index
 ----------------
+
+
 
 15 Marine Mammal consumption
 ----------------------------
 
+
+
 16 Estuarine Water Quality
 --------------------------
+
+
 
 17 Linking Condition
 --------------------
 
-Both Councils were interested in more quantitative analysis linking environmental indicators, managed fish indicators, and fishery indicators to facilitate use of this information in management. Considerable progress has been made on linking environmental indicators to fish condition for multiple species, with an overview of preliminary results included in the SOE. The NE SSC commented that overall (total) biomass could be included in the analysis of fish condition; this has been included in the analysis, as well as local abundance and local biomass. The MA SSC commented that indices of growth (weight at age) used in stock assessments could also be included in the analysis. The fish condition working group examined these and other fish growth indices during 2020 and hopes to integrate this information in future analyses. Another component of the project evaluating potential links between fish condition and market prices is also ongoing.  
+Both Councils were interested in more quantitative analysis linking environmental indicators, managed fish indicators, and fishery indicators to facilitate use of this information in management. Considerable progress has been made on linking environmental indicators to fish condition for multiple species, with an overview of preliminary Generalized Additive Modeling (GAM) results included in the SOE. The NE SSC commented that overall (total) biomass could be included in the analysis of fish condition; this has been included in the analysis, as well as local abundance and local biomass. The MA SSC commented that indices of growth (weight at age) used in stock assessments could also be included in the analysis, and that methods such as Gaussian network modeling may be appropriate. The fish condition working group examined several fish growth indices during 2020 and hopes to integrate this information in future analyses. Similarly, modeling approaches in addition to GAMs are under investigation. Another component of the project evaluating potential links between fish condition and market prices is also ongoing.  
 
 18 Avg weight of diet components by feeding group
 -------------------------------------------------
@@ -225,6 +285,8 @@ This information is being examined as part of the fish condition links project d
 21 Cumulative weather index
 ---------------------------
 
+
+
 22 Management complexity
 ------------------------
 
@@ -233,8 +295,14 @@ The MAFMC asked for indicators of management complexity for use in the EAFM risk
 23 VAST and uncertainty
 -----------------------
 
+Both Councils were interested in model-based estimates of aggregate fish biomass and uncertainty based on preliminary results presented in 2020. 
+
 24 Seal index
 -------------
+
+The MA SSC requested indices of abundance for seals rather than the narrative supplied in 2020. Analysis and review is in progress to update abundance and possibly assess trends in US waters for harbor and gray seals; however, these estimates were not available for the 2021 SOE. New information on increasing numbers of gray seal pups born at US pupping sites has been added to the narrative for both SOE reports. 
+
+A detailed stock assessment for Canadian Northwest Atlantic gray seals was published in 2017 and is available [online](https://waves-vagues.dfo-mpo.gc.ca/Library/40646749.pdf). As noted in the SOE, the Candian population is likely supplementing the US population, and seals range widely, so distinguishing trends within US waters or individual EPUs is complex. However, a gray seal survey is in progress for 2021, and updated information will be included as it is available.
 
 25 Incorporate social sciences survey from council
 --------------------------------------------------
@@ -244,14 +312,14 @@ The NE SSC was interested in reviewing information on the perception and use of 
 26 Young of Year index from multiple surveys
 --------------------------------------------
 
-The MA SSC was interested in a young of year index from multiple surveys. In past reports we have included the fish productivity index, which calculates the number of small fish per biomass of large fish of the same species from NEFSC surveys. This index is based only on the NEFSC bottom trawl survey, which was cancelled in 2020, so the index was not updated. We recognize that this is not strictly a young of year index, and it is from a single survey. 
+The MA SSC was interested in a young of year index from multiple surveys. In past reports we have included the fish productivity index, which calculates the number of small fish per biomass of large fish of the same species from NEFSC surveys. This index is based only on the NEFSC bottom trawl survey, which was not completed in 2020, so the index was not updated; we retain last year's indices online for reference ( [MAB](https://noaa-edab.github.io/ecodata/macrofauna_MAB#Productivity_anomaly), [GB and GOM](https://noaa-edab.github.io/ecodata/macrofauna_NE#Productivity_anomaly)). We recognize that this is not strictly a young of year index, and it is from a single survey. 
 
 We had insufficient resources to address this in 2020.  
 
 27 Biomass of species not included in bottom trawl surveys
 ----------------------------------------------------------
 
-We included information on sharks this year, and data streams for many other species not captured by bottom trawl surveys (BTS) are under investigation. However, we had insufficient resources to address this fully in 2020.  
+We included information on sharks this year ([Section 12](#shark-abundance-and-catch-indicators)), and data streams for many other species not captured by bottom trawl surveys (BTS) are under investigation. However, we had insufficient resources to address this fully in 2020.  
 
 28 Estuarine condition relative to power plants and temp
 --------------------------------------------------------
@@ -266,7 +334,7 @@ While this could not be addressed for individual indicators in 2020, we did incl
 30 Reduce indicator dimensionality with multivariate statistics
 ---------------------------------------------------------------
 
-We had insufficient resources to address this in 2020.  
+The NE SSC suggested statistical analysis to reduce the number of indicators and remove redundant indicators in the report. Some work has been initiated on this in past years, but we had insufficient resources to complete this in 2020.  
 
 31 Breakpoints
 --------------
