@@ -170,10 +170,9 @@ Last year we reported on work in progress related to Ocean Acidification (OA), i
 
 Both Councils, and in particular the NE SSC, were interested in including this work as it becomes available. This year we included the data from gliders characterizing seasonal OA conditions on the Mid-Atlantic shelf (p. MAFMC and Fig. \ref{fig:glidertracks}), and compared the observed OA conditions with preliminary lab results on pH thresholds where surfclam growth may be impacted (p. MAFMC).
 
-```{r glidertracks, fig.cap=""}
+```{r glidertracks, fig.cap="Locations and timing of glider-based pH transects on the Mid-Atlantic shelf.", out.width='40%'}
 knitr::include_graphics("images/pH glider transect map - Grace Saba.jpg")
 ```
-
 
 We will continue to update OA information as it becomes available. 
 
@@ -227,16 +226,16 @@ After discussion with both SSCs in 2020, we calculated NEFSC trawl survey divers
 ---------------------------------------
 
 The MAFMC requested information on biomass of sharks, as fishermen had reported encountering more blacktip, spinner, and sandbar sharks each summer. Both Councils have been interested in expanding data sources beyond the NEFSC bottom trawl survey for improved understanding of ecosystem dynammics. We were able to obtain commercial landings (Fig. \ref{fig:hmsland}), recreational landings (SOE p. MAFMC and p. NEFMC), and CPUE data (SOE p. MAFMC and p. NEFMC) from the Highly Migratory Species (HMS) group at NMFS Headquarters as well as bycatch information from the NEFSC Observer Program (SOE p. MAFMC and p. NEFMC). 
-```{r hmsland, fig.cap="Highly Migratory Species (HMS) landings; groups include “Bluefin Tuna”, “BAYS”, “Swordfish”, “Large Coastal Sharks”, “Small Coastal Sharks”, “Pelagic Sharks”, “Smoothhound Sharks”. “BAYS” includes bigeye, albacore, yellowfin and skipjack tunas. “Large Coastal Sharks” includes blacktip, bull, great hammerhead, scalloped hammerhead, smooth hammerhead, lemon, nurse, sandbar, silky, spinner, and tiger sharks. “Small Coastal Sharks” includes Atlantic sharpnose, blacknose, bonnethead, finetooth sharks. “Pelagic Sharks” includes blue, porbeagle, shortfin mako, and thresher sharks. “Smoothhound Sharks” includes smooth dogfish shark.", code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-hms-landings-comdat-commercial_landings.R")}
+```{r hmsland, fig.asp=1, fig.cap="Highly Migratory Species (HMS) landings; groups include “Bluefin Tuna”, “BAYS”, “Swordfish”, “Large Coastal Sharks”, “Small Coastal Sharks”, “Pelagic Sharks”, “Smoothhound Sharks”. “BAYS” includes bigeye, albacore, yellowfin and skipjack tunas. “Large Coastal Sharks” includes blacktip, bull, great hammerhead, scalloped hammerhead, smooth hammerhead, lemon, nurse, sandbar, silky, spinner, and tiger sharks. “Small Coastal Sharks” includes Atlantic sharpnose, blacknose, bonnethead, finetooth sharks. “Pelagic Sharks” includes blue, porbeagle, shortfin mako, and thresher sharks. “Smoothhound Sharks” includes smooth dogfish shark.", code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-hms-landings-comdat-commercial_landings.R")}
 
 ```
 
-```{r hmsrev, fig.cap="HMS revenue, groups are the same as previous figure.", code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-hms-comm-revenue.R")}
+```{r hmsrev, fig.asp=1, fig.cap="HMS revenue, groups are the same as previous figure.", code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-hms-comm-revenue.R")}
 
 ```
 
 In addition, commercial revenue from HMS (Fig. \ref{fig:hmsrev}) and information on CPUE (bycatch) of many other species (Fig. \ref{fig:hmsbycatch}) is available. 
-```{r hmsbycatch, fig.cap="Example species CPUE available from HMS fishery observations."}
+```{r hmsbycatch, fig.cap="Example species CPUE available from HMS fishery observations.", out.width='50%'}
 knitr::include_graphics("images/hms-too-big.png")
 ```
 
@@ -265,7 +264,19 @@ With these new contributions, we can potentially include more information on per
 17 Linking Condition
 --------------------
 
-Both Councils were interested in more quantitative analysis linking environmental indicators, managed fish indicators, and fishery indicators to facilitate use of this information in management. Considerable progress has been made on linking environmental indicators to fish condition for multiple species, with an overview of preliminary Generalized Additive Modeling (GAM) results included in the SOE. The NE SSC commented that overall (total) biomass could be included in the analysis of fish condition; this has been included in the analysis, as well as local abundance and local biomass. The MA SSC commented that indices of growth (weight at age) used in stock assessments could also be included in the analysis, and that methods such as Gaussian network modeling may be appropriate. The fish condition working group examined several fish growth indices during 2020 and hopes to integrate this information in future analyses. Similarly, modeling approaches in addition to GAMs are under investigation. Another component of the project evaluating potential links between fish condition and market prices is also ongoing.  
+Both Councils were interested in more quantitative analysis linking environmental indicators, managed fish indicators, and fishery indicators to facilitate use of this information in management. Considerable progress has been made on linking environmental indicators to fish condition for multiple species, with an overview of preliminary Generalized Additive Modeling (GAM) results described in the SOE. The NE SSC commented that overall (total) biomass could be included in the analysis of fish condition; this has been included in the analysis, as well as local abundance and local biomass (Fig. \ref{fig:cond-drivers}). 
+
+```{r cond-drivers, fig.cap="Preliminary results: GAM fish condition deviance explained by environmental variables, with darker cells indicating more important variables for that species.", out.width='60%'}
+#knitr::include_url("https://github.com/NOAA-EDAB/ecodata/raw/master/docs/images/condition_proj.png")
+knitr::include_graphics("images/Condition_table.png")
+```
+Correlations between the potential drivers of condition are also being explored (Fig. \ref{fig:cond-corr}).  
+```{r cond-corr, fig.cap="Preliminary results: correlations between potential environmental drivers of fish condition.", out.width='80%'}
+#knitr::include_url("https://github.com/NOAA-EDAB/ecodata/raw/master/docs/images/condition_proj.png")
+knitr::include_graphics("images/Condition_matrix.png")
+```
+
+The MA SSC commented that indices of growth (weight at age) used in stock assessments could also be included in the analysis, and that methods such as Gaussian network modeling may be appropriate. The fish condition working group explored GAM analyses to link environmental indices to weights at age for managed fish species, but there were diagnostic issues that were not present in the condition analyses. The fish condition working group is continuing to make improvements to the GAM analyses, exploring options for indices of growth to integrate this information into future analyses. Similarly, modeling approaches in addition to GAMs are under investigation. Another component of the project evaluating potential links between fish condition and market prices is also ongoing.  
 
 18 Avg weight of diet components by feeding group
 -------------------------------------------------
