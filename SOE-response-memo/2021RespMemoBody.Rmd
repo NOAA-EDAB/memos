@@ -291,7 +291,7 @@ Both Councils were interested in more quantitative analysis linking environmenta
 #knitr::include_url("https://github.com/NOAA-EDAB/ecodata/raw/master/docs/images/condition_proj.png")
 knitr::include_graphics("images/Condition_table.png")
 ```
-Correlations between the potential drivers of condition are also being explored (Fig. \ref{fig:cond-corr}).  
+Correlations between the potential drivers of condition are also being explored. Indices that are correlated (R>0.3, dark cells in Fig. \ref{fig:cond-corr}) will not be used together in future full GAM analyses.  
 ```{r cond-corr, fig.cap="Preliminary results: correlations between potential environmental drivers of fish condition.", out.width='60%'}
 #knitr::include_url("https://github.com/NOAA-EDAB/ecodata/raw/master/docs/images/condition_proj.png")
 knitr::include_graphics("images/Condition_matrix.png")
