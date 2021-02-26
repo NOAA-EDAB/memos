@@ -170,7 +170,7 @@ Last year we reported on work in progress related to Ocean Acidification (OA), i
 
 Both Councils, and in particular the NE SSC, were interested in including this work as it becomes available. This year we included the data from gliders characterizing seasonal OA conditions on the Mid-Atlantic shelf (p. MAFMC and Fig. \ref{fig:glidertracks}), and compared the observed OA conditions with preliminary lab results on pH thresholds where surfclam growth may be impacted (p. MAFMC).
 
-```{r glidertracks, fig.cap="Locations and timing of glider-based pH transects on the Mid-Atlantic shelf.", out.width='40%'}
+```{r glidertracks, fig.cap="Locations and timing of glider-based pH transects on the Mid-Atlantic shelf.", out.width='70%'}
 knitr::include_graphics("images/pH glider transect map - Grace Saba.jpg")
 ```
 
@@ -203,9 +203,9 @@ The MA SSC was interested in an expanded cold pool index, in particular with res
 
 In the SOE we visualize changes in cold pool area using this dataset to allow the Council to see how this dynamic habitat varies annually and in response to the temperature indicators we report. While we considered this to be an intuitive initial presentation, there are many other possible cold pool metrics that could be reported from this dataset. For example, time series of four additional metrics are available in the SOE dataset, [`ecodata`](https://github.com/NOAA-EDAB/ecodata) (Fig. \ref{fig:coldpool}): 
 
-1. Name: T_peak; Definition: spatial cold pool temperature distribution at the peak day 140; Units: degrees C.  
-2. Name: T_mean; Definition: yearly-mean cold pool temperature distribution; Units: degrees C.  
-3. Name: T_min; Definition: yearly-min cold pool temperature distribution; Units: degrees C.  
+1. Name: T_mean; Definition: yearly-mean cold pool temperature distribution; Units: degrees C.  
+2. Name: T_min; Definition: yearly-min cold pool temperature distribution; Units: degrees C.  
+3. Name: T_peak; Definition: spatial cold pool temperature distribution at the peak day 140; Units: degrees C.  
 4. Name: V_max; Definition: yearly-max cold pool vertical distribution relative to depth; Units: meter/meter.  
 ```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-setup.R")}
 ```
@@ -213,7 +213,7 @@ In the SOE we visualize changes in cold pool area using this dataset to allow th
 ```{r coldpool, fig.cap="Mid-Atlantic cold pool metrics from the GLORYS reanalysis dataset, as defined in text above.", fig.width=7, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-cold_pool.R")}
 ```
 
-We welcome feedback on whether using this reanalysis dataset is preferable to the prior observation-based cold pool index. If this dataset seems promising, we seek suggestions on metrics the SSC would like to see from this dataset and how to present this information so that it is most useful to the Council.
+We welcome feedback on whether using this reanalysis dataset is preferable to the prior observation-based cold pool index. Dynamics of the cold pool have been described in detail using model-based information [@chen_seasonal_2018]. If this dataset seems promising, we seek suggestions on metrics the SSC would like to see from this dataset and how to present this information so that it is most useful to the Council. 
 
 11 Seperate Bigelow/Albatross catch diversity metric
 ----------------------------------------------------
@@ -229,14 +229,35 @@ The MAFMC requested information on biomass of sharks, as fishermen had reported 
 ```{r hmsland, fig.asp=1, fig.cap="Highly Migratory Species (HMS) landings; groups include “Bluefin Tuna”, “BAYS”, “Swordfish”, “Large Coastal Sharks”, “Small Coastal Sharks”, “Pelagic Sharks”, “Smoothhound Sharks”. “BAYS” includes bigeye, albacore, yellowfin and skipjack tunas. “Large Coastal Sharks” includes blacktip, bull, great hammerhead, scalloped hammerhead, smooth hammerhead, lemon, nurse, sandbar, silky, spinner, and tiger sharks. “Small Coastal Sharks” includes Atlantic sharpnose, blacknose, bonnethead, finetooth sharks. “Pelagic Sharks” includes blue, porbeagle, shortfin mako, and thresher sharks. “Smoothhound Sharks” includes smooth dogfish shark.", code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-hms-landings-comdat-commercial_landings.R")}
 
 ```
-
+In addition, commercial revenue from HMS (Fig. \ref{fig:hmsrev}) and information on CPUE (bycatch) of many other species (Table \ref{tab:hmsbycatch}) is available. 
 ```{r hmsrev, fig.asp=1, fig.cap="HMS revenue, groups are the same as previous figure.", code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-hms-comm-revenue.R")}
 
 ```
 
-In addition, commercial revenue from HMS (Fig. \ref{fig:hmsrev}) and information on CPUE (bycatch) of many other species (Fig. \ref{fig:hmsbycatch}) is available. 
-```{r hmsbycatch, fig.cap="Example species CPUE available from HMS fishery observations.", out.width='50%'}
-knitr::include_graphics("images/hms-too-big.png")
+```{r hmsbycatch}
+#fig can't be made big enough to read, trying a table
+#fig.cap="Example species CPUE available from HMS fishery observations.", out.width='70%'
+#knitr::include_graphics("images/hms-too-big.png")
+
+# knitr::kable(sort(unique(ecodata::hms_cpue$Var)),
+#              col.names = "Species",
+#              caption = "Species with CPUE available from HMS fishery observations.") 
+# 
+
+spplist <- ecodata::hms_cpue %>%
+  filter(Value>0) 
+
+Species <- as.matrix(sort(unique(spplist$Var)))
+
+rows <- seq_len(nrow(Species) %/% 2)
+knitr::kable(list(Species[rows,1],  
+           matrix(numeric(), nrow=0, ncol=1),
+           Species[-rows, 1]), 
+          col.names = "Species", 
+      caption = "Species with CPUE available from HMS fishery observations.",
+      label = "hmsbycatch", format = "latex", booktabs = TRUE) 
+
+  
 ```
 
 With these new contributions, we can potentially include more information on performance relative to management objectives for HMS, such as a Kobe plot similar to the one presented for Council-managed species. We welcome feedback on what additional information on HMS would be most useful to the Councils in future SOE reports.
@@ -244,22 +265,22 @@ With these new contributions, we can potentially include more information on per
 13 Uncertainty estimates
 ------------------------
 
-
+Both Councils asked for uncertainty estimates to be included with indicators. Uncertainty estimates are now included for all survey biomass indices (see also [Section 23](#vast-and-uncertainty)), survey diversity (expected number of species), harbor porpoise and gray seal bycatch, North Atlantic right whale abundance, forage anomaly, and forage fish energy density indicators. We continue to work towards including uncertainty estiamtes for as many indicators as possible. We welcome feedback from the Councils on which indicators are highest priority for the estimation and visualization of uncertainty. 
 
 14 Bycatch index
 ----------------
 
-
+The NEFMC was interested in additional bycatch indices. This year we added an index of gray seal bycatch to both SOE reports (p. MAFMC and p. NEFMC). We have also added observer information on bycatch of sharks in Northeast US fisheries and additional information is available on catch and bycatch of multiple species in pelagic fisheries (see [Section 12](#shark-abundance-and-catch-indicators)). We welcome suggestions for which species bycatch indices to prioritize in future reports. 
 
 15 Marine Mammal consumption
 ----------------------------
 
-
+The MAFMC has continued interest in estimates of marine mammal consumption. While there have been no updated reports of total marine mammal consumption for the US Northeast Shelf ecosystem since 2015 @smith_consumption_2015, new diet studies are in progress. We included updated information on seal diets in both SOE reports (p. MAFMC and NEFMC). Once completed, these diet studies combined with mammal population estimates (see [Section 24](#seal-index)) could be used to update marine mammal consumption estimates.
 
 16 Estuarine Water Quality
 --------------------------
 
-
+Both Councils have been interested in estuarine water quality. While the Chesapeake Bay water quality index reported previously is updated on a 3-year basis, so no update was available this year, we included more information on Chesapeake Bay conditions and impacts to managed species in the MAFMC SOE. The NE SSC was interested in estuarine water quality in the New England region; and we have been in discussion with multiple organizations working in coastal and estuarine systems to incorporate more information. However we had inadequate resources develop New England estuarine water quality indicators in 2020. 
 
 17 Linking Condition
 --------------------
@@ -271,7 +292,7 @@ Both Councils were interested in more quantitative analysis linking environmenta
 knitr::include_graphics("images/Condition_table.png")
 ```
 Correlations between the potential drivers of condition are also being explored (Fig. \ref{fig:cond-corr}).  
-```{r cond-corr, fig.cap="Preliminary results: correlations between potential environmental drivers of fish condition.", out.width='80%'}
+```{r cond-corr, fig.cap="Preliminary results: correlations between potential environmental drivers of fish condition.", out.width='60%'}
 #knitr::include_url("https://github.com/NOAA-EDAB/ecodata/raw/master/docs/images/condition_proj.png")
 knitr::include_graphics("images/Condition_matrix.png")
 ```
@@ -291,12 +312,42 @@ This information is being examined as part of the fish condition links project d
 20 Shellfish growth/distribution linked to climate (system productivity)
 ------------------------------------------------------------------------
 
-
+The MAFMC requested that we investigate how shellfish growth and distribution information could be linked to climate indicators and possibly ecosystem productivity. We are working with Dr. Roger Mann who has obtained NSF INTERN funding for his student Alexis Hollander to spend up to 6 months at NEFSC working on shellfish growth, and to facilitate integration of SOE climate indicators with this work. This work should proceed later in 2021 or whenever in-person work is feasible.
 
 21 Cumulative weather index
 ---------------------------
 
+The MAFMC requested that we include information on weather that might affect recreational or commercial fishing effort. We are partnering with the National Weather Service (NWS) to provide this type of information. A preliminary index was developed based on Small craft/Gale warnings from the NWS Boston forecast office for the area off Cape Cod (Table \ref{tab:weather}). 
 
+```{r weather}
+
+weather <- data.frame("Year" = c(2008:2019),
+                      "Gale Warnings" = c(61, 49, 47, 48, 30, 43, 36, 80, 55, 52, 60, 57),
+                      "Storm Warnings" = c(8,11,6,5,8,6,7,3,8,15,14,8))
+# Copied from LTL notes https://docs.google.com/document/d/1KDgTxT0X4L14b5tfV_jMXyOFtUjvv76u4QVr1OMi_Yc/edit#
+# 2019: 57 Gale and 8 Storm Warnings
+# 2018: 60 Gale and 14 Storm Warnings
+# 2017: 52 Gale and 15 Storm Warnings
+# 2016: 55 Gale and 8 Storm Warnings
+# 2015: 80 Gale and 3 Storm Warnings
+# 2014: 36 Gale and 7 Storm Warnings
+# 2013: 43 Gale and 6 Storm Warnings
+# 2012: 30 Gale and 8 Storm Warnings
+# 2011: 48 Gale and 5 Storm Warnings
+# 2010: 47 Gale and 6 Storm Warnings
+# 2009: 49 Gale and 11 Storm Warnings
+# 2008: 61 Gale and 8 Storm Warnings
+
+
+knitr::kable(weather, 
+             caption = "Gales = winds >=34 knots (usually associated with a coastal storm); 
+Storm = winds >=48 knots (the *big ones*)",
+label = "weather", format = "latex", booktabs = TRUE)
+
+
+```
+
+We seek feedback from the Council on the utility of this information to further develop an indicator for future SOE reports. Is monthly data more useful than annual as above? Would seasonal aggregates be useful? Is there a certain wind speed where vessels alter effort? We look forward to further integration of NWS information for our region.
 
 22 Management complexity
 ------------------------
@@ -306,12 +357,12 @@ The MAFMC asked for indicators of management complexity for use in the EAFM risk
 23 VAST and uncertainty
 -----------------------
 
-Both Councils were interested in model-based estimates of aggregate fish biomass and uncertainty based on preliminary results presented in 2020. 
+Both Councils were interested in model-based estimates of aggregate fish biomass and uncertainty based on preliminary results presented in 2020. We experimented with a model-based estimate of uncertainty for survey biomass which accounts for both spatial and temporal sources (VAST; @thorson_guidance_2019). Although the surveys were not completed this year, work on model-based estimates continues and may be presented next year.
 
 24 Seal index
 -------------
 
-The MA SSC requested indices of abundance for seals rather than the narrative supplied in 2020. Analysis and review is in progress to update abundance and possibly assess trends in US waters for harbor and gray seals; however, these estimates were not available for the 2021 SOE. New information on increasing numbers of gray seal pups born at US pupping sites has been added to the narrative for both SOE reports. 
+The MA SSC requested indices of abundance for seals rather than the narrative supplied in 2020. Analysis and review is in progress to update abundance and possibly assess trends in US waters for harbor and gray seals; however, these estimates were not available for the 2021 SOE. New information on increasing numbers of gray seal pups born at US pupping sites has been added to the narrative for both SOE reports. A plot visualizing pup rates of increase has been added to the NEFMC SOE, as it is most relevant to the Gulf of Maine.
 
 A detailed stock assessment for Canadian Northwest Atlantic gray seals was published in 2017 and is available [online](https://waves-vagues.dfo-mpo.gc.ca/Library/40646749.pdf). As noted in the SOE, the Candian population is likely supplementing the US population, and seals range widely, so distinguishing trends within US waters or individual EPUs is complex. However, a gray seal survey is in progress for 2021, and updated information will be included as it is available.
 
