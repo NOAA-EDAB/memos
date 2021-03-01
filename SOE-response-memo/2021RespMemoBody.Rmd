@@ -69,7 +69,7 @@ requests <- drive_download(resultfile, type = "csv", overwrite = TRUE) %>%
 
 # Introduction
 
-In the table below we summarize all comments and requests with sources. The Progress column briefly summarizes how we responded, with a more detailed response in the numbered Memo Section. In the Progress column, "SOE" indicates a change included in the report(s).
+In the table below we summarize all comments and requests with sources. The Progress column briefly summarizes how we responded, with a more detailed response in the numbered Memo Section. In the Progress column, "SOE" indicates a change included in the State of the Ecosystem (SOE) report(s).
 
 ```{r summtable}
 # take from google drive to automatically update any changes
@@ -280,9 +280,26 @@ The MAFMC has continued interest in estimates of marine mammal consumption. Whil
 16 Estuarine Water Quality
 --------------------------
 
-Both Councils have been interested in estuarine water quality. While the Chesapeake Bay water quality index reported previously is updated on a 3-year basis, so no update was available this year, we included more information on Chesapeake Bay conditions and impacts to managed species in the MAFMC SOE. The NE SSC was interested in estuarine water quality in the New England region; and we have been in discussion with multiple organizations working in coastal and estuarine systems to incorporate more information. However we had inadequate resources develop New England estuarine water quality indicators in 2020. 
+Both Councils have been interested in estuarine water quality. While the Chesapeake Bay water quality index reported previously is updated on a 3-year basis, so no update was available this year, we included more information on Chesapeake Bay conditions and impacts to managed species in the MAFMC SOE. In addition a new [indicator catalog](https://noaa-edab.github.io/catalog/) (currently in progress) will contain more in-depth information on temperature, salinity, dissolved oxygen, and submerged aquatic vegetation submitted by the NOAA Chesapeake Bay Office. There are plans to expand this contribution in the future to include more MAFMC managed species, and to use the online catalog as a repository for detailed information in support of the SOE. 
 
-17 Linking Condition
+The NE SSC was interested in estuarine water quality in the New England region; and we have been in discussion with multiple organizations working in coastal and estuarine systems to incorporate more information. However we had inadequate resources develop New England estuarine water quality indicators in 2020. 
+
+17 Forage abundance
+-------------------
+
+The MAFMC has requested integrated indicators of small pelagic fish and forage abundance for several years. In addition to the trawl survey-based information on planktivores included in the document, this year we have added a new forage anomaly indicator based on combined zooplankton and ichthyoplankton data. We welcome feedback on this new indicator, including taxa currently included (Table \ref{tab:forage}).
+
+```{r forage}
+#read from the google table provided by Harvey
+
+```
+
+
+Forage energy content is another important consideration which may affect predators as much as fluctuations in abundance. We have updated information on forage fish energy content based on NEFSC bottom trawl surveys in the SOE reports (p.  MAFMC and p.  NEFMC) which highlights the potential for seasonal and interannual variability in energy content. 
+
+The MAFMC asked whether Atlantic menhaden could be evaluated for energy content. We agree that it would be useful to look at energy content of menhaden, but they are not included at present because they are not caught reliably in NEFSC bottom trawl surveys. Menhaden are much higher in the water column and/or inshore of NEFSC surveys. Any other source of data would need to maintain the rapid processing and freezing methods applied on the NEFSC survey vessel to allow accurate estimation of % dry weight. 
+
+18 Linking Condition
 --------------------
 
 Both Councils were interested in more quantitative analysis linking environmental indicators, managed fish indicators, and fishery indicators to facilitate use of this information in management. Considerable progress has been made on linking environmental indicators to fish condition for multiple species, with an overview of preliminary Generalized Additive Modeling (GAM) results described in the SOE. The NE SSC commented that overall (total) biomass could be included in the analysis of fish condition; this has been included in the analysis, as well as local abundance and local biomass (Fig. \ref{fig:cond-drivers}). 
@@ -299,22 +316,22 @@ knitr::include_graphics("images/Condition_matrix.png")
 
 The MA SSC commented that indices of growth (weight at age) used in stock assessments could also be included in the analysis, and that methods such as Gaussian network modeling may be appropriate. The fish condition working group explored GAM analyses to link environmental indices to weights at age for managed fish species, but there were diagnostic issues that were not present in the condition analyses. The fish condition working group is continuing to make improvements to the GAM analyses, exploring options for indices of growth to integrate this information into future analyses. Similarly, modeling approaches in addition to GAMs are under investigation. Another component of the project evaluating potential links between fish condition and market prices is also ongoing.  
 
-18 Avg weight of diet components by feeding group
+19 Avg weight of diet components by feeding group
 -------------------------------------------------
 
 This information is being examined as part of the fish condition links project described above. However, we had insufficient resources to develop an independent indicator for the SOE in 2020. 
 
-19 Mean stomach weight across feeding guilds
+20 Mean stomach weight across feeding guilds
 --------------------------------------------
 
 This information is being examined as part of the fish condition links project described above. However, we had insufficient resources to develop an independent indicator for the SOE in 2020. 
 
-20 Shellfish growth/distribution linked to climate (system productivity)
+21 Shellfish growth/distribution linked to climate (system productivity)
 ------------------------------------------------------------------------
 
 The MAFMC requested that we investigate how shellfish growth and distribution information could be linked to climate indicators and possibly ecosystem productivity. We are working with Dr. Roger Mann who has obtained NSF INTERN funding for his student Alexis Hollander to spend up to 6 months at NEFSC working on shellfish growth, and to facilitate integration of SOE climate indicators with this work. This work should proceed later in 2021 or whenever in-person work is feasible.
 
-21 Cumulative weather index
+22 Cumulative weather index
 ---------------------------
 
 The MAFMC requested that we include information on weather that might affect recreational or commercial fishing effort. We are partnering with the National Weather Service (NWS) to provide this type of information. A preliminary index was developed based on Small craft/Gale warnings from the NWS Boston forecast office for the area off Cape Cod (Table \ref{tab:weather}). 
@@ -349,61 +366,63 @@ label = "weather", format = "latex", booktabs = TRUE)
 
 We seek feedback from the Council on the utility of this information to further develop an indicator for future SOE reports. Is monthly data more useful than annual as above? Would seasonal aggregates be useful? Is there a certain wind speed where vessels alter effort? We look forward to further integration of NWS information for our region.
 
-22 Management complexity
+23 Management complexity
 ------------------------
 
 The MAFMC asked for indicators of management complexity for use in the EAFM risk assessment. An NEFSC summer student started work on this in 2018, but we have lacked capacity to finish the project since then. If resources allow we will continue the project, and guidance for further indicator developmet is welcome.
 
-23 VAST and uncertainty
+24 VAST and uncertainty
 -----------------------
 
 Both Councils were interested in model-based estimates of aggregate fish biomass and uncertainty based on preliminary results presented in 2020. We experimented with a model-based estimate of uncertainty for survey biomass which accounts for both spatial and temporal sources (VAST; @thorson_guidance_2019). Although the surveys were not completed this year, work on model-based estimates continues and may be presented next year.
 
-24 Seal index
+25 Seal index
 -------------
 
-The MA SSC requested indices of abundance for seals rather than the narrative supplied in 2020. Analysis and review is in progress to update abundance and possibly assess trends in US waters for harbor and gray seals; however, these estimates were not available for the 2021 SOE. New information on increasing numbers of gray seal pups born at US pupping sites has been added to the narrative for both SOE reports. A plot visualizing pup rates of increase has been added to the NEFMC SOE, as it is most relevant to the Gulf of Maine.
+The MA SSC requested indices of abundance for seals rather than the narrative supplied in 2020. Analysis and review is in progress to update abundance and possibly assess trends in US waters for harbor and gray seals; however, these estimates were not available for the 2021 SOE. New information on increasing numbers of gray seal pups born at US pupping sites has been added to the narrative for both SOE reports [@wood_rates_2020]. A plot visualizing pup rates of increase has been added to the NEFMC SOE, as it is most relevant to the Gulf of Maine.
 
 A detailed stock assessment for Canadian Northwest Atlantic gray seals was published in 2017 and is available [online](https://waves-vagues.dfo-mpo.gc.ca/Library/40646749.pdf). As noted in the SOE, the Candian population is likely supplementing the US population, and seals range widely, so distinguishing trends within US waters or individual EPUs is complex. However, a gray seal survey is in progress for 2021, and updated information will be included as it is available.
 
-25 Incorporate social sciences survey from council
+As noted by the MA SSC, seals are important predators in the ecosystem, so we have included additional updates on seal diet studies in progress, and have moved the discussion of seals as predators into a more general discussion of predator trends in the SOE along with information added for sharks.
+
+26 Incorporate social sciences survey from council
 --------------------------------------------------
 
 The NE SSC was interested in reviewing information on the perception and use of social science information from an NEFMC survey. We had insufficient resources to address this in 2020.  We welcome input from the New England Council and staff on how best to incorporate this information in future reports.
 
-26 Young of Year index from multiple surveys
+27 Young of Year index from multiple surveys
 --------------------------------------------
 
 The MA SSC was interested in a young of year index from multiple surveys. In past reports we have included the fish productivity index, which calculates the number of small fish per biomass of large fish of the same species from NEFSC surveys. This index is based only on the NEFSC bottom trawl survey, which was not completed in 2020, so the index was not updated; we retain last year's indices online for reference ( [MAB](https://noaa-edab.github.io/ecodata/macrofauna_MAB#Productivity_anomaly), [GB and GOM](https://noaa-edab.github.io/ecodata/macrofauna_NE#Productivity_anomaly)). We recognize that this is not strictly a young of year index, and it is from a single survey. 
 
 We had insufficient resources to address this in 2020.  
 
-27 Biomass of species not included in bottom trawl surveys
+28 Biomass of species not included in bottom trawl surveys
 ----------------------------------------------------------
 
 We included information on sharks this year ([Section 12](#shark-abundance-and-catch-indicators)), and data streams for many other species not captured by bottom trawl surveys (BTS) are under investigation. However, we had insufficient resources to address this fully in 2020.  
 
-28 Estuarine condition relative to power plants and temp
+29 Estuarine condition relative to power plants and temp
 --------------------------------------------------------
 
 We had insufficient resources to address this in 2020.  
 
-29 Inflection points for indicators
+30 Inflection points for indicators
 -----------------------------------
 
 While this could not be addressed for individual indicators in 2020, we did include new Ecosystem Overfishing indicators with proposed thresholds (see Section 2, [Ecosystem Overfishing indicators](#ecosystem-overfishing-indicators-link-and-watson-2019)). We welcome suggestions for which additional indicators or groups of indicators should be prioritized for inflection point/threshold analysis in upcoming years.  
 
-30 Reduce indicator dimensionality with multivariate statistics
+31 Reduce indicator dimensionality with multivariate statistics
 ---------------------------------------------------------------
 
 The NE SSC suggested statistical analysis to reduce the number of indicators and remove redundant indicators in the report. Some work has been initiated on this in past years, but we had insufficient resources to complete this in 2020.  
 
-31 Breakpoints
+32 Breakpoints
 --------------
 
 While this could not be addressed for individual indicators in 2020, our newly introduced regime shifts synthesis theme will be explored further in upcoming years. We welcome suggestions for which individual indicators or groups of indicators should be prioritized for regime shift analysis in upcoming years.  
 
-32 Re-evaluate EPUs
+33 Re-evaluate EPUs
 -------------------
 
 Initial planning for re-evaluating Northeast US Shelf ecological production units has started, but we had insufficient resources to begin the project in 2020.  
