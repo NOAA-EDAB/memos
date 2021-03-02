@@ -1,0 +1,30 @@
+,Classification,Taxa,Type,Taxa_Description
+1,Large Copepods,Calanus finmarchicus,Zooplankton,Calanus finmarchicus
+,,Large Calanoid Copepods,Zooplankton,"Calanus spp., Calanus minor, Eucalanus spp., Metridia lucens"
+2,Small Copepods,Small Calanoid Copepods,Zooplankton,Small Calanoid Copepods less than 1.6 mm Prosome length
+,,Cyclopoid Copepods,Zooplankton,Cyclopoid Copepods
+3,Krill,Krill,Zooplankton,Euphausiacea
+4,Mysid,Mysid,Zooplankton,Mysidacea
+5,Amphipod,Hyperiidea,Zooplankton,Hyperiidea Amphipods
+,,Gammaridea,Zooplankton,Gammaridea Amphipods
+6,Pteropod,Pteropod,Zooplankton,Pteropoda
+7,Gelatinous Plankton,Larvaceans,Zooplankton,Appendicularia
+,,Cnidaria,Zooplankton,Cnidaria
+,,Ctenophore,Zooplankton,Ctenophora
+,,Salp,Zooplankton,Thaliacea
+8,Small Pelagics,Unmanaged Clupeids,Ichthyoplankton,Clupeidae
+,,Managed Clupeids,Ichthyoplankton,"Clupeidae- Atlantic herring, Atlantic menaden, Alosa spp."
+,,Anchovies,Ichthyoplankton,Engraulidae
+,,Sandlance,Ichthyoplankton,Ammodytidae
+,,Bristlemouths and hatchetfishes,Ichthyoplankton,Stomiiformes
+,,Lanternfish,Ichthyoplankton,Myctophidae
+9,Small Demersals,Rocklings,Ichthyoplankton,Lotidae
+,,Codlets,Ichthyoplankton,Bregmacerotidae
+,,Cuskeels,Ichthyoplankton,Ophidiidae
+10,Gadiformes,"Cod, Haddock, Pollock",Ichthyoplankton,"Gadidae- Atlantic cod, Haddock, Pollock"
+,,Urophycis Hakes,Ichthyoplankton,"Phycidae- Urophycis spp., Red hake, White hake, Spotted hake"
+,,Merluccius Hakes,Ichthyoplankton,"Merlucciidae- Merluccius spp., Silver hake, Offshore hake"
+11,Pelagics,Mackerels,Ichthyoplankton,Scombridae
+,,Butterfishes,Ichthyoplankton,Stromateidae
+12,Flounders,Unmanaged Flounders,Ichthyoplankton,"Pleuronectiformes- Citharichthys, Etropus, Syacium, Bothus, Hippoglossina, Trichopsetta"
+,,Managed Flounders,Ichthyoplankton,"Pleuronectiformes- Paralichthys, Pseudopleuronectes, Hippoglossoides, Hippoglossus, Limanda, Glyptocephalus"
