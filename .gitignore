@@ -42,5 +42,5 @@ vignettes/*.pdf
 .DS_Store
 
 *.pdf
-*.tex
+*.tif
 
