@@ -1,0 +1,32 @@
+---
+author:
+- Sarah Gaichas, PhD
+- Research Fishery Biologist
+- Ecosystem Dynamics and Assessment Branch
+- Northeast Fisheries Science Center
+opening: To the Council,
+closing: Sincerely,
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+address:
+- Mid-Atlantic Fishery Management Council
+- 800 North State Street, Suite 201 
+- Dover, DE 19901
+- Scientific and Statistical Committee
+encl:
+ - "State of the Ecosystem 2021: Request Tracking Memo"
+cc:
+- Jon Hare
+letterhead: letterhead/NEFSCletterhead.pdf
+signature: signature/gaichas.pdf
+signature-before: -8ex
+
+output: linl::linl
+
+---
+
+In this memo we list the comments and requests received on the 2019 and 2020 State of the Ecosystem (SOE) reports, and how we responded to those requests. We include comments from both Councils because adjustments to the report were made in response to both. We welcome comments on whether this memo is useful and how to improve it for future SOE reporting.
+
+The attached document includes a table where we summarize all comments and requests with sources. The Progress column briefly summarizes how we responded, with a more detailed response in the numbered Memo Section. In the Progress column, "SOE" indicates a change included in the report(s). In each detailed response, we refer to SOE pages where changes are found or describe information that was not sufficiently developed to include in the 2021 SOE in an effort to solicit feedback on how best to develop indicators for future reports.
+
+We welcome comments on the entire SOE report as well as information included in this memo, and look forward to feedback from the SSC and Council.
+
