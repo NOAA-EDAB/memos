@@ -87,19 +87,107 @@ knitr::kable(requeststab, longtable = T, booktabs = TRUE, linesep = "") %>%
   column_spec(1, width="5cm") %>%
   column_spec(2, width="1cm") %>%
   column_spec(3, width="2cm") %>%
-  column_spec(4, width="5cm") %>%
-  column_spec(5, width="2cm")
+  column_spec(4, width="2cm") %>%
+  column_spec(5, width="5cm") %>%
+  column_spec(6, width="2cm")
 ```
 
 
 # Responses to comments
 
-```{r, results='asis'}
-for(i in 1:nrow(requeststab)) {
-  cat("##", requeststab$'Memo Section'[i], as.character(requeststab$Request[i]), "\n")
-  cat("\n")
-}
-```
+## 1 Add “This report is direct to…”
+
+The first sentence of each report now states the audience.
+
+## 2 State management objectives first in report
+
+The graphical summary on page 2 (first content page for MAFMC) and 2-3 (first content pages for NEFMC) summarize management objectives (columns in each table) and the indicator's performance relative to those objectives. Table 1 in the main body each report lists management objectives. 
+
+## 3 OA in NEFMC SOE
+
+## 4 Habitat impact of fishing based on gear.
+
+## 5 Revisit right whale language
+
+## 6 Fishery gear modifications accounted for in shark CPUE? ask HMS
+
+## 7 Sum of TAC/ Landings relative to TAC
+
+## 8 Estuarine Water Quality
+
+## 9 More direct convos for feedback
+
+## 10 Further definition of regime shift - Define “abupt” and “Persistant”
+
+## 11 Expand collaboration with Canadian Counterparts
+
+## 12 Fall turnover date index
+
+## 13 links between species availability inshore/offshore (estuarine conditions) and trends in recreational fishing effort?
+
+## 14 Apex predator index (pinnipeds)
+
+## 15 Forage availability index (Herring/Sandlance)
+
+## 16 Trend analysis
+
+## 17 Regime shifts in Social-Economic indicators
+
+## 18 Linking Condition
+
+## 19 Cumulative weather index
+
+## 20 VAST and uncertainty
+
+## 21 Seal index
+
+## 22 Breakpoints
+
+## 23 Management complexity
+
+## 24 Shellfish growth/distribution linked to climate (system productivity)
+
+## 25 Avg weight of diet components by feeding group
+
+## 26 Mean stomach weight across feeding guilds
+
+## 27 Recreational bycatch mortality as an indicator of regulatory waste
+
+## 28 Sturgeon Bycatch
+
+## 29 Decomposition of diversity drivers highlighting social components
+
+## 30 Changing per capita seafood consumption as driver of revenue?
+
+## 31 Nutrient input, Benthic Flux and POC(particulate organic carbon ) to inform benthic productivity by something other than surface indidcators
+
+## 32 Relate OA to nutrient input; are there “dead zones” (hypoxia)?
+
+## 33 indicators of chemical pollution in offshore waters?
+
+## 34 how does phyto size comp affect EOF indicator, if at all?
+
+## 35 Indicator of scallop pred pops poorly sampled by bts
+
+## 36 Compare EOF (Link) thresholds to empirical thresholds (Large, Tam)
+
+## 37 Time series analysis (Zooplankton/Forage fish) to tie into regime shifts
+
+## 38 Optimum yeild for ecosystem
+
+## 39 Re-evaluate EPUs
+
+## 40 Incorporate social sciences survey from council
+
+## 41 Biomass of spp not included in BTS
+
+## 42 Reduce indicator dimensionality with multivariate statistics
+
+## 43 Estuarine condition relative to power plants and temp
+
+## 44 Young of Year index from multiple surveys
+
+## 45 Inflection points for indicators
 
 # References
 
