@@ -165,7 +165,9 @@ Language was edited in 2021 and a revised 2021 report was submitted to both Coun
 
 ## 8 Estuarine Water Quality
 
+The NEFMC requested more information on estuarine habitats. In 2021, PEP intern Rhegan Thomason (U. Texas) developed a reproducible data workflow using open data science tools and principles that will be used to provide estuarine habitat information into annual SOE reports She used data from the National Estuarine Research Reserve System (NERRS) to explore water quality and climate indicators at four sites in the New England region. NERRS conducts research and monitors the ecosystems to “track short-term variability and long-term changes due to natural and anthropogenic disturbances”. We acquired and compiled data from the NERRS Centralized Data Management Office to create a partially automated workflow that analyzes and visualizes available data. We developed open access code to generate time series and climatologies for temperature, dissolved oxygen, salinity, and chlorophyll. The project used RStudio with GitHub integration to version control data and code as well as enhance collaboration and transparency (https://github.com/rheganthomason/NERRSdata). This workflow was designed to be reproducible and available for future use anywhere the data is applicable.
 
+An Indicator catalog chapter will appear here https://noaa-edab.github.io/catalog/NERRs.html
 
 ## 9 More direct opportunities for feedback
 
@@ -185,31 +187,76 @@ https://www.fisheries.noaa.gov/new-england-mid-atlantic/climate/current-conditio
 
 ## 13 Links between species availability inshore/offshore (estuarine conditions) and trends in recreational fishing effort?
 
-
+Work is in progress to evalaute bluefish availability inshore vs offshore along with trends in recreational fishing effort for the 2022 Bluefish Research Track Assessment. 
 
 ## 14 Apex predator index (pinnipeds)
 
-
+See also point 21. 
 
 ## 15 Forage availability index (Herring/Sandlance)
 
+As noted under point 13, Work is in progress to evalaute bluefish availability inshore vs offshore along with trends in recreational fishing effort for the 2022 Bluefish Research Track Assessment. 
 
+Additional research on sandlance co-ocurrence on Stellwagen Bank with seabird and marine mammal predators has been added to the Indicator catalog (https://noaa-edab.github.io/catalog/sandlance.html) for potential expansion in the future. 
 
 ## 16 Trend analysis
 
-
+Points 16, 22 and 27 are related, and exploratory analysis evaluating trends, empirical breakpoints, and thresholds for individual indicators are in progress. Initial comparisons of current SOE trends are available online at https://connect.fisheries.noaa.gov/content/24ac5977-ec9f-4c32-ab8d-045cdbc526e6/
 
 ## 17 Regime shifts in Social-Economic indicators
 
-
+The National IEA HDWG is working on regime shifts in social indicators. The WG, led by Geret DePiper, has a special issue call open for Marine Policy: https://www.journals.elsevier.com/marine-policy/call-for-papers/special-issue-call-for-papers-assessing-social-change-and-ranking-outcomes-in-support-of-ecosystem-based-management-regime-shifts-nonlinearities-and-ecosystem-status We'll have one for the Northeast (Walden and DePiper, presented at the SOE synthesis meeting) and a cross regional manuscript.
 
 ## 18 Linking Condition
 
+Both Councils were interested in more quantitative analysis linking environmental indicators, managed fish indicators, and fishery indicators to facilitate use of this information in management. Considerable progress has been made on linking environmental indicators to fish condition for multiple species, with an overview of preliminary Generalized Additive Modeling (GAM) results described in the SOE. The NE SSC commented that overall (total) biomass could be included in the analysis of fish condition; this has been included in the analysis, as well as local abundance and local biomass (Fig. \ref{fig:cond-drivers}). 
 
+```{r cond-drivers, fig.cap="Preliminary results: GAM fish condition deviance explained by environmental variables, with darker cells indicating more important variables for that species.", out.width='60%'}
+#knitr::include_url("https://github.com/NOAA-EDAB/ecodata/raw/master/docs/images/condition_proj.png")
+knitr::include_graphics("images/Condition_table.png")
+```
+Correlations between the potential drivers of condition are also being explored. Indices that are correlated (R>0.3, dark cells in Fig. \ref{fig:cond-corr}) will not be used together in future full GAM analyses.  
+```{r cond-corr, fig.cap="Preliminary results: correlations between potential environmental drivers of fish condition.", out.width='50%'}
+#knitr::include_url("https://github.com/NOAA-EDAB/ecodata/raw/master/docs/images/condition_proj.png")
+knitr::include_graphics("images/Condition_matrix.png")
+```
+
+The MA SSC commented that indices of growth (weight at age) used in stock assessments could also be included in the analysis, and that methods such as Gaussian network modeling may be appropriate. The fish condition working group explored GAM analyses to link environmental indices to weights at age for managed fish species, but there were diagnostic issues that were not present in the condition analyses. The fish condition working group is continuing to make improvements to the GAM analyses, exploring options for indices of growth to integrate this information into future analyses. Similarly, modeling approaches in addition to GAMs are under investigation. Another component of the project evaluating potential links between fish condition and market prices is also ongoing.  
 
 ## 19 Cumulative weather index
 
+The MAFMC requested that we include information on weather that might affect recreational or commercial fishing effort. We are partnering with the National Weather Service (NWS) to provide this type of information. A preliminary index was developed based on Small craft/Gale warnings from the NWS Boston forecast office for the area off Cape Cod (Table \ref{tab:weather}). 
 
+```{r weather}
+
+weather <- data.frame("Year" = c(2008:2019),
+                      "Gale Warnings" = c(61, 49, 47, 48, 30, 43, 36, 80, 55, 52, 60, 57),
+                      "Storm Warnings" = c(8,11,6,5,8,6,7,3,8,15,14,8))
+# Copied from LTL notes https://docs.google.com/document/d/1KDgTxT0X4L14b5tfV_jMXyOFtUjvv76u4QVr1OMi_Yc/edit#
+# 2019: 57 Gale and 8 Storm Warnings
+# 2018: 60 Gale and 14 Storm Warnings
+# 2017: 52 Gale and 15 Storm Warnings
+# 2016: 55 Gale and 8 Storm Warnings
+# 2015: 80 Gale and 3 Storm Warnings
+# 2014: 36 Gale and 7 Storm Warnings
+# 2013: 43 Gale and 6 Storm Warnings
+# 2012: 30 Gale and 8 Storm Warnings
+# 2011: 48 Gale and 5 Storm Warnings
+# 2010: 47 Gale and 6 Storm Warnings
+# 2009: 49 Gale and 11 Storm Warnings
+# 2008: 61 Gale and 8 Storm Warnings
+
+
+knitr::kable(weather, linesep = "",
+             caption = "Gales = winds >=34 knots (usually associated with a coastal storm); 
+Storm = winds >=48 knots",
+label = "weather", format = "latex", booktabs = TRUE) %>%
+kable_styling(latex_options = "striped")
+
+
+```
+
+We seek feedback from the Council on the utility of this information to further develop an indicator for future SOE reports. Is monthly data more useful than annual as above? Would seasonal aggregates be useful? Is there a certain wind speed where vessels alter effort? We look forward to further integration of NWS information for our region.
 
 ## 20 VAST and uncertainty
 
@@ -225,7 +272,7 @@ As noted by the MA SSC, seals are important predators in the ecosystem, so we ha
 
 ## 22 Breakpoints
 
-Points 22 and 27 are related, and exploratory analysis evaluating empirical breakpoints and thresholds for individual indicators are in progress. 
+Points 16, 22 and 27 are related, and exploratory analysis evaluating trends, empirical breakpoints, and thresholds for individual indicators are in progress. 
 
 While this could not be addressed for individual indicators in 2022, our regime shifts synthesis theme will be explored further in upcoming years. We welcome suggestions for which individual indicators or groups of indicators should be prioritized for regime shift analysis in upcoming years. 
 
@@ -239,7 +286,7 @@ The MAFMC requested that we investigate how shellfish growth and distribution in
 
 ## 25 Avg weight of diet components by feeding group
 
-This information is being examined as part of the fish condition links project described above. In 2021, IN FISH intern Ava De Leon (U. Miami) investigated diet data collected aboard the NEFSC bottom trawl survey 1973-2019 across all predators combined. Trend analyses were performed on four prey categories, including benthic invertebrates, fish, pelagic invertebrates, and other in the regions of Georges Bank, Mid-Atlantic Bight and the Gulf of Maine during the Fall and Spring seasons. 
+In 2021, IN FISH intern Ava De Leon (U. Miami) investigated diet data collected aboard the NEFSC bottom trawl survey 1973-2019 across all predators combined. Trend analyses were performed on four prey categories, including benthic invertebrates, fish, pelagic invertebrates, and other in the regions of Georges Bank, Mid-Atlantic Bight and the Gulf of Maine during the Fall and Spring seasons. 
 
 Each category can be described in general:
 
@@ -249,23 +296,27 @@ FISH includes all fish, whether identified as individual species or as a taxonmi
 
 OTHER includes everything that could not be placed into one of the above categories; for example, “unidentified invertebrates,” taxonomic categories that could be either benthic or pelagic, digested animal remains, plant material, etc.
 
-In the Mid-Atlantic Bight in the Fall there were notable trends of increasing fish and decreasing benthic invertebrates and pelagic invertebrates.
+In the Mid-Atlantic Bight in the Fall there were notable trends of increasing fish, and decreasing benthic invertebrates and pelagic invertebrates in predator diets. Other regions and seasons did not show significant diet trends. 
 
-```{r MABaggdiet, fig.cap="Significant trends are shown using the standard State of the Ecosystem format: orange lines indicate a significant increasing trend and purple lines indicate a significant decreasing trend"}
-knitr::include_graphics("SOE-response-memo/images/MABaggdiet.png")
+```{r MABaggdiet, out.width = "90%", fig.cap="Diet composition for all predators combined collected on Fall NEFSC surveys in the Mid-Atlantic. See text for prey group definitions. Significant trends are shown using the standard State of the Ecosystem format: orange lines indicate a significant increasing trend and purple lines indicate a significant decreasing trend"}
+knitr::include_graphics("images/MABaggdiet.png")
 ```
 
 There was no significant trend in predator size over time for the Mid-Atlantic. The number of stomachs sampled from all predators combined has increased over time for both seasons and all regions. There isn’t one dominantly sampled predator over time, so it would be difficult to say that any single predator was driving the aggregate trends. The proportion of piscivores sampled was dominant for much of the 1980s and 1990s, and the proportion benthivores sampled has been higher and more consistent in all areas and seasons since about 2000.
 
-Detailes of the work are summarized [here](https://sgaichas.github.io/learnR-dietdata/ExplainTrends.html). 
+Detailes of the work are summarized at https://sgaichas.github.io/learnR-dietdata/ExplainTrends.html. 
 
-We welcome feedback on further directions for this work.
+An Indicator catalog chapter will appear here https://noaa-edab.github.io/catalog/diet-composition-analysis.html. 
+
+This information is also being examined as part of the fish condition links project described above. We welcome feedback on further directions for this work.
 
 ## 26 Mean stomach weight across feeding guilds
 
 This information is being examined as part of the fish condition links project, and is related to the intiial work described on trends in diet componetns by feeding group (25) above. However, we had insufficient resources to develop an independent indicator for the SOE in 2021.  
 
 ## 27 Inflection points for indicators
+
+Points 16, 22 and 27 are related, and exploratory analysis evaluating trends, empirical breakpoints, and thresholds for individual indicators are in progress.
 
 While this could not be addressed for individual indicators in 2021, we did include new Ecosystem Overfishing indicators with proposed thresholds (see Section 2, [Ecosystem Overfishing indicators](#ecosystem-overfishing-indicators-link-and-watson-2019)). We welcome suggestions for which additional indicators or groups of indicators should be prioritized for inflection point/threshold analysis in upcoming years. 
 
@@ -287,7 +338,7 @@ We had insufficient resources to address this in 2021.
 
 ## 32 Nutrient input, Benthic Flux and POC (particulate organic carbon ) to inform benthic productivity by something other than surface indidcators
 
-
+While there is investigation into these issues related to ongoing end-to-end ecosystem model development at NEFSC, qe had insufficient resources to address this as a standalone ecosystem indicator in 2021. 
 
 ## 33 Relate OA to nutrient input; are there “dead zones” (hypoxia)?
 
