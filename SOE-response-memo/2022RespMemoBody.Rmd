@@ -105,7 +105,7 @@ The first sentence of each report now states the audience.
 
 ## 2 State management objectives first in report
 
-The graphical summary on page 2 (first content page for MAFMC) and 2-3 (first content pages for NEFMC) summarize management objectives (columns in each table) and the indicator's performance relative to those objectives. Table 1 in the main body of each report (reproduced below) lists management objectives and indicators linked to those objectives. 
+The graphical summary on page 1 (MAFMC) and 1-2 (NEFMC) summarizes management objectives (columns in each table) and indicator performance relative to those objectives. Table 1 in the main body of each report (reproduced below) lists management objectives and indicators linked to those objectives. 
 
 ```{r management-objectives}
 
@@ -145,19 +145,19 @@ knitr::kable(mng_obj, linesep = "",
 
 ## 3 Ocean acidification (OA) in NEFMC SOE
 
-Added.
+Ocean acidification information was included in the MAFMC report in 2021, and was expanded to the Gulf of Maine and added to the NEFMC report in 2022. In both reports, OA information is presented in the Climate Risks section. Additional information is available in the Indicator catalog: https://noaa-edab.github.io/catalog/ocean-acidification-and-shellfish.html
 
-https://noaa-edab.github.io/catalog/ocean-acidification-and-shellfish.html
+## 4 Habitat impact of fishing based on gear
 
-## 4 Habitat impact of fishing based on gear.
+Both SOEs were revised this year to include a section on Habitat Risks. Both reports include a Fishing Gear Impacts subsection within the Habitat Risks section that links to detailed information on the outputs of the Northeast Fishing Effects Model. Detailed model results are available at the Northeast Ocean Data Portal (https://www.northeastoceandata.org/data-explorer/) under the Habitat/Fishing Effects - Seabed Habitat Disturbance and Fishing Effects - Intrinsic Seabed Habitat Vulnerablity. 
 
-Both SOEs were revised this year to include improved information on Habitat risks. 
+More details are available on the Indicator catalog page https://noaa-edab.github.io/catalog/northeast-fishing-effects-model.html
 
 ## 5 Revisit right whale language
 
-Language was edited in 2021 and a revised 2021 report was submitted to both Counicls. The report of record for each region ([MAFMC](https://doi.org/10.25923/jd1w-dc26), [NEFMC](https://doi.org/10.25923/6pww-mw45)) notes revised text as a footnote. Revised language was carried through to the 2022 reports.
+The NEFMC requested a review and update of language in the Protected Species section on right whales. Language was edited in 2021, and a revised 2021 report was submitted to both Councils in April 2021. The report of record for each region ([MAFMC](https://doi.org/10.25923/jd1w-dc26), [NEFMC](https://doi.org/10.25923/6pww-mw45)) contains the revised text and notes the revision history as a footnote. Revised language was carried through to the 2022 reports.
 
-## 6 Fishery gear modifications accounted for in shark CPUE? ask HMS
+## 6 Fishery gear modifications accounted for in shark CPUE
 
 
 
@@ -318,9 +318,11 @@ This information is being examined as part of the fish condition links project, 
 
 ## 27 Inflection points for indicators
 
-Points 16, 22 and 27 are related, and exploratory analysis evaluating trends, empirical breakpoints, and thresholds for individual indicators are in progress.
+Both Councils have requested more information on ecosystem thresholds and inflection points. In 2021, we calculated two ecosystem overfishing indicators with proposed thresholds [@link_global_2019] for each ecological production unit (EPU) on the northeast US shelf.
 
-While this could not be addressed for individual indicators in 2021, we did include new Ecosystem Overfishing indicators with proposed thresholds (see Section 2, [Ecosystem Overfishing indicators](#ecosystem-overfishing-indicators-link-and-watson-2019)). We welcome suggestions for which additional indicators or groups of indicators should be prioritized for inflection point/threshold analysis in upcoming years. 
+Points 16, 22 and 27 are related, and exploratory analysis evaluating trends, empirical breakpoints, and thresholds for individual indicators are in progress. While this could not be addressed for individual indicators in 2022, we did include new Ecosystem Overfishing (EOF) indicators with proposed thresholds. Simulation testing the EOF indicators is one of the potential analyses identified by the MAFMC SSC Ecosystem working group, so work on this may proceed over the coming year.
+
+We welcome suggestions for which additional indicators or groups of indicators should be prioritized for inflection point/threshold analysis in upcoming years. 
 
 ## 28 Recreational bycatch mortality as an indicator of regulatory waste
 
@@ -334,23 +336,25 @@ We had insufficient resources to address this in 2021.
 
 We had insufficient resources to address this in 2021.  
 
-## 31 Changing per capita seafood consumption as driver of revenue?
+## 31 Changing per capita seafood consumption as driver of revenue
 
 We had insufficient resources to address this in 2021.  
 
 ## 32 Nutrient input, Benthic Flux and POC (particulate organic carbon ) to inform benthic productivity by something other than surface indidcators
 
-While there is investigation into these issues related to ongoing end-to-end ecosystem model development at NEFSC, qe had insufficient resources to address this as a standalone ecosystem indicator in 2021. 
+While there is investigation into these issues related to ongoing end-to-end ecosystem model development at NEFSC, we had insufficient resources to address this as a standalone ecosystem indicator in 2021. 
 
 ## 33 Relate OA to nutrient input; are there “dead zones” (hypoxia)?
 
+Ocean acidification (OA) information was updated and expanded for the Mid-Atlantic report, and included for the first time in the New England report in 2022 (see point 3 above). 
 
+Comprehensive data on nutrient input onto the Northeast US shelf is lacking. However, as noted above, nutrient dynamics are under investigation within ongoing end-to-end ecosystem model development at NEFSC. We had insufficient resources to address this as a standalone ecosystem indicator or integrate it with OA indicators in 2021. 
 
 ## 34 Indicators of chemical pollution in offshore waters
 
 We had insufficient resources to address this in 2021.  
 
-## 35 How does phyto size comp affect EOF indicator, if at all?
+## 35 How does phyto size comp affect ecosystem overfishing (EOF) indicators, if at all?
 
 
 
