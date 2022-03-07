@@ -37,7 +37,7 @@ Memo Section
 <tbody>
 <tr>
 <td style="text-align:left;width: 5cm; ">
-Add “This report is direct to…”
+Add “This report is for \[audience\]”
 </td>
 <td style="text-align:right;width: 1cm; ">
 2021
@@ -77,7 +77,7 @@ Introduction section + Table
 </tr>
 <tr>
 <td style="text-align:left;width: 5cm; ">
-OA in NEFMC SOE
+Ocean acidification (OA) in NEFMC SOE
 </td>
 <td style="text-align:right;width: 1cm; ">
 2021
@@ -197,7 +197,7 @@ Intern collated NERRs data
 </tr>
 <tr>
 <td style="text-align:left;width: 5cm; ">
-More direct convos for feedback
+More direct opportunities for feedback
 </td>
 <td style="text-align:right;width: 1cm; ">
 2021
@@ -237,7 +237,7 @@ Regime shift analyses for specific indicators define quantitatively
 </tr>
 <tr>
 <td style="text-align:left;width: 5cm; ">
-Expand collaboration with Canadian Counterparts
+Expand collaboration with Canadian counterparts
 </td>
 <td style="text-align:right;width: 1cm; ">
 2021
@@ -277,7 +277,7 @@ See Current Conditions report
 </tr>
 <tr>
 <td style="text-align:left;width: 5cm; ">
-links between species availability inshore/offshore (estuarine
+Links between species availability inshore/offshore (estuarine
 conditions) and trends in recreational fishing effort?
 </td>
 <td style="text-align:right;width: 1cm; ">
@@ -558,19 +558,19 @@ Intern evaluated trends in guild diets
 </tr>
 <tr>
 <td style="text-align:left;width: 5cm; ">
-Recreational bycatch mortality as an indicator of regulatory waste
+Inflection points for indicators
 </td>
 <td style="text-align:right;width: 1cm; ">
-2021
+2019
 </td>
 <td style="text-align:left;width: 2cm; ">
-MAFMC SSC
+Both Councils
 </td>
 <td style="text-align:left;width: 5cm; ">
-Not started
+In progress
 </td>
 <td style="text-align:left;width: 2cm; ">
-Lacking resources this year
+Evaluating empirical thresholds
 </td>
 <td style="text-align:left;">
 27
@@ -578,7 +578,7 @@ Lacking resources this year
 </tr>
 <tr>
 <td style="text-align:left;width: 5cm; ">
-Sturgeon Bycatch
+Recreational bycatch mortality as an indicator of regulatory waste
 </td>
 <td style="text-align:right;width: 1cm; ">
 2021
@@ -598,7 +598,7 @@ Lacking resources this year
 </tr>
 <tr>
 <td style="text-align:left;width: 5cm; ">
-Decomposition of diversity drivers highlighting social components
+Sturgeon Bycatch
 </td>
 <td style="text-align:right;width: 1cm; ">
 2021
@@ -618,6 +618,26 @@ Lacking resources this year
 </tr>
 <tr>
 <td style="text-align:left;width: 5cm; ">
+Decomposition of diversity drivers highlighting social components
+</td>
+<td style="text-align:right;width: 1cm; ">
+2021
+</td>
+<td style="text-align:left;width: 2cm; ">
+MAFMC SSC
+</td>
+<td style="text-align:left;width: 5cm; ">
+Not started
+</td>
+<td style="text-align:left;width: 2cm; ">
+Lacking resources this year
+</td>
+<td style="text-align:left;">
+30
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 5cm; ">
 Changing per capita seafood consumption as driver of revenue?
 </td>
 <td style="text-align:right;width: 1cm; ">
@@ -633,7 +653,7 @@ Not started
 Lacking resources this year
 </td>
 <td style="text-align:left;">
-30
+31
 </td>
 </tr>
 <tr>
@@ -654,7 +674,7 @@ Not started
 Lacking resources this year
 </td>
 <td style="text-align:left;">
-31
+32
 </td>
 </tr>
 <tr>
@@ -674,32 +694,12 @@ Not started
 Lacking resources this year
 </td>
 <td style="text-align:left;">
-32
-</td>
-</tr>
-<tr>
-<td style="text-align:left;width: 5cm; ">
-indicators of chemical pollution in offshore waters?
-</td>
-<td style="text-align:right;width: 1cm; ">
-2021
-</td>
-<td style="text-align:left;width: 2cm; ">
-MAFMC
-</td>
-<td style="text-align:left;width: 5cm; ">
-Not started
-</td>
-<td style="text-align:left;width: 2cm; ">
-Lacking resources this year
-</td>
-<td style="text-align:left;">
 33
 </td>
 </tr>
 <tr>
 <td style="text-align:left;width: 5cm; ">
-how does phyto size comp affect EOF indicator, if at all?
+Indicators of chemical pollution in offshore waters
 </td>
 <td style="text-align:right;width: 1cm; ">
 2021
@@ -719,7 +719,27 @@ Lacking resources this year
 </tr>
 <tr>
 <td style="text-align:left;width: 5cm; ">
-Indicator of scallop pred pops poorly sampled by bts
+How does phyto size comp affect EOF indicator, if at all?
+</td>
+<td style="text-align:right;width: 1cm; ">
+2021
+</td>
+<td style="text-align:left;width: 2cm; ">
+MAFMC
+</td>
+<td style="text-align:left;width: 5cm; ">
+Not started
+</td>
+<td style="text-align:left;width: 2cm; ">
+Lacking resources this year
+</td>
+<td style="text-align:left;">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 5cm; ">
+Indicator of scallop pred pops poorly sampled by bottom trawls
 </td>
 <td style="text-align:right;width: 1cm; ">
 2021
@@ -734,7 +754,7 @@ Not started
 Lacking resources this year
 </td>
 <td style="text-align:left;">
-35
+36
 </td>
 </tr>
 <tr>
@@ -754,7 +774,7 @@ Not started
 planned for 2022 with MAFMC SSC
 </td>
 <td style="text-align:left;">
-36
+37
 </td>
 </tr>
 <tr>
@@ -774,7 +794,7 @@ Not started
 Lacking resources this year
 </td>
 <td style="text-align:left;">
-37
+38
 </td>
 </tr>
 <tr>
@@ -794,7 +814,7 @@ Not started
 Possibly planned for 2022 with MAFMC SSC
 </td>
 <td style="text-align:left;">
-38
+39
 </td>
 </tr>
 <tr>
@@ -814,7 +834,7 @@ Not started
 Lacking resources this year
 </td>
 <td style="text-align:left;">
-39
+40
 </td>
 </tr>
 <tr>
@@ -834,7 +854,7 @@ Not started
 Lacking resources this year
 </td>
 <td style="text-align:left;">
-40
+41
 </td>
 </tr>
 <tr>
@@ -854,7 +874,7 @@ Not started
 Lacking resources this year
 </td>
 <td style="text-align:left;">
-41
+42
 </td>
 </tr>
 <tr>
@@ -874,7 +894,7 @@ Not started
 Lacking resources this year
 </td>
 <td style="text-align:left;">
-42
+43
 </td>
 </tr>
 <tr>
@@ -894,7 +914,7 @@ Not started
 Lacking resources this year
 </td>
 <td style="text-align:left;">
-43
+44
 </td>
 </tr>
 <tr>
@@ -914,26 +934,6 @@ Not started
 Lacking resources this year
 </td>
 <td style="text-align:left;">
-44
-</td>
-</tr>
-<tr>
-<td style="text-align:left;width: 5cm; ">
-Inflection points for indicators
-</td>
-<td style="text-align:right;width: 1cm; ">
-2019
-</td>
-<td style="text-align:left;width: 2cm; ">
-Both Councils
-</td>
-<td style="text-align:left;width: 5cm; ">
-Not started
-</td>
-<td style="text-align:left;width: 2cm; ">
-Lacking resources this year
-</td>
-<td style="text-align:left;">
 45
 </td>
 </tr>
@@ -942,11 +942,11 @@ Lacking resources this year
 
 # Responses to comments
 
-## 1 Add “This report is direct to…”
+## 1 Add “This report is for \[audience\]”
 
 ## 2 State management objectives first in report
 
-## 3 OA in NEFMC SOE
+## 3 Ocean acidification (OA) in NEFMC SOE
 
 ## 4 Habitat impact of fishing based on gear.
 
@@ -958,15 +958,15 @@ Lacking resources this year
 
 ## 8 Estuarine Water Quality
 
-## 9 More direct convos for feedback
+## 9 More direct opportunities for feedback
 
 ## 10 Further definition of regime shift - Define “abupt” and “Persistant”
 
-## 11 Expand collaboration with Canadian Counterparts
+## 11 Expand collaboration with Canadian counterparts
 
 ## 12 Fall turnover date index
 
-## 13 links between species availability inshore/offshore (estuarine conditions) and trends in recreational fishing effort?
+## 13 Links between species availability inshore/offshore (estuarine conditions) and trends in recreational fishing effort?
 
 ## 14 Apex predator index (pinnipeds)
 
@@ -994,42 +994,42 @@ Lacking resources this year
 
 ## 26 Mean stomach weight across feeding guilds
 
-## 27 Recreational bycatch mortality as an indicator of regulatory waste
+## 27 Inflection points for indicators
 
-## 28 Sturgeon Bycatch
+## 28 Recreational bycatch mortality as an indicator of regulatory waste
 
-## 29 Decomposition of diversity drivers highlighting social components
+## 29 Sturgeon Bycatch
 
-## 30 Changing per capita seafood consumption as driver of revenue?
+## 30 Decomposition of diversity drivers highlighting social components
 
-## 31 Nutrient input, Benthic Flux and POC(particulate organic carbon ) to inform benthic productivity by something other than surface indidcators
+## 31 Changing per capita seafood consumption as driver of revenue?
 
-## 32 Relate OA to nutrient input; are there “dead zones” (hypoxia)?
+## 32 Nutrient input, Benthic Flux and POC(particulate organic carbon ) to inform benthic productivity by something other than surface indidcators
 
-## 33 indicators of chemical pollution in offshore waters?
+## 33 Relate OA to nutrient input; are there “dead zones” (hypoxia)?
 
-## 34 how does phyto size comp affect EOF indicator, if at all?
+## 34 Indicators of chemical pollution in offshore waters
 
-## 35 Indicator of scallop pred pops poorly sampled by bts
+## 35 How does phyto size comp affect EOF indicator, if at all?
 
-## 36 Compare EOF (Link) thresholds to empirical thresholds (Large, Tam)
+## 36 Indicator of scallop pred pops poorly sampled by bottom trawls
 
-## 37 Time series analysis (Zooplankton/Forage fish) to tie into regime shifts
+## 37 Compare EOF (Link) thresholds to empirical thresholds (Large, Tam)
 
-## 38 Optimum yeild for ecosystem
+## 38 Time series analysis (Zooplankton/Forage fish) to tie into regime shifts
 
-## 39 Re-evaluate EPUs
+## 39 Optimum yeild for ecosystem
 
-## 40 Incorporate social sciences survey from council
+## 40 Re-evaluate EPUs
 
-## 41 Biomass of spp not included in BTS
+## 41 Incorporate social sciences survey from council
 
-## 42 Reduce indicator dimensionality with multivariate statistics
+## 42 Biomass of spp not included in BTS
 
-## 43 Estuarine condition relative to power plants and temp
+## 43 Reduce indicator dimensionality with multivariate statistics
 
-## 44 Young of Year index from multiple surveys
+## 44 Estuarine condition relative to power plants and temp
 
-## 45 Inflection points for indicators
+## 45 Young of Year index from multiple surveys
 
 # References

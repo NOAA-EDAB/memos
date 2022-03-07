@@ -99,99 +99,248 @@ knitr::kable(requeststab, longtable = T, booktabs = TRUE, linesep = "") %>%
 
 # Responses to comments
 
-## 1 Add “This report is direct to…”
+## 1 Add “This report is for [audience]”
 
 The first sentence of each report now states the audience.
 
 ## 2 State management objectives first in report
 
-The graphical summary on page 2 (first content page for MAFMC) and 2-3 (first content pages for NEFMC) summarize management objectives (columns in each table) and the indicator's performance relative to those objectives. Table 1 in the main body each report lists management objectives. 
+The graphical summary on page 2 (first content page for MAFMC) and 2-3 (first content pages for NEFMC) summarize management objectives (columns in each table) and the indicator's performance relative to those objectives. Table 1 in the main body of each report (reproduced below) lists management objectives and indicators linked to those objectives. 
 
-## 3 OA in NEFMC SOE
+```{r management-objectives}
+
+mng_obj <- data.frame("Objective Categories" = c("Seafood Production",
+                                                 "Profits","Recreation",
+                                                 "Stability","Social & Cultural",
+                                                 "Protected Species",
+                                                 "Biomass","Productivity",
+                                                 "Trophic structure","Habitat"),
+"Indicators reported" = c("Landings; commercial total and by feeding guild; recreational harvest",
+                               "Revenue decomposed to price and volume",
+                               "Angler trips; recreational fleet diversity",
+                               "Diversity indices (fishery and ecosystem)",
+                               "Community engagement/reliance and environmental justice status",
+                               "Bycatch; population (adult and juvenile) numbers, mortalities",
+                               "Biomass or abundance by feeding guild from surveys",
+                               "Condition and recruitment of managed species, primary productivity",
+                               "Relative biomass of feeding guilds, zooplankton",
+                               "Estuarine and offshore habitat conditions"))
+
+knitr::kable(mng_obj, linesep = "",
+      col.names = c("Objective Categories","Indicators reported"),
+      caption = "Ecosystem-scale fishery management objectives in the Mid-Atlantic Bight",
+      #align = 'c',
+      booktabs = T) %>%
+  kable_styling(latex_options = "hold_position", "scale_down") %>%
+ # column_spec(c(2), width = c("25em")) %>%
+  row_spec(0, bold = TRUE) %>%
+ # group_rows("Provisioning/Cultural", 1,4) %>%
+ # group_rows("Supporting/Regulating", 5,9)
+  pack_rows("Provisioning and Cultural Services", 1,6) %>%
+  pack_rows("Supporting and Regulating Services", 7,10)
+
+
+```
+
+
+## 3 Ocean acidification (OA) in NEFMC SOE
+
+
 
 ## 4 Habitat impact of fishing based on gear.
 
+Both SOEs were revised this year to include improved information on Habitat risks. 
+
 ## 5 Revisit right whale language
+
+Language was edited in 2021 and a revised 2021 report was submitted to both Counicls. The report of record for each region ([MAFMC](https://doi.org/10.25923/jd1w-dc26), [NEFMC](https://doi.org/10.25923/6pww-mw45)) notes revised text as a footnote. Revised language was carried through to the 2022 reports.
 
 ## 6 Fishery gear modifications accounted for in shark CPUE? ask HMS
 
+
+
 ## 7 Sum of TAC/ Landings relative to TAC
+
+
 
 ## 8 Estuarine Water Quality
 
-## 9 More direct convos for feedback
 
-## 10 Further definition of regime shift - Define “abupt” and “Persistant”
 
-## 11 Expand collaboration with Canadian Counterparts
+## 9 More direct opportunities for feedback
+
+
+
+## 10 Further definition of regime shift 
+
+- Define “abupt” and “Persistant”
+
+## 11 Expand collaboration with Canadian counterparts
+
+We are currently drafting a NMFS-DFO climate/fisheries collaboration framework. We can expand some of our environmental indicators to include NW Atlantic indicators
 
 ## 12 Fall turnover date index
 
-## 13 links between species availability inshore/offshore (estuarine conditions) and trends in recreational fishing effort?
+https://www.fisheries.noaa.gov/new-england-mid-atlantic/climate/current-conditions-northeast-us-shelf-ecosystem-spring-2021-update#fall-thermal-transition-day
+
+## 13 Links between species availability inshore/offshore (estuarine conditions) and trends in recreational fishing effort?
+
+
 
 ## 14 Apex predator index (pinnipeds)
 
+
+
 ## 15 Forage availability index (Herring/Sandlance)
+
+
 
 ## 16 Trend analysis
 
+
+
 ## 17 Regime shifts in Social-Economic indicators
+
+
 
 ## 18 Linking Condition
 
+
+
 ## 19 Cumulative weather index
+
+
 
 ## 20 VAST and uncertainty
 
+Both Councils were interested in model-based estimates of aggregate fish biomass and uncertainty based on preliminary results presented in 2020. We experimented with a model-based estimate of uncertainty for survey biomass which accounts for both spatial and temporal sources (VAST; @thorson_guidance_2019). Work on model-based estimates is currently in review and may be presented in an upcoming report.
+
 ## 21 Seal index
+
+The MA SSC requested indices of abundance for seals rather than the narrative supplied in 2020. Analysis and review is in progress to update abundance and possibly assess trends in US waters for harbor and gray seals; however, these estimates were not available for the 2022 SOE. New information on increasing numbers of gray seal pups born at US pupping sites has been added to the narrative for both SOE reports [@wood_rates_2020]. 
+
+A detailed stock assessment for Canadian Northwest Atlantic gray seals was published in 2017 and is available [online](https://waves-vagues.dfo-mpo.gc.ca/Library/40646749.pdf). As noted in the SOE, the Candian population is likely supplementing the US population, and seals range widely, so distinguishing trends within US waters or individual EPUs is complex. However, a gray seal survey was in progress in 2021, and updated information will be included as it is available.
+
+As noted by the MA SSC, seals are important predators in the ecosystem, so we have included additional updates on seal diet studies in progress, and have moved the discussion of seals as predators into a more general discussion of predator trends in the SOE along with information added for sharks.
 
 ## 22 Breakpoints
 
+Points 22 and 27 are related, and exploratory analysis evaluating empirical breakpoints and thresholds for individual indicators are in progress. 
+
+While this could not be addressed for individual indicators in 2022, our regime shifts synthesis theme will be explored further in upcoming years. We welcome suggestions for which individual indicators or groups of indicators should be prioritized for regime shift analysis in upcoming years. 
+
 ## 23 Management complexity
+
+The MAFMC asked for indicators of management complexity for use in the EAFM risk assessment. An NEFSC summer student started work on this in 2018, but we have lacked capacity to finish the project since then. If resources allow we will continue the project, and guidance for further indicator developmet is welcome.
 
 ## 24 Shellfish growth/distribution linked to climate (system productivity)
 
+The MAFMC requested that we investigate how shellfish growth and distribution information could be linked to climate indicators and possibly ecosystem productivity. We are working with Dr. Roger Mann who has obtained NSF INTERN funding for his student Alexis Hollander to spend up to 6 months at NEFSC working on shellfish growth, and to facilitate integration of SOE climate indicators with this work. While in-person work has not been possible to date, bottom temperature and other ecosystem indicators are currently being incorporated into Ms Hollander's work.
+
 ## 25 Avg weight of diet components by feeding group
+
+This information is being examined as part of the fish condition links project described above. In 2021, IN FISH intern Ava De Leon (U. Miami) investigated diet data collected aboard the NEFSC bottom trawl survey 1973-2019 across all predators combined. Trend analyses were performed on four prey categories, including benthic invertebrates, fish, pelagic invertebrates, and other in the regions of Georges Bank, Mid-Atlantic Bight and the Gulf of Maine during the Fall and Spring seasons. 
+
+Each category can be described in general:
+
+BENINV includes prey that are clearly identifiable as benthic (bottom dwelling) invertebrates by either name or general taxoomic category. Similarly, PELINV includes prey clearly identifiable as pelagic (water column dwelling) invertebrates, including some shrimp species that spend much time in the water column.
+
+FISH includes all fish, whether identified as individual species or as a taxonmic category, or “unidentified fish.” The FISH category also includes the commercially fished squid species, Illex and Doryteuthis (formerly Loligo).
+
+OTHER includes everything that could not be placed into one of the above categories; for example, “unidentified invertebrates,” taxonomic categories that could be either benthic or pelagic, digested animal remains, plant material, etc.
+
+In the Mid-Atlantic Bight in the Fall there were notable trends of increasing fish and decreasing benthic invertebrates and pelagic invertebrates.
+
+```{r MABaggdiet, fig.cap="Significant trends are shown using the standard State of the Ecosystem format: orange lines indicate a significant increasing trend and purple lines indicate a significant decreasing trend"}
+knitr::include_graphics("SOE-response-memo/images/MABaggdiet.png")
+```
+
+There was no significant trend in predator size over time for the Mid-Atlantic. The number of stomachs sampled from all predators combined has increased over time for both seasons and all regions. There isn’t one dominantly sampled predator over time, so it would be difficult to say that any single predator was driving the aggregate trends. The proportion of piscivores sampled was dominant for much of the 1980s and 1990s, and the proportion benthivores sampled has been higher and more consistent in all areas and seasons since about 2000.
+
+Detailes of the work are summarized [here](https://sgaichas.github.io/learnR-dietdata/ExplainTrends.html). 
+
+We welcome feedback on further directions for this work.
 
 ## 26 Mean stomach weight across feeding guilds
 
-## 27 Recreational bycatch mortality as an indicator of regulatory waste
+This information is being examined as part of the fish condition links project, and is related to the intiial work described on trends in diet componetns by feeding group (25) above. However, we had insufficient resources to develop an independent indicator for the SOE in 2021.  
 
-## 28 Sturgeon Bycatch
+## 27 Inflection points for indicators
 
-## 29 Decomposition of diversity drivers highlighting social components
+While this could not be addressed for individual indicators in 2021, we did include new Ecosystem Overfishing indicators with proposed thresholds (see Section 2, [Ecosystem Overfishing indicators](#ecosystem-overfishing-indicators-link-and-watson-2019)). We welcome suggestions for which additional indicators or groups of indicators should be prioritized for inflection point/threshold analysis in upcoming years. 
 
-## 30 Changing per capita seafood consumption as driver of revenue?
+## 28 Recreational bycatch mortality as an indicator of regulatory waste
 
-## 31 Nutrient input, Benthic Flux and POC(particulate organic carbon ) to inform benthic productivity by something other than surface indidcators
+We had insufficient resources to address this in 2021.  
 
-## 32 Relate OA to nutrient input; are there “dead zones” (hypoxia)?
+## 29 Sturgeon Bycatch
 
-## 33 indicators of chemical pollution in offshore waters?
+We had insufficient resources to address this in 2021.  
 
-## 34 how does phyto size comp affect EOF indicator, if at all?
+## 30 Decomposition of diversity drivers highlighting social components
 
-## 35 Indicator of scallop pred pops poorly sampled by bts
+We had insufficient resources to address this in 2021.  
 
-## 36 Compare EOF (Link) thresholds to empirical thresholds (Large, Tam)
+## 31 Changing per capita seafood consumption as driver of revenue?
 
-## 37 Time series analysis (Zooplankton/Forage fish) to tie into regime shifts
+We had insufficient resources to address this in 2021.  
 
-## 38 Optimum yeild for ecosystem
+## 32 Nutrient input, Benthic Flux and POC (particulate organic carbon ) to inform benthic productivity by something other than surface indidcators
 
-## 39 Re-evaluate EPUs
 
-## 40 Incorporate social sciences survey from council
 
-## 41 Biomass of spp not included in BTS
+## 33 Relate OA to nutrient input; are there “dead zones” (hypoxia)?
 
-## 42 Reduce indicator dimensionality with multivariate statistics
 
-## 43 Estuarine condition relative to power plants and temp
 
-## 44 Young of Year index from multiple surveys
+## 34 Indicators of chemical pollution in offshore waters
 
-## 45 Inflection points for indicators
+We had insufficient resources to address this in 2021.  
+
+## 35 How does phyto size comp affect EOF indicator, if at all?
+
+
+
+## 36 Indicator of scallop pred pops poorly sampled by bottom trawls
+
+We had insufficient resources to address this in 2021.  
+
+## 37 Compare EOF (Link) thresholds to empirical thresholds (Large, Tam)
+
+
+
+## 38 Time series analysis (Zooplankton/Forage fish) to tie into regime shifts
+
+
+
+## 39 Optimum yeild for ecosystem
+
+
+
+## 40 Re-evaluate EPUs
+
+Initial planning for re-evaluating Northeast US Shelf ecological production units has started, but we had insufficient resources to begin the project in 2021.  
+
+## 41 Incorporate social sciences survey from council
+
+The NE SSC was interested in reviewing information on the perception and use of social science information from an NEFMC survey. We had insufficient resources to address this in 2021.  We welcome input from the New England Council and staff on how best to incorporate this information in future reports.
+
+## 42 Biomass of spp not included in BTS
+
+We continued to include information on sharks this year, and data streams for many other species not captured by bottom trawl surveys (BTS) are under investigation. However, we had insufficient resources to address this fully in 2021.  
+
+## 43 Reduce indicator dimensionality with multivariate statistics
+
+The NE SSC suggested statistical analysis to reduce the number of indicators and remove redundant indicators in the report. Some work has been initiated on this in past years, but we had insufficient resources to complete this in 2021.  
+
+## 44 Estuarine condition relative to power plants and temp
+
+We had insufficient resources to address this in 2021.  
+
+## 45 Young of Year index from multiple surveys
+
+The MA SSC was interested in a young of year index from multiple surveys. The SOE includes a fish productivity index (direct links [MAB](https://noaa-edab.github.io/ecodata/macrofauna_MAB#Productivity_anomaly), [GB and GOM](https://noaa-edab.github.io/ecodata/macrofauna_NE#Productivity_anomaly)), which calculates the number of small fish per biomass of large fish of the same species from NEFSC surveys. This index is based only on the NEFSC bottom trawl survey. We recognize that this is not strictly a young of year index, and it is from a single survey. 
+
+We had insufficient resources to address this further in 2021.  
 
 # References
-
