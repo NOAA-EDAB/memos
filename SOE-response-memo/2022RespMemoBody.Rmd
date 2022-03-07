@@ -163,9 +163,11 @@ The NEFMC requested a review and update of language in the Protected Species sec
 
 ## 7 Sum of TAC/ Landings relative to TAC
 
-
+The MAFMC SSC requested information on landings relative to allowable catches. This information was provided by Council staff for 2012-2020 for all MAFMC fisheries and presented in 2022 MAFMC report as one of the multiple potential drivers of Seafood Production. 
 
 ## 8 Estuarine Water Quality
+
+The 2022 MAFMC report was updated with additional Chesapeake Bay water quality indicators, as well as a new indicator on submerged aquatic vegetation. 
 
 The NEFMC requested more information on estuarine habitats. In 2021, PEP intern Rhegan Thomason (U. Texas) developed a reproducible data workflow using open data science tools and principles that will be used to provide estuarine habitat information into annual SOE reports She used data from the National Estuarine Research Reserve System (NERRS) to explore water quality and climate indicators at four sites in the New England region. NERRS conducts research and monitors the ecosystems to “track short-term variability and long-term changes due to natural and anthropogenic disturbances”. We acquired and compiled data from the NERRS Centralized Data Management Office to create a partially automated workflow that analyzes and visualizes available data. We developed open access code to generate time series and climatologies for temperature, dissolved oxygen, salinity, and chlorophyll. The project used RStudio with GitHub integration to version control data and code as well as enhance collaboration and transparency (https://github.com/rheganthomason/NERRSdata). This workflow was designed to be reproducible and available for future use anywhere the data is applicable.
 
@@ -173,23 +175,28 @@ An Indicator catalog chapter will appear here https://noaa-edab.github.io/catalo
 
 ## 9 More direct opportunities for feedback
 
-The MAFMC SSC requested more opportunites for SOE report development and feedback to improve use in mangement. 
+The MAFMC SSC requested more opportunities for SOE report development and feedback to improve use in mangement. An SSC ecosystem working group was established in 2021 to coordinate SSC needs with ecosystem indicator investigations. NEFSC secured funding to support SSC-requested analyses that will evaluate aspects of SOE indicators along with management uses. Results of this work will be reported as they become available, but porposed analyses may address several other points raised by both SSCs and Councils, including evaluations of ecosystem overfishing indicators (points 35, 37), indicator thresholds (points 16, 22, 27), and system level optimum yields (point 39).
 
 ## 10 Further definition of regime shift 
 
-- Define “abupt” and “Persistant”
+- Define “abrupt” and “Persistent”
 
 ## 11 Expand collaboration with Canadian counterparts
 
-We are currently drafting a NMFS-DFO climate/fisheries collaboration framework. We can expand some of our environmental indicators to include NW Atlantic indicators
+NEFSC are currently drafting a NMFS-DFO climate/fisheries collaboration framework. We can expand some of our environmental indicators to include NW Atlantic indicators, and welcome feedback on priority indicators for this expansion.
 
 ## 12 Fall turnover date index
 
-https://www.fisheries.noaa.gov/new-england-mid-atlantic/climate/current-conditions-northeast-us-shelf-ecosystem-spring-2021-update#fall-thermal-transition-day
+An index of fall turnover timing is presented in the NEFSC Current Conditions report each year: https://www.fisheries.noaa.gov/new-england-mid-atlantic/climate/current-conditions-northeast-us-shelf-ecosystem-spring-2021-update#fall-thermal-transition-day
+
+As noted in the Current Conditions summary, 
+>The fall thermal transition continues to shift to progressively later on the year, raising concern over the timing of production cycles in the food web.
+
+We can include these indicators or summarize resutls from Current Conditions in the SOE
 
 ## 13 Links between species availability inshore/offshore (estuarine conditions) and trends in recreational fishing effort?
 
-Work is in progress to evalaute bluefish availability inshore vs offshore along with trends in recreational fishing effort for the 2022 Bluefish Research Track Assessment. 
+Work is in progress to evaluate bluefish availability inshore vs offshore along with trends in recreational fishing catch per unit effort for the 2022 Bluefish Research Track Assessment. The index in development relates bluefish availablilty to prey, rather than estuarine conditions. It remains to be seen if prey availability is related to recreational CPUE, but results can be summarized in an upcoming SOE if this seems relevant. 
 
 ## 14 Apex predator index (pinnipeds)
 
@@ -197,7 +204,7 @@ See also point 21.
 
 ## 15 Forage availability index (Herring/Sandlance)
 
-As noted under point 13, Work is in progress to evalaute bluefish availability inshore vs offshore along with trends in recreational fishing effort for the 2022 Bluefish Research Track Assessment. 
+As noted under point 13, Work is in progress to evaluate bluefish availability inshore vs offshore along with trends in recreational fishing effort for the 2022 Bluefish Research Track Assessment. While there are not plans to distinguish different forage fish species for this work, the aggregate forage fish index may be pesented in the SOE reports in coming years.
 
 Additional research on sandlance co-ocurrence on Stellwagen Bank with seabird and marine mammal predators has been added to the Indicator catalog (https://noaa-edab.github.io/catalog/sandlance.html) for potential expansion in the future. 
 
