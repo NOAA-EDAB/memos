@@ -157,56 +157,64 @@ More details are available on the Indicator catalog page https://noaa-edab.githu
 
 The NEFMC requested a review and update of language in the Protected Species section on right whales. Language was edited in 2021, and a revised 2021 report was submitted to both Councils in April 2021. The report of record for each region ([MAFMC](https://doi.org/10.25923/jd1w-dc26), [NEFMC](https://doi.org/10.25923/6pww-mw45)) contains the revised text and notes the revision history as a footnote. Revised language was carried through to the 2022 reports.
 
-## 6 Fishery gear modifications accounted for in shark CPUE
-
-
-
-## 7 Sum of TAC/ Landings relative to TAC
+## 6 Sum of TAC/ Landings relative to TAC
 
 The MAFMC SSC requested information on landings relative to allowable catches. This information was provided by Council staff for 2012-2020 for all MAFMC fisheries and presented in 2022 MAFMC report as one of the multiple potential drivers of Seafood Production. 
 
-## 8 Estuarine Water Quality
+## 7 Estuarine Water Quality
 
 The 2022 MAFMC report was updated with additional Chesapeake Bay water quality indicators, as well as a new indicator on submerged aquatic vegetation. 
 
 The NEFMC requested more information on estuarine habitats. In 2021, PEP intern Rhegan Thomason (U. Texas) developed a reproducible data workflow using open data science tools and principles that will be used to provide estuarine habitat information into annual SOE reports She used data from the National Estuarine Research Reserve System (NERRS) to explore water quality and climate indicators at four sites in the New England region. NERRS conducts research and monitors the ecosystems to “track short-term variability and long-term changes due to natural and anthropogenic disturbances”. We acquired and compiled data from the NERRS Centralized Data Management Office to create a partially automated workflow that analyzes and visualizes available data. We developed open access code to generate time series and climatologies for temperature, dissolved oxygen, salinity, and chlorophyll. The project used RStudio with GitHub integration to version control data and code as well as enhance collaboration and transparency (https://github.com/rheganthomason/NERRSdata). This workflow was designed to be reproducible and available for future use anywhere the data is applicable.
 
-An Indicator catalog chapter will appear here https://noaa-edab.github.io/catalog/NERRs.html
+An Indicator catalog chapter details further results:  https://noaa-edab.github.io/catalog/NERRs.html. We welcome feedback to develop this information for future SOE reports. 
 
-## 9 More direct opportunities for feedback
+## 8 More direct opportunities for feedback
 
 The MAFMC SSC requested more opportunities for SOE report development and feedback to improve use in mangement. An SSC ecosystem working group was established in 2021 to coordinate SSC needs with ecosystem indicator investigations. NEFSC secured funding to support SSC-requested analyses that will evaluate aspects of SOE indicators along with management uses. Results of this work will be reported as they become available, but porposed analyses may address several other points raised by both SSCs and Councils, including evaluations of ecosystem overfishing indicators (points 35, 37), indicator thresholds (points 16, 22, 27), and system level optimum yields (point 39).
 
-## 10 Further definition of regime shift 
+## 9 Further definition of regime shift 
 
-- Define “abrupt” and “Persistent”
+Regime shifts are currently described in the SOE graphical summary as "large, abrupt and persistent changes in the structure and function of an ecosystem." This plain-language general definition is used by many sources on regime shifts (e.g., https://www.regimeshifts.org/what-is-a-regime-shift) as well as in the scientific literature (e.g., @morse_distinct_2017). 
 
-## 11 Expand collaboration with Canadian counterparts
+Further technical definitions of “abrupt” "and "persistent” for a particular indicator or set of indicators may vary, and can be based on the outcomes of multiple analyses. In many analyses, "abrupt" represents a single-year shift between different levels of a time series indicator, and "persistent" means the indicator stays in the new state for mutliple years after the shift rather than returning to the previous state.
+
+For example, @morse_distinct_2017 identified regime shifts where "results of the chronological clustering, PCA, and change point analysis were complementary." In other words, groups of similar years were detected by multiple methods and compared to determine persistence within a regime, and changepoint analysis detects whether abrupt change has occurred between those groups of years with similar conditions.
+
+Thge regime shift in warm core rings presented in the SOE also used multiple methods incorporated into a "sequential regime shift detection algorithm" (@gangopadhyay_observed_2019; https://noaa-edab.github.io/tech-doc/warm-core-rings.html).  The algorithm looks for "abrupt change" and "persistence" by comparing time series means prior to and after the inclusion of each new observation, evaluating the amount of change within the current time period, and determining whether the current year represents a change point.
+
+Technical definitions of "abrupt" and "persistent" for regime shift analyses presented in the SOE can be found either in the SOE Technical Documentation (https://noaa-edab.github.io/tech-doc/), in literature cited within the SOE, or both.
+
+## 10 Expand collaboration with Canadian counterparts
 
 NEFSC are currently drafting a NMFS-DFO climate/fisheries collaboration framework. We can expand some of our environmental indicators to include NW Atlantic indicators, and welcome feedback on priority indicators for this expansion.
 
-## 12 Fall turnover date index
+## 11 Fall turnover date index
 
 An index of fall turnover timing is presented in the NEFSC Current Conditions report each year: https://www.fisheries.noaa.gov/new-england-mid-atlantic/climate/current-conditions-northeast-us-shelf-ecosystem-spring-2021-update#fall-thermal-transition-day
 
 As noted in the Current Conditions summary, 
 >The fall thermal transition continues to shift to progressively later on the year, raising concern over the timing of production cycles in the food web.
 
-We can include these indicators or summarize resutls from Current Conditions in the SOE
+We can include these indicators or summarize results from Current Conditions and other sources in the SOE, in particular as they are prioritized by the Councils. 
 
-## 13 Links between species availability inshore/offshore (estuarine conditions) and trends in recreational fishing effort?
+## 12 Links between species availability inshore/offshore (estuarine conditions) and trends in recreational fishing effort?
 
 Work is in progress to evaluate bluefish availability inshore vs offshore along with trends in recreational fishing catch per unit effort for the 2022 Bluefish Research Track Assessment. The index in development relates bluefish availablilty to prey, rather than estuarine conditions. It remains to be seen if prey availability is related to recreational CPUE, but results can be summarized in an upcoming SOE if this seems relevant. 
 
-## 14 Apex predator index (pinnipeds)
+## 13 Apex predator index (pinnipeds)
 
-See also point 21. 
+Understanding the dynamics of apex predators, including pinnipeds and sharks, is the aim of the restructured SOE section on Ecosystem Structure Indicators. This section is a work-in progress, which will add information as it becomes available. The NEFSC Protected Species Branch is working towards time series for many apex predators (see also point 21, Seal Index), and the HMS shark CPUE time series is another component. We hope to have a more integrated apex predator index in future SOE reports. 
 
-## 15 Forage availability index (Herring/Sandlance)
+## 14 Forage availability index (Herring/Sandlance)
 
-As noted under point 13, Work is in progress to evaluate bluefish availability inshore vs offshore along with trends in recreational fishing effort for the 2022 Bluefish Research Track Assessment. While there are not plans to distinguish different forage fish species for this work, the aggregate forage fish index may be pesented in the SOE reports in coming years.
+As noted under point 12, Work is in progress to evaluate bluefish availability inshore vs offshore along with trends in recreational fishing effort for the 2022 Bluefish Research Track Assessment. While there are not plans to distinguish different forage fish species for this work, the aggregate forage fish index may be pesented in the SOE reports in coming years.
 
 Additional research on sandlance co-ocurrence on Stellwagen Bank with seabird and marine mammal predators has been added to the Indicator catalog (https://noaa-edab.github.io/catalog/sandlance.html) for potential expansion in the future. 
+
+## 15 Fishery gear modifications accounted for in shark CPUE
+
+Methods for the HMS Pelagic Observer Program (POP) shark CPUE indicator have been posted to the SOE Technical Documentation website (https://noaa-edab.github.io/tech-doc/).  The Pelagic Observer Program does collect information on hooks (https://www.fisheries.noaa.gov/inport/item/30713), but at this time it is unclear how or whether information on circle hooks is specifically incorporated into the CPUE index. We are updating the methods with more detail for the next report. 
 
 ## 16 Trend analysis
 
@@ -214,7 +222,7 @@ Points 16, 22 and 27 are related, and exploratory analysis evaluating trends, em
 
 ## 17 Regime shifts in Social-Economic indicators
 
-The National IEA HDWG is working on regime shifts in social indicators. The WG, led by Geret DePiper, has a special issue call open for Marine Policy: https://www.journals.elsevier.com/marine-policy/call-for-papers/special-issue-call-for-papers-assessing-social-change-and-ranking-outcomes-in-support-of-ecosystem-based-management-regime-shifts-nonlinearities-and-ecosystem-status We'll have one for the Northeast (Walden and DePiper, presented at the SOE synthesis meeting) and a cross regional manuscript.
+The National Integrated Ecosystem Assessment Human Dimensions Working Group is working on regime shifts in social indicators. The WG, led by Geret DePiper, has a special issue call open for Marine Policy: https://www.journals.elsevier.com/marine-policy/call-for-papers/special-issue-call-for-papers-assessing-social-change-and-ranking-outcomes-in-support-of-ecosystem-based-management-regime-shifts-nonlinearities-and-ecosystem-status. There will be one paper for the Northeast (Walden and DePiper, presented at the SOE synthesis meeting) and a cross regional manuscript. This informatin can be incorporated into a future SOE as it becomes available. 
 
 ## 18 Linking Condition
 
@@ -321,7 +329,7 @@ This information is also being examined as part of the fish condition links proj
 
 ## 26 Mean stomach weight across feeding guilds
 
-This information is being examined as part of the fish condition links project, and is related to the intiial work described on trends in diet componetns by feeding group (25) above. However, we had insufficient resources to develop an independent indicator for the SOE in 2021.  
+This information is being examined as part of the fish condition links project, and is related to the intiial work described on trends in diet components by feeding group (25) above. However, we had insufficient resources to develop an independent indicator for the SOE in 2021.  
 
 ## 27 Inflection points for indicators
 
@@ -363,7 +371,7 @@ We had insufficient resources to address this in 2021.
 
 ## 35 How does phyto size comp affect ecosystem overfishing (EOF) indicators, if at all?
 
-
+Ecosystem overfishing indicators could not be updated this year due to delayed landings data, as noted in the SOE. However, more detailed information on phytoplankton size composition was presented in the Ecosystem Productivity Indicators section. We anticipate addressing this question in future years as we further develop the EOF indicators. Simulation testing the EOF indicators is one of the potential analyses identified by the MAFMC SSC Ecosystem working group, so work on this may proceed over the coming year.
 
 ## 36 Indicator of scallop pred pops poorly sampled by bottom trawls
 
@@ -371,15 +379,15 @@ We had insufficient resources to address this in 2021.
 
 ## 37 Compare EOF (Link) thresholds to empirical thresholds (Large, Tam)
 
-
+Ecosystem overfishing indicators could not be updated this year due to delayed landings data, as noted in the SOE. As noted above under points 16, 22 and 27, exploratory analysis evaluating trends, empirical breakpoints, and thresholds for individual indicators are in progress. Simulation testing the EOF indicators is one of the potential analyses identified by the MAFMC SSC Ecosystem working group, so work on this may proceed over the coming year.
 
 ## 38 Time series analysis (Zooplankton/Forage fish) to tie into regime shifts
 
+Zooplankton and forage fish time series presented in the 2021 report could not be updated this year due to survey interruptions and sample processing delays. We hope to initiate this work in the coming years. 
 
+## 39 Optimum yield for ecosystem
 
-## 39 Optimum yeild for ecosystem
-
-
+This is related to the EOF indicators first presented in 2021. Ecosystem overfishing indicators could not be updated this year due to delayed landings data, as noted in the SOE. Simulation testing the EOF indicators and evaluating ecoystem reference points such as optimum yield is among the potential analyses identified by the MAFMC SSC Ecosystem working group, so work on this may proceed over the coming year.
 
 ## 40 Re-evaluate EPUs
 
