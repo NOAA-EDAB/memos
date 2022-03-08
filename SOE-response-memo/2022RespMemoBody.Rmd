@@ -165,7 +165,7 @@ The MAFMC SSC requested information on landings relative to allowable catches. T
 
 The 2022 MAFMC report was updated with additional Chesapeake Bay water quality indicators, as well as a new indicator on submerged aquatic vegetation. 
 
-The NEFMC requested more information on estuarine habitats. In 2021, PEP intern Rhegan Thomason (U. Texas) developed a reproducible data workflow using open data science tools and principles that will be used to provide estuarine habitat information into annual SOE reports She used data from the National Estuarine Research Reserve System (NERRS) to explore water quality and climate indicators at four sites in the New England region. NERRS conducts research and monitors the ecosystems to “track short-term variability and long-term changes due to natural and anthropogenic disturbances”. We acquired and compiled data from the NERRS Centralized Data Management Office to create a partially automated workflow that analyzes and visualizes available data. We developed open access code to generate time series and climatologies for temperature, dissolved oxygen, salinity, and chlorophyll. The project used RStudio with GitHub integration to version control data and code as well as enhance collaboration and transparency (https://github.com/rheganthomason/NERRSdata). This workflow was designed to be reproducible and available for future use anywhere the data is applicable.
+The NEFMC requested more information on estuarine habitats. In 2021, PEP intern Rhegan Thomason (U. Texas) developed a reproducible data workflow using open data science tools and principles that will be used to provide estuarine habitat information into annual SOE reports. She used data from the National Estuarine Research Reserve System (NERRS) to explore water quality and climate indicators at four sites in the New England region. NERRS conducts research and monitors the ecosystems to “track short-term variability and long-term changes due to natural and anthropogenic disturbances”. We acquired and compiled data from the NERRS Centralized Data Management Office to create a partially automated workflow that analyzes and visualizes available data. We developed open access code to generate time series and climatologies for temperature, dissolved oxygen, salinity, and chlorophyll. The project used RStudio with GitHub integration to version control data and code as well as enhance collaboration and transparency (https://github.com/rheganthomason/NERRSdata). This workflow was designed to be reproducible and available for future use anywhere the data is applicable.
 
 An Indicator catalog chapter details further results:  https://noaa-edab.github.io/catalog/NERRs.html. We welcome feedback to develop this information for future SOE reports. 
 
@@ -193,8 +193,7 @@ NEFSC are currently drafting a NMFS-DFO climate/fisheries collaboration framewor
 
 An index of fall turnover timing is presented in the NEFSC Current Conditions report each year: https://www.fisheries.noaa.gov/new-england-mid-atlantic/climate/current-conditions-northeast-us-shelf-ecosystem-spring-2021-update#fall-thermal-transition-day
 
-As noted in the Current Conditions summary, 
->The fall thermal transition continues to shift to progressively later on the year, raising concern over the timing of production cycles in the food web.
+As noted in the Current Conditions summary, "the fall thermal transition continues to shift to progressively later on the year, raising concern over the timing of production cycles in the food web."
 
 We can include these indicators or summarize results from Current Conditions and other sources in the SOE, in particular as they are prioritized by the Councils. 
 
@@ -208,9 +207,9 @@ Understanding the dynamics of apex predators, including pinnipeds and sharks, is
 
 ## 14 Forage availability index (Herring/Sandlance)
 
-As noted under point 12, Work is in progress to evaluate bluefish availability inshore vs offshore along with trends in recreational fishing effort for the 2022 Bluefish Research Track Assessment. While there are not plans to distinguish different forage fish species for this work, the aggregate forage fish index may be pesented in the SOE reports in coming years.
+As noted under point 12, work is in progress to evaluate bluefish availability inshore vs. offshore along with trends in recreational fishing effort for the 2022 Bluefish Research Track Assessment. While there are not plans to distinguish different forage fish species for this work, the aggregate forage fish index may be presented in the SOE reports in coming years.
 
-Additional research on sandlance co-ocurrence on Stellwagen Bank with seabird and marine mammal predators has been added to the Indicator catalog (https://noaa-edab.github.io/catalog/sandlance.html) for potential expansion in the future. 
+Additional research on sandlance co-occurrence on Stellwagen Bank with seabird and marine mammal predators has been added to the Indicator catalog (https://noaa-edab.github.io/catalog/sandlance.html) for potential expansion in the future. 
 
 ## 15 Fishery gear modifications accounted for in shark CPUE
 
@@ -222,7 +221,7 @@ Points 16, 22 and 27 are related, and exploratory analysis evaluating trends, em
 
 ## 17 Regime shifts in Social-Economic indicators
 
-The National Integrated Ecosystem Assessment Human Dimensions Working Group is working on regime shifts in social indicators. The WG, led by Geret DePiper, has a special issue call open for Marine Policy: https://www.journals.elsevier.com/marine-policy/call-for-papers/special-issue-call-for-papers-assessing-social-change-and-ranking-outcomes-in-support-of-ecosystem-based-management-regime-shifts-nonlinearities-and-ecosystem-status. There will be one paper for the Northeast (Walden and DePiper, presented at the SOE synthesis meeting) and a cross regional manuscript. This informatin can be incorporated into a future SOE as it becomes available. 
+The National Integrated Ecosystem Assessment Human Dimensions Working Group is working on regime shifts in social indicators. The WG, led by Geret DePiper, has a special issue call open for Marine Policy: https://www.journals.elsevier.com/marine-policy/call-for-papers/special-issue-call-for-papers-assessing-social-change-and-ranking-outcomes-in-support-of-ecosystem-based-management-regime-shifts-nonlinearities-and-ecosystem-status. There will be one paper for the Northeast (Walden and DePiper, presented at the SOE synthesis meeting) and a cross regional manuscript. This information can be incorporated into a future SOE as it becomes available. 
 
 ## 18 Linking Condition
 
@@ -273,6 +272,8 @@ kable_styling(latex_options = "striped")
 
 ```
 
+Funding has been obtained to have 1 or 2 interns working on creating this index.  The plan is for it to be available for the 2023 SOE.
+
 We seek feedback from the Council on the utility of this information to further develop an indicator for future SOE reports. Is monthly data more useful than annual as above? Would seasonal aggregates be useful? Is there a certain wind speed where vessels alter effort? We look forward to further integration of NWS information for our region.
 
 ## 20 VAST and uncertainty
@@ -309,7 +310,7 @@ Each category can be described in general:
 
 BENINV includes prey that are clearly identifiable as benthic (bottom dwelling) invertebrates by either name or general taxoomic category. Similarly, PELINV includes prey clearly identifiable as pelagic (water column dwelling) invertebrates, including some shrimp species that spend much time in the water column.
 
-FISH includes all fish, whether identified as individual species or as a taxonmic category, or “unidentified fish.” The FISH category also includes the commercially fished squid species, Illex and Doryteuthis (formerly Loligo).
+FISH includes all fish, whether identified as individual species or as a taxonmic category, or “unidentified fish.” The FISH category also includes the commercially fished squid species, *Illex* and *Doryteuthis* (formerly *Loligo*).
 
 OTHER includes everything that could not be placed into one of the above categories; for example, “unidentified invertebrates,” taxonomic categories that could be either benthic or pelagic, digested animal remains, plant material, etc.
 
@@ -321,15 +322,13 @@ knitr::include_graphics("images/MABaggdiet.png")
 
 There was no significant trend in predator size over time for the Mid-Atlantic. The number of stomachs sampled from all predators combined has increased over time for both seasons and all regions. There isn’t one dominantly sampled predator over time, so it would be difficult to say that any single predator was driving the aggregate trends. The proportion of piscivores sampled was dominant for much of the 1980s and 1990s, and the proportion benthivores sampled has been higher and more consistent in all areas and seasons since about 2000.
 
-Details of the work are summarized at https://sgaichas.github.io/learnR-dietdata/ExplainTrends.html. 
-
-An Indicator catalog chapter will appear here https://noaa-edab.github.io/catalog/diet-composition-analysis.html. 
+Details of the work are summarized at https://sgaichas.github.io/learnR-dietdata/ExplainTrends.html, and an Indicator catalog chapter is in progress here https://noaa-edab.github.io/catalog/diet-composition-analysis.html. 
 
 This information is also being examined as part of the fish condition links project described above. We welcome feedback on further directions for this work.
 
 ## 26 Mean stomach weight across feeding guilds
 
-This information is being examined as part of the fish condition links project, and is related to the intiial work described on trends in diet components by feeding group (25) above. However, we had insufficient resources to develop an independent indicator for the SOE in 2021.  
+This information is being examined as part of the fish condition links project, and is related to the initial work described on trends in diet components by feeding group (25) above. However, we had insufficient resources to develop an independent indicator for the SOE in 2021.  
 
 ## 27 Inflection points for indicators
 
