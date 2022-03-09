@@ -78,7 +78,7 @@ At the January 2022 meeting, WG member Mike Wilberg reported that he (and studen
 
 ## Ecosystem indicator evaluation and threshold analyses
 
-The WG outlined general themes for this objective at all meetings, but began discussing them in earnest at the January 2022 meeting. Initial thoughts for ecosystem and multispecies level indicator evaluation were outlined in October-November 2021 (Fig. \ref{}fig:multispp).
+The WG outlined general themes for this objective at all meetings, but began discussing them in earnest at the January 2022 meeting. Initial thoughts for ecosystem and multispecies level indicator evaluation were outlined in October-November 2021 (Fig. \ref{fig:multispp}).
 
 ```{r multispp, fig.cap="SSC outline incorporating ecosystem information into multispecies and ecosystem decisions.", out.width="100%"}
 knitr::include_graphics("images/multisppecosystem.png")
