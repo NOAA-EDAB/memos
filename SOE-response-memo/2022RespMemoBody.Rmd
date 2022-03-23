@@ -64,7 +64,7 @@ Use the code=readLines with the setup chunks from ecodata: need to do before eac
 ```
 # Introduction
 
-In the table below we summarize all comments and requests with sources. The Progress column briefly summarizes how we responded, with a more detailed response in the numbered Memo Section. In the Progress column, "SOE" indicates a change included in the report(s).
+In the table below we summarize all comments and requests with sources. The Progress column briefly summarizes how we responded, with a more detailed response in the numbered Memo Section.
 
 ```{r summtable}
 # take from google drive to automatically update any changes
