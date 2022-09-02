@@ -5,23 +5,33 @@ format: pdf
 editor: visual
 ---
 
-## Quarto
+## Review of Objectives and Outcomes
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+The MAFMC SSC Ecosystem Working Group (WG) was established in May  2021 to assist the Council in developing short term and long term objectives to advance the operational use of ecosystem information in management decisions. As reported in [September 2021](https://www.mafmc.org/s/b_Ecosystem-WG_Proposed-Tasks-August-2021.pdf), and in [March 2022](https://www.mafmc.org/s/d_March2022_SSCEcoWG.pdf) the WG has identified three general objectives: 
 
-## Running Code
+1.  Expanding and clarifying the ecosystem portion of the SSC OFL CV determination process (short term objective)
+1.  Developing prototype processes to provide multispecies and system level scientific advice appropriate for Council decision making, in particular where there are multispecies and multifleet tradeoffs linking directly to economic and social outcomes (long term objective)
+1.  Collaborating with SSC species leads, stock assessment leads, and relevant working groups in developing the stock-specific Ecosystem and Socio-economic Profiles (ESP) process to specify stock-specific Ecosystem ToRs that are impactful and can be integrated into assessments (moderate-term objective)
 
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+Objectives 1 and 3 aim to integrate appropriate ecosystem information at the stock level of management decision making, while objective 2 applies to current Council EAFM processes and potential future multispecies and system level objectives. 
 
-```{r}
-1 + 1
-```
+Intended outcomes of WG work for the Council include:
+*  An OFL CV process that makes better use of ecosystem information in determining the ABC
+*  Evaluation of multiple ecosystem indicators and potential development of thresholds for use in a revised EAFM risk assessment and/or other Council processes
+*  Increased range of opportunities for relevant ecosystem information to be considered in management decision processes
 
-You can add options to executable code like this
+## Progress
 
-```{r}
-#| echo: false
-2 * 2
-```
+Since March 2022 the working group has met twice (28 April, 18 July) and is scheduled to meet 20 September 2022.
 
-The `echo: false` option disables the printing of code (only output is displayed).
+In April, the working group outlined simulation work addressing Objective 1 and reviewed current ecosystem overfishing indicators addressing Objective 2.
+
+In July, the working group reviewed a method addressing Objective 2 presented by John Walden (NEFSC). The group also prioritized the request list for current and proposed ecosystem indicators to be worked on by the State of the Ecosystem production team.
+
+Work under Objective 3 has been ongoing with the participation of several working group members in multiple Research Track assessment working groups:
+Fay--black sea bass WG
+Gaichas--bluefish WG
+
+In addition, Gaichas participated in the SCS7 meeting in August 2022 and gave an overview of Ecosystem WG objectives and progress, as well as current MAFMC EAFM efforts. 
+
+
