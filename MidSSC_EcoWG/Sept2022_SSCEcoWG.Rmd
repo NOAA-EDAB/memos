@@ -1,12 +1,16 @@
 ---
-format: pdf
-editor: source
 fontsize: 11pt
 geometry: left=2cm, right=2cm, top=2cm, bottom=3cm, footskip = .5cm
+link-citations: yes
 output:
   pdf_document:
     includes:
       in_header: latex/header-sept22.tex
+    keep_tex: yes
+  html_document:
+    df_print: paged
+subparagraph: yes
+urlcolor: blue
 ---
 
 ## Review of Objectives and Intended Outcomes
@@ -59,9 +63,9 @@ The WG will continue to design simulations and scenarios to define more clearly 
 
 John Walden (NEFSC) presented an overview of [Index numbers](https://drive.google.com/drive/folders/1GUbsGuVEHfavrddt6yXc8-Y6iS4qa0GM) which evaluate sets of environmental indicators and output indicators to determine system performance at the July meeting. The approach combines important ecosystem outputs (e.g. commercial revenue, recreational days fished, right whale abundance) and likely ecosystem drivers of change in these outputs (e.g., chlorophyl a, zooplankton, aggregate fish biomass) into an analysis evaluating aggregating inputs and outputs into single indicators used to determine whether system performance has improved over time relative to a benchmark. The analysis uses Data Envelopment Analysis (DEA) to identify a "best practice frontier" of maximum output given system input, and determine the how current performance relates to this frontier.
 
-A initial case study using the SOE indicators identified above was presented, evaluating whether system performance changed after the passage of the Sustainable Fisheries Act (SFA). Both outputs and environmental conditions improved post-SFA, but the overall performance of the ecosystem did not. A second case study focused on Mid-Atlantic region indicators of commercial revenue and recreational days fished as outputs, and regional zooplankton and survey aggregate fish biomass as inputs. In this example, the recreational index was driving the overall declining trend in performance since 2010 even with the model predicting better/improved environmental conditions. Jon noted that an advantage of the Index numbers method is that the weights for the outputs and environmental factors used in the index do not need to be pre-determined; they are endogenously calculated as part of the DEA model.
+A initial case study using the SOE indicators identified above was presented, evaluating whether system performance changed after the passage of the Sustainable Fisheries Act (SFA). Both outputs and environmental conditions improved post-SFA, but the overall performance of the ecosystem did not. A second case study focused on Mid-Atlantic region indicators of commercial revenue and recreational days fished as outputs, and regional zooplankton and survey aggregate fish biomass as inputs. In this example, the recreational index was driving the overall declining trend in performance since 2010 even with the model predicting better/improved environmental conditions. John noted that an advantage of the Index numbers method is that the weights for the outputs and environmental factors used in the index do not need to be pre-determined; they are endogenously calculated as part of the DEA model.
 
-The WG saw considerable promise in this method. It has the potential to create one or a few different system level index(es) which is something the Council has been looking for. Point of presentation and work so far was to demonstrate the utility of the approach and not prescribe the specific inputs and outputs used -- certainly other inputs and outputs related to different priorities can be considered and included. The WG asked how many indices could potentially be included; this is limited by the number of observations. With limited data and many indicators included, the model can't explore the frontier space appropriately. The WG had some suggestions to increase observations and include more indices, including ,oving to looking at data at a monthly or seasonal timestep. Another approach would be to evaluate drivers for specific objectives separately. We could Consider developing a model for commercial landings and one for recreational landings as opposed to a full ecosystem performance model. Finally, the WG asked whether there would be a need to lag the data within the input and output information? Would expect some of these dynamics to respond immediately and others might be delayed.
+The WG saw considerable promise in this method. It has the potential to create one or a few different system level index(es) which is something the Council has been looking for. The point of the presentation and work so far was to demonstrate the utility of the approach and not prescribe the specific inputs and outputs used -- certainly other inputs and outputs related to different priorities can be considered and included. The WG asked how many indices could potentially be included; this is limited by the number of observations. With limited data and many indicators included, the model can't explore the frontier space appropriately. The WG had some suggestions to increase observations and include more indices, including looking at data at a monthly or seasonal timesteps where possible. Another approach would be to evaluate drivers for specific objectives separately. We could Consider developing a model for commercial landings and one for recreational landings as opposed to a full ecosystem performance model. Finally, the WG asked whether there would be a need to lag the data within the input and output information? We would expect some of these dynamics to respond immediately to environmental drivers, and others might be delayed.
 
 WG members Geret DePiper and Sarah Gaichas plan to meet with other SOE leads to explore how to bring Index Numbers forward in the upcoming SOE cycle.
 
