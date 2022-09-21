@@ -102,9 +102,19 @@ The WG agreed that to be used in the regional operational management context, mo
 
 #### Index Numbers for ecosystem performance
 
-John Walden (NEFSC) presented an overview of [Index numbers](https://drive.google.com/drive/folders/1GUbsGuVEHfavrddt6yXc8-Y6iS4qa0GM) at the July meeting, which evaluate sets of environmental indicators and management output indicators to determine system performance. The approach combines important management outputs linked to objectives (e.g. commercial revenue, recreational days fished, right whale abundance) and likely ecosystem drivers of change in these outputs (e.g., chlorophyl a, zooplankton, aggregate fish biomass) into an analysis evaluating aggregating inputs and outputs into single indicators used to determine whether system performance has improved over time relative to a reference year. 
+John Walden (NEFSC) presented an overview of [Index numbers](https://drive.google.com/drive/folders/1GUbsGuVEHfavrddt6yXc8-Y6iS4qa0GM) at the July meeting, which evaluate sets of environmental indicators and management output indicators to determine system performance. The approach combines important management outputs linked to objectives (e.g. commercial revenue, recreational days fished, right whale abundance) and likely ecosystem drivers of change in these outputs (e.g., chlorophyll a, zooplankton, aggregate fish biomass) into an analysis evaluating aggregating inputs and outputs into single indicators used to determine whether system performance has improved over time relative to a reference year. 
 
-A initial case study using the SOE indicators identified above was presented, evaluating whether system performance changed after the passage of the Sustainable Fisheries Act (SFA). Both outputs and environmental conditions improved post-SFA, but the overall performance of the ecosystem did not. A second case study focused on Mid-Atlantic region indicators of commercial revenue and recreational days fished as outputs, and regional zooplankton and survey aggregate fish biomass as inputs. In this example, the recreational index was driving the overall declining trend in performance since 2010 even with the model predicting better/improved environmental conditions. 
+A initial case study using the SOE indicators identified above was presented, evaluating whether system performance changed after the passage of the Sustainable Fisheries Act (SFA). Both outputs and environmental conditions improved post-SFA, but the overall performance of the ecosystem did not (Fig. \ref{fig:indexnums}; red line is combined index of system performance). 
+
+<!--![ADD CAPTION](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/IndexNumbersExample.png)-->
+
+```{r indexnums, fig.cap="Example index numbers approach, where Inputs include chl a, zooplankton, and aggregate fish biomass, and Outputs include commercial revenue, recreational days fished, and right whale abundance.", out.width='95%'}
+
+knitr::include_url("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/IndexNumbersExample.png")
+
+```
+
+A second case study focused on Mid-Atlantic region indicators of commercial revenue and recreational days fished as outputs, and regional zooplankton and survey aggregate fish biomass as inputs. Several other examples have been developed focusing on Mid-Atlantic indicators and objectives. 
 
 The WG saw considerable promise in this method. It has the potential to create one or a few different system level index(es) by integrating multiple individual indicators. The point of the presentation and work so far was to demonstrate the utility of the approach and not prescribe the specific inputs and outputs used, which is best determined in dicussion with the Council.  We could Consider developing a model for commercial landings and one for recreational landings as opposed to a full ecosystem performance model. 
 
