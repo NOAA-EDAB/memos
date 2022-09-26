@@ -102,13 +102,13 @@ The WG agreed that to be used in the regional operational management context, mo
 
 #### Index Numbers for ecosystem performance
 
-John Walden (NEFSC) presented an overview of [Index numbers](https://drive.google.com/drive/folders/1GUbsGuVEHfavrddt6yXc8-Y6iS4qa0GM) at the July meeting, which evaluate sets of environmental indicators and management output indicators to determine system performance. The approach combines important management outputs linked to objectives (e.g. commercial revenue, recreational days fished, right whale abundance) and likely ecosystem drivers of change in these outputs (e.g., chlorophyll a, zooplankton, aggregate fish biomass) into an analysis evaluating aggregating inputs and outputs into single indicators used to determine whether system performance has improved over time relative to a reference year. 
+John Walden (NEFSC) presented an overview of Index Numbers at the July meeting, which evaluate sets of environmental indicators and management output indicators to determine system performance. The approach combines important management outputs linked to objectives (e.g. commercial revenue, recreational days fished, right whale abundance) and likely ecosystem drivers of change in these outputs (e.g., chlorophyll a, zooplankton, aggregate fish biomass) into an analysis evaluating aggregating inputs and outputs into single indicators used to determine whether system performance has improved over time relative to a reference year. 
 
 A initial case study using the SOE indicators identified above was presented, evaluating whether system performance changed after the passage of the Sustainable Fisheries Act (SFA). Both outputs and environmental conditions improved post-SFA, but the overall performance of the ecosystem did not (Fig. \ref{fig:indexnums}; red line is combined index of system performance). 
 
 <!--![ADD CAPTION](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/IndexNumbersExample.png)-->
 
-```{r indexnums, fig.cap="Example index numbers approach, where Inputs include chl a, zooplankton, and aggregate fish biomass, and Outputs include commercial revenue, recreational days fished, and right whale abundance.", out.width='95%'}
+```{r indexnums, fig.cap="Example index numbers approach, where Environment includes chl a, zooplankton, and aggregate fish biomass, and Outputs include commercial revenue, recreational days fished, and right whale abundance.", out.width='95%'}
 
 knitr::include_url("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/IndexNumbersExample.png")
 
@@ -126,9 +126,15 @@ WG members Geret DePiper and Sarah Gaichas plan to meet with other SOE leads to 
 
 **Development of Ecosystem-Socioeconomic Profiles in Research Track assessment working groups facilitates the inclusion of ecosystem information within the current stock assessment process, and therefore fits within existing Council decision processes.** 
 
-Ecosystem and Socioeconomic Profiles (ESPs) are used within the North Pacific stock assessment process as a structured way to include stock-relevant ecosystem information within stock assessments. An overview of the North Pacific ESP development process is available [here](https://www.youtube.com/watch?v=kYi1SAI-Xtk). ESPs are currently in development in the Northeast US for multiple Mid-Atlantic and New England stocks. 
+Ecosystem and Socioeconomic Profiles (ESPs) are used within the North Pacific stock assessment process as a structured way to include stock-relevant ecosystem information within stock assessments. An overview of the North Pacific ESP development process is available [here](https://www.youtube.com/watch?v=kYi1SAI-Xtk). An example conceptual model of ecosystem interactions with Eastern Bering Sea Pacific cod demonstrates pathways for ecosystem indicators to enter the assessment process (Fig. \ref{fig:pcodesp}, source: https://www.fisheries.noaa.gov/alaska/2021-alaska-fisheries-science-center-year-review#ecosystem-and-socio-economic-profiles). 
 
-Work under Objective 3 continues with the participation of several working group members in multiple Research Track assessment working groups:
+```{r pcodesp, fig.cap="Caption from Alaska Fisheries Science Center: In 2021, our scientists developed a working conceptual Ecosystem and Socioeconomic Profile model of Eastern Bering Sea Pacific cod stock showing various indicators impacting the Pacific cod populations. Credit: NOAA Fisheries", out.width='95%'}
+
+knitr::include_url("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/Working_Conceptual_Model_EBSPcod.png")
+
+```
+
+ESPs are currently in development in the Northeast US for multiple Mid-Atlantic and New England stocks. Work under Objective 3 continues with the participation of several working group members in multiple Research Track assessment working groups:
 
 -   Gavin Fay, black sea bass WG (ongoing)
 -   Sarah Gaichas, bluefish WG (ongoing)
