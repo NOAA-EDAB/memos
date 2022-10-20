@@ -1,0 +1,40 @@
+---
+author:
+- Sarah Gaichas, Ph.D.
+- Research Fishery Biologist
+- Ecosystem Dynamics and Assessment Branch
+- Northeast Fisheries Science Center
+
+letterhead: letterhead/NEFSCletterhead.pdf
+
+output: linl::linl
+---
+
+MEMORANDUM FOR: Jonathan A. Hare, Ph.D., Science and Research Director
+
+FROM: Sarah Gaichas, Ph.D., Research Fishery Biologist
+
+SUBJECT:  Post-travel approval for Invitational Travel for Georges Bank EBFM Model Review
+
+\
+
+Requesting approval of invitational travel 9-15 October, 2022 for four expert reviewers:
+
+1.  Valerio Bartolino, Swedish University of Agricultural Sciences, Department of Aquatic Resources, Institute of Marine Research, Sweden
+1.  Alfonso Perez-Rodriguez, Spanish Oceanographic Institute (IEO) and Spanish Research Council (CSIC), Spain
+1.  Michael Spence, Centre for Environment, Fisheries and Aquaculture Science (CEFAS), UK
+1.  Vanessa Trijoulet, Danish Technical University, Denmark
+
+The objective of this travel is to conduct expert review of multiple Georges Bank multispecies and ecosystem model keyruns and evaluate readiness of models to provide scientific advice in support of EBFM. These reviewers were selected for expertise in multispecies and ecosystem modeling to provide an independent perspective on and rigorous review of models constructed at the Northeast Fisheries Science Center. These reviewers are not only recognized world experts in multispecies modeling; they have also applied these models in operational management contexts. Invitational travel will ensure that this expertise is applied in our review, reducing barriers to participation posed by funding. External expert review is a valued part of the management process in the Northeast US. Supplying funds for expert reviewers to travel to Woods Hole will ensure that a wide range of international expertise evaluates and improves multispecies assessment tools to support management in the Northeast US. 
+
+We are requesting approval post-travel because both I and the travel coordinator were unaware at the time that weneeded an invitational letter of approval. 
+
+Approximate combined travel costs for all four expert reviewers is \$20,000 (\$5,000 each traveler). Costs include flights, ground transportation, accommodations, and per diem for a one week review meeting. 
+
+Travel costs will be paid with 2022 MSA funds granted for the purpose of this review (TEMP Georges Bank EBFM Model Review). 
+
+\vfill
+
+CONCURRENCE
+
+Approved:_________________ Disapproved:________________ Let's Discuss_______________
