@@ -1,0 +1,93 @@
+---
+fontsize: 10pt
+geometry: left=2cm, right=2cm, top=2cm, bottom=3cm, footskip = .5cm
+link-citations: yes
+output:
+  pdf_document:
+    includes:
+      in_header: latex/header-scs7.tex
+    keep_tex: yes
+  html_document:
+    df_print: paged
+subparagraph: yes
+urlcolor: blue
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      message = FALSE,
+                      warning = FALSE,
+                      dev = "cairo_pdf",
+                      fig.align = 'center') #allows for inserting R code into captions
+
+library(tidyverse)
+#library(readxl)
+#library(kableExtra)
+library(ecodata)
+#library(googledrive)
+#library(pacman)
+#p_load(repmis, RCurl, DT, magrittr, gsubfn, stringr, tidyverse)
+
+```
+
+```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-setup.R")}
+```
+
+# US Policy defines EBFM as:
+
+>A systematic approach to fisheries management in a geographically specified area that contributes to the resilience and sustainability of the ecosystem; recognizes the physical, biological, economic, and social interactions among the affected fishery-related components of the ecosystem, including humans; and seeks to optimize benefits among a diverse set of societal goals. 
+
+https://www.fisheries.noaa.gov/resource/document/ecosystem-based-fisheries-management-policy
+
+To use ecosystem information in assessment and management processes, *a systematic approach* is required. Examples of systematic approaches to use ecosystem information in current stock assessments, in ABC determination, and in building new multispecies and system level decision processes are presented here. 
+
+## Ecosystem and Socioeconomic Profiles (ESPs): a systematic approach for stock assessments
+
+While the ESP was pioneered in Alaska, similar approaches have been implemented in multiple regions. In general, the approach begins with a stock life history conceptual model highlighting key ecosystem interactions with each life stage based on scientific literature, stakeholder knowledge, or both. 
+
+A systematic approach to using ecosystem information in stock assessments may result in direct quantitative incorporation of new data within analytical assessments, and or may result in a more qualitative assessment of ecosystem risk factors presented along with the assessment. Both uses allow managers to take relevant ecosystem information into account when making decisions about stock management. 
+
+## MAFMC SSC Ecosystem Working Group Objectives and Intended Outcomes
+
+The MAFMC SSC Ecosystem Working Group (WG) was established in May 2021 to assist the Council in developing short term and long term objectives to advance the operational use of ecosystem information in management decisions. As reported in [September 2021](https://www.mafmc.org/s/b_Ecosystem-WG_Proposed-Tasks-August-2021.pdf), and in [March 2022](https://www.mafmc.org/s/d_March2022_SSCEcoWG.pdf) the WG has identified three general objectives:
+
+1.  Expanding and clarifying the ecosystem portion of the SSC OFL CV determination process (short term objective)
+2.  Developing prototype processes to provide multispecies and system level scientific advice appropriate for Council decision making, in particular where there are multispecies and multifleet tradeoffs linking directly to economic and social outcomes (long term objective)
+3.  Collaborating with SSC species leads, stock assessment leads, and relevant working groups in developing the stock-specific Ecosystem and Socio-economic Profiles (ESP) process to specify stock-specific Ecosystem ToRs that are impactful and can be integrated into assessments (moderate-term objective)
+
+Objectives 1 and 3 aim to integrate appropriate ecosystem information at the stock level of management decision making, while objective 2 applies to current Council EAFM processes and potential future multispecies and system level objectives.
+
+Intended outcomes of WG work for the Council include:
+
+-   An OFL CV process that makes better use of ecosystem information in determining the ABC
+-   Evaluation of multiple ecosystem indicators and potential development of thresholds for use in a revised EAFM risk assessment and/or other Council processes
+-   Increased range of opportunities for relevant ecosystem information to be considered in management decision processes
+
+## Ecosystem criteria for OFL CV determination
+
+The WG focused on this objective in all four meetings. An initial step was outlining an SSC decision process for evaluating stock level ecosystem effects (Fig. \ref{fig:OFLCV}).
+
+```{r OFLCV, fig.cap="SSC process for incorporating ecosystem information into OFL CV decisions.", out.width="100%"}
+knitr::include_graphics("images/OFLCVprocess.png")
+```
+
+The WG outlined decisions for OFL CV centered on management responses. How would we manage differently if we knew the following attributes of a stock were changing?  
+*  M is increasing/decreasing
+*  Recruitment is in a low/high regime
+*  Growth rates are increasing/decreasing
+*  Fish are maturing earlier/later age or smaller/larger size
+*  Sex ratio is changing
+*  Spatial distribution is changing
+
+Other considerations are: Over what timeframe is change observed? Can we expect change to continue? Overall, to the extent possible the goal is to link changes to specific ecosystem factors to tease out expectations.
+
+The WG outlined next steps and is currently designing analyses to address a subset of these questions. 
+
+*  Flesh out OFL CV conceptual model (Fig. \ref{fig:OFLCV}) as it relates to these and other parameters
+*  Use Wiedenmann MSE framework to evaluate impact of changes in these parameters on OFL (assessment and projection) and or OFL CV, and performance of current HCR over multiple stocks already included in that model
+*  Continue coordination with stock-specific conceptual model development and current assessments through research track working groups/ESP process
+
+## MAFMC EAFM: a systematic approach to address interactions
+
+
