@@ -11,6 +11,7 @@ output:
     df_print: paged
 subparagraph: yes
 bibliography: operationalSOE.bib
+csl: american-fisheries-society.csl
 urlcolor: blue
 
 ---
@@ -39,9 +40,7 @@ library(ecodata)
 
 ## US Policy defines EBFM as:
 
->A systematic approach to fisheries management in a geographically specified area that contributes to the resilience and sustainability of the ecosystem; recognizes the physical, biological, economic, and social interactions among the affected fishery-related components of the ecosystem, including humans; and seeks to optimize benefits among a diverse set of societal goals. 
-
-https://www.fisheries.noaa.gov/resource/document/ecosystem-based-fisheries-management-policy
+>A systematic approach to fisheries management in a geographically specified area that contributes to the resilience and sustainability of the ecosystem; recognizes the physical, biological, economic, and social interactions among the affected fishery-related components of the ecosystem, including humans; and seeks to optimize benefits among a diverse set of societal goals. ([NOAA Fisheries EBFM Policy](https://www.fisheries.noaa.gov/resource/document/ecosystem-based-fisheries-management-policy))
 
 To use ecosystem information in assessment and management processes, *a systematic approach* is required. Examples of systematic approaches to use ecosystem information in current stock assessments, in ABC determination, and in building new multispecies and system level decision processes are presented here. While examples of SSC and Council processes come mainly from the Mid-Atlantic Fishery Management Council (MAFMC), these examples are not exhaustive, and many more examples exist from throughout the US.
 
@@ -53,7 +52,7 @@ A systematic approach to using ecosystem information in stock assessments may re
 
 ## MAFMC SSC advice process: a systematic approach for ABC determination
 
-### Council Risk Policy
+Both stock and ecosystem level information can be used to inform scientific advice delivered by SSCs to Councils. For example, the MAFMC SSC has developed a systematic approach to determining scientific uncertainty to determine ABC under the Council's p-star risk policy (Fig. \ref{fig:MAFMCriskpolicy}). Considering ecosystem factors is one element of this process, which also considers Data quality, Model appropriateness, Retrospective analysis, Comparison with simpler analysis, Recruitment trends, Prediction error, Informative F, and Simulations/MSE ([MAFMC SSC 2020](https://www.mafmc.org/s/Final_Revised-OFL-CV-guidance-document_06_19_20.pdf)). 
 
 ```{r MAFMCriskpolicy, fig.asp = 0.7, fig.show='hold', out.width="49%", fig.cap="MAFMC risk policy (left) and the ABC proportion of OFL given the OFL CV specified to represent scientific uncertainty (right)."}
 
@@ -103,50 +102,36 @@ p2
   
 ```
 
+The MAFMC SSC Ecosystem Working Group was established in May 2021 to assist the Council in increasing the range of opportunities for relevant ecosystem information to be considered in management decision processes. This systematic approach to using ecosystem information explicitly includes current and potential future management decision making at the stock, multispecies, fleet, community, and ecosystem levels. The group has three general objectives:
 
-Ecosystem Working Group Objectives and Intended Outcomes
-
-The MAFMC SSC Ecosystem Working Group (WG) was established in May 2021 to assist the Council in developing short term and long term objectives to advance the operational use of ecosystem information in management decisions. As reported in [September 2021](https://www.mafmc.org/s/b_Ecosystem-WG_Proposed-Tasks-August-2021.pdf), and in [March 2022](https://www.mafmc.org/s/d_March2022_SSCEcoWG.pdf) the WG has identified three general objectives:
-
-1.  Expanding and clarifying the ecosystem portion of the SSC OFL CV determination process (short term objective)
+1.  Expanding and clarifying the ecosystem portion of the SSC OFL CV determination process (short term objective, (Fig. \ref{fig:OFLCV}))
 2.  Developing prototype processes to provide multispecies and system level scientific advice appropriate for Council decision making, in particular where there are multispecies and multifleet tradeoffs linking directly to economic and social outcomes (long term objective)
-3.  Collaborating with SSC species leads, stock assessment leads, and relevant working groups in developing the stock-specific Ecosystem and Socio-economic Profiles (ESP) process to specify stock-specific Ecosystem ToRs that are impactful and can be integrated into assessments (moderate-term objective)
+3.  Collaborating with SSC species leads, stock assessment leads, and relevant working groups in developing the stock-specific ESP process to specify stock-specific Ecosystem ToRs that are impactful and can be integrated into assessments (moderate-term objective)
 
-Objectives 1 and 3 aim to integrate appropriate ecosystem information at the stock level of management decision making, while objective 2 applies to current Council EAFM processes and potential future multispecies and system level objectives.
-
-Intended outcomes of WG work for the Council include:
-
--   An OFL CV process that makes better use of ecosystem information in determining the ABC
--   Evaluation of multiple ecosystem indicators and potential development of thresholds for use in a revised EAFM risk assessment and/or other Council processes
--   Increased range of opportunities for relevant ecosystem information to be considered in management decision processes
-
-## Ecosystem criteria for OFL CV determination
-
-The WG focused on this objective in all four meetings. An initial step was outlining an SSC decision process for evaluating stock level ecosystem effects (Fig. \ref{fig:OFLCV}).
-
-```{r OFLCV, fig.cap="SSC process for incorporating ecosystem information into OFL CV decisions.", out.width="100%"}
+```{r OFLCV, fig.cap="SSC process for incorporating ecosystem information into OFL CV decisions.", out.width="90%"}
 knitr::include_graphics("images/OFLCVprocess.png")
 ```
 
-The WG outlined decisions for OFL CV centered on management responses. How would we manage differently if we knew the following attributes of a stock were changing?  
-*  M is increasing/decreasing
-*  Recruitment is in a low/high regime
-*  Growth rates are increasing/decreasing
-*  Fish are maturing earlier/later age or smaller/larger size
-*  Sex ratio is changing
-*  Spatial distribution is changing
+The keynote outlined several specific analyses in progress evaluating the impact of ecosystem factors on uncertainty in the OFL CV. Analyses aim to evaluate both the benefits of making the correct OFL CV decision and the costs of an incorrect decision. Other analyses are in progress to support MAFMC's Ecosystem Approach to Fisheries Management (EAFM). 
 
-Other considerations are: Over what timeframe is change observed? Can we expect change to continue? Overall, to the extent possible the goal is to link changes to specific ecosystem factors to tease out expectations.
+## MAFMC EAFM: a systematic approach to address ecosystem interactions
 
-The WG outlined next steps and is currently designing analyses to address a subset of these questions. 
+The MAFMC developed its EAFM structured decision process to integrate and make better use of climate, ecosystem, social, and economic information within current operational fisheries management [@muffley_there_2021, @gaichas_framework_2016]. The EAFM process begins with risk assessment to characterize a broad range of risks to managed species and fisheries, and to identify high priority fisheries for further analysis. Next, conceptual modeling identifies interactions between ecosystem risks for a high priority fishery or issue. Conceptual modeling forms a basis for management strategy evaluation (MSE) focused on actions to achieve a set of management objectives, but also includes key risks such as climate, ecological, or socioeconomic interactions identified earlier in the EAFM process. 
 
-*  Flesh out OFL CV conceptual model (Fig. \ref{fig:OFLCV}) as it relates to these and other parameters
-*  Use Wiedenmann MSE framework to evaluate impact of changes in these parameters on OFL (assessment and projection) and or OFL CV, and performance of current HCR over multiple stocks already included in that model
-*  Continue coordination with stock-specific conceptual model development and current assessments through research track working groups/ESP process
+Regular ecosystem reporting and maintenance of long term indicator time series is a key component of a systematic approach, as noted in multiple US regions [@zador_ecosystem_2016; @harvey_importance_2020]. As MAFMC has developed and implemented EAFM, annual ecosystem reporting has evolved to more clearly link fishery management objectives with ecosystem indicators [@depiper_operationalizing_2017]. For the 2021 and subsequent reports, the SOE outline was restructured to reinforce indicator linkages to management objectives and to improve synthesis across indicators by emphasizing multiple drivers of social-ecological change. Framed climate indicators and offshore wind development indicators in terms of risks to meeting fishery management objectives to improve management relevance. Implications sections were added after all indicators to clearly link information to management. Finally, the SOE summary section was restructured into a report-card style table linking indicator trends to ecosystem level management objectives. With continued MAFMC feedback and input, brief and plain-language State of the Ecosystem reports now include updates on both general climate conditions and linkages to managed species and their habitats. These reports are compiled using open-science principles, with indicator data and documentation freely available online [@bastille_improving_2021]. Example results from the 2022 SOE were included in the keynote talk.
 
-## MAFMC EAFM: a systematic approach to address interactions
+The MAFMC completed an initial EAFM risk assessment in 2017 [@gaichas_implementing_2018] using a combination of SOE indicators and other published risk assessments, including the Northeast Regional Climate Vulnerability Analysis [@hare_vulnerability_2016]. The risk assessment is updated annually based on ecosystem and management indicators; an example of the 2022 risk assessment was presented during the keynote. Based on the intial risk assessment, MAFMC selected summer flounder as a high priority fishery for further EAFM analysis. MAFMC completed EAFM conceptual modeling for summer flounder in 2019 [@depiper_learning_2021], and completed MSE of summer flounder recreational fishery measures to reduce discards and improve angler welfare while meeting stock status objectives ([MAFMC Summer Flounder MSE 2022](https://www.mafmc.org/actions/summer-flounder-mse)). 
 
 
+## Systematic approaches for potential multispecies and ecosystem level decisions
+
+Focus on developing decision processes that are able to use ecosystem information
+
+The success of the EAFM process and continued use of ecosystem information in management hinges on scientist-management collaboration with stakeholder engagement throughout.
+
+Ecosystem reporting, risk and vulnerablity assessment useful tools
+Stock level ESPs a good example
+Multispecies and system level indicators of productivity change and overexploitation
 
 # References
 
