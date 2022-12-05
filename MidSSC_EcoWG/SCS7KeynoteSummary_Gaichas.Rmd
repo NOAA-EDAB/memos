@@ -10,6 +10,7 @@ output:
   html_document:
     df_print: paged
 subparagraph: yes
+bibliography: operationalSOE.bib
 urlcolor: blue
 
 ---
@@ -34,21 +35,76 @@ library(ecodata)
 ```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-setup.R")}
 ```
 
-# US Policy defines EBFM as:
+# Using Ecosystem Information in the Stock Assessment and Advice Process
+
+## US Policy defines EBFM as:
 
 >A systematic approach to fisheries management in a geographically specified area that contributes to the resilience and sustainability of the ecosystem; recognizes the physical, biological, economic, and social interactions among the affected fishery-related components of the ecosystem, including humans; and seeks to optimize benefits among a diverse set of societal goals. 
 
 https://www.fisheries.noaa.gov/resource/document/ecosystem-based-fisheries-management-policy
 
-To use ecosystem information in assessment and management processes, *a systematic approach* is required. Examples of systematic approaches to use ecosystem information in current stock assessments, in ABC determination, and in building new multispecies and system level decision processes are presented here. 
+To use ecosystem information in assessment and management processes, *a systematic approach* is required. Examples of systematic approaches to use ecosystem information in current stock assessments, in ABC determination, and in building new multispecies and system level decision processes are presented here. While examples of SSC and Council processes come mainly from the Mid-Atlantic Fishery Management Council (MAFMC), these examples are not exhaustive, and many more examples exist from throughout the US.
 
 ## Ecosystem and Socioeconomic Profiles (ESPs): a systematic approach for stock assessments
 
-While the ESP was pioneered in Alaska, similar approaches have been implemented in multiple regions. In general, the approach begins with a stock life history conceptual model highlighting key ecosystem interactions with each life stage based on scientific literature, stakeholder knowledge, or both. 
+Ecosystem and Socioeconomic Profiles (ESPs) were pioneered in Alaska [@shotwell_synthesizing_2022], although similar approaches have been implemented in multiple regions [@tolimieri_oceanographic_2018; @haltuch_oceanographic_2020]. In general, the approach begins with a problem statement based on previously observed assessment issues combined with a stock life history conceptual model highlighting key ecosystem interactions with each life stage based on scientific literature, stakeholder knowledge, or both. Then, ecosystem indicators associated with the key interactions are developed and and analyzed. Finally, the stock specific ecosystem information is summarized and reported within the same management review process as the stock assessment itself. 
 
-A systematic approach to using ecosystem information in stock assessments may result in direct quantitative incorporation of new data within analytical assessments, and or may result in a more qualitative assessment of ecosystem risk factors presented along with the assessment. Both uses allow managers to take relevant ecosystem information into account when making decisions about stock management. 
+A systematic approach to using ecosystem information in stock assessments may result in direct quantitative incorporation of new data within stock assessments [@miller_state-space_2016], and or may result in a more qualitative assessment of ecosystem risk factors presented along with the assessment [@dorn_risk_2020]. Both uses allow managers to take relevant ecosystem information into account when making decisions about stock management. For example, the MAFMC SSC ABC determination process currently uses multiple information sources. 
 
-## MAFMC SSC Ecosystem Working Group Objectives and Intended Outcomes
+## MAFMC SSC advice process: a systematic approach for ABC determination
+
+### Council Risk Policy
+
+```{r MAFMCriskpolicy, fig.asp = 0.7, fig.show='hold', out.width="49%", fig.cap="MAFMC risk policy (left) and the ABC proportion of OFL given the OFL CV specified to represent scientific uncertainty (right)."}
+
+riskpol <- data.frame(Bfrac = c(0, 0.1, 1.0, 1.5, 2.5),
+                      Current = c(0, 0, 0.45, 0.49, 0.49),
+                      Pre2020 = c(0, 0, 0.4, 0.4, 0.4)
+)
+
+riskpol <- riskpol %>%
+  pivot_longer(-Bfrac, names_to = "pstar")
+
+p1 <- ggplot2::ggplot(riskpol, aes(x=Bfrac, y=value, linetype = pstar)) +
+  geom_path(show.legend = TRUE) +
+  theme_minimal() +
+  xlab("B/Bmsy") +
+  ylab("p*") +
+  labs(linetype = "Policy")#+
+  #theme(legend.position="bottom")
+
+
+#print(p1, vp=grid::viewport(gp=grid::gpar(cex=1.5)))
+
+ABCprop <- data.frame(Bfrac = seq(0, 2.5, 0.01)) %>%
+  dplyr::mutate(pstar = case_when(Bfrac <= 0.1 ~ 0,
+                                  Bfrac > 0.1 & Bfrac <= 1.0 ~ (Bfrac-0.1)*((0.45-0)/(1-0.1)) ,
+                                  Bfrac > 1.0 & Bfrac <= 1.5 ~ (Bfrac-1.0)*((0.49-0.45)/(1.5-1))+0.45,
+                                  Bfrac > 1.5 ~ 0.49)) %>%
+  dplyr::mutate("CV=60%" = qlnorm(pstar, log(1), log(0.60 + 1)),
+                "CV=100%" = qlnorm(pstar, log(1), log(1.00 + 1)),
+                "CV=150%" = qlnorm(pstar, log(1), log(1.50 + 1))) %>%
+  pivot_longer(-c(Bfrac, pstar), names_to = "CVlevel")
+                       
+
+p2 <- ggplot2::ggplot(ABCprop, aes(x=Bfrac, y=value, colour=CVlevel)) +
+  geom_line()+  
+  theme_minimal() +
+  xlab("B/Bmsy") +
+  ylab("ABC/OFL proportion") +
+  labs(colour = "OFL CV") #+
+  #theme(legend.position="bottom")
+
+#print(p1, p2, vp=grid::viewport(gp=grid::gpar(cex=1.5)))
+
+p1
+
+p2
+  
+```
+
+
+Ecosystem Working Group Objectives and Intended Outcomes
 
 The MAFMC SSC Ecosystem Working Group (WG) was established in May 2021 to assist the Council in developing short term and long term objectives to advance the operational use of ecosystem information in management decisions. As reported in [September 2021](https://www.mafmc.org/s/b_Ecosystem-WG_Proposed-Tasks-August-2021.pdf), and in [March 2022](https://www.mafmc.org/s/d_March2022_SSCEcoWG.pdf) the WG has identified three general objectives:
 
@@ -90,4 +146,7 @@ The WG outlined next steps and is currently designing analyses to address a subs
 
 ## MAFMC EAFM: a systematic approach to address interactions
 
+
+
+# References
 
