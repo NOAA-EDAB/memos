@@ -1,7 +1,11 @@
 ---
 title:
 geometry: left=2cm, right=2cm, top=2cm, bottom=3cm, footskip = .5cm
-output: md_document
+output:
+  pdf_document:
+    includes:
+      in_header: latex/header1.tex
+    keep_tex: yes
 bibliography: SOE2020.bib
 csl: plos.csl
 link-citations: yes
@@ -25,6 +29,15 @@ library(ecodata)
 library(googledrive)
 library(pacman)
 p_load(repmis, RCurl, DT, magrittr, gsubfn, stringr, tidyverse)
+
+library(flextable)
+
+set_flextable_defaults(
+  font.size = 9,
+  padding.bottom = 0,  
+  padding.top = 1, 
+  line_spacing = 1,
+  font.family = "Palatino")
 
 
 ```
@@ -60,9 +73,9 @@ Use the code=readLines with the setup chunks from ecodata: need to do before eac
 ```
 # Introduction
 
-In the table below we summarize all comments and requests with sources. The new Priority column was derived from combined discussion with the Mid-Atlantic SSC ecosystem working group and a survey of selected MAFMC members coordinated by Council staff in July 2022. The Progress column briefly summarizes how we responded, with a more detailed response in the numbered Memo Section. In the Progress column, "SOE" indicates a change included in the report(s).
+In the table below we summarize all comments and requests with sources. The memo is now reorganized into categories of requests in descending order of overall Council priority. The new Priority column was derived from combined discussion with the Mid-Atlantic SSC ecosystem working group and a survey of selected MAFMC members coordinated by Council staff in July 2022. The Progress column briefly summarizes how we responded, with a more detailed response to each request in a section for each request category. In the Progress column, "SOE" indicates a change included in the report(s).
 
-```{r summtable}
+```{r summtable, ft.arraystretch = 1}
 # take from google drive to automatically update any changes
 #googledrive::drive_download("Northeast IEA/State of the Ecosystem Reports/SOE 2020/Workshop & Meeting Notes/Request checklist", path="2019requests.xlsx", overwrite = TRUE)
 
@@ -118,15 +131,18 @@ flextable::as_grouped_data(requeststab, groups = "Aggregate") %>%
   flextable::as_flextable(hide_grouplabel=TRUE) %>% 
   flextable::align(i = ~ !is.na(Aggregate), align = "left") %>% 
   flextable::bold(i = ~ !is.na(Aggregate), bold = TRUE) %>%
+  flextable::bg(i = ~ !is.na(Aggregate), bg = "gainsboro", part = "body") %>%
+  flextable::hline(i = ~ !is.na(Aggregate)) %>%
   flextable::set_caption("State of the Ecosystem requests by category and Council priority") %>%
-  flextable::autofit() 
+  #flextable::autofit() 
+  flextable::width(width = c(2.5,0.5,0.7,0.7,0.7,1.5))
 
 ```
 
 
 # Responses to comments
 
-```{r, results='asis'}
+```{r, results='asis', eval=FALSE}
 
 for(j in 1:length(unique(requeststab$Aggregate))) {
   cat("##", unique(requeststab$Aggregate)[j], "\n")
@@ -140,6 +156,58 @@ for(j in 1:length(unique(requeststab$Aggregate))) {
 }
 
 ```
+
+## System level thresholds/ref pts
+
+Further refining ecosystem level overfishing (EOF) indicators and investigating optimum yield (OY) at the ecosystem level was identified as highest priority by both the MAFMC SSC working group and by surveyed MAFMC members. Methods for evaluating ecosystem indicator trends, inflection points, and breakpoints (regimes, see below) were also ranked highest priority by both SSC and Council as these methods apply to ecosystem level thresholds and reference points, as well as to indicators at the functional group or stock level, or to indicators of climate or habitat risk. Several other SSC and Council requests are related to or support these analyses and can likely be addressed by planned analyses.
+
+The EOF indicators were first presented in 2021 and were discussed in depth with the MAFMC SSC working group on 2022 and 2023. *Progress here*
+
+We expect to present results of EOF analyses to the SSC in late 2023 for possible inclusion in the 2024 SOE.
+
+Automated methods for estimating both short term and long term trends, evaluating time series inflection points, and identifying breakpoints (regimes) are being tested. The ecodata R package already incorporates long term trend estimation based on @hardison. *Progress here*
+
+The short term trend fitting method needs more simulation testing to address performance with missing data. If this simulation can be completed, it is likely to be available for SOE and risk assessment analyses in 2023 for possible inclusion in the 2024 SOE.
+
+The inflection point identification method has been implemented as a protoype which requires more in depth review. If this review can be completed, it is likely to be available for SOE and risk assessment analyses in 2023 for possible inclusion in the 2024 SOE.
+
+A method for identifying breakpoints has been implemented and a prototype analysis developed using SOE indicators in 2022. If this method can be further developed it may be reviewed in 2023 along with other regime shift analyses (see below). 
+
+## Management
+
+Council members tended to give higher priority rankings to requests in this category relative to the SSC working group, but overall both ranked management related requests high priority.
+
+*Progress here*
+
+## Short term forecasts
+
+The SSC working group ranked these relatively new requests higher priority relative to Council members, but overall both ranked short term forecasting requests high priority. 
+Additional resources are needed to address these requests in the coming year.
+
+## Regime shifts
+
+We have a group meeting to coordinate this. add the table
+
+## Multiple system drivers
+
+
+
+## Functional group level status/thresholds/ref pts
+
+
+
+## Stock level indicators (ESP)
+
+
+
+## SOE admin
+
+These relatively new requests were not ranked by the MAFMC SSC or Council members. However, both are in progress.
+
+Investigation of uses of the SOE as requested by the MAFMC SSC is in progress with the assistance of NOAA communications experts using a combination of website analytics and citation information. We hope to have an update on uses of the SOE for the 2024 report. 
+
+The restructuring of this memo according to prioritization is intended to partially address the requests for timelines on in progress SOE requests by the NEFMC SSC. While not all project timelines are currently available, we have reported estimates where possible. In addition, the effort to prioritize requests in 2022 ensure that limited resources are applied to the highest priority issues.
+
 
 # References
 
