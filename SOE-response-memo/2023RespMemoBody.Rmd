@@ -196,17 +196,59 @@ The SSC working group ranked these new requests higher priority relative to Coun
 
 While using phytoplankton trends to forecast fish stocks may be feasibly simulation tested within the Atlantis modeling framework described above for EOF indicators, this is a long term project that would require dedicated effort to achieve, likely by a postdoctoral researcher.
 
-Some experimental short term forecasts of regional water temperature are currently available, and could be investigated or presented to the SSCs during the 2024 cycle if this remains a high priority. Skill assessment of these forecasts, as well as determining the context in which they would be used (stock assessment projections? habitat projections? other uses?) would be needed to bring them into the management process. This project would require a similar level of effort to the one above. 
+Some experimental short term forecasts of regional water temperature are currently available, and could be investigated or presented to the SSCs during the 2024 cycle if this remains a high priority. Short term forecasts of species distributions for fisheries management are [in progress with Rutgers University and MAFMC](https://www.mafmc.org/s/Rutgers-Project-Overview.pdf), which may also address this request. Skill assessment of these forecasts, as well as determining the context in which they would be used (stock assessment projections? habitat projections? other uses?) would be needed to bring them into the management process (this is better developed for the ongoing Rutgers/MAFMC project). Incorporating short term forecasts into the SOE outside the ongoing Rutgers/MAFMC project would require a similar level of effort to the phytoplankton/fish forecasting project above. 
 
 Additional resources are needed to address these requests in the coming year.
 
 ## Regime shifts
 
-We have a group meeting to coordinate this. add the table
+Adding information on regime shifts was considered a high priority by both the Council and SSC. Time series analysis of zooplankton and forage fish to evaluate potential linked regime shifts is currently in progress, and multiple projects may contribute to this. We are working to coordinate existing projects (see below) into a synthesis product for the SOE. Because the projects are on different timelines, it is difficult to give a target date for SOE synthesis. However, we expect to have some project results published prior to the 2024 SOE. With these publications complete, some synthesis may be presented in the following SOE cycle. 
+
+```{r, results='hide'}
+  regimefile <- googledrive::drive_find(pattern = "Regime Shift Summary", type = "spreadsheet")
+ # 
+  regimes <- googledrive::drive_download(regimefile, type = "csv", overwrite = TRUE) %>%
+    {read.csv(.$local_path)} 
+
+#requests <- read.csv(here("SOE 2021 Response Checklist.csv"))
+```
+
+```{r regimetable, ft.arraystretch = 1}
+# take from google drive to automatically update any changes
+#googledrive::drive_download("Northeast IEA/State of the Ecosystem Reports/SOE 2020/Workshop & Meeting Notes/Request checklist", path="2019requests.xlsx", overwrite = TRUE)
+
+#requests <- read_excel("2019requests.xlsx", sheet="MemoTable", range = 'A1:D31')
+
+#requests$`Memo Section` <- paste0("[", requests$`Memo Section`, "](#",requests$`Memo Section`,")") #trying to make clickable links in the table to sections, not working
+#adding format = "markdown" to kable statement made them links but they still didnt jump to report sections and messed up other formatting
+
+regimestab <- regimes %>%
+  dplyr::select(Analysis, Methods, Ecosystem.Category, Temporal.Scale, Spatial.Scale, ETA) %>%
+  dplyr::ungroup() 
+  
+flextable::flextable(regimestab) %>% 
+  flextable::theme_zebra() %>%
+  flextable::set_caption("Selected Regime Shift Projects.") %>%
+  #flextable::autofit() 
+  flextable::width(width = c(1.5,1,1,1,1,1.5))
+
+```
+
+Regime shifts in socio-economic indicators may be addressed in the ongoing work described above by John Walden and Geret DePiper (NEFSC) integrating multiple indicators into Index Numbers. Once the structure of the Index Numbers is determined, these time series can be evaluated for change points using any of the methods described in the table above. 
 
 ## Multiple system drivers
 
-Many projects are currently in progress. 
+This category contains a wide array of requests with many projects currently in progress. There were two requests ranked high priority, eight ranked moderate priority (or unranked because they are newer requests), and eight ranked low or lowest priority. Given the number of SOE requests, those ranked lowest priority that have not already been started are unlikely to be addressed. 
+
+The high priority request in this category is incorporating the ongoing fish condition project and associated analyses into the SOE. Regime shift analyses of fish condition may be available for the 2024 SOE, while linking fish condition to ecosystem drivers using GAMs will require more time with current resources. 
+
+One moderate priority request was included in the 2023 SOE: a fall turnover index has been included in both the MAFMC and NEFMC reports in the Climate and Ecosystem Risks sections.
+
+One low priority request was included in the 2023 SOE: we updated text with further explanation of the Environmental Justice indicators.
+
+An unranked request to evaluate links between species availability inshore and offshore and trends in recreational fishing effort was partially addressed using a spatial index of forage fish to evaluate bluefish availability to the recreational fishery during the research track assessment in December 2022. This forage fish index has been included in the 2023 SOE. 
+
+Several other moderate/unranked and low priority requests are currently in progress or started as intern projects, including a cumulative weather index, mean stomach weights across feeding guilds, and estuarine water quality for the NEFMC SOE. If sufficient resources are found to finish these projects, they could be included in the 2024 SOE. 
 
 ## Functional group level status/thresholds/ref pts
 

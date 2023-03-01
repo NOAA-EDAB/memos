@@ -1,0 +1,9 @@
+Analysis,Qualitative/Quantitative,Methods,Ecosystem Category,SingleSPP/MultiSPP,Temporal Scale,Spatial Scale,ETA,Resources Needed,Caveats,How It could or has been used
+SOE Indicator Comparison,Qual,Rpart,Env to Fish,Multi,Annual,EPU,Available Now,None,Does Not define connections between indicators - Just Explores if shift exists and lines up indicators with similar shift period,Could be used to identify possble inputs to Quantitative Analyses
+Condition (1),Quant,RPart,Env to Fish,Either,Annual?,EPU or shelf,Multi species available now ,Applied for SAIP grant to expand work on single species,"Identifies potential environmental drivers of changes in fish health and potential recruitment regimes, but correlative by nature",butterfish assessment used condition regime shift evidence to determine time period for projections - Possible for mackerel and herring too
+Condition (2),Quant,DFA,Fish,Multi,Annual?,EPU,,,Could include covariates in future,
+Zooplankton,Quant,?,Zoo,Single,Seasonal,EPU?,,,,"1. Centropages - linked to Haddock distribution (Morse et al. in review, Friedland et al (year?)) and experience regime shifts, 2. Pseudocalanus link to Cod recruitment for new WGOM stock (Cod WG TOR1)"
+Zooplankton VAST,Quant,EOF,Zoo,Multi,Seasonal,EPU,,,,
+SST,Quant,?,Env,NA,?,NW Atlantic,,,,Could help explain drivers
+DEA,Quant,DEA,Zoo to Landings,Multi,Annual,EPU,,,,Could be used to tell is system is more or less beneficial to humans than before
+Stock Recruit,Quant,changepoint and GAMS,fish,single,annual,stock,Probably easy lift with stock smart,Stock recruit relationships from stocksmart,Assumes S/R relationships are true and/or driven by env. or F,Could help explain changes in stock recruit relationships for many NEUS stocks (see chapter too of Bloker's dissertation: https://drive.google.com/file/d/1gfze63m-B12ZfMbdzne9M4kRDJGORBX2/view?usp=share_link) 
