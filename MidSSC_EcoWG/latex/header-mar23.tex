@@ -20,8 +20,24 @@
 \usepackage{ifthen}
 %\usepackage{everypage-1x}
 \usepackage{float}
-%\usepackage{subfig}
+\usepackage{subfig}
 %\usepackage{subcaption}
+
+%The following codes scale images in mainmatter if necessary
+%It will be overwrite by local setting in \includegraphics[width, height, ...]{}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\textwidth \textwidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>0.5\textheight 0.5\textheight\else\Gin@nat@height\fi}
+\makeatother
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+%The following codes add max dimension options to includegraphics
+\usepackage[export]{adjustbox} %Needed for max width
+\usepackage{etoolbox} %Needed for \pathcmd
+\expandafter\patchcmd\csname Gin@ii\endcsname
+{\setkeys{Gin}{#1}}
+{\setkeys{Gin}{max width=\textwidth, max height=.5\textwidth,keepaspectratio,#1}}
+{}
+{}
 
 % Avoid struggling over figure and table float in Rmarkdown
 \let\origfigure\figure
