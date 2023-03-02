@@ -52,15 +52,25 @@ Intended outcomes of WG work for the Council include:
 
 At the joint Council/SSC meeting in October 2022, the SSC Ecosystem Working Group provided an update on current work, and sought Council feedback on priorities for development and use of integrated ecosystem-level indicators within existing or new Council processes (see [October 2022 report to the Council](https://www.mafmc.org/s/Tab12_Joint-Council-SSC_2022-10.pdf), p.3-8 and [Presentation](https://www.mafmc.org/s/Tab-12_Joint-Council-SSC-meeting_10_22.pdf), slides 6-11).
 
-Since October 2022, WG member Sarah Gaichas submitted a summary of the SCS7 Keynote "Using Ecosystem Information in the Stock Assessment and Advice Process that highlights MAFMC SSC and SSC Ecosystem WG projects (see draft attached at the end of this document). The WG has met once (27 February 2023).
+Since October 2022, WG member Sarah Gaichas submitted a summary of the SCS7 Keynote "Using Ecosystem Information in the Stock Assessment and Advice Process" that highlights MAFMC SSC and SSC Ecosystem WG projects (see draft attached at the end of this document). The WG has met once (27 February 2023).
 
 At the February 2023 meeting, the WG received updates on four projects related to the objectives above.
 
 ### Objective 1: OFL CV and ecosystem effects
 
-**This project will enhance the SSC's current OFL CV process, and therefore fits within existing Council decision processes.** 
+**These projects will enhance the SSC's current OFL CV process or address stock reference points, and therefore fit within existing Council decision processes.** 
 
-WG member Mike Wilberg's lab (U. Maryland) is collaborating with John Wiedenmann's lab (Rutgers) to simulate an environmental effect on stock recruitment and test how it impacts assessment uncertainty. Implications of choosing both the appropriate OFL CV based on an environmental effect linked to recruitment and an inappropriate OFL CV will be evaluated using an updated MSE framework. The group is conducting a mini-review on environmental drivers in the region to get an idea of trends, periodicity, autocorrelation to inform the analysis. A simulated species based on Summer flounder is the initial case study, with extension to a simulated species based on Atlantic Mackerel proposed for future work. 
+#### ABC decisions with environmentally driven recruitment
+
+WG member Mike Wilberg's lab (U. Maryland) is collaborating with John Wiedenmann's lab (Rutgers) to simulate an environmental effect on stock recruitment and test how it impacts assessment uncertainty. Implications of choosing both the appropriate OFL CV based on an environmental effect linked to recruitment and an inappropriate OFL CV will be evaluated using an updated MSE framework. The group is conducting a mini-review on environmental drivers in the region to get an idea of trends, periodicity, autocorrelation to inform the analysis. A simulated species based on Summer flounder is the initial case study. 
+
+A literature review of summer flounder environmental influences along with analysis of relationships between multiple SOE environmental indicators and summer flounder recruitment is in progress. In addition, hypothetical relationships between environmental drivers and summer flounder recruitment have been developed for testing within the MSE framework. The group is compiling a list of harvest control rules representing those used across the US (including the MAFMC risk policy) as well as environmentally-driven control rules to be tested within the framework. Work is planned for May, and another update can be given in June 2023.
+
+The Ecosystem WG agreed with reducing the scope of work to focus on a summer flounder-like species, rather than extending to an additional life history type.
+
+#### Alternative stock performance metrics considering current conditions
+
+WG member Paul Rago and SSC member Brian Rothschild presented a method to recast stock assessment outputs taking explicit account of current (perhaps environmentally driven) realized recruitments, rather than all observed historical recruitments. 
 
 ### Objective 2: Multispecies and system level ecosystem advice
 
@@ -68,55 +78,24 @@ WG member Mike Wilberg's lab (U. Maryland) is collaborating with John Wiedenmann
 
 #### Ecosystem overfishing indicators
 
-Andy Beet (NEFSC) and Sarah Gaichas presented detailed information on current [ecosystem overfishing (EOF) indicators](https://noaa-edab.github.io/presentations/20220428_SSCEcoWG_Gaichas.html#1) at the April meeting. These indicators (Figs. \ref{fig:fogarty} and \ref{fig:ryther}) were presented in the 2021 SOE. 
+Andy Beet (NEFSC) presented an update from the April 2022 meeting on data inputs, data analysis, methodology, and planned empirical and simulation analyses to further develop regionally specific [ecosystem overfishing (EOF) indicators](https://noaa-edab.github.io/presentations/20230227_SSCEcoWG_Beet.html) at the February 2023 meeting. These indicators were presented in the 2021 SOE, but were not updated due to data constraints in 2022. Because the data inputs are still incomplete and discussion of analyses with the SSC are planned to evaluate appropriate thresholds, the EOF indicators are not included in the 2023 SOE. 
 
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-setup.R")}
-```
+The 2021 EOF indicators were based on commercial landings of federally managed species. However, EOF indicators are designed to be based on total catch. In 2022, catch data for Atlantic menhaden was added; because this is the highest volume fishery on the US East Coast it is important to include menhaden catch in the EOF indicators. Work continues to include commercial discards and recreational catch of all species. Comparisons among commercial landings data sources were also completed to ensure that inputs to the indicators are correct. Discrepancies between the Sea Around Us data source and NEFSC data sources were resolved by including live weight instead of meat weight for shellfish landings. 
 
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-GIS-setup.R")}
-```
+The Ecosystem WG agreed that these changes to input data were appropriate, and suggested double checking that all state landed species (not federally permitted) were included in the input data.
 
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/macrofauna_MAB.Rmd-setup.R")}
-```
+Detailed methods were reviewed for each of the three EOF indicators: Ryther (total catch per unit area), Fogarty (total catch per total primary production), and Friedland (total catch per mean chlorophyll). Because the originally published thresholds for each indicator were based on global average ocean productivity and trophic level of the catch, the initial step is to recalculate the thresholds using regional estimates of productivity and catch trophic level.
 
-```{r, code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/LTL_MAB.Rmd-setup.R")}
-```
+A simulation analysis was proposed using the Northeast US Atlantis ecosystem model to test the robustness of the resulting regional thresholds to different levels of fishing. 
 
-```{r fogarty, fig.cap="Fogarty Index; the ratio of total landings to total primary production in the MAB. Link and Watson (2019) give an optimal range (green shading) of the Fogarty ratio of 0.22 to 0.92 parts per thousand (PPT). Previous work suggested that index values exceeding 1 to 2 PPT (orange shading) led to ecosystem tipping points.", code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-fogarty.R")}
+The SSC Ecosystem WG agreed with this general approach and had several suggestions for simulation scenarios. First, evaluating tradeoffs between functional groups is desirable as there are many combinations of group fishing levels that may lead to, or relieve, ecosystem overfishing. Evaluating both biomass/biodiversity objectives and economic and social objectives will be important (not all species are equally valued). Finally, the relationship between transfer efficienciy and ocean warming should be investigated. If transfer efficiency is assumed constant but climate change means it is not, how is that accounted for in the EOF indicators and simulations?
 
-```
-
-```{r ryther, fig.cap="Ryther index; total landings presented on a unit area basis for the MAB. Theoretical estimates (Link and Watson, 2019) imply the index should range from 0.3 - 1.1 mt per sq km annually (green shading) with a limit of 3 mt per sq km annually, above which tipping points could occur in fished ecosystems (orange shading). Expected system-wide MSYs can be in the range of 1 to 3 mt per sq km (unshaded).", code = readLines("https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/chunk-scripts/human_dimensions_MAB.Rmd-ryther.R")}
-
-```
-
-Work is in progress to improve the current indicators, including updating landings estimates to include non-federally managed species such as Atlantic menhaden, and including discard estimates for all species. The WG gave helpful suggestions on additional sources of discard information for the indicators.
-
-**The WG seeks Council feedback on how the EOF indicators might be used. This will help design a simulation analysis that gives insight into practical management use.**
-
-The WG suggested that maximizing social benefits may be a good way to measure outcomes. Ecosystem overfishing reference points could be used to identify states we don't want the system to go into. The goal of the threshold would be to define "safe operating space" rather than pretending we can control the ecosystem by fishing it into an optimal state to meet our needs. The thresholds should define the bounds where fishing causes poor system performance (as defined using multiple Council objectives), but also ideally identify tradeoffs across species within the safe zone of fishing. The WG suggested that an analysis should give insight into the specific advice we should offer if we are exceeding a threshold. Conversely, if the indicator is in the good range what does that mean? What are the implications for the ecosystem? 
-
-The WG agreed that to be used in the regional operational management context, more regional analysis of EOF thresholds and detail on regional productivity is important. For example, some issues to address include how to deal with migratory species in the region vs resident species, how to identify what species can be backed off on to correct any overfishing--is it wise to reduce landings on one or two species or equally across all? Where is the biggest bang for your buck to the ecosystem and which managers should do it? The WG recognized that this is more complex than MAFMC management, and begins discussion of how to move forward more broadly with other management partners. 
 
 #### Index Numbers for ecosystem performance
 
-John Walden (NEFSC) presented an overview of Index Numbers at the July meeting, which evaluate sets of environmental indicators and management output indicators to determine system performance. The approach combines important management outputs linked to objectives (e.g. commercial revenue, recreational days fished, right whale abundance) and likely ecosystem drivers of change in these outputs (e.g., chlorophyll a, zooplankton, aggregate fish biomass) into an analysis evaluating aggregating inputs and outputs into single indicators used to determine whether system performance has improved over time relative to a reference year. 
+John Walden (NEFSC) presented an update to the Index Numbers analyses following suggestions at the July 2022 meeting. 
 
-A initial case study using the SOE indicators identified above was presented, evaluating whether system performance changed after the passage of the Sustainable Fisheries Act (SFA). Both outputs and environmental conditions improved post-SFA, but the overall performance of the ecosystem did not (Fig. \ref{fig:indexnums}; red line is combined index of system performance). 
-
-<!--![ADD CAPTION](https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/IndexNumbersExample.png)-->
-
-```{r indexnums, fig.cap="Example index numbers approach, where Environment includes chl a, zooplankton, and aggregate fish biomass, and Outputs include commercial revenue, recreational days fished, and right whale abundance.", out.width='95%'}
-
-knitr::include_url("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/IndexNumbersExample.png")
-
-```
-
-A second case study focused on Mid-Atlantic region indicators of commercial revenue and recreational days fished as outputs, and regional zooplankton and survey aggregate fish biomass as inputs. Several other examples have been developed focusing on Mid-Atlantic indicators and objectives. 
-
-The WG saw considerable promise in this method. It has the potential to create one or a few different system level index(es) by integrating multiple individual indicators. The point of the presentation and work so far was to demonstrate the utility of the approach and not prescribe the specific inputs and outputs used, which is best determined in dicussion with the Council.  We could Consider developing a model for commercial landings and one for recreational landings as opposed to a full ecosystem performance model. 
-
-**The WG seeks Council feedback on how Index numbers might be used. This will help design sets of inputs and output indicators for practical management use.**
+, which evaluate sets of environmental indicators and management output indicators to determine system performance. The approach combines important management outputs linked to objectives (e.g. commercial revenue, recreational days fished, right whale abundance) and likely ecosystem drivers of change in these outputs (e.g., chlorophyll a, zooplankton, aggregate fish biomass) into an analysis evaluating aggregating inputs and outputs into single indicators used to determine whether system performance has improved over time relative to a reference year. 
 
 WG members Geret DePiper and Sarah Gaichas plan to meet with other SOE leads to explore how to bring Index Numbers forward in the upcoming SOE cycle.
 
@@ -135,5 +114,16 @@ knitr::include_url("https://github.com/NOAA-EDAB/presentations/raw/master/docs/E
 ESPs are currently in development in the Northeast US for multiple Mid-Atlantic and New England stocks. Work under Objective 3 continues with the participation of several working group members in multiple Research Track assessment working groups:
 
 -   Gavin Fay, black sea bass WG (ongoing)
--   Sarah Gaichas, bluefish WG (ongoing)
+-   Sarah Gaichas, bluefish WG (complete)
 -   Paul Rago, *Illex* WG (complete)
+
+The Bluefish Research Track ESP was presented December 7 2022, and was well received by CIE reviewers. Reviewers commented that it was the most complete treatment of a stock assessment "ecosystem ToR" they had seen, and formed a good basis for integrating further ecosystem information into the stock assessment in the future. The full ESP document is available as a working paper from the [stock assessment data portal](https://apps-nefsc.fisheries.noaa.gov/saw/sasi_files.php?year=2022&species_id=32&stock_id=6&review_type_id=5&info_type_id=5&map_type_id=&filename=WP%2001%20Tyrell%20etAl%202022%20-%20ESP.pdf). 
+
+```{r blueesp, fig.cap="Bluefish conceptual model from the 2022 Research Track ESP Credit: Abigail Tyrell", out.width='95%'}
+
+#knitr::include_graphics(here("MidSSC_EcoWG/images/bluefishconceptualmodel.png"))
+knitr::include_url("https://github.com/NOAA-EDAB/presentations/raw/master/docs/EDAB_images/bluefishconceptualmodel.png")
+
+```
+
+
