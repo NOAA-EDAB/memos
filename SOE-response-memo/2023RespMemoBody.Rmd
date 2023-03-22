@@ -74,7 +74,7 @@ Use the code=readLines with the setup chunks from ecodata: need to do before eac
 ```
 # Introduction
 
-In the table below we summarize all comments and requests with sources. The memo is now reorganized into categories of requests in descending order of overall Council priority. The new Priority column was derived from combined discussion with the Mid-Atlantic SSC ecosystem working group and a survey of selected MAFMC members coordinated by Council staff in July 2022. The Progress column briefly summarizes how we responded, with a more detailed response to each request in a section for each request category. In the Status column, "In SOE" indicates a change included in the report(s).
+In the table below we summarize all comments and requests with sources. The memo is now reorganized into categories of requests in descending order of overall Council priority. The new Rank column summarizes priority and was derived from combined discussion with the Mid-Atlantic SSC ecosystem working group and a survey of selected MAFMC members coordinated by Council staff in July 2022. The Progress column briefly summarizes how we responded, with a more detailed response to each request in a section for each request category. In the Status column, "In SOE" indicates a change included in the report(s).
 
 ```{r summtable, ft.arraystretch = 1}
 # take from google drive to automatically update any changes
