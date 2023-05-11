@@ -3,17 +3,19 @@ fontsize: 10pt
 geometry: left=2cm, right=2cm, top=2cm, bottom=3cm, footskip = .5cm
 link-citations: yes
 output:
+  bookdown::word_document2:
+    toc: false
+    number_sections: false
+  html_document:
+    df_print: paged
   pdf_document:
     includes:
       in_header: latex/header-scs7.tex
     keep_tex: yes
-  html_document:
-    df_print: paged
 subparagraph: yes
 bibliography: operationalSOE.bib
 csl: american-fisheries-society.csl
 urlcolor: blue
-
 ---
 
 ```{r setup, include=FALSE}
