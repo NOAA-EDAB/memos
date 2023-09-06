@@ -5,13 +5,15 @@ link-citations: yes
 output:
   pdf_document:
     includes:
-      in_header: latex/header-mar23.tex
+      in_header: latex/header-sep23.tex
     keep_tex: yes
     extra_dependencies: "subfig"
     pandoc_args: ["--extract-media", "."]
   html_document:
     df_print: paged
 subparagraph: yes
+bibliography: operationalSOE.bib
+csl: american-fisheries-society.csl
 urlcolor: blue
 ---
 ```{r setup, include=FALSE}
@@ -55,7 +57,7 @@ Intended outcomes of WG work for the Council include:
 
 Since our last report in March 2023: 
 
--   Work presented by John Walden (NEFSC) to the WG in 2022 has been published [].
+-   Work presented by John Walden (NEFSC) to the WG in 2022 has been published [@walden_benchmarking_2023].
 -   The WG met 28 August 2023 to review updates on two projects related to the objectives above. Notes from the review are detailed below.
 
 ### Objective 1: OFL CV and ecosystem effects
@@ -101,7 +103,7 @@ Metrics need to be interpretable in the context of management in the MAB. How wo
 
 #### Index Numbers for ecosystem performance
 
-John Walden (NEFSC)'s publication of this method is now available. (no update was given in August 2023) 
+John Walden (NEFSC)'s publication of this method is now available [@walden_benchmarking_2023] (but no update was given in August 2023).
 
 The Ecosystem WG requests input from the full SSC on the potential to apply this analysis with the risk assessment review, for instance to help establish targets or thresholds that the EOP Committee has expressed interest in seeing. 
 
@@ -116,3 +118,6 @@ Ecosystem and Socioeconomic Profiles (ESPs) are used within the North Pacific st
 ESPs are currently in development in the Northeast US for multiple Mid-Atlantic and New England stocks. The SSC positively reviewed the bluefish ESP last year. However, NEFSC is currently capacity limited to produce these reports after several contractors focused on ESPs have moved on to other positions. The WG seeks SSC input on whether these products hold value or may contribute to OFL CV or ABC decisions.
 
 The SSC Ecosystem WG looks forward to the feedback of the full SSC on any of these topics, and always welcomes new members.
+
+## References
+
