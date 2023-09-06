@@ -39,7 +39,7 @@ library(ecodata)
 
 ## Review of SSC Ecosystem Working Group Objectives and Intended Outcomes
 
-The MAFMC SSC Ecosystem Working Group (WG) was established in May 2021 to assist the Council in developing short term and long term objectives to advance the operational use of ecosystem information in management decisions. As reported in [September 2021](https://www.mafmc.org/s/b_Ecosystem-WG_Proposed-Tasks-August-2021.pdf), [March 2022](https://www.mafmc.org/s/d_March2022_SSCEcoWG.pdf), and [September 2022](https://www.mafmc.org/s/b_Sept2022_SSCEcoWG.pdf) the WG has identified three general objectives:
+The MAFMC SSC Ecosystem Working Group (WG) was established in May 2021 to assist the Council in developing short term and long term objectives to advance the operational use of ecosystem information in management decisions. As reported in [September 2021](https://www.mafmc.org/s/b_Ecosystem-WG_Proposed-Tasks-August-2021.pdf), [March 2022](https://www.mafmc.org/s/d_March2022_SSCEcoWG.pdf), [September 2022](https://www.mafmc.org/s/b_Sept2022_SSCEcoWG.pdf), and [March 2023](https://www.mafmc.org/s/d_SSC-Ecosystem-WG-report-with-attachment.pdf) the WG has identified three general objectives:
 
 1.  Expanding and clarifying the ecosystem portion of the SSC OFL CV determination process (short term objective)
 2.  Developing prototype processes to provide multispecies and system level scientific advice appropriate for Council decision making, in particular where there are multispecies and multifleet tradeoffs linking directly to economic and social outcomes (long term objective)
@@ -58,7 +58,9 @@ Intended outcomes of WG work for the Council include:
 Since our last report in March 2023: 
 
 -   Work presented by John Walden (NEFSC) to the WG in 2022-2023 has been published [@walden_benchmarking_2023].
--   The WG met 28 August 2023 to review updates on two projects related to the objectives above: decomposing stock productivity change into components (Objective 1) and ecosystem overfishing indicators (Objective 2). The meeting was facilitated by Brandon Muffley and attended by Geret DePiper, Gavin Fay, Wendy Gabriel, Sarah Gaichas, Robert Latour, Paul Rago, and Mike Wilberg. Notes from the review are detailed below, along with questions for the full SSC on the full range of projects.
+-   The WG met 28 August 2023 to review updates on two projects related to the objectives above: decomposing stock productivity change into components (Objective 1) and ecosystem overfishing indicators (Objective 2). The meeting was facilitated by Brandon Muffley and attended by Geret DePiper, Gavin Fay, Wendy Gabriel, Sarah Gaichas, Robert Latour, Paul Rago, and Mike Wilberg. Notes from the review are detailed below, along with questions for the SSC on the full range of projects.
+
+The SSC Ecosystem WG looks forward to the feedback of the full SSC on any of these topics, and always welcomes new members.
 
 ### Objective 1: OFL CV and ecosystem effects
 
@@ -68,15 +70,16 @@ Since our last report in March 2023:
 
 WG member Mike Wilberg's lab (U. Maryland) is collaborating with John Wiedenmann's lab (Rutgers) to simulate an environmental effect on stock recruitment and test how it impacts assessment uncertainty. Implications of choosing both the appropriate OFL CV based on an environmental effect linked to recruitment and an inappropriate OFL CV will be evaluated using an updated MSE framework. The group is conducting a mini-review on environmental drivers in the region to get an idea of trends, periodicity, autocorrelation to inform the analysis. A simulated species based on Summer flounder is the initial case study. 
 
-Considerable progress on this work was presented in February 2023, but other priorities have prevented further development since then. 
+Considerable progress on this work was presented in February 2023, but other priorities have prevented further development since then. Mike plans to confer with John, assess available resources, and determine reasonable next steps.
 
 #### Decomposing stock productivity change into components
 
-WG member Paul Rago and SSC member Brian Rothschild presented a method to decompose changes in yield per recruit and spawning stock biomass per recruit to changes in weight at age, fishing pressure, natural mortality, and other factors (see posted working paper for SSC review at this meeting for details on the method and example applications). This analysis is of particular interest for the ecosystem working group because it demonstrates how reference points change due to multiple factors, including some assessment assumptions, and some related to input data which may reflect changes due to environmental drivers. 
+WG member Paul Rago and SSC member Brian Rothschild presented a method to decompose changes in yield per recruit and spawning stock biomass per recruit to changes in weight at age, fishing pressure, natural mortality, and other factors (see posted [working paper](https://www.mafmc.org/s/3_Decomposition-Analyses_draft-for-SSC-Eco-WG-8-28-23.pdf) for SSC review at this meeting for details on the method and example applications). This analysis is of particular interest for the ecosystem working group because it demonstrates how reference points change due to multiple factors, including both assessment assumptions, and some related to input data which may reflect changes due to environmental drivers. 
 
 The SSC WG discussed potential to use this type of approach in management applications. One possibility might be to link the decomposition to the OFL CV process, asking how much do assessments change with changes in various inputs or assumptions? 
 
-Additive, could look at joint effect of say M and wt at age and maturation or just wt age and maturation as system properties. Remainder assumptions about state of system (M) or intensity of fishing. 
+Paul noted that because the effects are additive, we could look at the joint effect of assumptions about natural mortality (M) and weight at age and maturation or just weight age and maturation as ecosystem properties. Then, the remaining effects relate to assumptions about the state of system (M) or the intensity of fishing. 
+
 The WG and full SSC could consider how this approach might be incorporated into current decisions.
 
 ### Objective 2: Multispecies and system level ecosystem advice
@@ -85,31 +88,19 @@ The WG and full SSC could consider how this approach might be incorporated into 
 
 #### Ecosystem overfishing indicators
 
-Sarah Gaichas presented an update on behalf of Andy Beet (NEFSC) on data inputs, data analysis, methodology, and planned empirical and simulation analyses to further develop regionally specific [ecosystem overfishing (EOF) indicators](https://noaa-edab.github.io/presentations/20230227_SSCEcoWG_Beet.html) at the August 2023 meeting. 
+WG member Sarah Gaichas presented an update on behalf of Andy Beet (NEFSC) on data inputs, data analysis, methodology, and planned empirical and simulation analyses to further develop regionally specific [ecosystem overfishing (EOF) indicators](https://noaa-edab.github.io/presentations/20230227_SSCEcoWG_Beet.html) at the August 2023 meeting. Work continues to integrate estimates of discards as inputs along with landings from federally managed species and menhaden. We are optimistic that the new CAMS discards will automate this data input moving forward.
 
-Work continues to integrate estimates of discards as inputs along with landings from federally managed species and menhaden. We are optimistic that the new CAMS discards will automate this data input moving forward.
+Preliminary calculations of Mid-Atlantic ecosystem overfishing thresholds using methods published based on global analysis suggests that overfishing thresholds will be higher than published values in @link_global_2019. This is due to high primary productivity in the Mid Atlantic region compared with the global average. Calculations involve primary productivity as well as estimates of mean trophic level and trophic transfer efficiency. The latter two estimates are in progress using Mid-Atlantic specific information. Once all three regional estimates are available, new overfishing threshold levels will be estimated.
 
-Preliminary calculations of Mid-Atlantic ecosystem overfishing thresholds using methods published based on global analysis suggests that overfishing thresholds will be higher than published values. This is due to high primary productivity in the Mid Atlantic region compared with the global average. Calculations involve primary productivity as well as estimates of trophic level and trophic transfer efficiency. The latter two estimates are in progress using Mid-Atlantic specific information. Once all three regional estimates are available, new overfishing threshold levels will be estimated.
+Planned simulation analysis using the Northeast US Atlantis ecosystem model [@caracappa_northeast_2022] will test the robustness of the resulting regional thresholds (as well as global thresholds) to different levels of fishing. Sarah and Andy requested feedback from the WG on metrics for the analysis: what would indicate success or failure of a given threshold at the ecosystem level? 
 
-Planned simulation analysis using the Northeast US Atlantis ecosystem model will test the robustness of the resulting regional thresholds (as well as global thresholds) to different levels of fishing. Sarah and Andy requested feedback from the WG on metrics for the analysis: what would indicate success or failure of a given threshold at the ecosystem level? 
+The WG agreed that metrics for individual species will be important in addition to system level metrics. Evaluating whether stocks would be considered overfished using single stock thresholds is desirable. Metrics need to be interpretable in the context of current management in the Mid Atlantic. How would strategies to prevent ecosystem overfishing filter into tactical management advice?
 
-The WG agreed that metrics for individual species will be important in addition to system level metrics. Evaluating whether stocks would be considered overfished using single stock thresholds is desirable. Metrics need to be interpretable in the context of current management in the Mid Atlantic. How would ecosystem strategies filter into tactical management advice?
+The WG had several practical suggestions, including using approaches established in other applications of Atlantis. For example, single species reference points and unfished biomass within Atlantis can be estimated using a range of system level fishing pressures from F=0 on all species to a range of fishing intensity by functional groups [@nyamweya_prediction_2017; @kaplan_ecosystem-based_2020]. A set of ecosystem level metrics evaluated in @fulton_which_2005 can be calculated as well. The WG also suggested noting which trophic levels accumulate biomass over time under different fishing scenarios.
 
+In addition to reference points and stock status, there were several other suggestions. Information on ecosystem risks  being elicited through the MAFMC Ecosystem and Ocean Planning Committee and AP update of the EAFM risk assessment can potentially be used to identify metrics. The recently completed prototype NEFMC EBFM MSE may also contain useful metrics and will be reviewed. The amount of variability in the system has often been used to assess risk. Maintaining markets/fisheries always a concern particularly for species in which market consistency becomes important, so metrics can be developed to address this concern. Formal methods to assess stability in electrical engineering, [Niquest plots](https://en.wikipedia.org/wiki/Nyquist_stability_criterion), might have some direct analogies to model perturbations in Atlantis.
 
-Set F to 0 and see what unfished looks like might be a way to do it.
-
-It would also be of interest to note which trophic levels accumulate biomass over time under different fishing scenarios.
-
-Reference points & unfished biomass - recommend using approaches established in other applications for Atlantis. 
-
-Can we exploit information being elicited through the EOP and the risk assessment to identify metrics? 
-
-also have MSE work Gavin and Lisa undertook to inform metrics.
-
-pay attention to menhaden, impacts of management and harvest ripple through the food web to Council managed species, Curious to know since model is driven by catch, can we glean the status of the ecosystem that are similar to ABC recommendations across all species. For the ones not realized. What if we took the full catch? SSC decision version, average of all decisions, gut check on SSC ABCs, are we driving things ok?
-
-Amount of variability in the system has often been used to assess risk. Maintaining markets/fisheries always a concern particularly for species in which market consistency becomes important. formal methods to assess stability in electrical engineering. Niquest plots - might have some direct analogies to model perturbations in Atlantis.
-
+Finally, the WG recommended attention to menhaden, because impacts of its management and harvest ripple through the food web to Council managed species. It would be useful to estiamte the status of the ecosystem that implements current SSC ABC recommendations across all species. This would include full catch of the ABCs that are currently not realized. This would be a metric of the current system's performance.
 
 #### Index Numbers for ecosystem performance
 
@@ -123,11 +114,9 @@ The Ecosystem WG requests input from the full SSC on how to bring Index Numbers 
 
 **Development of Ecosystem-Socioeconomic Profiles in Research Track assessment working groups facilitates the inclusion of ecosystem information within the current stock assessment process, and therefore fits within existing Council decision processes.** 
 
-Ecosystem and Socioeconomic Profiles (ESPs) are used within the North Pacific stock assessment process as a structured way to include stock-relevant ecosystem information within stock assessments. National workshops on ESPs were led by Kalei Shotwell (NOAA Fisheries Alaska Fisheries Science Center) during summer 2023 to enhance production of ESPs outside Alaska.
+Ecosystem and Socioeconomic Profiles (ESPs) are used within the North Pacific stock assessment process as a structured way to include stock-relevant ecosystem information within stock assessments [@shotwell_synthesizing_2022; @dorn_risk_2020]. National workshops on ESPs were led by Kalei Shotwell (NOAA Fisheries Alaska Fisheries Science Center) during summer 2023 to enhance production of ESPs outside Alaska.
 
 ESPs are currently in development in the Northeast US for multiple Mid-Atlantic and New England stocks. The SSC positively reviewed the bluefish ESP last year. However, NEFSC is currently capacity limited to produce these reports after several contractors focused on ESPs have moved on to other positions. The WG seeks SSC input on whether these products hold value or may contribute to OFL CV or ABC decisions.
-
-The SSC Ecosystem WG looks forward to the feedback of the full SSC on any of these topics, and always welcomes new members.
 
 ## References
 
