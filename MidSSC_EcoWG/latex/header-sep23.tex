@@ -1,0 +1,85 @@
+% Set up the fonts
+\usepackage[urw-palatino]{mathdesign}
+\usepackage[T1]{fontenc}
+
+
+% Set the language for 508
+%\hypersetup{
+%  pdftitle = {title},
+%  pdflang = en-US}
+
+% Add accessibility support from http://www.richschwinn.com/accessibility
+%\RequirePackage{accsupp}
+%\RequirePackage{pdfcomment}
+%\newcommand{\AccTool}[2]{\BeginAccSupp{method=pdfstringdef,unicode,Alt={{#1}}}\pdftooltip{{#2}}{{#1}}\EndAccSupp{}}
+
+
+% Set up the headers and footers
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{ifthen}
+%\usepackage{everypage-1x}
+\usepackage{float}
+\usepackage{subfig}
+%\usepackage{subcaption}
+
+%The following codes scale images in mainmatter if necessary
+%It will be overwrite by local setting in \includegraphics[width, height, ...]{}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\textwidth \textwidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>0.5\textheight 0.5\textheight\else\Gin@nat@height\fi}
+\makeatother
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+%The following codes add max dimension options to includegraphics
+\usepackage[export]{adjustbox} %Needed for max width
+\usepackage{etoolbox} %Needed for \pathcmd
+\expandafter\patchcmd\csname Gin@ii\endcsname
+{\setkeys{Gin}{#1}}
+{\setkeys{Gin}{max width=\textwidth, max height=.5\textwidth,keepaspectratio,#1}}
+{}
+{}
+
+% Avoid struggling over figure and table float in Rmarkdown
+\let\origfigure\figure
+\let\endorigfigure\endfigure
+\renewenvironment{figure}[1][2] {
+    \expandafter\origfigure\expandafter[H]
+} {
+    \endorigfigure
+}
+
+\let\origtable\table
+\let\endorigtable\endtable
+\renewenvironment{table}[1][2] {
+    \expandafter\origtable\expandafter[H]
+} {
+    \endorigtable
+}
+
+% First page has the large title and NOAA logo
+\pagestyle{fancy}
+\fancyhf{}
+\setlength\headheight{40pt}
+\fancyheadoffset[L]{0.5cm}
+\cfoot{\thepage}
+
+\fancyheadinit{%
+   \ifthenelse{\value{page}=1}%
+      {\fancyhead[R]{\textsf{\emph{September 6, 2023}}}
+       \fancyhead[L]{\textsf{\LARGE SSC Ecosystem Working Group Report: September 2023}}
+      }%
+      {\fancyhead[R]{}
+       \fancyhead[L]{\textsf{\emph{SSC Ecosystem Working Group Report: September 2023}}}
+      }
+}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Make caption fonts a bit smaller
+\usepackage[font={small}]{caption}
+
+
+% Change section labels to san serif
+\usepackage{sectsty}
+\allsectionsfont{\normalfont\sffamily\bfseries}
