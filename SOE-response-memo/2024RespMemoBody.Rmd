@@ -1,0 +1,309 @@
+---
+title:
+geometry: left=2cm, right=2cm, top=2cm, bottom=3cm, footskip = .5cm
+output:
+  pdf_document:
+    includes:
+      in_header: latex/header1.tex
+    keep_tex: yes
+bibliography: SOE2023.bib
+csl: plos.csl
+link-citations: yes
+fontsize: 10pt
+subparagraph: yes
+urlcolor: blue
+always_allow_html: true
+---
+
+```{r setup, include=FALSE}
+#Default Rmd options
+knitr::opts_chunk$set(echo = FALSE,
+                      message = FALSE,
+                      warning = FALSE,
+                      dev = "cairo_pdf",
+                      fig.align = 'center') #allows for inserting R code into captions
+
+library(tidyverse)
+library(readxl)
+library(kableExtra)
+library(ecodata)
+library(googledrive)
+library(pacman)
+p_load(repmis, RCurl, DT, magrittr, gsubfn, stringr, tidyverse)
+
+library(flextable)
+
+set_flextable_defaults(
+  font.size = 9,
+  padding.bottom = 0,  
+  padding.top = 1, 
+  line_spacing = 1,
+  font.family = "Palatino")
+
+
+```
+
+```{r, include = F}
+#this is to wrap text around figures if we want
+defOut <- knitr::knit_hooks$get("plot")  # save the default plot hook 
+knitr::knit_hooks$set(plot = function(x, options) {  # set new plot hook ...
+  x <- defOut(x, options)  # first apply the default hook
+  if(!is.null(options$wrapfigure)) {  # then, if option wrapfigure is given ...
+    # create the new opening string for the wrapfigure environment ...
+    wf <- sprintf("\\begin{wrapfigure}{%s}{%g\\textwidth}", options$wrapfigure[[1]], options$wrapfigure[[2]])
+    x  <- gsub("\\begin{figure}", wf, x, fixed = T)  # and replace the default one with it.
+    x  <- gsub("{figure}", "{wrapfigure}", x, fixed = T)  # also replace the environment ending
+  }
+  return(x)
+})
+```
+
+<!--
+NOTES
+
+Use the code=readLines with the setup chunks from ecodata: need to do before each set of figs from a region/subgroup
+-->
+
+```{r, results='hide'}
+   resultfile <- googledrive::drive_find(pattern = "SOE 2023 Request Checklist to Memo", type = "spreadsheet")
+ # 
+  requests <- googledrive::drive_download(resultfile, type = "csv", overwrite = TRUE) %>%
+    {read.csv(.$local_path)} 
+
+# requests <- read.csv(here::here("SOE 2023 Request Checklist.csv"))
+```
+
+# Introduction
+
+In the table below we summarize all comments and requests with sources. The memo is now reorganized into categories of requests in descending order of overall Council priority. The new Rank column summarizes priority and was derived from combined discussion with the Mid-Atlantic SSC ecosystem working group and a survey of selected MAFMC members coordinated by Council staff in July 2022. The Progress column briefly summarizes how we responded, with a more detailed response to each request in a section for each request category. In the Status column, "In SOE" indicates a change included in the report(s).
+
+```{r summtable, ft.arraystretch = 1}
+# take from google drive to automatically update any changes
+#googledrive::drive_download("Northeast IEA/State of the Ecosystem Reports/SOE 2020/Workshop & Meeting Notes/Request checklist", path="2019requests.xlsx", overwrite = TRUE)
+
+#requests <- read_excel("2019requests.xlsx", sheet="MemoTable", range = 'A1:D31')
+
+#requests$`Memo Section` <- paste0("[", requests$`Memo Section`, "](#",requests$`Memo Section`,")") #trying to make clickable links in the table to sections, not working
+#adding format = "markdown" to kable statement made them links but they still didnt jump to report sections and messed up other formatting
+
+requeststab <- requests %>%
+  dplyr::select(Request, Year, Aggregate, Project, Source, Status, Progress, Order) %>%
+  dplyr::mutate(Source = str_trim(str_extract(Source, "[^-]+"))) %>%
+  dplyr::group_by(factor(Aggregate, levels = c("System level thresholds/ref pts",
+                                               "Management",
+                                               "Short term forecasts",
+                                               "Regime shifts",
+                                               "Multiple system drivers",
+                                               "Functional group level status/thresholds/ref pts",
+                                               "Stock level indicators",
+                                               "SOE admin"))
+                  )%>% #, Project) %>%
+  dplyr::mutate(#AvgOrder = mean(Order, na.rm=T),
+                Rank = factor(case_when(Order < 1.5 ~ "Highest", 
+                                     Order >= 1.5 & Order < 1.75 ~ "High",
+                                     Order >= 1.75 & Order < 2 ~ "Moderate",
+                                     Order >= 2 & Order < 2.5 ~ "Low",
+                                     Order >=2.5 ~ "Lowest",
+                                     TRUE ~ "Unranked"),
+                       levels=c("Highest", "High", "Moderate", "Unranked", "Low", "Lowest")))%>%
+  dplyr::arrange(Rank, Order, .by_group = TRUE) %>% #AvgOrder, 
+  # arrange(match(Status, c("In SOE", 
+  #                         "In SOE-MAFMC",
+  #                         "In SOE-MAFMC, In progress-NEFMC",
+  #                         "In progress", 
+  #                         "Not started")), desc(Year)) %>%
+  dplyr::ungroup() %>%
+  #dplyr::mutate("Memo Section" = rownames(.)) %>%
+  #dplyr::mutate(Section = dplyr::group_indices(.)) %>%
+  dplyr::select(Request, Year, Aggregate, Rank, Source, Status, Progress)
+
+#requeststab$Section <- group_indices(requeststab)
+  
+
+# knitr::kable(requeststab, longtable = T, booktabs = TRUE, linesep = "") %>%
+#   kable_styling(font_size=9, latex_options = c("hold_position", "striped", "repeat_header")) %>%
+#   row_spec(0,bold=TRUE) %>%
+#   column_spec(1, width="5cm") %>%
+#   column_spec(2, width="1cm") %>%
+#   column_spec(3, width="2cm") %>%
+#   column_spec(4, width="5cm") %>%
+#   column_spec(5, width="2cm")
+
+flextable::as_grouped_data(requeststab, groups = "Aggregate") %>% 
+  flextable::as_flextable(hide_grouplabel=TRUE) %>% 
+  flextable::align(i = ~ !is.na(Aggregate), align = "left") %>% 
+  flextable::bold(i = ~ !is.na(Aggregate), bold = TRUE) %>%
+  flextable::theme_zebra() %>%
+  flextable::bg(i = ~ !is.na(Aggregate), bg = "beige", part = "body") %>%
+  flextable::hline(i = ~ !is.na(Aggregate)) %>%
+  flextable::set_caption("State of the Ecosystem requests by category and Council priority.") %>%
+  #flextable::autofit() 
+  flextable::width(width = c(2.5,0.5,0.7,0.7,0.7,1.5))
+
+```
+
+
+# Responses to comments
+
+Priorities from 2023 have been retained for 2024. While no formal prioritization has been conducted since last year, we welcome further discussion and adjustment of priorities as needed by the Councils and SSCs. New requests from 2023 are listed without prioritization, while previously prioritized requests have been noted with adjustments to years in the table. 
+
+Some high priority SOE work was delayed in 2023-2024 due to staff turnover. However, we plan to continue as noted in the categories below, and welcome further feedback on planned and continuing work. 
+
+In response to an unranked request for further definition of risk, in addition to general requests for further synthesis and transparency, we have made major revisions to the 2024 SOEs:
+
+1.  The Climate and Ecosystem Risks section now centers on management decisions. It includes 3 sections: 
+    +  Risks to spatial management, highlighting distribution shifts in managed species with potential drivers
+    +  Risks to seasonal management, highlighting temporal shifts in managed species with potential drivers 
+    +  Risks to quota setting and rebuilding, highlighting productivity and condition shifts, with potential drivers
+    
+2.  A new section, 2023 Highlights, reviews new conditions, activities, and anomalous observations across the Northeast US from the past year. This section is summarized graphically on p.3 (Mid-Atlantic report) and p.4 (New England report).
+
+3.  A new [online indicator catalog](https://noaa-edab.github.io/catalog/index.html) provides a "deep dive" into each indicator, with multiple visualizations of the data and clearer links to the datasets in the [ecodata R package](https://noaa-edab.github.io/ecodata/) for increased transparency and ease of use by investigators throughout the region. 
+
+
+```{r, results='asis', eval=FALSE}
+
+for(j in 1:length(unique(requeststab$Aggregate))) {
+  cat("##", unique(requeststab$Aggregate)[j], "\n")
+  # for(i in 1:nrow(requeststab)) {
+  #   #cat("##", requeststab$'Memo Section'[i], as.character(requeststab$Request[i]), "\n")
+  #   
+  #   cat("###", as.character(requeststab$Request[i]), "\n")
+  #   cat("\n")
+  # } 
+  cat("\n")
+}
+
+```
+
+## System level thresholds/reference points
+
+Further refining ecosystem level overfishing (EOF) indicators and investigating optimum yield (OY) at the ecosystem level was identified as highest priority by both the MAFMC SSC working group and by surveyed MAFMC members. Methods for evaluating ecosystem indicator trends, inflection points, and breakpoints (regimes, see below) were also ranked highest priority by both SSC and Council as these methods apply to ecosystem level thresholds and reference points, as well as to indicators at the functional group or stock level, or to indicators of climate or habitat risk. Several other SSC and Council requests are related to or support these analyses and can likely be addressed by planned analyses.
+
+The EOF indicators were first presented in 2021 and were discussed in depth with the MAFMC SSC working group in April 2022 and February 2023. Considerable progress has been made on updating data inputs for the EOF indicators and planning for system level threshold analyses with the MAFMC SSC. After reviewing previous presentations of the EOF indicators, Andy Beet (NEFSC) reviewed solutions to several data input problems identified in July 2022 (menhaden landings were added and differences between different data sources were resolved). In 2023, estimates of regional productivity were added to calculate regional thresholds, for comparison with published global thresholds. An outstanding data input task is completing discard estimates for all species in the Northeast US, which is in progress. 
+
+A simulation study is being planned to use the Northeast US Atlantis ecosystem model [@caracappa_northeast_2022] to investigate robustness of thresholds and determine how informative they can be. This portion of the research will likely address the MAFMC request to evaluate how phytoplankton size composition might affect the EOF indicator. It will also address SSC questions raised about tradeoffs between fishing for different species groups to address EOF, and how climate driven changes in transfer efficiency might be incorporated into or impact EOF indicators. In addition, the NEUS Atlantis model may be able to address the lower priority requests on nutrient input and benthic flux contributions to system productivity once model sensitivity analysis determines whether these model components behave reasonably. We expect to present results of EOF analyses to the SSC in late 2023. If reviews are positive, EOF indicators may appear in the 2024 SOE, and if further work is needed they should appear in the 2025 SOE.
+
+Automated methods for estimating both short term and long term trends, evaluating time series inflection points, and identifying breakpoints (regimes) are being tested for inclusion in the 2025 SOE. 
+
+*  The `ecodata` R package already incorporates long term trend estimation based on Hardison et al. @hardison_simulation_2019. This research found that trends were most robustly distinguished from autocorrelation in indicator time series of 30 years or longer. However, there is still considerable interest in robust methods for assessing short term trends, especially for the most recent portions of time series and for shorter indicator time series. In 2022, work was initiated on short term trend analysis robust to autocorrelation by Andy Beet and Kim Bastille (NEFSC). The short term trend fitting method needs more simulation testing to address performance with missing data. 
+
+*  Kim Bastille (NEFSC) has also been working on methods to identify inflection points in indicator time series based on Large et al. @large_defining_2013 and @large_quantifying_2015. A standardized method has been implemented as a prototype and applied to several existing SOE indicators in 2022, but several questions on default approaches to be used across multiple indicators require more in depth analysis and review. 
+
+*  A method for identifying breakpoints has been implemented by Kim Bastille and Laurel Smith (NEFSC) and a prototype analysis developed using SOE indicators in 2022. If this method can be further developed, it may be reviewed in a regime shift workshop scheduled for May 2024. 
+
+Work is in progress by John Walden and Geret DePiper (NEFSC) to combine multiple indicators into single integrated indices (Index Numbers) using Data Envelopment Analysis. This work has been reviewed by the MAFMC SSC ecosystem working group in July 2022 and again in February 2023. Index Numbers evaluate sets of environmental indicators and management output indicators to determine system performance. The approach combines important management outputs linked to objectives (e.g. commercial revenue, recreational days fished, right whale abundance) and likely ecosystem drivers of change in these outputs (e.g., chlorophyll a, zooplankton, aggregate fish biomass) into an analysis evaluating aggregating inputs and outputs into single indicators used to determine whether system performance has improved over time relative to a reference year. An initial case study using the SOE indicators identified above was presented in July 2022, and a follow up analysis evaluating individual Index Numbers for SOE management objectives (Seafood Production, Recreational Opportunities, etc.) was presented in February 2023. Integrated Index Numbers based on some of these case studies may be further reviewed by the MAFMC SSC ecosystem working group and developed for the 2025 SOE. 
+
+## Management
+
+Council members tended to give higher priority rankings to requests in this category relative to the SSC working group, but overall both ranked management related requests high priority.
+
+In 2022, MAFMC requested that New England ports with significant reliance on Mid-Atlantic managed species be included in the Mid-Atlantic SOE analysis of potential risks to fishery management from offshore wind development. Angela Silva (NEFSC) evaluated landings for all New England ports by both value and pounds, and included New England ports with over 50% of maximum value or pounds MAFMC managed species landed from wind areas between 2008-2021. Six ports were identified as "significantly reliant" using this criteria, and we included this information in the 2023 and 2024 MAFMC SOEs.
+
+It may be possible to address the requests on management complexity and recreational bycatch mortality as part of the Mid-Atlantic EAFM risk assessment updates throughout 2024 if appropriate expertise can be brought into this process. 
+
+The request to re-evaluate Ecosystem Production Units (EPUs) was ranked lowest priority. We do not forsee having the resources to address this request, which is a large project, in the near future. 
+
+## Short term forecasts
+
+The SSC working group ranked these new requests higher priority relative to Council members, but overall both ranked short term forecasting requests high priority. New resources to address this request are coming online at the NEFSC through the Climate Ecosystem Fisheries Initiative (CEFI) in 2024. This national effort seeks to link ocean model forecasts with products used in management. In the Northeast region, the SOE team plans to closely collaborate with CEFI modelers to test and present new products to the Councils and SSCs as they come online.
+
+While using phytoplankton trends to forecast fish stocks may be feasibly simulation tested within the Atlantis modeling framework described above for EOF indicators, this relatively long term project would require dedicated effort to achieve, likely by a postdoctoral or CEFI researcher.
+
+Some experimental short term forecasts of regional water temperature are currently available, and could be investigated or presented to the SSCs during the 2025 cycle if this remains a high priority. MAFMC has recently completed work on short term forecasts of species distributions for fisheries management are [in progress with Rutgers University and MAFMC](https://www.mafmc.org/s/Rutgers-Project-Overview.pdf), which may also address this request. Skill assessment of these forecasts, as well as determining the context in which they would be used (stock assessment projections? habitat projections? other uses?) would be needed to bring them into the management process (this is better developed for the ongoing Rutgers/MAFMC project). Incorporating short term forecasts into the SOE outside the ongoing Rutgers/MAFMC project would require a similar level of effort to the phytoplankton/fish forecasting project above. 
+
+## Regime shifts
+
+Adding information on regime shifts was considered a high priority by both the Council and SSC. Time series analysis of zooplankton and forage fish to evaluate potential linked regime shifts is currently in progress, and multiple projects may contribute to this. We are working to coordinate existing projects (see below) into a synthesis product for the SOE. Because the projects are on different timelines, it is difficult to give a target date for SOE synthesis. However, a workshop is scheduled for May 2024 to review and synthesize methods and results for the Northeast Region. We expect to have some project results published prior to the 2025 SOE. With these publications complete, some synthesis may be presented in the following SOE cycle. 
+
+```{r, results='hide'}
+  regimefile <- googledrive::drive_find(pattern = "Regime Shift Summary", type = "spreadsheet")
+ # 
+  regimes <- googledrive::drive_download(regimefile, type = "csv", overwrite = TRUE) %>%
+    {read.csv(.$local_path)} 
+
+#requests <- read.csv(here("SOE 2021 Response Checklist.csv"))
+```
+
+```{r regimetable, ft.arraystretch = 1}
+# take from google drive to automatically update any changes
+#googledrive::drive_download("Northeast IEA/State of the Ecosystem Reports/SOE 2020/Workshop & Meeting Notes/Request checklist", path="2019requests.xlsx", overwrite = TRUE)
+
+#requests <- read_excel("2019requests.xlsx", sheet="MemoTable", range = 'A1:D31')
+
+#requests$`Memo Section` <- paste0("[", requests$`Memo Section`, "](#",requests$`Memo Section`,")") #trying to make clickable links in the table to sections, not working
+#adding format = "markdown" to kable statement made them links but they still didnt jump to report sections and messed up other formatting
+
+regimestab <- regimes %>%
+  dplyr::select(Analysis, Methods, Ecosystem.Category, Temporal.Scale, Spatial.Scale, ETA) %>%
+  dplyr::ungroup() 
+  
+flextable::flextable(regimestab) %>% 
+  flextable::theme_zebra() %>%
+  flextable::set_header_labels( Ecosystem.Category = "Ecosystem Component", 
+                                Temporal.Scale = "Temporal Scale", 
+                                Spatial.Scale = "Spatial Scale",
+                                ETA = "Availability") %>%
+  flextable::set_caption("Selected Regime Shift Projects. Methods: rpart = recrusive partitioning R package, DFA = dynamic factor analysis, EOF = empirical orthoganal function, SEWS = spatial early warning signals, DEA = data envelopment analysis, GAMs = general additive models. Ecosystem Component: Env = environmental drivers, Fish = fish, Zoo = zooplankton, Landings = fishery landings.") %>%
+  #flextable::autofit() 
+  flextable::width(width = c(1.5,1,1,1,1,1.5))
+
+```
+
+Regime shifts in socio-economic indicators may be addressed in the ongoing work described above by John Walden and Geret DePiper (NEFSC) integrating multiple indicators into Index Numbers. Once the structure of the Index Numbers is determined, these time series can be evaluated for change points using any of the methods described in the table above. 
+
+## Multiple system drivers
+
+This category contains a wide array of requests with many projects currently in progress. There were two requests ranked high priority, five ranked moderate priority, nine unranked because they are newer requests, and eight ranked low or lowest priority. Given the number of SOE requests, those ranked lowest priority that have not already been started are unlikely to be addressed. 
+
+The high priority request in this category is incorporating the ongoing fish condition project and associated analyses into the SOE. Regime shift analyses of fish condition may be available for the 2025 SOE. Initial work linking multiple SOE low trophic time series with fish condition using dynamic structural equation modeling [@thorson_dynamic_2024] was started in February 2024. With additional resources, this approach may be presented to synthesize drivers of fish condition across multiple species in a future SOE.  
+
+An unranked request to review direct indicators of net vs. gross revenue indicators is in progress. We can calculate net revenue for ~ 1/2 of the revenue generated within the Greater Atlantic Region. The trends between the total gross revenue and gross revenue for which we can estimate costs are different. In addition, the net revenue looks to be just a scaled gross revenue metric, with trends staying the same, just the magnitude changing (Fig. \ref{fig:profit}). 
+
+```{r profit, fig.cap="Net revenue (left) and cost coverage (right) in the Greater Atlantic Region.", out.width = "49%", fig.show='hold'}
+
+knitr::include_graphics(here::here("SOE-response-memo/images/Net_revenue.pdf"))
+knitr::include_graphics(here::here("SOE-response-memo/images/Cost_Coverage.pdf"))
+```
+
+One moderate priority request was included in the 2023-2024 SOE: a fall turnover index has been included in both the MAFMC and NEFMC reports in the Climate and Ecosystem Productivity sections.
+
+One low priority request was included in the 2023 SOE: we updated text with further explanation of the Environmental Justice indicators. This text has been expanded for 2024 in an [online indicator catalog page](https://noaa-edab.github.io/catalog/engagement.html). 
+
+An unranked request to evaluate links between species availability inshore and offshore and trends in recreational fishing effort was partially addressed using a spatial index of forage fish to evaluate bluefish availability to the recreational fishery during the research track assessment in December 2022. This forage fish index has been included in the 2023-2024 SOE. 
+
+Several other moderate/unranked and low priority requests are currently in progress or started as intern projects, including a cumulative weather index, mean stomach weights across feeding guilds, and estuarine water quality for the NEFMC SOE. If sufficient resources are found to finish these projects, they could be included in the 2024 SOE. 
+
+## Functional group level status/thresholds/ref pts
+
+Requests in this category were considered moderate to low priority by the SSC and Council. However, many were already in progress prior to ranking, and one has been included in the 2023 SOE.
+
+The NEFMC requested a forage availability index (including both managed species such as herring and unmanaged species such as sandlance). A spatial index of forage availability was developed for the bluefish research track assessment as described above. This index was partitioned into EPUs and presented in the 2023 and 2024 SOEs. An index of forage center of gravity was also included as a potential driver of distribution shifts in the 2024 Risks to Spatial Management section.
+
+Gray seal pup count indices are already included in the NEFMC SOE, and indices of populations for other seals and apex predators are in development by the protected species branch. These additional indices were not ready for the 2024 report. 
+
+Investigating time series of biomass for species not well represented in bottom trawl surveys was partially addressed by the forage index included in the 2023-2024 reports. However, only a subset of forage species are not well represented in bottom trawl surveys, and other species that are not forage are also not well represented in bottom trawl surveys. This request was ranked lowest priority by the Council and SSC, and given the difficulty of synthesizing data on poorly sampled species, is unlikely to be addressed in the near future.
+
+## Stock level indicators
+
+Requests in this category were ranked moderate to lowest priority by the SSC and Council. Indicators of this nature would be well suited to Ecosystem and Socioeconomic Profiles (ESP) developed during research track assessments for individual stocks. Some aspects of these indicators may benefit SOE reporting as well.
+
+One request, linking shellfish growth and distribution to climate change and system productivity, is in progress. Alexis Hollander (VIMS) completed her thesis on surfclam growth in relation to bottom temperature in 2022, and information from this work can likely be included in the 2025 SOE, pending publication of student thesis results. 
+
+The request for indicators of scallop predators that are poorly sampled by bottom trawls is similar to the request in the category above addressing all species not well sampled by bottom trawls. It is possible that this request could be clarified and addressed during a scallop research track assessment.
+
+A new unranked request to evaluate the impacts of climate change on survey catchability is being addressed in some research track stock assessments. 
+
+The request for a sturgeon bycatch indicator was ranked lowest priority by the SSC and Council, so is unlikely to be addressed in the near future.
+
+## SOE admin
+
+These relatively new requests were not ranked; however, both are in progress.
+
+Investigation of uses of the SOE as requested by the MAFMC SSC is in progress with the assistance of NOAA communications experts using a combination of website analytics and citation information. This information has been compiled as part of an in progress manuscript reviewing use of ecosystem reports across NMFS. We hope to have an update on uses of the Northeast SOEs for the 2025 report/request memo. 
+
+The restructuring of this memo according to prioritization is intended to partially address the requests for timelines on in progress SOE requests by the NEFMC SSC. While not all project timelines are currently available, we have reported estimates in this document where possible. In addition, the effort to prioritize requests in 2022 ensures that limited resources are applied to the highest priority issues.
+
+
+# References
+
