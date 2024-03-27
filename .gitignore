@@ -43,4 +43,10 @@ vignettes/*.pdf
 
 *.pdf
 *.tif
+*.aux
+*.out
+*.log
+
+
+*_files/
 
