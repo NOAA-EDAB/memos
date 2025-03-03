@@ -70,9 +70,9 @@ Use the code=readLines with the setup chunks from ecodata: need to do before eac
  #  resultfile <- googledrive::drive_find(pattern = "SOE prioritization worksheet", type = "spreadsheet")
  # 
  # requests <- googledrive::drive_download(resultfile, type = "csv", overwrite = TRUE) %>%
-#    {read.csv(.$local_path)} 
+ #   {read.csv(.$local_path)} 
 
- requests <- read.csv(here::here("SOE prioritization worksheet.csv"))
+ requests <- read.csv(here::here("SOE-response-memo/SOE prioritization worksheet.csv"))
 ```
 
 # Introduction
@@ -90,7 +90,6 @@ In the table below we summarize all comments and requests with sources. The memo
 
 requeststab <- requests %>%
   dplyr::select(Request, Year, Aggregate = Aggregate.Category, Project, Source, Status, Progress, Order) %>%
-  dplyr::filter(Order>0) |>
   dplyr::mutate(Source = str_trim(str_extract(Source, "[^-]+"))) %>%
   dplyr::group_by(factor(Aggregate, levels = c("System level thresholds/ref pts",
                                                "Management",
@@ -102,7 +101,7 @@ requeststab <- requests %>%
                                                "SOE admin"))
                   )%>% #, Project) %>%
   dplyr::mutate(#AvgOrder = mean(Order, na.rm=T),
-                Rank = factor(case_when(Order < 1.5 ~ "Highest", 
+                Rank = factor(case_when(Order > 0 & Order < 1.5 ~ "Highest", 
                                      Order >= 1.5 & Order < 1.75 ~ "High",
                                      Order >= 1.75 & Order < 2 ~ "Moderate",
                                      Order >= 2 & Order < 2.5 ~ "Low",
@@ -317,8 +316,8 @@ An unranked request to review direct indicators of net vs. gross revenue indicat
 
 ```{r profit, fig.cap="Net revenue (left) and cost coverage (right) in the Greater Atlantic Region.", out.width = "49%", fig.show='hold'}
 
-knitr::include_graphics(here::here("SOE-response-memo/images/Net_revenue.pdf"))
-knitr::include_graphics(here::here("SOE-response-memo/images/Cost_Coverage.pdf"))
+#knitr::include_graphics(here::here("SOE-response-memo/images/Net_revenue.pdf"))
+#knitr::include_graphics(here::here("SOE-response-memo/images/Cost_Coverage.pdf"))
 ```
 
 One moderate priority request was included in the 2023-2024 SOE: a fall turnover index has been included in both the MAFMC and NEFMC reports in the Climate and Ecosystem Productivity sections.
