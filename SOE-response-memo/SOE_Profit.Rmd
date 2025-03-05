@@ -1,15 +1,22 @@
 ---
-title: "Profit_Assessment"
+title: "Proxies for profit in the Mid-Atlantic"
 author: "Geret DePiper"
 date: "`r Sys.Date()`"
 
 bibliography: ["Profit_MAFMC.bib"]
 link-citations: yes
+header-includes:
+- \usepackage{graphicx}
+- \usepackage{float}
+- \usepackage{pdflscape}
+- \newcommand{\blandscape}{\begin{landscape}}
+- \newcommand{\elandscape}{\end{landscape}}
 output:
   bookdown::pdf_document2:
     toc: False
     fig_caption: yes
     keep_tex: yes
+    number_sections: yes
 ---
 
 ```{r setup, include=FALSE}
@@ -30,16 +37,27 @@ library(reshape2)
 library(ggpubr)
 library(urca)
 library(kableExtra)
-load(file="F:/MAFMC Risk Assessment/Profit/Net_revenue_data_CAMS_LAND")
+library(dynlm)
+library(jtools)
+library(huxtable)
+load(file=here::here("Net_revenue_data_CAMS_LAND"))
 ```
 
-## Introduction
+\section{Introduction}
 
-The SSC asked for a refined indicator of net revenue to better proxy for profitability. In what follows I provide an overview of the analysis conducted, per SSC recommendations. Specifically, I present a net revenue assessment (gross revenue minus trip costs, for federally reporting trips), profitability ratio (gross revenue for all trips divided by trip costs), and cointegration analysis of gross revenue and fuel prices, by ecological production unit between the years 2000 - 2023. The aim of this document is to provide information sufficient for the SSC to select a preferred indicator to present within the MAFMC's State of the Ecosystem Report and Ecosystem Approach to Fishery Management Risk Assessment. All dollar values are reported in $2023 real values.
+The SSC asked for a refined indicator of net revenue to better proxy for profitability. In what follows I provide an overview of the analysis conducted, per SSC recommendations. Specifically, I present a net revenue assessment (gross revenue minus trip costs, for federally reporting trips), profitability ratio (gross revenue for all trips divided by average trip costs), and cointegration analysis of gross revenue and fuel prices, by ecological production unit between the years 2000 - 2023. The aim of this document is to provide information sufficient for the SSC to select a preferred indicator to present within the MAFMC's State of the Ecosystem Report and Ecosystem Approach to Fishery Management Risk Assessment. All dollar values are reported in $2023 real values.
 
 Two important notes on the analysis: The underlying data does not currently include information for trips in which there is a valid trip report but no corresponding dealer report. In addition, the algorithm currently employed to assign trips to region fished differs slightly than the algorithm used in the formal State of the Ecosystem Report. Both of these issues will look to be addressed in the coming year. This analysis will therefore differ from the final indicators developed, but should suffice for decision-making with respect to the overarching methodologies to employ.
 
-## Cost Coverage
+The results of these analysis indicate that the three viable indicators for reporting purposes are gross revenue, net revenue for the federally permitted fleet, or a profitability ratio of a total gross revenue index to an average cost index. The question for the SSC is what combination of these three indices they endorse for use in ecosystem reporting products. 
+
+For concreteness, I propose the SSC consider one of the following two alternatives:
+
+1. A combination of Gross Revenue from all trips in the Mid-Atlantic region and net revenue estimates for federally-permitted vessels.
+
+2. Revenue, Cost, and Profitability indices as outlined in Section \ref{P-ratio}
+
+\section{Cost Coverage}
 
 As background, Figure \@ref(fig:coverage) presents an overview of gross revenue from federal trips, for which costs can be calculated, versus gross revenue for which trip costs cannot be computed. A number of issues are highlighted by the graphs. First, the coverage varies substantially by ecological production unit, with Georges Bank having highest percentage of gross revenue covered. The Mid-Atlantic Bight shows substantial interannual variability in coverage, with costs covering between 50\% and 75\% of total gross revenue generated in most recent years. Second, and in particular for the Mid-Atlantic, the gross revenue for federally permitted trips presents different trends than the the gross revenue by non-federally permitted trip. This suggests different production functions between the two fleet segments, and thus inappropriateness of imputing costs from a model based on federally permitted trips onto non-federally permitted trips. 
 
@@ -55,9 +73,9 @@ ggplot(Cost_Coverage,aes(x=YEAR,y=Total_revenue/1000000,colour=Missing))+
   geom_line(stat="identity")+facet_wrap(vars(EPU), scales="free_y")+ expand_limits(y = 0)+ theme(axis.text.x = element_text(angle=90, hjust=1))+labs(y="Total Revenue ($2023 Million)",x="Year")
 ```
 
-## Net Revenue
+\section{Net Revenue}
 
-Figure \@ref(fig:coverage) presents the summed net revenue estimates for federally permitted trips. Again, there is substantial heterogeneity and variability in net revenue across regions. Apart from a slight uptick between 2019 - 2020, there has been a steady decline in net revenue within the Mid-Atlantic since 2016, with 2023 representing the lowest net revenue estimate of the series.
+Figure \@ref(fig:coverage) presents the summed net revenue estimates for federally permitted trips. Again, there is substantial heterogeneity and variability in net revenue across regions. Apart from a slight uptick between 2019 - 2020, there has been a steady decline in net revenue within the Mid-Atlantic since 2016, with 2023 representing the lowest net revenue estimate of the series. Of note is that the net revenue estimates, particularly in Georges Bank and Mid-Atlantic, follow the same trends as the gross revenue generated by federally permitted trips presented in figure \@ref(fig:coverage). 
 
 ```{r netrev, echo=FALSE, fig.cap="Net revenue generated by federally permitted trips."}
 Net_revenue <- CAMS_Trip_Revenue %>% 
@@ -71,12 +89,9 @@ ggplot(Net_revenue, aes(x=YEAR,y=Net_Revenue/1000000))+
   geom_line()+facet_wrap(vars(EPU), scales="free_y")+ expand_limits( y = 0)+labs(y="Net Revenue ($2023 Million)",x="Year")
 
 ```
-```{r netrev_violin, echo=FALSE, include=FALSE}
-ggplot(CAMS_Trip_Revenue %>%
-  filter(!is.na(VTR_TRIPID)), aes(x=as.factor(YEAR),y=Net_Revenue, fill=as.factor(YEAR)))+
-  geom_violin(show.legend = FALSE)+facet_wrap(vars(EPU), scales="free_y")+ theme(axis.text.x = element_text(angle=45, hjust=1))
-```
-Although net revenue is the most-oft assessed metric of profitability in fisheries management, the fact that 25-50\% of trip revenue is excluded from this analysis has been a serious deficiency pointed out by both the SSC and Council, particularly through its Ecosystem and Ocean Planning Committee. As such, two additional analyses are presented in what follows. First, we present a "profitabilty index", which in this case is a ratio of gross revenue to estimated costs. This indicator is common in the benchmarking literature [@balk_residual_2003], despite the ratio not being unique across combinations of revenue and costs. 
+\section{Profitability Ratios} \label{P-ratio}
+
+Although net revenue is the most-oft assessed metric of profitability in fisheries management, the fact that 25-50\% of trip revenue is excluded from this analysis has been a deficiency pointed out by both the SSC and Council, particularly through the latter's Ecosystem and Ocean Planning Committee. As such, two additional analyses are presented in what follows. First, we present a "profitabilty index", which in this case is a ratio of gross revenue to estimated costs. This indicator is common in the benchmarking literature [@balk_residual_2003], despite the ratio not being unique across combinations of revenue and costs. 
 
 In this application, we generate three separate indexes of performance: Revenue, Cost, and Profit. The Revenue index is the sum of gross revenue from both federally permitted and non-federally permitted trips by region, normalized by the arithmetic mean gross revenue across regions in 2000, the first year of the series. The Cost index is the geometric mean of the normalized trip-level costs by region, with normalization based on the arithmetic average cost across all federally permitted trips. The trip level normalization ensures the index can be compared across regions, abstracting away from the issue of scale and downweighting outliers, as is standard in the literature [e.g. @walden_profits_2022]. The final Profit index is the ratio of Revenue and Cost indices. The implicit assumption embedded in the Cost and Profit indices is that average costs in the federally permitted fleet adequately proxies for non-permitted fleet costs, a tenuous assumption given the trends seen in figure \@ref(fig:coverage). 
 
@@ -84,7 +99,7 @@ Each of these indices are presented in figure \@ref(fig:Profitability). For the 
 
 The Profit index across all three regions is near historic lows, driven by both historic low revenue in the Gulf of Maine and Mid-Atlantic, coupled by relatively high costs across all three regions.
 
-```{r Profitability, echo=FALSE}
+```{r Profitability, echo=FALSE, fig.cap="Revenue, Cost, and Profitability Indices by region."}
 CI <- function(data, year, cost_ref) { #COST INDEX
   data <- data[,c("YEAR","CAMSID","Real_Cost","EPU")] %>%
     mutate(index=Real_Cost/as.numeric(cost_ref))
@@ -197,10 +212,17 @@ p3 <- ggplot(PI,aes(x=YEAR,y=prof_index, colour=EPU))+geom_line()
 ggarrange(p1, p2, p3, ncol=1, common.legend = TRUE, legend="bottom")
 
 ```
-In order to assess how well costs on federally permitted trips proxy for non-federally permitted trips, we conduct a cointegration analysis, which captures the extent to which two variables move concurrently across time. In this case, we look at whether the gross revenue from non-federally permitted trips move in syncopation with fuel prices in the region, particularly Diesel no. 2 spot prices from the port of New York, downloaded from the Department of Energy on February 7, 2025 (https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?n=PET&s=EER_EPD2F_PF4_Y35NY_DPG&f=W
+The SSC suggested a cointegration analysis between gross revenue and fuel prices to assess whether the latter could help inform the linkage between gross revenue and profitability. A cointegration analysis captures the extent to which two variables move concurrently across time. In this case, we look at whether the gross revenue from non-federally permitted trips move in syncopation with fuel prices in the region, particularly Diesel no. 2 heating oil (equivalent to marine diesel) spot prices from the port of New York, downloaded from the Department of Energy on February 7, 2025 (https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?n=PET&s=EER_EPD2F_PF4_Y35NY_DPG&f=W
 ). We then compare this analysis with one conducted on federally permitted trips, to assess whether differences exist between the two fleet segments. 
 
+Table \@ref(tab:stationarity) presents the unit root tests for gross revenue and diesel costs within the Mid-Atlantic separately, using both Augmented Dickey-Fuller and Elliot, Rothenberg and Stock formulations, and the congregation of gross revenue and diesel prices using an Augmented Dickey-Fullter test for nonstationarity on the residuals of a regression of gross revenue on diesel prices. In each case, a significant result indicates the rejection of the nonstationarity null hypothesis.
+
+Two main findings immediately become apparent when reviewing these results. First, the results are consistent between the two fleet segments, with gross revenue rejecting the null hypothesis of nonstationarity at the 5\% level across all tests, and a failure to reject the null for diesel price across at any customary level across all specifications. The latter finding is consistent with the literature on No. 2 diesel prices estimated at the weekly level [@narayan_unit_2015]. Second, The order of integration is different between gross revenue and diesel prices, with the former being I(0) and the latter integrated at a higher order, which directly leads to a rejection of cointegration between the two [@engle_co-integration_1987].
+
+\blandscape
+
 ```{r stationarity, echo=FALSE}
+      
 Diesel <- read.csv(file=here::here("Weekly_New_York_Harbor_No._2_Heating_Oil_Spot_Price_FOB.csv"),
                      skip = 5, col.names=c("Date","Price"), header=FALSE) %>%
   mutate(Date = as.Date(Date,"%m/%d/%Y"),
@@ -210,6 +232,7 @@ Diesel <- read.csv(file=here::here("Weekly_New_York_Harbor_No._2_Heating_Oil_Spo
                          format="%Y")))
 
 Cointegration <- CAMS_Trip_Revenue %>%
+  filter(EPU=="Mid-Atlantic Bight") %>%
   mutate(Missing= "Net Revenue Possible",
     Missing= ifelse(is.na(Real_Cost),"Missing Costs", Missing),
     Week = strftime(DATE_TRIP, 
@@ -221,10 +244,14 @@ Cointegration <- CAMS_Trip_Revenue %>%
   dplyr::summarise(Real_Revenue=sum(Real_Revenue,na.rm=TRUE),
             Price=mean(Price, na.rm=TRUE)) %>% ungroup
 
-Missing_cost <- Cointegration %>% filter(Missing=="Missing Costs")
-Nonmissing_cost <- Cointegration %>% filter(Missing=="Net Revenue Possible")
+Missing_cost <- Cointegration %>% filter(Missing=="Missing Costs") %>% 
+  ts(start=c(2000,1),
+  end=c(2023,52), frequency=52)
+Nonmissing_cost <- Cointegration %>% filter(Missing=="Net Revenue Possible")%>% 
+  ts(start=c(2000,1),
+  end=c(2023,52), frequency=52)
 
-Stationarity1 <- ur.df(Missing_cost$Real_Revenue/100000000,
+Stationarity1 <- ur.df(Missing_cost[,"Real_Revenue"]/10000000,
                        type="none",
                        lags = 15,
                        selectlags="AIC")
@@ -234,7 +261,7 @@ p1 <- ""
   p1 <- ifelse(Stationarity1@teststat<Stationarity1@cval[1]," * * * ",p1)
 #summary(Stationarity1)
 
-Stationarity2 <- ur.ers(Missing_cost$Real_Revenue/100000000,
+Stationarity2 <- ur.ers(Missing_cost[,"Real_Revenue"]/100000000,
                        lag.max = 15)
 p2 <- ""
   p2 <- ifelse(Stationarity2@teststat<Stationarity2@cval[3],
@@ -245,7 +272,7 @@ p2 <- ""
                " * * * ",p2)
 #summary(Stationarity2)
 
-Stationarity3 <- ur.df(Nonmissing_cost$Price,
+Stationarity3 <- ur.df(Nonmissing_cost[,"Real_Revenue"]/100000000,
                        type="none",
                        lags = 15,
                        selectlags="AIC")
@@ -258,7 +285,7 @@ p3 <- ""
                " * * * ",p3)
 #summary(Stationarity3)
 
-Stationarity4 <- ur.ers(Nonmissing_cost$Price,
+Stationarity4 <- ur.ers(Nonmissing_cost[,"Real_Revenue"]/100000000,
                        lag.max = 15)
 p4 <- ""
   p4 <- ifelse(Stationarity4@teststat<Stationarity4@cval[3],
@@ -268,51 +295,163 @@ p4 <- ""
   p4 <- ifelse(Stationarity4@teststat<Stationarity4@cval[1],
                " * * * ",p4)
 #summary(Stationarity4)
+  
+  Stationarity5 <- ur.df(Missing_cost[,"Price"],
+                       type="none",
+                       lags = 15,
+                       selectlags="AIC")
+p5 <- ""
+  p5 <- ifelse(Stationarity5@teststat<Stationarity5@cval[3],
+               " * ",p5)
+  p5 <- ifelse(Stationarity5@teststat<Stationarity5@cval[2],
+               " * * ",p5)
+  p5 <- ifelse(Stationarity5@teststat<Stationarity5@cval[1],
+               " * * * ",p5)
+#summary(Stationarity5)
 
+Stationarity6 <- ur.ers(Missing_cost[,"Price"],
+                       lag.max = 15)
+p6 <- ""
+  p6 <- ifelse(Stationarity6@teststat<Stationarity6@cval[3],
+               " * ",p6)
+  p6 <- ifelse(Stationarity6@teststat<Stationarity6@cval[2],
+               " * * ",p6)
+  p6 <- ifelse(Stationarity6@teststat<Stationarity6@cval[1],
+               " * * * ",p6)
+#summary(Stationarity6)
+  
+    Stationarity7 <- ur.df(Nonmissing_cost[,"Price"],
+                       type="none",
+                       lags = 15,
+                       selectlags="AIC")
+p7 <- ""
+  p7 <- ifelse(Stationarity7@teststat<Stationarity7@cval[3],
+               " * ",p7)
+  p7 <- ifelse(Stationarity7@teststat<Stationarity7@cval[2],
+               " * * ",p7)
+  p7 <- ifelse(Stationarity7@teststat<Stationarity7@cval[1],
+               " * * * ",p7)
+#summary(Stationarity7)
+
+Stationarity8 <- ur.ers(Nonmissing_cost[,"Price"],
+                       lag.max = 15)
+p8 <- ""
+  p8 <- ifelse(Stationarity8@teststat<Stationarity8@cval[3],
+               " * ",p8)
+  p8 <- ifelse(Stationarity8@teststat<Stationarity8@cval[2],
+               " * * ",p8)
+  p8 <- ifelse(Stationarity8@teststat<Stationarity8@cval[1],
+               " * * * ",p8)
+#summary(Stationarity8)
+  
+FS_EGADF <- dynlm(Missing_cost[,"Real_Revenue"]/100000000 ~ Missing_cost[,"Price"])
+#summary(FS_EGADF)
+
+z_hat <- resid(FS_EGADF)
+Coint <- ur.df(z_hat, lags = 15, type = "none", selectlags = "AIC")
+
+p9 <- ""
+  p9 <- ifelse(Coint@teststat<Coint@cval[3],
+               " * ",p9)
+  p9 <- ifelse(Coint@teststat<Coint@cval[2],
+               " * * ",p9)
+  p9 <- ifelse(Coint@teststat<Coint@cval[1],
+               " * * * ",p9)
+  
+FS_EGADF2 <- dynlm(Nonmissing_cost[,"Real_Revenue"]/100000000 ~ Nonmissing_cost[,"Price"])
+#summary(FS_EGADF2)
+
+z_hat2 <- resid(FS_EGADF2)
+Coint2 <- ur.df(z_hat2, lags = 15, type = "none", selectlags = "AIC")
+
+p10 <- ""
+  p10 <- ifelse(Coint2@teststat<Coint2@cval[3],
+               " * ",p10)
+  p10 <- ifelse(Coint2@teststat<Coint2@cval[2],
+               " * * ",p10)
+  p10 <- ifelse(Coint2@teststat<Coint2@cval[1],
+               " * * * ",p10)
+  
 Stationarity_results <- rbind(
-  c("Gross Revenue",Stationarity1@test.name,Stationarity1@lags,paste0(Stationarity1@teststat,p1, sep="")),
-c("Gross Revenue",Stationarity2@test.name,"15",paste0(Stationarity2@teststat,p2, sep="")))
+  c("Missing Costs","Gross Revenue",Stationarity1@test.name,Stationarity1@lags,paste0(Stationarity1@teststat,p1, sep="")),
+c("Missing Costs","Gross Revenue",Stationarity2@test.name,"15",paste0(Stationarity2@teststat,p2, sep="")))
 
 Stationarity_results <- rbind(Stationarity_results,
-c("Diesel Price",Stationarity3@test.name,Stationarity3@lags,paste0(Stationarity3@teststat,p3, sep="")))
+c("Net Revenue Possible","Gross Revenue",Stationarity3@test.name,Stationarity3@lags,paste0(Stationarity3@teststat,p3, sep="")))
 
 Stationarity_results <- rbind(Stationarity_results,
-c("Diesel Price",Stationarity4@test.name,"15",paste0(Stationarity4@teststat,p4, sep="")))
+c("Net Revenue Possible","Gross Revenue",Stationarity4@test.name,"15",paste0(Stationarity4@teststat,p4, sep="")))
+
+Stationarity_results <- rbind(Stationarity_results,
+c("Missing Costs","Diesel Price",Stationarity5@test.name,Stationarity5@lags,paste0(Stationarity5@teststat,p5, sep="")))
+
+Stationarity_results <- rbind(Stationarity_results,
+c("Missing Costs","Diesel Price",Stationarity6@test.name,"15",paste0(Stationarity6@teststat,p6, sep="")))
+
+Stationarity_results <- rbind(Stationarity_results,
+c("Net Revenue Possible","Diesel Price",Stationarity7@test.name,Stationarity7@lags,paste0(Stationarity7@teststat,p7, sep="")))
+
+Stationarity_results <- rbind(Stationarity_results,
+c("Net Revenue Possible","Diesel Price",Stationarity8@test.name,"15",paste0(Stationarity8@teststat,p8, sep="")))
+
+# Stationarity_results <- rbind(Stationarity_results,
+#   c("Missing Costs","Regression Residuals",Coint@test.name,Coint@lags,paste0(Coint@teststat,p9, sep="")))
+# 
+# Stationarity_results <- rbind(Stationarity_results,
+#   c("Net Revenue Possible","Regression Residuals",Coint2@test.name,Coint2@lags,paste0(Coint2@teststat,p10, sep="")))
 
 knitr::kable(Stationarity_results, format = "latex", linesep = "",
-      col.names = c("Variable","Model","Lags","tau"),
-      caption = "Unit root tests for Gross Revenue and Diesel prices.",
+      col.names = c("Fleet Segment","Variable","Model","Lags","tau"),
       #align = aca,
-      booktabs = T) %>%
+      booktabs = T, 
+      caption = "Unit root tests for Gross Revenue and Diesel prices.") %>%
+  kable_styling(latex_options = "HOLD_position") %>%
   row_spec(0, bold = TRUE) %>% 
-  add_footnote(" * * * \\textit{p}-value < 0.01,* * \\textit{p}-value < 0.05, * \\textit{p}-value < 0.1.",notation="symbol",threepart=TRUE)
+  kableExtra::add_footnote(" * * * _p_-value < 0.01,* * _p_-value < 0.05, * _p_-value < 0.1.",notation="symbol",threepart=TRUE) 
 ```
 
-```{r cointegration, echo=FALSE}
-Cointegration_1 <- ur.df(Missing_cost$Real_Revenue/100000000-Missing_cost$Price, 
-      lags = 15, 
-      selectlags = "AIC", 
-      type = "drift")
-summary(Cointegration_1)
+\elandscape
 
-Cointegration_2 <-ur.ers(Missing_cost$Real_Revenue/100000000-Missing_cost$Price,
-       model = "constant", 
-       lag.max = 15)
-summary(Cointegration_2)
+To further highlight the fact, table \@ref(tab:cointegration) presents a regression of gross revenue on diesel prices. The insignificant parameter estimate on diesel prices indicates that there is no possibility of cointegration between the two series.
 
+```{r cointegration, results='as.is', tab.cap="Regression of gross revenue on diesel prices for non-federally permitted trips."}
 
-Cointegration_3 <- ur.df(Nonmissing_cost$Real_Revenue/100000000-Nonmissing_cost$Price, 
-      lags = 15, 
-      selectlags = "AIC", 
-      type = "drift")
-summary(Cointegration_3)
+FS_EGADF <- dynlm(Missing_cost[,"Real_Revenue"]/100000000 ~ Missing_cost[,"Price"])
+#summary(FS_EGADF)
 
-Cointegration_4 <-ur.ers(Missing_cost$Real_Revenue/100000000-Missing_cost$Price,
-       model = "constant", 
-       lag.max = 15)
-summary(Cointegration_4)
+# z_hat <- resid(FS_EGADF)
+# Coint <- ur.df(z_hat, lags = 15, type = "none", selectlags = "AIC")
+# 
+# p9 <- ""
+#   p9 <- ifelse(Coint@teststat<Coint@cval[3],
+#                " * ",p9)
+#   p9 <- ifelse(Coint@teststat<Coint@cval[2],
+#                " * * ",p9)
+#   p9 <- ifelse(Coint@teststat<Coint@cval[1],
+#                " * * * ",p9)
+  
+# FS_EGADF2 <- dynlm(Nonmissing_cost[,"Real_Revenue"]/100000000 ~ Nonmissing_cost[,"Price"])
+# #summary(FS_EGADF2)
+# 
+# z_hat2 <- resid(FS_EGADF2)
+# Coint2 <- ur.df(z_hat2, lags = 15, type = "none", selectlags = "AIC")
+# 
+# p10 <- ""
+#   p10 <- ifelse(Coint2@teststat<Coint2@cval[3],
+#                " * ",p10)
+#   p10 <- ifelse(Coint2@teststat<Coint2@cval[2],
+#                " * * ",p10)
+#   p10 <- ifelse(Coint2@teststat<Coint2@cval[1],
+#                " * * * ",p10)
+
+export_summs(FS_EGADF, coefs=c("Intercept"="(Intercept)","Diesel Price"='Missing_cost[, "Price"]'))
 
 ```
+\section{Discussion}
 
-# References
+The analyses herein highlight that federally permitted and non-federally permitted trips within the Mid-Atlantic region present different gross revenue dynamics, indicating differences in underlying production functions. This, in turn, suggests that proxying for non-federal trip costs with federal trip costs is inappropriate.
+
+The net revenue estimate for federally permitted vessels is straightforward to calculate and informative for that fleet segment. Given that gross revenue for non-federally permitted vessels is not cointegrated with diesel prices, the only remaining alternative for consideration is the profitability ratio of total gross revenue to average trip cost on federally permitted trips. The utility of the profitability ratio implicitly relies on a tentative relationship between the average trip cost on federally permitted and non-federally permitted trips.
+
+\section{References}
 
