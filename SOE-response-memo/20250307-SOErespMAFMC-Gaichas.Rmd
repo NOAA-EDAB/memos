@@ -13,6 +13,7 @@ address:
 - Dover, DE 19901
 encl:
  - "State of the Ecosystem 2025: Request Tracking Memo"
+ - "Proxies for profit in the Mid-Atlantic"
 cc:
 - Jon Hare
 letterhead: letterhead/NEFSCletterhead.pdf
@@ -25,9 +26,14 @@ output: linl::linl
 
 In this memo we list comments and requests received on the 2019-2024 State of the Ecosystem (SOE) reports, and how we responded to those requests. We include comments from both Councils because adjustments to the report were made in response to both. We welcome feedback on whether this memo is useful and how to improve it for future SOE reporting.
 
-Since 2023, the memo is organized into categories of requests in descending order of overall Council priority. The Rank column summarizes priority and was initially derived from combined discussion with the Mid-Atlantic SSC ecosystem working group and a survey of selected MAFMC members coordinated by Council staff in July 2022. Priorities were reviewed and updated with the MAFMC SSC ecosystem and economic subgroups and the NEFMC SSC Chair in July 2024.
+The attached document includes a table where we summarize all comments and requests with sources. Since 2023, the memo is organized into categories of requests in descending order of overall Council priority. The Rank column summarizes priority and was derived from combined discussion with the Mid-Atlantic SSC ecosystem working group and a survey of selected MAFMC members coordinated by Council staff in July 2022. Ranks were reviewed and updated by MAFMC and NEFMC SSC members in July 2024.
 
-The attached document includes a table where we summarize all comments and requests with sources. The Status and Progress columns briefly summarize how we responded, with a more detailed response in each memo section. In each detailed response, we refer to SOE sections where changes are found or describe information that was not sufficiently developed to include in the 2025 SOE in an effort to solicit feedback on how best to develop indicators for future reports.
+We specifically request feedback on the following topics to improve the utility of the SOE for the Council:
+
+1.  Ecosystem level management objectives: is the list complete? Does the Council have reference points, desired states, or other performance metrics we should address for each objective?
+1.  Current objective sections
+    *  Profits objective and appropriate indicators: attached analysis with decision points
+    *  Stability objective: are current indicators addressing Council needs?
+1.  Forecasts: what decisions or contexts would ocean forecasts be most useful for? What are desired characteristics of a forecast?
 
 We welcome comments on the entire SOE report as well as information included in this memo, and look forward to feedback from the SSC and Council.
-
