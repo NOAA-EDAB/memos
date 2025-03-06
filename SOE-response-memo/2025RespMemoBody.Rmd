@@ -175,9 +175,10 @@ New requests from 2023-2024 were either prioritized jointly through SSC discussi
 ## Adjustments to general SOE report structure
 
 In response to feedback that the revision of the Climate and Ecosystem Risks section was useful, we have retained that section and made adjustments based on suggestions from both Council's staff in January 2025. The Climate and Ecosystem Risks section continues to center on management decisions. It includes 3 sections with modified titles to better align with management decisions: 
-    +  Risks to managing spatially, highlighting distribution shifts in managed species with potential drivers
-    +  Risks to managing seasonally, highlighting temporal shifts in managed species with potential drivers 
-    +  Risks to setting catch limits, highlighting productivity and condition shifts, with potential drivers
+
++  Risks to managing spatially, highlighting distribution shifts in managed species with potential drivers
++  Risks to managing seasonally, highlighting temporal shifts in managed species with potential drivers 
++  Risks to setting catch limits, highlighting productivity and condition shifts, with potential drivers
     
 In response to positive feedback on the 2023 Highlights section, we will continue to include a section summarizing conditions in the previous year. The 2024 Highlights section reviews new conditions, activities, and anomalous observations across the Northeast US from the past year. This section is summarized graphically on p.3 (Mid-Atlantic report) and p.4 (New England report).
 
@@ -203,11 +204,12 @@ for(j in 1:length(unique(requeststab$Aggregate))) {
 
 ### System level thresholds/reference points: highest priority
 
-In July 2024, SSC review prioritized the following requests:  
-    + maintain high priority on trend/threshold evaluation
-    + express indicators relative to biological thresholds
-    + standardize uncertainty language (IPCC)
-    + longer term: simulation analysis of thresholds
+In July 2024, SSC review prioritized the following requests: 
+
++ maintain high priority on trend/threshold evaluation
++ express indicators relative to biological thresholds
++ standardize uncertainty language (IPCC)
++ longer term: simulation analysis of thresholds
 
 #### Trend/threshold evaluation
 The 2025 SOE addressed the first request by introducing a new short term trend analysis by Andy Beet (NEFSC) and applying it to all indicators where the analysis is appropriate. Short term trend analysis was applied the most recent 10 years of data for long (>30 year) time series, and to the full time series for indicators with fewer than 30 years of data for the 2025 SOE. The `ecodata` R package already incorporates long term trend estimation based on Hardison et al. @hardison_simulation_2019. This research found that trends were most robustly distinguished from autocorrelation in indicator time series of 30 years or longer. The new short term trend analysis addresses both autocorrelation in the short time series and missing data by applying a bootstrap analysis
@@ -215,7 +217,20 @@ The 2025 SOE addressed the first request by introducing a new short term trend a
 Automated methods for evaluating time series inflection points, and identifying breakpoints (regimes) have been tested for inclusion in future SOEs. Kim Bastille (NEFSC) worked on methods to identify inflection points in indicator time series based on Large et al. @large_defining_2013 and @large_quantifying_2015. A standardized method has been implemented as a prototype and applied to several existing SOE indicators in 2022, but several questions on default approaches to be used across multiple indicators require more in depth analysis and review. A method for identifying breakpoints has been implemented by Kim Bastille and Laurel Smith (NEFSC) and a prototype analysis developed using SOE indicators in 2022. These methods are promising, but staff time has been devoted to other priorities for the past several years.
 
 #### Biological thresholds 
+Since 2023, SOEs have expressed ocean acidification indicators relative to biological thresholds for Atlantic sea scallops, longfin squid, surfclams, and other species. In 2025, [ocean acidification indicators](https://noaa-edab.github.io/catalog/ocean_acidification.html) are expressed relative to sensitivity levels for Atlantic sea scallop (Placopecten magellanicus), longfin squid (Doryteuthis pealeii), Atlantic cod (Gadus morhua) and American lobster (Homarus americanus).
 
+The 2024 SOE showed the number of days where [2022 bottom temperatures exceeded stressful levels for Atlantic scallop on a map](https://noaa-edab.github.io/catalog/observation_synthesis.html#key-results-and-visualizations-60). 
+
+```{r scallopmap, fig.cap="The number of days in 2022 where bottom temperature was between 17 and 19 ℃ (stressful thermal temperatures for sea scallops) in each GLORYS grid cell. The gray lines show the sea scallop estimation areas, with the Elephant Trunk region highlighted in black lines.", out.width='50%'}
+magick::image_read("https://github.com/NOAA-EDAB/ecodata/raw/master/workshop/images/bottom_temp_threshold_17_19_Elephant_Trunk.png")
+```
+
+
+Since producing this indicator, SOE team members initiated a project to gather information on temperature and salinity sensitivity levels for all managed species on the Northeast US shelf. To date, the project has completed a literature review as well as an empirical analysis of temperature ranges for N species from NEFSC bottom trawl surveys and the NHRA database. In addition, bottom temperature products were developed so that users could produce plots similar to the scallop plot for any species, once temperature sensitivity thresholds were established.
+
+```{r}
+
+```
 
 
 #### Standard uncertainty language 
@@ -230,7 +245,8 @@ A simulation study is being planned to use the Northeast US Atlantis ecosystem m
 ### Management: high priority
 
 In July 2024, SSC review prioritized the following requests:  
-    + include indicators for risk policy/risk assessment processes
+
++ include indicators for risk policy/risk assessment processes
 
 The SOE team prioritized this request for 2025. The SOE already includes many indicators used in the MAFMC's EAFM risk assessment process, and several proposed for the newly approved NEFMC risk policy. Additional indicators associated with the MAFMC EAFM risk assessment have been added to the SOE ecodata package for 2025 (shoreside support indicators), and multiple new EAFM risk assessment indicators have also been included in 2025 (e.g., low trophic level prey abundance indices for benthic invertebrates and zooplankton that are combined with existing fish condition indicators to assess prey availability, social vulnerability indicators for all communities, and community climate risk indicators). Additional indicators are in development for offshore habitat risks based on stock-specific indicators, which will be presented in the MAFMC EAFM Risk Assessment document. These indicators will be added or adjusted after review by MAFMC for upcoming SOE and other ecosystem reporting products. 
 
@@ -241,7 +257,8 @@ The request to re-evaluate Ecosystem Production Units (EPUs) was ranked lowest p
 ### Short term forecasts: high priority
 
 In July 2024, SSC review prioritized the following requests:  
-    + include Climate Ecosystem Fisheries Initiative (CEFI) projections
+
++ include Climate Ecosystem Fisheries Initiative (CEFI) projections
 
 The SSC working group ranked these new requests higher priority relative to Council members, but overall both ranked short term forecasting requests high priority. New resources to address this request came online at the NEFSC through the Climate Ecosystem Fisheries Initiative (CEFI) in 2024. This national effort seeks to link ocean model forecasts with products used in management. In the Northeast region, the SOE team was closely collaborating with CEFI modelers to test and present new products to the Councils and SSCs as they come online.
 
@@ -254,7 +271,8 @@ MAFMC has recently completed work on short term forecasts of species distributio
 ### Regime shifts: high priority
 
 In July 2024, SSC review prioritized the following requests:  
-   + characterize current conditions in context of expected short term change
+
++ characterize current conditions in context of expected short term change
 
 Addressing the request to characterize expected short term change is linked to the short term forecasts category above. 
 
@@ -264,12 +282,13 @@ Regime shifts in socio-economic indicators may be addressed in the ongoing work 
 
 ### Multiple system drivers: moderate-high priority
 
-In July 2024, SSC review prioritized the following requests:  
-    + profits vs revenue: provide incomplete net revenue and index of costs
-    + clarify objectives and terminology for fishing community engagement and social indicators
-        + time series of community indicators
-        + social and economic linkages to climate
-        + consider appropriate scale for indicators
+In July 2024, SSC review prioritized the following requests: 
+
++ profits vs revenue: provide incomplete net revenue and index of costs
++ clarify objectives and terminology for fishing community engagement and social indicators
+    + time series of community indicators
+    + social and economic linkages to climate
+    + consider appropriate scale for indicators
 
 This category contains a wide array of requests with many projects currently in progress. There were two requests ranked high priority, five ranked moderate priority, nine unranked because they are newer requests, and eight ranked low or lowest priority. Given the number of SOE requests, those ranked lowest priority that have not already been started are unlikely to be addressed. 
 
@@ -284,48 +303,23 @@ An unranked request to review direct indicators of net vs. gross revenue indicat
 Another high priority request in this category is incorporating the ongoing fish condition project and associated analyses into the SOE. Regime shift analyses of fish condition may be available for the 2025 SOE. Initial work linking multiple SOE low trophic time series with fish condition using dynamic structural equation modeling [@thorson_dynamic_2024] was started in February 2024. With additional resources, this approach may be presented to synthesize drivers of fish condition across multiple species in a future SOE.  
 
 
-
 ### Functional group level status/thresholds/ref pts: moderate priority
 
-In July 2024, SSC review prioritized the following requests:  
-    + not specifically prioritized
-    + include more aggregations for biomass and landings (Council-managed, status)
+In July 2024, SSC review pdid not prioritize requests, but discussed including more aggregations for biomass and landings (Council-managed, status). Information on Council management was added to the SOE ecodata package for 2025 so that additional analyses and visualizations can be developed in future years. 
 
+The NEFMC requested a forage availability index (including both managed species such as herring and unmanaged species such as sandlance). A spatial index of forage availability was developed for the bluefish research track assessment as described above. This index was partitioned into EPUs and presented in the 2023 and 2024 SOEs. An index of forage center of gravity was also included as a potential driver of distribution shifts in the 2024 Risks to Spatial Management section. Additional indices of abundance and center of gravity for benthic forage and zooplankton forage were added to the 2025 SOE. This also addresses the request to include time series of biomass not well represented in bottom trawl surveys. 
 
-Requests in this category were considered moderate to low priority by the SSC and Council. However, many were already in progress prior to ranking, and one has been included in the 2023 SOE.
-
-The NEFMC requested a forage availability index (including both managed species such as herring and unmanaged species such as sandlance). A spatial index of forage availability was developed for the bluefish research track assessment as described above. This index was partitioned into EPUs and presented in the 2023 and 2024 SOEs. An index of forage center of gravity was also included as a potential driver of distribution shifts in the 2024 Risks to Spatial Management section.
-
-Gray seal pup count indices are already included in the NEFMC SOE, and indices of populations for other seals and apex predators are in development by the protected species branch. These additional indices were not ready for the 2024 report. 
-
-Investigating time series of biomass for species not well represented in bottom trawl surveys was partially addressed by the forage index included in the 2023-2024 reports. However, only a subset of forage species are not well represented in bottom trawl surveys, and other species that are not forage are also not well represented in bottom trawl surveys. This request was ranked lowest priority by the Council and SSC, and given the difficulty of synthesizing data on poorly sampled species, is unlikely to be addressed in the near future.
+Gray seal pup count indices are already included in the NEFMC SOE, and indices of populations for other seals and apex predators are in development by the protected species branch. These additional indices were not ready for the 2025 report. 
 
 ### Stock level indicators: moderate priority
 
-In July 2024, SSC review prioritized the following requests:  
-    + not specifically prioritized 
-    + cross reference ESP products where appropriate
-
-
-Requests in this category were ranked moderate to lowest priority by the SSC and Council. Indicators of this nature would be well suited to Ecosystem and Socioeconomic Profiles (ESP) developed during research track assessments for individual stocks. Some aspects of these indicators may benefit SOE reporting as well.
-
-One request, linking shellfish growth and distribution to climate change and system productivity, is in progress. Alexis Hollander (VIMS) completed her thesis on surfclam growth in relation to bottom temperature in 2022, and information from this work can likely be included in the 2025 SOE, pending publication of student thesis results. 
-
-The request for indicators of scallop predators that are poorly sampled by bottom trawls is similar to the request in the category above addressing all species not well sampled by bottom trawls. It is possible that this request could be clarified and addressed during a scallop research track assessment.
-
-A new unranked request to evaluate the impacts of climate change on survey catchability is being addressed in some research track stock assessments. 
-
-The request for a sturgeon bycatch indicator was ranked lowest priority by the SSC and Council, so is unlikely to be addressed in the near future.
+In July 2024, SSC review did not prioritize requests, but highlighted a request to cross reference ESP products where appropriate. The SOE team agrees and work is ongoing to coordinate SOE and ESP products. 
 
 ### SOE admin: unranked priority
 
-These requests were not ranked; however, many are in progress.
+In July 2024, SSC review did not prioritize requests in this category. However, one was addressed.
 
 In 2024, both SSCs asked for criteria used to include information in the new "Highlights" sections. As noted in the [2024 Highlights catalog page](https://noaa-edab.github.io/catalog/observation_synthesis_2024.html), Observations were solicited from contributors to the State of the Ecosystem reports, colleagues at the Northeast Fisheries Science Center, academic and management partners, and the fishing industry. In late 2024 an email account was set up so that anyone can provide observations to the SOE team: <northeast.ecosystem.highlights@noaa.gov>. Items selected for inclusion in the synthesis include observations that were at or near their respective time series record (high or low) or had a large departure from the recent trends, were reported by multiple contributors, affected fishing efforts, or were considered newsworthy. 
-
-Investigation of uses of the SOE as requested by the MAFMC SSC is in progress with the assistance of NOAA communications experts using a combination of website analytics and citation information. This information has been compiled as part of an in progress manuscript reviewing use of ecosystem reports across NMFS. We hope to have an update on uses of the Northeast SOEs for the 2025 report/request memo. 
-
-The restructuring of this memo according to prioritization is intended to partially address the requests for timelines on in progress SOE requests by the NEFMC SSC. While not all project timelines are currently available, we have reported estimates in this document where possible. In addition, the effort to prioritize requests in 2022 ensures that limited resources are applied to the highest priority issues.
 
 
 # References
