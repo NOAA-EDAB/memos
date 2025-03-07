@@ -67,6 +67,21 @@ Use the code=readLines with the setup chunks from ecodata: need to do before eac
 ```{r, results='hide'}
  #  uncomment to get refreshed file from gdrive, otherwise it reads the one originally downloaded
 
+# google has changed authorization
+# after running googledrive::drive_find... below
+# you will get a line on the console that says 
+# Selection:
+# type 1
+# it will go to a browser window
+# select your google account
+# you _have_ to check the box that says Tidyverse API can access all your google stuff and change it
+# sounds bad but this won't work without it--you will get permission denied
+# once that happens the way to fix it to let you try again is to run the following line
+
+#    googledrive::drive_auth(email = NA)
+
+# once authorized these lines will run and save the file locally
+
  #  resultfile <- googledrive::drive_find(pattern = "SOE prioritization worksheet", type = "spreadsheet")
  # 
  # requests <- googledrive::drive_download(resultfile, type = "csv", overwrite = TRUE) %>% {read.csv(.$local_path)} 
@@ -156,7 +171,7 @@ Includes requests to develop analytical methods that can be applied across all i
 Includes analyses related to management performance. Work on this category is resource limited.
 
 #### Short term forecasts 
-Includes requests for biological and environmental forecasts. These forecasts include forthcoming CEFI products once they are tested. Work in this category started this year, but has been suspended due to the loss of multiple people hired to do this work.
+Includes requests for biological and environmental forecasts. These forecasts include forthcoming CEFI products once they are tested. Work in this category started this year, but has been suspended due to the termination of multiple people hired to do this work.
 
 #### Regime shifts 
 Many analyses have been conducted and are in progress for individual ecosystem components, but a unifying framework with consistent methods is needed for the SOE.
@@ -214,7 +229,7 @@ In July 2024, SSC review prioritized the following requests:
 + longer term: simulation analysis of thresholds
 
 #### Trend/threshold evaluation
-The 2025 SOE addressed the first request by introducing a new short term trend analysis by Andy Beet (NEFSC) and applying it to all indicators where the analysis is appropriate. Short term trend analysis was applied the most recent 10 years of data for long (>30 year) time series, and to the full time series for indicators with fewer than 30 years of data for the 2025 SOE. The `ecodata` R package already incorporates long term trend estimation based on Hardison et al. @hardison_simulation_2019. This research found that trends were most robustly distinguished from autocorrelation in indicator time series of 30 years or longer. The new [short term trend analysis](https://noaa-edab.github.io/tech-doc/short-term-trend-analysis.html) addresses both autocorrelation in the short time series and missing data by applying the Likelihood ratio statistic combined with a parametric bootstrap to test for a linear trend in the presence of autocorrelation in the form of an AR(1) process. Simulation testing has found the test to be robust to missing data.
+The 2025 SOE addressed the first request by introducing a new short term trend analysis by Andy Beet (NEFSC) and applying it to all indicators where the analysis is appropriate. Short term trend analysis was applied the most recent 10 years of data for long (>30 year) time series, and to the full time series for indicators with fewer than 30 years of data for the 2025 SOE. The `ecodata` R package already incorporates long term trend estimation based on Hardison et al. @hardison_simulation_2019. This research found that trends were most robustly distinguished from autocorrelation in indicator time series of 30 years or longer. The new [short term trend analysis](https://noaa-edab.github.io/tech-doc/short-term-trend-analysis.html) allows for the detection of a linear trend in short time series when autocorrelation is present. The method uses maximum likelihood for parameter estimation and a parametric bootstrap to assess significance. Missing data can be accommodated.
 
 Automated methods for evaluating time series inflection points, and identifying breakpoints (regimes) have been tested for inclusion in future SOEs. Kim Bastille (NEFSC) worked on methods to identify inflection points in indicator time series based on Large et al. @large_defining_2013 and @large_quantifying_2015. A standardized method has been implemented as a prototype and applied to several existing SOE indicators in 2022, but several questions on default approaches to be used across multiple indicators require more in depth analysis and review. A method for identifying breakpoints has been implemented by Kim Bastille and Laurel Smith (NEFSC) and a prototype analysis developed using SOE indicators in 2022. These methods are promising, but limited resources have been devoted to other priorities for the past several years.
 
@@ -331,6 +346,16 @@ Terminology for community fishery participation was clarified in the 2025 SOE an
 Social vulnerability indicators measure social factors that shape a community’s ability to adapt to change. These are derived from the NOAA Fisheries Community Social Vulnerability Indicators (CSVIs) which characterize aspects of well-being for coastal communities engaged in fishing activities. The updated dataset includes indicators of social, economic, and gentrification vulnerabilities. All of these factors were evaluated for inclusion in the Mid-Atlantic risk assessment, and all are summarized for the top fishing communities in the SOE [indicator catalog](https://noaa-edab.github.io/catalog/engagement.html).
 
 A new dataset with time series of Community Climate Change Risk indicators is in the 2025 SOE, presented at both the regional scale and summarizing results at the community scale. The dataset contains by year by community scores for community sensitivity to temperature, ocean acidification, stock size/status, total sensitivity, and total vulnerability based on Hare et al. 2016 species vulnerability and community dependency. Reciprocal Simpson’s Diversity scores for each community, Regional Quotients, and Regional climate vulnerability scores are also included. Indicators are reported summed at the regional scale to evaluate the climate vulnerability of fisheries landings and revenue in the SOE, as well as evaluating the proportion of communities at each level of climate vulnerablity in each region. 
+
+#### Other notable progress
+The impact of climate on data streams is being addressed by a new MAFMC project. Results of this project will be considered in future SOEs.
+
+In late 2024 the Project Oversight Team was established for the Mid-Atlantic Council’s IRA project titled “Evaluating the Data Needs and Management Strategies to Support Climate-Ready Fisheries Management". The contract was awarded to University of Maine and an initial meeting was held on Jan. 10th, 2025. 
+Specific project objectives will include:
+
+*  Phase 1: Synthesize the challenges associated with changes in fishery independent and fishery dependent data collection programs along the US East Coast (2010 to present).
+*  Phase 2: Use management strategy evaluation to evaluate the performance of US fisheries management strategies in the context of climate change and data uncertainty.
+*  Phase 3: Review management strategy evaluation outcomes and develop sampling, assessment, and management recommendations.
 
 ### Functional group level status/thresholds/ref pts: moderate priority
 
