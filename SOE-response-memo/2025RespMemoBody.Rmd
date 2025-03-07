@@ -171,7 +171,7 @@ Includes requests to develop analytical methods that can be applied across all i
 Includes analyses related to management performance. Work on this category is resource limited.
 
 #### Short term forecasts 
-Includes requests for biological and environmental forecasts. These forecasts include forthcoming CEFI products once they are tested. Work in this category started this year, but has been suspended due to the termination of multiple people hired to do this work.
+Includes requests for biological and environmental forecasts. These forecasts include forthcoming CEFI products once they are tested. Work in this category started this year, but has been suspended due to the loss of multiple people hired to do this work.
 
 #### Regime shifts 
 Many analyses have been conducted and are in progress for individual ecosystem components, but a unifying framework with consistent methods is needed for the SOE.
