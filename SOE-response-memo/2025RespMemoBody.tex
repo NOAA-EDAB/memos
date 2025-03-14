@@ -57,28 +57,38 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
 \newlength{\cslhangindent}
 \setlength{\cslhangindent}{1.5em}
 \newlength{\csllabelwidth}
 \setlength{\csllabelwidth}{3em}
-\newlength{\cslentryspacingunit} % times entry-spacing
-\setlength{\cslentryspacingunit}{\parskip}
-\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
- {% don't indent paragraphs
-  \setlength{\parindent}{0pt}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
   % turn on hanging indent if param 1 is 1
   \ifodd #1
-  \let\oldpar\par
-  \def\par{\hangindent=\cslhangindent\oldpar}
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
   \fi
   % set entry spacing
-  \setlength{\parskip}{#2\cslentryspacingunit}
- }%
- {}
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
 \usepackage{calc}
-\newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 % Set up the fonts
 \usepackage[urw-palatino]{mathdesign}
@@ -129,7 +139,7 @@
 
 \fancyheadinit{%
    \ifthenelse{\value{page}=1}%
-      {\fancyhead[R]{\includegraphics[width=40pt]{images/NOAA_logo.png} \\ \textsf{\emph{March 7, 2025}}}
+      {\fancyhead[R]{\includegraphics[width=40pt]{images/NOAA_logo.png} \\ \textsf{\emph{March 14, 2025}}}
        \fancyhead[L]{\textsf{\LARGE State of the Ecosystem 2025: Request Tracking Memo}}
       }%
       {\fancyhead[R]{}
@@ -171,7 +181,7 @@
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\usepackage{bookmark}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
@@ -187,8 +197,7 @@
 
 \begin{document}
 
-\hypertarget{introduction}{%
-\section{Introduction}\label{introduction}}
+\section{Introduction}\label{introduction}
 
 In the table below we summarize all comments and requests with sources.
 The memo is now reorganized into categories of requests in descending
@@ -208,7 +217,7 @@ catalog.
 
 \global\setlength{\Oldtabcolsep}{\tabcolsep}
 
-\setlength{\tabcolsep}{0pt}
+\setlength{\tabcolsep}{2pt}
 
 \renewcommand*{\arraystretch}{1}
 
@@ -898,8 +907,7 @@ catalog.
 
 \renewcommand*{\arraystretch}{1}
 
-\hypertarget{overview-of-requests}{%
-\section{Overview of requests}\label{overview-of-requests}}
+\section{Overview of requests}\label{overview-of-requests}
 
 This memo is organized into categories by topic, and categories are
 listed in descending order of overall priority based on approximate
@@ -909,50 +917,43 @@ category has an overall priority. Priorities originally established in
 2022 were reviewed by the SSCs in July 2024, and have been retained for
 2025 in this memo. The request categories are:
 
-\hypertarget{system-level-thresholdsreference-points}{%
 \paragraph{System level thresholds/reference
-points}\label{system-level-thresholdsreference-points}}
+points}\label{system-level-thresholdsreference-points}
 
 Includes requests to develop analytical methods that can be applied
 across all indicator types and operationalized for management advice.
 Much of this high priority methodological work is in progress.
 
-\hypertarget{management}{%
-\paragraph{Management}\label{management}}
+\paragraph{Management}\label{management}
 
 Includes analyses related to management performance. Work on this
 category is resource limited.
 
-\hypertarget{short-term-forecasts}{%
-\paragraph{Short term forecasts}\label{short-term-forecasts}}
+\paragraph{Short term forecasts}\label{short-term-forecasts}
 
 Includes requests for biological and environmental forecasts. These
 forecasts include forthcoming CEFI products once they are tested. Work
 in this category started this year, but has been suspended due to the
 loss of multiple people hired to do this work.
 
-\hypertarget{regime-shifts}{%
-\paragraph{Regime shifts}\label{regime-shifts}}
+\paragraph{Regime shifts}\label{regime-shifts}
 
 Many analyses have been conducted and are in progress for individual
 ecosystem components, but a unifying framework with consistent methods
 is needed for the SOE.
 
-\hypertarget{multiple-system-drivers}{%
-\paragraph{Multiple system drivers}\label{multiple-system-drivers}}
+\paragraph{Multiple system drivers}\label{multiple-system-drivers}
 
 This category has the most requests. Most unranked requests from
 2023-2024 are in this category. Further prioritization within this
 category is sorely needed.
 
-\hypertarget{functional-group-level-statusthresholdsreference-points}{%
 \paragraph{Functional group level status/thresholds/reference
-points}\label{functional-group-level-statusthresholdsreference-points}}
+points}\label{functional-group-level-statusthresholdsreference-points}
 
 Most of these requests are in progress.
 
-\hypertarget{stock-level-indicators}{%
-\paragraph{Stock level indicators}\label{stock-level-indicators}}
+\paragraph{Stock level indicators}\label{stock-level-indicators}
 
 Requests for this information may be more appropriately directed to
 stock specific ecosystem products such as
@@ -964,22 +965,20 @@ discussion, or are listed without prioritization, while previously
 prioritized requests have been noted with adjustments to years in the
 table. We welcome further feedback on planned and continuing work.
 
-\hypertarget{adjustments-to-general-soe-report-structure}{%
 \subsection{Adjustments to general SOE report
-structure}\label{adjustments-to-general-soe-report-structure}}
+structure}\label{adjustments-to-general-soe-report-structure}
 
 The first SOE section on Performance Relative to Management Objectives
 has been positively received since it was introduced in 2021, so it has
 been retained. Objectives in this section are derived from U.S.
 Legislation (MSFCMA, ESA, MMPA, NEPA) and agency guidance implementing
-this legislation
-{[}\protect\hyperlink{ref-depiper_operationalizing_2017}{1}{]}. However,
-legislation generally does not identify reference points or thresholds
-for these objectives, and regional Councils have different contexts
-surrounding these objectives. The SOE team always welcomes input from
-Councils on additions to the list objectives, and regional specification
-of objectives, decision contexts, reference points, and performance
-metrics so that we can optimize indicators for Council use.
+this legislation {[}\citeproc{ref-depiper_operationalizing_2017}{1}{]}.
+However, legislation generally does not identify reference points or
+thresholds for these objectives, and regional Councils have different
+contexts surrounding these objectives. The SOE team always welcomes
+input from Councils on additions to the list objectives, and regional
+specification of objectives, decision contexts, reference points, and
+performance metrics so that we can optimize indicators for Council use.
 
 In response to feedback that the 2024 revision of the Climate and
 Ecosystem Risks section was useful, we have retained that section and
@@ -1018,13 +1017,11 @@ region. We are also updating the
 \href{https://noaa-edab.github.io/tech-doc/}{online technical
 documentation}.
 
-\hypertarget{summary-of-progress-by-category}{%
 \subsection{Summary of progress by
-category}\label{summary-of-progress-by-category}}
+category}\label{summary-of-progress-by-category}
 
-\hypertarget{system-level-thresholdsreference-points-highest-priority}{%
 \subsubsection{System level thresholds/reference points: highest
-priority}\label{system-level-thresholdsreference-points-highest-priority}}
+priority}\label{system-level-thresholdsreference-points-highest-priority}
 
 In July 2024, SSC review prioritized the following requests:
 
@@ -1040,8 +1037,7 @@ In July 2024, SSC review prioritized the following requests:
   longer term: simulation analysis of thresholds
 \end{itemize}
 
-\hypertarget{trendthreshold-evaluation}{%
-\paragraph{Trend/threshold evaluation}\label{trendthreshold-evaluation}}
+\paragraph{Trend/threshold evaluation}\label{trendthreshold-evaluation}
 
 The 2025 SOE addressed the first request by introducing a new short term
 trend analysis by Andy Beet (NEFSC) and applying it to all indicators
@@ -1050,9 +1046,9 @@ the most recent 10 years of data for long (\textgreater30 year) time
 series, and to the full time series for indicators with fewer than 30
 years of data for the 2025 SOE. The \texttt{ecodata} R package already
 incorporates long term trend estimation based on Hardison et al.
-{[}\protect\hyperlink{ref-hardison_simulation_2019}{2}{]}. This research
-found that trends were most robustly distinguished from autocorrelation
-in indicator time series of 30 years or longer. The new
+{[}\citeproc{ref-hardison_simulation_2019}{2}{]}. This research found
+that trends were most robustly distinguished from autocorrelation in
+indicator time series of 30 years or longer. The new
 \href{https://noaa-edab.github.io/tech-doc/short-term-trend-analysis.html}{short
 term trend analysis} allows for the detection of a linear trend in short
 time series when autocorrelation is present. The method uses maximum
@@ -1063,19 +1059,18 @@ Automated methods for evaluating time series inflection points, and
 identifying breakpoints (regimes) have been tested for inclusion in
 future SOEs. Kim Bastille (NEFSC) worked on methods to identify
 inflection points in indicator time series based on Large et al.
-{[}\protect\hyperlink{ref-large_defining_2013}{3}{]} and
-{[}\protect\hyperlink{ref-large_quantifying_2015}{4}{]}. A standardized
-method has been implemented as a prototype and applied to several
-existing SOE indicators in 2022, but several questions on default
-approaches to be used across multiple indicators require more in depth
-analysis and review. A method for identifying breakpoints has been
-implemented by Kim Bastille and Laurel Smith (NEFSC) and a prototype
-analysis developed using SOE indicators in 2022. These methods are
-promising, but limited resources have been devoted to other priorities
-for the past several years.
+{[}\citeproc{ref-large_defining_2013}{3}{]} and
+{[}\citeproc{ref-large_quantifying_2015}{4}{]}. A standardized method
+has been implemented as a prototype and applied to several existing SOE
+indicators in 2022, but several questions on default approaches to be
+used across multiple indicators require more in depth analysis and
+review. A method for identifying breakpoints has been implemented by Kim
+Bastille and Laurel Smith (NEFSC) and a prototype analysis developed
+using SOE indicators in 2022. These methods are promising, but limited
+resources have been devoted to other priorities for the past several
+years.
 
-\hypertarget{biological-thresholds}{%
-\paragraph{Biological thresholds}\label{biological-thresholds}}
+\paragraph{Biological thresholds}\label{biological-thresholds}
 
 Since 2023, SOEs have expressed ocean acidification indicators relative
 to biological thresholds for several species. In 2025,
@@ -1103,23 +1098,13 @@ gather information on temperature and salinity sensitivity levels for
 all managed species on the Northeast US shelf. To date, the project has
 completed a literature review as well as an empirical analysis of
 temperature ranges for over 50 species from NEFSC bottom trawl surveys
-(Fig. \ref{fig:survdattemps}) and the NRHA database. In addition, bottom
-temperature products were developed so that users could produce plots
-similar to the scallop plot for any species, once temperature
-sensitivity thresholds were established.
+and the NRHA database. In addition, bottom temperature products were
+developed so that users could produce plots similar to the scallop plot
+for any species, once temperature sensitivity thresholds were
+established.
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{images/Survdat_Threshold_Density_Ridge_Plots_demersal} 
-
-}
-
-\caption{Observed bottom temperature ranges for NEFSC bottom trawl survey species}\label{fig:survdattemps}
-\end{figure}
-
-\hypertarget{standard-uncertainty-language}{%
 \paragraph{Standard uncertainty
-language}\label{standard-uncertainty-language}}
+language}\label{standard-uncertainty-language}
 
 The SOE team has not had resources to review and incorporate
 standardized uncertainty language similar to that used by the IPCC for
@@ -1128,9 +1113,8 @@ that not all contributed indicators include uncertainty estimates, so
 advice on treating a mix of indicators with various approaches to
 uncertainty would be most welcome.
 
-\hypertarget{indicator-and-threshold-simulation-analysis}{%
 \paragraph{Indicator and threshold simulation
-analysis}\label{indicator-and-threshold-simulation-analysis}}
+analysis}\label{indicator-and-threshold-simulation-analysis}
 
 Longer term simulation analysis of ecosystem thresholds is similarly of
 great interest to the SOE team, with a project currently in progress to
@@ -1149,12 +1133,11 @@ outstanding data input task is completing discard estimates for all
 species in the Northeast US, which is in progress.
 
 A simulation study is being planned to use the Northeast US Atlantis
-ecosystem model
-{[}\protect\hyperlink{ref-caracappa_northeast_2022}{5}{]} to investigate
-robustness of thresholds and determine how informative they can be. This
-portion of the research will likely address the MAFMC request to
-evaluate how phytoplankton size composition might affect the EOF
-indicator. It will also address SSC questions raised about tradeoffs
+ecosystem model {[}\citeproc{ref-caracappa_northeast_2022}{5}{]} to
+investigate robustness of thresholds and determine how informative they
+can be. This portion of the research will likely address the MAFMC
+request to evaluate how phytoplankton size composition might affect the
+EOF indicator. It will also address SSC questions raised about tradeoffs
 between fishing for different species groups to address EOF, and how
 climate driven changes in transfer efficiency might be incorporated into
 or impact EOF indicators. In addition, the NEUS Atlantis model may be
@@ -1162,9 +1145,8 @@ able to address the lower priority requests on nutrient input and
 benthic flux contributions to system productivity once model sensitivity
 analysis determines whether these model components behave reasonably.
 
-\hypertarget{management-high-priority}{%
 \subsubsection{Management: high
-priority}\label{management-high-priority}}
+priority}\label{management-high-priority}
 
 In July 2024, SSC review prioritized the following requests:
 
@@ -1198,9 +1180,8 @@ Ecosystem Production Units (EPUs) was ranked lowest priority. We do not
 forsee having the resources to address this request, which is a large
 project, in the near future.
 
-\hypertarget{short-term-forecasts-high-priority}{%
 \subsubsection{Short term forecasts: high
-priority}\label{short-term-forecasts-high-priority}}
+priority}\label{short-term-forecasts-high-priority}
 
 In July 2024, SSC review prioritized the following requests:
 
@@ -1233,9 +1214,8 @@ distributions for fisheries management
 \href{https://www.mafmc.org/s/Rutgers-Project-Overview.pdf}{with Rutgers
 University}, which also addresses this request.
 
-\hypertarget{regime-shifts-high-priority}{%
 \subsubsection{Regime shifts: high
-priority}\label{regime-shifts-high-priority}}
+priority}\label{regime-shifts-high-priority}
 
 In July 2024, SSC review prioritized the following requests:
 
@@ -1262,9 +1242,8 @@ held May 2024 to review and synthesize regime shift methods and results
 for the Northeast Region may also contribute to this request. The
 workshop report was not available for the 2025 SOE.
 
-\hypertarget{multiple-system-drivers-moderate-high-priority}{%
 \subsubsection{Multiple system drivers: moderate-high
-priority}\label{multiple-system-drivers-moderate-high-priority}}
+priority}\label{multiple-system-drivers-moderate-high-priority}
 
 In July 2024, SSC review prioritized the following requests:
 
@@ -1287,8 +1266,7 @@ In July 2024, SSC review prioritized the following requests:
   \end{itemize}
 \end{itemize}
 
-\hypertarget{profits-vs-revenue}{%
-\paragraph{Profits vs Revenue}\label{profits-vs-revenue}}
+\paragraph{Profits vs Revenue}\label{profits-vs-revenue}
 
 Geret DePiper (NEFSC) has completed a full analysis at the request of
 the SSCs, included as an attachment to this request memo. Geret presents
@@ -1348,9 +1326,8 @@ profitability ratio implicitly relies on a tentative relationship
 between the average trip cost on federally permitted and non-federally
 permitted trips.
 
-\hypertarget{fishing-community-indicators}{%
 \paragraph{Fishing community
-indicators}\label{fishing-community-indicators}}
+indicators}\label{fishing-community-indicators}
 
 In 2025, considerable effort was devoted to clarifying terminology and
 objectives for fishing community indicators, and the range of
@@ -1403,8 +1380,7 @@ to evaluate the climate vulnerability of fisheries landings and revenue
 in the SOE, as well as evaluating the proportion of communities at each
 level of climate vulnerablity in each region.
 
-\hypertarget{other-notable-progress}{%
-\paragraph{Other notable progress}\label{other-notable-progress}}
+\paragraph{Other notable progress}\label{other-notable-progress}
 
 The impact of climate on data streams is being addressed by a new MAFMC
 project. Results of this project will be considered in future SOEs.
@@ -1431,10 +1407,9 @@ will include:
   sampling, assessment, and management recommendations.
 \end{itemize}
 
-\hypertarget{functional-group-level-statusthresholdsref-pts-moderate-priority}{%
 \subsubsection{Functional group level status/thresholds/ref pts:
 moderate
-priority}\label{functional-group-level-statusthresholdsref-pts-moderate-priority}}
+priority}\label{functional-group-level-statusthresholdsref-pts-moderate-priority}
 
 In July 2024, SSC review did not prioritize requests, but discussed
 including more aggregations for biomass and landings (Council-managed,
@@ -1459,17 +1434,15 @@ indices of populations for other seals and apex predators are in
 development by the NEFSC protected species division. These additional
 indices were not ready for the 2025 report.
 
-\hypertarget{stock-level-indicators-moderate-priority}{%
 \subsubsection{Stock level indicators: moderate
-priority}\label{stock-level-indicators-moderate-priority}}
+priority}\label{stock-level-indicators-moderate-priority}
 
 In July 2024, SSC review did not prioritize requests, but highlighted a
 request to cross reference ESP products where appropriate. The SOE team
 agrees and work is ongoing to coordinate SOE and ESP products.
 
-\hypertarget{soe-admin-unranked-priority}{%
 \subsubsection{SOE admin: unranked
-priority}\label{soe-admin-unranked-priority}}
+priority}\label{soe-admin-unranked-priority}
 
 In July 2024, SSC review did not prioritize requests in this category.
 However, the 2024 request by both SSCs for criteria used to include
@@ -1487,13 +1460,12 @@ contributors, affected fishing efforts, or were considered newsworthy.
 
 \newpage
 
-\hypertarget{references}{%
-\section*{References}\label{references}}
+\section*{References}\label{references}
 \addcontentsline{toc}{section}{References}
 
-\hypertarget{refs}{}
-\begin{CSLReferences}{0}{0}
-\leavevmode\vadjust pre{\hypertarget{ref-depiper_operationalizing_2017}{}}%
+\phantomsection\label{refs}
+\begin{CSLReferences}{0}{1}
+\bibitem[\citeproctext]{ref-depiper_operationalizing_2017}
 \CSLLeftMargin{1. }%
 \CSLRightInline{DePiper GS, Gaichas SK, Lucey SM, Pinto da Silva P,
 Anderson MR, Breeze H, et al. Operationalizing integrated ecosystem
@@ -1501,14 +1473,14 @@ assessments within a multidisciplinary team: Lessons learned from a
 worked example. ICES Journal of Marine Science. 2017;74: 2076--2086.
 doi:\href{https://doi.org/10.1093/icesjms/fsx038}{10.1093/icesjms/fsx038}}
 
-\leavevmode\vadjust pre{\hypertarget{ref-hardison_simulation_2019}{}}%
+\bibitem[\citeproctext]{ref-hardison_simulation_2019}
 \CSLLeftMargin{2. }%
 \CSLRightInline{Hardison S, Perretti CT, DePiper GS, Beet A. A
 simulation study of trend detection methods for integrated ecosystem
 assessment. ICES Journal of Marine Science. 2019;76: 2060--2069.
 doi:\href{https://doi.org/10.1093/icesjms/fsz097}{10.1093/icesjms/fsz097}}
 
-\leavevmode\vadjust pre{\hypertarget{ref-large_defining_2013}{}}%
+\bibitem[\citeproctext]{ref-large_defining_2013}
 \CSLLeftMargin{3. }%
 \CSLRightInline{Large SI, Fay G, Friedland KD, Link JS. Defining trends
 and thresholds in responses of ecological indicators to fishing and
@@ -1516,14 +1488,14 @@ environmental pressures. ICES Journal of Marine Science: Journal du
 Conseil. 2013;70: 755--767.
 doi:\href{https://doi.org/10.1093/icesjms/fst067}{10.1093/icesjms/fst067}}
 
-\leavevmode\vadjust pre{\hypertarget{ref-large_quantifying_2015}{}}%
+\bibitem[\citeproctext]{ref-large_quantifying_2015}
 \CSLLeftMargin{4. }%
 \CSLRightInline{Large SI, Fay G, Friedland KD, Link JS. Quantifying
 {Patterns} of {Change} in {Marine} {Ecosystem} {Response} to {Multiple}
 {Pressures}:~e0119922. PLoS One. 2015;10.
 doi:\url{http://dx.doi.org/10.1371/journal.pone.0119922}}
 
-\leavevmode\vadjust pre{\hypertarget{ref-caracappa_northeast_2022}{}}%
+\bibitem[\citeproctext]{ref-caracappa_northeast_2022}
 \CSLLeftMargin{5. }%
 \CSLRightInline{Caracappa JC, Beet A, Gaichas S, Gamble RJ, Hyde KJW,
 Large SI, et al. A northeast {United} {States} {Atlantis} marine
