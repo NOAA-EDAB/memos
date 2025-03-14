@@ -1,0 +1,104 @@
+\documentclass[11pt,]{letter}
+\usepackage{mathpazo}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage[unicode=true]{hyperref}
+\hypersetup{
+            pdfauthor={Aaron Wolen},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+% Make links footnotes instead of hotlinks:
+\renewcommand{\href}[2]{#2\footnote{\url{#1}}}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\signature{Aaron Wolen}
+
+
+\address{456 Road St.\\New York, NY}
+
+\usepackage{mdframed} % color is loaded by mdframed
+\definecolor{greyborder}{RGB}{221,221,221}
+\definecolor{greytext}{RGB}{119,119,119}
+\newmdenv[rightline=false,bottomline=false,topline=false,linewidth=3pt,linecolor=greyborder,skipabove=\parskip]{blockquote}
+\renewenvironment{quote}{\begin{blockquote}\list{}{\rightmargin=0em\leftmargin=0em}%
+\item\relax\color{greytext}\ignorespaces}{\unskip\unskip\endlist\end{blockquote}}
+
+
+
+\begin{document}
+
+
+\begin{letter}{Dirk Eddelbuettel\\123 Street Rd\\Chicago, IL}
+\opening{Dear Dirk,}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin mollis
+dolor vitae tristique eleifend. Quisque non ipsum sit amet velit
+malesuada consectetur. Praesent vel facilisis leo. Sed facilisis varius
+orci, ut aliquam lorem malesuada in. Morbi nec purus at nisi fringilla
+varius non ut dui. Pellentesque bibendum sapien velit. Nulla purus
+justo, congue eget enim a, elementum sollicitudin eros. Cras porta augue
+ligula, vel adipiscing odio ullamcorper eu. In tincidunt nisi sit amet
+tincidunt tincidunt. Maecenas elementum neque eget dolor
+\href{http://example.com}{egestas fringilla}:
+
+\begin{quote}
+Nullam eget dapibus quam, sit amet sagittis magna. Nam tincidunt, orci
+ac imperdiet ultricies, neque metus ultrices quam, id gravida augue
+lacus ac leo.
+\end{quote}
+
+Vestibulum id sodales lectus, sed scelerisque quam. Nullam auctor mi et
+feugiat commodo. Duis interdum imperdiet nulla, vitae bibendum eros
+placerat non. Cras ornare, risus in faucibus malesuada, libero sem
+fringilla quam, ut luctus enim sapien eget dolor.
+
+\longindentation=0pt
+\closing{Sincerely,}
+
+\end{letter}
+
+\end{document}
