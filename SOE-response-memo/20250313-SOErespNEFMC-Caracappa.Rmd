@@ -16,7 +16,7 @@ encl:
 cc:
 - Jon Hare
 letterhead: letterhead/NEFSCletterhead.pdf
-signature: signature/caracappa.pdf
+signature: Signature/caracappa.pdf
 signature-before: -8ex
 
 output: linl::linl
