@@ -241,16 +241,17 @@ magick::image_read("https://github.com/NOAA-EDAB/ecodata/raw/master/workshop/ima
 ```
 
 
-Since producing this indicator, SOE team members initiated a project to gather information on temperature and salinity sensitivity levels for all managed species on the Northeast US shelf. To date, the project has completed a literature review as well as an empirical analysis of temperature ranges for over 50 species from NEFSC bottom trawl surveys (Fig. \ref{fig:survdattemps}) and the NRHA database. In addition, bottom temperature products were developed so that users could produce plots similar to the scallop plot for any species, once temperature sensitivity thresholds were established.
+Since producing this indicator, SOE team members initiated a project to gather information on temperature and salinity sensitivity levels for all managed species on the Northeast US shelf. To date, the project has completed a literature review as well as an empirical analysis of temperature ranges for over 50 species from NEFSC bottom trawl surveys and the NRHA database. In addition, bottom temperature products were developed so that users could produce plots similar to the scallop plot for any species, once temperature sensitivity thresholds were established.
 
+<!-- (Fig. \ref{fig:survdattemps}) -->
 <!-- \begin{figure} -->
 
 <!-- {\centering \includegraphics[width=1\linewidth]{images/Survdat_Threshold_Density_Ridge_Plots_demersal}  -->
 
 <!-- } -->
 
-\caption{Observed bottom temperature ranges for NEFSC bottom trawl survey species}\label{fig:survdattemps}
-\end{figure}
+<!--\caption{Observed bottom temperature ranges for NEFSC bottom trawl survey species}\label{fig:survdattemps}-->
+<!--\end{figure}-->
 
 #### Standard uncertainty language 
 The SOE team has not had resources to review and incorporate standardized uncertainty language similar to that used by the IPCC for the 2025 report, although there is a desire to do so. One challenge is that not all contributed indicators include uncertainty estimates, so advice on treating a mix of indicators with various approaches to uncertainty would be most welcome. 
