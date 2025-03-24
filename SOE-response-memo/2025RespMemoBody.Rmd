@@ -92,7 +92,7 @@ Use the code=readLines with the setup chunks from ecodata: need to do before eac
 
 # Introduction
 
-In the table below we summarize all comments and requests with sources. The memo is now reorganized into categories of requests in descending order of overall Council priority. The Rank column summarizes priority and was derived from combined discussion with the Mid-Atlantic SSC ecosystem working group and a survey of selected MAFMC members coordinated by Council staff in July 2022, and updated based on discussion with the Mid-Atlantic SSC ecosystem and economic working groups and the New England SSC chair in July 2024. The Progress column briefly summarizes how we responded, with a more detailed response to each request in a section for each request category. In the Status column, "In SOE" indicates a change included in the report(s), and "In Catalog" indicates information included in the online indicator catalog.
+In the table below we summarize a running list of comments and requests with sources from MAFMC, NEFMC, and both SSCs. The memo is now reorganized into categories of requests in descending order of overall Council priority. The Rank column summarizes priority and was derived from combined discussion with the Mid-Atlantic SSC ecosystem working group and a survey of selected MAFMC members coordinated by Council staff in July 2022, and updated based on discussion with the Mid-Atlantic SSC ecosystem and economic working groups and the New England SSC chair in July 2024. The Progress column briefly summarizes how we responded, with a more detailed response to each request in a section for each request category. In the Status column, "In SOE" indicates a change included in the report(s), and "In Catalog" indicates information included in the online indicator catalog.
 
 ```{r summtable, ft.arraystretch = 1}
 # take from google drive to automatically update any changes
@@ -162,7 +162,7 @@ flextable::as_grouped_data(requeststab, groups = "Aggregate") %>%
 
 # Overview of requests
 
-This memo is organized into categories by topic, and categories are listed in descending order of overall priority based on approximate weighting within the category.  Therefore, a range of priority may be applied to individual requests within a category even though the entire category has an overall priority.  Priorities originally established in 2022 were reviewed by the SSCs in July 2024, and have been retained for 2025 in this memo. The request categories are:
+This memo is organized into categories by topic, and categories are listed in descending order of overall priority based on approximate weighting within the category.  Therefore, a range of priority may be applied to individual requests within a category even though the entire category has an overall priority.  Priorities originally established in 2022 were reviewed by representatives from both SSCs in July 2024, and have been retained for 2025 in this memo. The request categories are:
 
 #### System level thresholds/reference points
 Includes requests to develop analytical methods that can be applied across all indicator types and operationalized for management advice. Much of this high priority methodological work is in progress.
@@ -221,7 +221,7 @@ for(j in 1:length(unique(requeststab$Aggregate))) {
 
 ### System level thresholds/reference points: highest priority
 
-In July 2024, SSC review prioritized the following requests: 
+In July 2024, representatives from the NEFMC and MAFMC SSC prioritized the following requests: 
 
 + maintain high priority on trend/threshold evaluation
 + express indicators relative to biological thresholds

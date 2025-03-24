@@ -25,7 +25,7 @@ output: linl::linl
 
 In this memo we list comments and requests received on the 2019-2024 State of the Ecosystem (SOE) reports, and how we responded to those requests. We include comments from both Councils because adjustments to the report were made in response to both. We welcome feedback on whether this memo is useful and how to improve it for future SOE reporting.
 
-The attached document includes a table where we summarize all comments and requests with sources. Since 2023, the memo is organized into categories of requests in descending order of overall Council priority. The Rank column summarizes priority and was derived from combined discussion with the Mid-Atlantic SSC ecosystem working group and a survey of selected MAFMC members coordinated by Council staff in July 2022. Ranks were reviewed and updated by MAFMC and NEFMC SSC members in July 2024.
+The attached document includes a table where we summarize all comments and requests with sources. Since 2023, the memo is organized into categories of requests in descending order of overall Council priority. The Rank column summarizes priority and was derived from combined discussion with the Mid-Atlantic SSC ecosystem working group and a survey of selected MAFMC members coordinated by Council staff in July 2022. Ranks were reviewed and updated by MAFMC and NEFMC SSC members in July 2024 as well as the NEFMC SSC report on the SOE.
 
 We specifically request feedback on the following topics to improve the utility of the SOE for the Council:
 
