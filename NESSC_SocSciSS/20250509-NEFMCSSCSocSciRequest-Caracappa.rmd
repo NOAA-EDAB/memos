@@ -1,0 +1,45 @@
+---
+author:
+- Joseph Caracappa, PhD
+- Research Fishery Biologist
+- Ecosystem Dynamics and Assessment Branch
+- Northeast Fisheries Science Center
+opening: To the SSC Social Sciences Subcommittee,
+closing: Sincerely,
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+address:
+- New England Fishery Management Council
+- 50 Water Street, Mill 2
+- Newburyport, MA 01950
+encl:
+- "State of the Ecosystem 2026: Social Science Objectives and Evaluation"
+cc:
+- Jon Hare
+letterhead: letterhead/NEFSCletterhead.pdf
+signature: Signature/caracappa.pdf
+signature-before: -2ex
+
+output: linl::linl
+---
+
+During our presentation of the 2025 New England State of the Ecosystem (SOE) report, it was determined that further discussions of Term of Reference C was necessary in order for the SSC to adequately address those topics. We are requesting that this subcommittee works with the SOE team to further address these topics. The following is some additional background information and context that may help prepare for further discussion.
+
+**Management Objectives**
+
+-   To further operationalize the SOE it is necessary to evaluate indicator status and trends with respect to well-defined management objectives. These should represent desired states, targets, or thresholds but can be quantitative or qualitative.
+-   Both “Fishery Stability” and “Community Vulnerability” objectives have been identified as being important factors for managers, but the specific objectives have not been well defined.
+-   *We are requesting that the SSC help develop language to help define true management objectives and evaluate the status of their respective indicators.*
+
+**Community Vulnerability**
+
+- The SOE team has worked over the past year with NEFSC social scientists and NEFMC staff to develop improvements in the representation of community vulnerability indicators. However, there is a continued need to evaluate how community vulnerability is changing over time and across the region. There is also a lack of objective criteria for evaluating regional community vulnerability.
+- There are many community-level indicators available, but without understanding how they relate to management objectives and actions, it is difficult to provide a meaningful assessment, especially when summed to a regional level.
+- *We are requesting that the SSC help identify which community vulnerability indicators are most relevant to NEFMC priorities, and how they can be used to evaluate community vulnerability in a meaningful way.*
+
+**Fishery Stability**
+
+-   The SOE team has discussed competing interpretations of fishery stability which may have different implications for management. These include evaluating economic volatility (revenue, quota, and/or markets), changes in the membership or activity of a fishery, or changes in harvest characteristics across fisheries, though there may be other interpretations.
+-   The previous measure of stability as increasing/decreasing and above/below a long term average may not be appropriate without more specific objectives defined. For instance, one could define a consistent state of low productivity as "stable" but not particularly desirable. Additionally, the criteria for determining whether a fishery is stable vs. not stable should be more explicit.
+-   *We are requesting that the SSC help identify which interpretations of “fishery stability” address NEFMC priorities, are actionable by managers, and which indicators would be most applicable.*
+
+We are not expecting the above topics to be immediately resolved, but are seeking a continued involvement with the SSC or other NEFMC committees to further improve the utility of the SOE and it's underlying data. We look forward to further conversations on these topics and appreciate whatever feedback this subcommittee can provide.

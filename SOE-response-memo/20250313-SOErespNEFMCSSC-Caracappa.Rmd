@@ -27,4 +27,12 @@ In this memo we list comments and requests received on the 2019-2024 State of th
 
 The attached document includes a table where we summarize all comments and requests with sources. Since 2023, the memo is organized into categories of requests in descending order of overall Council priority. The Rank column summarizes priority and was derived from combined discussion with the Mid-Atlantic SSC ecosystem working group and a survey of selected MAFMC members coordinated by Council staff in July 2022. Ranks were reviewed and updated by MAFMC and NEFMC SSC members in July 2024 as well as the NEFMC SSC report on the SOE.
 
+We specifically request feedback on the following topics to improve the utility of the SOE for the Council:
+
+1.  Ecosystem level management objectives: Is the list complete? Does the Council have reference points, desired states, or other performance metrics we should address for each objective?
+2.  Current objective sections
+    *  Profits objective and appropriate indicators: Attached analysis with decision points
+    *  Stability objective: Are current indicators addressing Council needs?
+3.  Forecasts: What decisions or contexts would ocean forecasts be most useful for? What are desired characteristics of a forecast?
+
 We welcome comments on the entire SOE report as well as information included in this memo, and look forward to feedback from the SSC and Council.
